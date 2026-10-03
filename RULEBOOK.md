@@ -730,3 +730,22 @@ This file is the project's master implementation contract.
 If another document, prompt, AI agent, generated code, or future contributor conflicts with this Rulebook, this Rulebook wins unless the owner explicitly approves an updated Rulebook version.
 
 Rulebook changes themselves must be intentional, documented, reviewed and committed separately from unrelated feature work.
+
+
+## 36. Product roadmap and design authority
+
+The product roadmap and master design direction are maintained in README.md under:
+- Master Product Roadmap
+- Master Design System Direction
+
+These sections define planned sequencing and product/UX direction. They do not override mandatory safety, source, security, indexing, SEO, accessibility or data rules in this Rulebook.
+
+Before implementing a milestone:
+1. Read the relevant roadmap/design section.
+2. Read this Rulebook.
+3. Inspect the current repository state.
+4. Implement only the approved milestone scope.
+5. Update documentation when a deliberate architecture decision changes.
+6. Keep unrelated work out of the milestone commit.
+
+No future feature may weaken the core product identity, mobile navigation rule, official-source transparency, anti-thin-content policy or no-fake-data policy.
