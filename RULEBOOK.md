@@ -749,3 +749,24 @@ Before implementing a milestone:
 6. Keep unrelated work out of the milestone commit.
 
 No future feature may weaken the core product identity, mobile navigation rule, official-source transparency, anti-thin-content policy or no-fake-data policy.
+
+## 37. Pre-development gate
+
+No implementation milestone may begin until the PRE-DEVELOPMENT FINAL CHECKLIST & LOCKED DECISIONS in README.md has been reviewed.
+
+The following architecture decisions cannot be silently changed:
+- public information architecture
+- URL/page-type strategy
+- source/review governance
+- language architecture
+- indexing architecture
+- Rule Engine boundaries
+- map-data boundaries
+- anti-thin-content policy
+- mobile navigation principles
+
+If any of these need to change, documentation must be intentionally updated before affected code is implemented.
+
+## 38. Evidence and freshness rule
+
+For current government-portal availability, service availability, legal validity, fees, procedures, document requirements, map availability or similar changing facts, use authoritative/current sources before publishing. DILRMP can provide national/state discovery and modernization-status context, but state-specific official portals remain the primary source for state-specific user instructions.
