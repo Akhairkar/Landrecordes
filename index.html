@@ -7,8 +7,8 @@
   <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="LandRecord is an independent platform for discovering Indian land records, services, maps, tools and state-specific guidance.">
   <title>LandRecord — Find the right land-record service</title>
-  <link rel="stylesheet" href="/assets/css/design-system.css">
-  <link rel="stylesheet" href="/assets/css/shell.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/shell.css">
   <style>
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -107,9 +107,9 @@
             <div><h2>What do you need?</h2><p>Start from the task instead of searching through government terminology.</p></div>
           </div>
           <div class="grid">
-            <a class="card" href="/services/records/"><div class="card-icon">R</div><h3>Find a land record</h3><p>Understand records such as 7/12, RoR, Jamabandi, Khatauni and Property Card.</p></a>
-            <a class="card" href="/services/"><div class="card-icon">S</div><h3>Use a land service</h3><p>Find routes for mutation, registration, corrections and other land-related services.</p></a>
-            <a class="card" href="/maps/"><div class="card-icon">M</div><h3>Find a land map</h3><p>Explore official or contextual map routes where the relevant state provides them.</p></a>
+            <a class="card" href="services/records/"><div class="card-icon">R</div><h3>Find a land record</h3><p>Understand records such as 7/12, RoR, Jamabandi, Khatauni and Property Card.</p></a>
+            <a class="card" href="services/"><div class="card-icon">S</div><h3>Use a land service</h3><p>Find routes for mutation, registration, corrections and other land-related services.</p></a>
+            <a class="card" href="maps/"><div class="card-icon">M</div><h3>Find a land map</h3><p>Explore official or contextual map routes where the relevant state provides them.</p></a>
           </div>
         </div>
       </section>
@@ -121,7 +121,7 @@
               <span class="pill">Smart Land Assistant</span>
               <h2>Not sure which service you need?</h2>
               <p>Use the Rule Engine to map your goal, state and land-record term to a recommended route. The recommendation is explainable guidance — not a government decision.</p>
-              <a class="primary" href="/tools/smart-land-assistant/">Open Smart Land Assistant</a>
+              <a class="primary" href="tools/smart-land-assistant/">Open Smart Land Assistant</a>
             </div>
             <div class="assistant-list" aria-label="Assistant inputs">
               <div class="assistant-item">📍 <strong>State</strong><span>Choose your jurisdiction</span></div>
@@ -136,10 +136,10 @@
         <div class="lr-container">
           <div class="section-head">
             <div><h2>Explore by state</h2><p>State context matters because record names, workflows and official portals differ.</p></div>
-            <a class="section-link" href="/states/">View all states</a>
+            <a class="section-link" href="states/">View all states</a>
           </div>
           <div class="grid">
-            <a class="card state-card" href="/states/maharashtra/"><div><h3>Maharashtra</h3><small>7/12 · 8A · Property Card</small></div><span class="pill">Available</span></a>
+            <a class="card state-card" href="states/maharashtra/"><div><h3>Maharashtra</h3><small>7/12 · 8A · Property Card</small></div><span class="pill">Available</span></a>
             <div class="card"><h3>More states</h3><p>State coverage will be expanded only when verified, useful local content is ready.</p></div>
           </div>
         </div>
@@ -149,12 +149,12 @@
         <div class="lr-container">
           <div class="section-head">
             <div><h2>Useful tools</h2><p>Practical utilities should help you prepare before opening an official workflow.</p></div>
-            <a class="section-link" href="/tools/">View tools</a>
+            <a class="section-link" href="tools/">View tools</a>
           </div>
           <div class="grid">
-            <a class="card" href="/tools/"><div class="card-icon">T</div><h3>Land tools</h3><p>Calculators, checklists and guided utilities designed around real land-record tasks.</p></a>
-            <a class="card" href="/search/"><div class="card-icon">⌕</div><h3>Search the platform</h3><p>Search records, services, maps and guides from one place.</p></a>
-            <a class="card" href="/guides/"><div class="card-icon">G</div><h3>Guides</h3><p>Plain-language explanations for common land-record questions and next steps.</p></a>
+            <a class="card" href="tools/"><div class="card-icon">T</div><h3>Land tools</h3><p>Calculators, checklists and guided utilities designed around real land-record tasks.</p></a>
+            <a class="card" href="search/"><div class="card-icon">⌕</div><h3>Search the platform</h3><p>Search records, services, maps and guides from one place.</p></a>
+            <a class="card" href="guides/"><div class="card-icon">G</div><h3>Guides</h3><p>Plain-language explanations for common land-record questions and next steps.</p></a>
           </div>
         </div>
       </section>
@@ -169,7 +169,7 @@
       <div class="lr-container footer-row"><span>© LandRecord · Independent land-information platform</span><span>Built for discovery, guidance and utility — not a government portal.</span></div>
     </footer>
   </div>
-  <script src="/assets/js/site-shell.js"></script>
+  <script src="assets/js/site-shell.js"></script>
   <script>
     LandRecordShell.mount({});
     document.getElementById("hero-search").addEventListener("submit",function(e){
@@ -177,7 +177,7 @@
       const q=document.getElementById("hero-input").value.trim();
       const out=document.getElementById("search-result");
       if(!q){out.textContent="Enter a land-record question to continue.";return;}
-      window.location.href="/search/?q="+encodeURIComponent(q);
+      window.location.href="search/?q="+encodeURIComponent(q);
     });
   </script>
 </body>
