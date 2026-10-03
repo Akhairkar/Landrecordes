@@ -807,3 +807,71 @@ The implementation priority is therefore:
 M1 Design System → M2 Global Shell → M3 Homepage → M4 Service/Record Architecture → M5 Rule Engine → M6 State Architecture.
 
 No competitor's branding, layout or government identity should be copied.
+
+## THIN / DUPLICATE PAGE PREVENTION — MANDATORY
+
+LandRecord must not grow by creating large numbers of near-identical, template-only, keyword-only, state/district/tehsil, language, or record pages.
+
+Before creating any new page, ask:
+
+1. What unique user intent does this page satisfy?
+2. What information, workflow, tool, source mapping, local context, or decision support is unique to this page?
+3. Would a user benefit from landing directly on this page?
+4. Is there already another page serving substantially the same intent?
+5. Can the information be better handled by an existing canonical page instead of creating another URL?
+6. Does the page have verified jurisdiction-specific source information where required?
+7. Does it provide meaningful internal links and a clear next action?
+
+### Automatic no-go conditions
+
+Do NOT create the page if it is mainly:
+- a city/state/district/tehsil name swapped into the same template
+- a keyword variant of an existing page
+- a spelling/synonym variation with substantially identical content
+- a language duplicate without a deliberate language/URL architecture
+- a page containing only a list of links with no additional user value
+- a page containing generic SEO paragraphs plus an official link
+- a mass-generated page whose local data cannot be verified
+- a page created only to increase indexed URL count
+- a near-copy of another service/record page
+- an AI-generated page with little human review or original value
+
+### Minimum unique-value requirement
+
+Every indexable page must have a documented purpose and at least one substantial source of unique value, such as:
+- verified jurisdiction-specific process
+- verified official portal/source mapping
+- meaningful local service differences
+- original explanation of a record/term
+- useful calculator or interactive tool
+- problem-solving workflow
+- Rule Engine decision path
+- map/location discovery
+- document/readiness checklist
+- authoritative source/review metadata
+- genuinely different search intent
+
+Being longer is NOT sufficient. Adding generic FAQs, repeated paragraphs, or keyword variations does not make a page unique.
+
+### Canonical consolidation rule
+
+If two planned URLs answer substantially the same intent:
+- prefer one strong canonical page
+- merge useful information into that page
+- use internal links rather than duplicate pages
+- use redirects/canonical handling when a legacy URL must remain accessible
+- use language-specific URLs only after the language architecture is deliberately approved
+
+### State / district / tehsil scaling rule
+
+Geographic pages are created only when there is verified, meaningful geographic value. A location page should contain relevant local sources, jurisdiction-specific services, terminology, office/service context, map information or other information that materially differs from the parent page.
+
+Never create thousands of location pages from a spreadsheet/template alone.
+
+### Publishing gate
+
+No page enters the production sitemap until the page-quality checklist and thin/duplicate check pass.
+
+During development, unfinished pages remain outside GSC submission and production sitemap.
+
+This rule is intentionally strict: fewer strong pages are preferred over a large number of thin or duplicate pages. Google Search guidance emphasizes people-first content, substantial original value, and avoiding mass-produced search-engine-first content; duplicate URLs should also be consolidated through appropriate canonicalization where needed.
