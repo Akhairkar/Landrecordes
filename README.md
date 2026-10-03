@@ -497,3 +497,211 @@ Before introducing a new component or visual pattern:
 2. Reuse it if possible.
 3. If a new pattern is necessary, define it as a reusable system component.
 4. Do not create a one-page-only design language without explicit approval.
+
+## PRE-DEVELOPMENT FINAL CHECKLIST & LOCKED DECISIONS
+
+### Repository baseline
+- Repository: Akhairkar/Landrecordes
+- Default branch: main
+- Development remains outside GSC submission until launch readiness is approved.
+- Do not add unfinished or intentionally blocked pages to the production sitemap.
+- Do not introduce implementation before the applicable architecture and Rulebook checks are complete.
+- Current repository is documentation-only; implementation begins with M1.
+
+### Final information architecture
+Preferred public structure:
+/
+├── states/
+├── districts/
+├── tehsils/
+├── services/
+├── records/
+├── maps/
+├── tools/
+├── guides/
+├── legal/
+├── assets/
+├── data/
+├── admin/
+├── api/
+├── docs/
+├── README.md
+├── RULEBOOK.md
+├── robots.txt
+└── sitemap.xml
+
+Page types must be defined before bulk publishing. A page type must have a clear search intent, unique value, source strategy and internal-link role.
+
+### URL rules
+- URLs are lowercase and stable.
+- Use descriptive words, not IDs where a stable human-readable slug is practical.
+- Do not create state/district/tehsil URLs merely to increase URL count.
+- Do not create duplicate URLs for spelling, language or keyword variations without a deliberate canonical strategy.
+- Any future URL migration requires explicit redirect/canonical planning before launch.
+
+### Data model
+Core relationship:
+State/UT → District → Tehsil/Taluka → Service/Record → Official Source → Guidance → Tools → Related Services
+
+Controlled entities should eventually include:
+- states/UTs
+- districts
+- tehsils/talukas
+- services
+- record types
+- state-service mappings
+- official sources
+- source-review records
+- rules/rule conditions
+- tools
+- guides
+- internal-link relationships
+
+Static content should remain static where database storage adds no useful capability.
+
+### Official-source architecture
+The Government of India's DILRMP publishes a state/UT RoR and related land-record portal directory. It also publishes state-level data covering computerization, online RoR availability, digitally signed RoR and online mutation capabilities. These sources are a national discovery/reference layer, not proof that every state offers identical services.
+
+For each LandRecord service mapping, track:
+- source organization
+- official URL
+- state/UT jurisdiction
+- service type
+- source status
+- last reviewed date
+- limitations/notes
+
+Current fees, legal validity, availability, required documents and process steps must be verified against the relevant authoritative source before publication.
+
+### Language architecture
+- English and Hindi are first-class product languages.
+- UI controls, navigation, labels and core explanations must remain consistent.
+- Select the implementation model during M1 and reuse it globally.
+- Do not create uncontrolled duplicate language pages.
+- If separate language URLs are later chosen, canonical/hreflang/sitemap rules must be designed before publishing them.
+
+### Indexing architecture
+Development:
+- No GSC submission.
+- No unfinished pages in the production sitemap.
+- Indexability must be intentional.
+
+Launch:
+- remove accidental development noindex controls
+- validate robots.txt
+- validate sitemap.xml
+- validate canonical URLs
+- validate internal links
+- validate structured data
+- confirm only intended canonical public pages are indexable
+- submit sitemap only after the complete launch gate passes
+
+### Search architecture
+Search must support:
+1. exact record/service terms
+2. state names
+3. natural-language user goals
+4. problem-oriented queries
+
+Result categories:
+- Services
+- Records
+- States
+- Districts/locations
+- Maps
+- Tools
+- Guides
+
+Search should map regional terminology to canonical concepts without generating duplicate pages.
+
+### Rule Engine architecture
+Version 1 is deterministic and explainable.
+
+Input:
+- state/UT
+- district where relevant
+- goal
+- record/service type
+- situation/context
+
+Output:
+- recommended route
+- explanation
+- required information/documents where verified
+- official source
+- next steps
+- relevant tools
+- related services
+- limitations
+
+The Rule Engine must never imply that its recommendation is a government decision, legal opinion or ownership determination.
+
+### Map architecture
+Map functionality is a discovery/context layer.
+
+Allowed:
+- state/district/tehsil hierarchy
+- official map/Bhu-Naksha discovery
+- verified location/office information
+- links to official cadastral/map systems
+
+Not allowed:
+- fabricated parcel boundaries
+- fabricated survey numbers
+- fabricated ownership
+- fabricated coordinates
+- presenting third-party maps as official cadastral records
+
+### SEO page-quality gate
+Before an indexable page is published, confirm:
+- clear user intent
+- unique useful information
+- jurisdiction identified
+- authoritative source where applicable
+- meaningful internal links
+- relevant tool/service connection
+- accurate title/meta/H1
+- canonical
+- appropriate schema
+- no copied/thin text
+- no misleading promises
+- no keyword stuffing
+
+### Pre-M1 benchmark
+Before finalizing the visual system, benchmark:
+- government portal service density
+- private SEO information architecture
+- map workflows
+- record terminology
+- mutation/registration workflows
+- search/discovery UX
+- mobile usability
+- bilingual behavior
+- trust/source presentation
+
+Take functionality patterns, not government branding or copied layouts.
+
+### M1 acceptance test
+M1 cannot be marked complete until these are documented:
+- final navigation map
+- final URL/page-type map
+- final design tokens
+- final mobile navigation
+- language architecture
+- indexing architecture
+- state/service data model
+- source/review model
+- Rule Engine input/output model
+- map boundaries
+- homepage wireframe
+- reusable component inventory
+- accessibility/performance baseline
+
+### Change-control rule
+If implementation reveals a need to change a locked architecture decision:
+1. Stop the affected implementation.
+2. Explain the conflict.
+3. Update the relevant documentation intentionally.
+4. Review the Rulebook impact.
+5. Commit the architecture change separately when practical.
+6. Resume implementation only after the new decision is clear.
