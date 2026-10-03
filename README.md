@@ -705,3 +705,105 @@ If implementation reveals a need to change a locked architecture decision:
 4. Review the Rulebook impact.
 5. Commit the architecture change separately when practical.
 6. Resume implementation only after the new decision is clear.
+
+## FINAL COMPETITOR & FEATURE-GAP RESEARCH — 03 OCT 2026
+
+This research is a product-planning benchmark, not a claim that LandRecord should copy any competitor.
+
+### 1. Government ecosystem benchmark
+
+DILRMP's current State/UT RoR directory shows that land-record systems are fragmented by jurisdiction. Examples include Maharashtra Mahabhumi, Karnataka Bhoomi, Uttar Pradesh Bhulekh, Bihar Bhoomi, Rajasthan Apna Khata, Telangana Bhu Bharati, Odisha Bhulekh and other state systems. The directory also distinguishes RoR, BhuNaksha, land-record and property-registration systems.
+
+Observed common capabilities:
+- State/district/tehsil/village hierarchy
+- Record-of-Rights search
+- owner/survey/plot/khata based search depending on state
+- cadastral/map access in some states
+- mutation/namantaran workflows
+- application/status tracking in some states
+- registration/document workflows in some integrated systems
+- grievance/correction workflows
+- digitally signed records in supported jurisdictions
+- notices, court/revenue information and other state-specific services
+
+Examples verified during research:
+- Maharashtra Mahabhulekh exposes 7/12, 8A, Property Card and K-Prat search, with district/taluka/village and survey/name inputs.
+- Uttar Pradesh Bhulekh exposes Khatauni, certified-copy payment, sale status, litigation status and plot/gata-related records.
+- Bihar Bhoomi exposes digital signed records, online mutation, land-revenue payment, revenue courts, e-Mapi, land-use conversion, map delivery, SMS alerts, correction and mortgage/record information.
+- Rajasthan Apna Khata exposes Jamabandi, mutation applications/status, Seemagyan, maps and related agricultural land-record workflows.
+- Telangana Bhu Bharati exposes land-detail search, registered-document lookup, GIS parcel information and grievance workflows.
+
+### 2. Private/product benchmark
+
+Two product directions are especially relevant.
+
+Land intelligence / verification:
+Current Maharashtra-focused products such as BhuMe and LandSahi combine official-record discovery with map views, record aggregation, mutation/deed analysis, risk checks or monitoring. Their positioning demonstrates that users may value a workflow that connects several official records rather than reading one record in isolation.
+
+SEO information sites:
+Independent guides typically answer one narrow question at a time: what a record means, how to find it, which portal to use, what fields mean and what to do next. This is useful for search acquisition but often leaves the user to connect multiple pages and portals themselves.
+
+### 3. Product gap identified
+
+The strongest gap is not another record-viewing portal. Official systems already perform record retrieval.
+
+LandRecord should focus on the layer between:
+User goal → terminology → correct jurisdiction → correct service → official source → explanation → next action
+
+Core differentiators to build:
+1. Natural-language land search
+2. State-aware terminology mapping
+3. Explainable Rule Engine
+4. Problem Solver journeys
+5. Official-source discovery with source/review metadata
+6. Cross-linking between records, maps, mutation, registration and tools
+7. Document/readiness checklists
+8. Map-to-service discovery
+9. Land-record terminology assistant
+10. State-specific process navigation
+11. Related-service engine
+12. Future saved checklists/monitoring only after reliable data architecture exists
+
+### 4. Competitor feature matrix
+
+| Capability | Govt portals | Private SEO sites | Land intelligence products | LandRecord target |
+|---|---|---|---|---|
+| Official record retrieval | Strong | Usually redirect/guide | Sometimes aggregated | Discovery + official route |
+| State-aware navigation | Strong but fragmented | Partial | Often Maharashtra-focused | India-wide |
+| Natural-language goal search | Limited | Limited | Limited | Core |
+| Record terminology explanation | Limited | Strong on individual topics | Moderate | Core |
+| Problem Solver | Limited | Fragmented guides | Moderate | Core |
+| Rule Engine | Not user-facing | Rare | Some rule/check workflows | Core |
+| Cross-portal journey | Fragmented | Manual | Stronger in niche products | Core |
+| Maps discovery | Strong where available | Variable | Strong in niche products | Core |
+| Source/review transparency | Varies | Varies | Stronger in evidence-led products | Mandatory |
+| Bilingual UX | State-dependent | Varies | Varies | English + Hindi first |
+| Calculators/tools | Limited/varies | Common | Some | Core |
+| Paid verification | Official fees vary | Some | Common | Future only |
+| Monitoring/alerts | Some state systems | Rare | Emerging | Future phase |
+
+### 5. User journey benchmark
+
+The product must optimize these journeys rather than only individual pages:
+
+- Mujhe apni zameen ka record check karna hai.
+- Mujhe 7/12 / RTC / Jamabandi / Khatauni chahiye.
+- Mera naam record me galat hai.
+- Mutation/Ferfar pending hai.
+- Survey/Gat/Khasra number nahi pata.
+- Land map dekhna hai.
+- Property kharidne se pehle kya check karna hai?
+- Registered deed/Index/document kaise find karna hai?
+- Record me area/owner/details mismatch hai.
+- Mujhe apne state ka official land portal kaunsa hai?
+
+Each journey should end with a verified official route, relevant explanation, next steps and related tools/services.
+
+### 6. Important product conclusion
+
+Competitor research is now sufficient for starting M1. More competitor browsing should only happen when a specific design, feature or state workflow needs validation.
+
+The implementation priority is therefore:
+M1 Design System → M2 Global Shell → M3 Homepage → M4 Service/Record Architecture → M5 Rule Engine → M6 State Architecture.
+
+No competitor's branding, layout or government identity should be copied.
