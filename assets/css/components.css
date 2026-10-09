@@ -1,0 +1,44 @@
+/* LandRecord shared page components. Tokens only — see design-system.css. */
+*{box-sizing:border-box}
+body{margin:0;background:var(--lr-bg);color:var(--lr-text);font-family:var(--lr-font-sans);line-height:1.65;font-size:16px}
+a{color:var(--lr-brand)}
+.lr-skip{position:absolute;left:-9999px;top:0;background:var(--lr-brand);color:var(--lr-surface);padding:10px 14px;z-index:50}
+.lr-skip:focus{left:8px;top:8px}
+.lr-container{width:min(var(--lr-content-max),calc(100% - 32px));margin:auto}
+.lr-page-main{padding:24px 0 56px}
+.lr-prose{max-width:var(--lr-reading-max)}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;letter-spacing:-.02em;margin:8px 0 10px}
+h2{font-size:clamp(21px,3vw,27px);margin:36px 0 10px;letter-spacing:-.01em}
+h3{font-size:18px;margin:20px 0 6px}
+.lr-lead{color:var(--lr-text-muted);font-size:18px;max-width:var(--lr-reading-max)}
+.lr-en{color:var(--lr-text-muted);font-size:.94em}
+.lr-crumbs{font-size:14px;color:var(--lr-text-muted);margin:0 0 4px}
+.lr-crumbs a{color:var(--lr-text-muted)}
+.lr-card{border:1px solid var(--lr-border);background:var(--lr-surface);border-radius:var(--lr-radius-lg);padding:20px;box-shadow:var(--lr-shadow-sm)}
+.lr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.lr-field{display:grid;gap:6px;margin:0 0 14px}
+.lr-field label,.lr-label{font-weight:700;font-size:15px}
+.lr-field small{color:var(--lr-text-muted)}
+.lr-input,.lr-select{width:100%;min-height:var(--lr-control-min);padding:10px 12px;border:1px solid var(--lr-border-strong);border-radius:var(--lr-radius-md);background:var(--lr-surface);color:var(--lr-text);font:inherit;font-size:16px}
+.lr-input:focus-visible,.lr-select:focus-visible,.lr-btn:focus-visible,a:focus-visible,summary:focus-visible{outline:none;box-shadow:var(--lr-focus)}
+.lr-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lr-btn{min-height:var(--lr-control-min);padding:10px 18px;border:0;border-radius:var(--lr-radius-md);background:var(--lr-brand);color:var(--lr-surface);font:inherit;font-weight:700;cursor:pointer}
+.lr-btn.secondary{background:var(--lr-surface-muted);color:var(--lr-text);border:1px solid var(--lr-border-strong)}
+.lr-notice{border:1px solid var(--lr-border-strong);background:var(--lr-accent-soft);border-radius:var(--lr-radius-md);padding:12px 14px;font-size:14.5px}
+.lr-notice strong{color:var(--lr-accent)}
+.lr-table-wrap{overflow-x:auto}
+table.lr-table{border-collapse:collapse;width:100%;min-width:520px}
+#conv-table{min-width:0}
+.lr-btn .lr-en{color:inherit;opacity:.85}
+.lr-table th,.lr-table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--lr-border);vertical-align:top}
+.lr-table th{background:var(--lr-surface-muted);font-size:14px}
+.lr-table td.num{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+.lr-muted-cell{color:var(--lr-text-muted)}
+.lr-faq details{border:1px solid var(--lr-border);border-radius:var(--lr-radius-md);background:var(--lr-surface);margin:8px 0;padding:0 14px}
+.lr-faq summary{cursor:pointer;min-height:var(--lr-control-min);display:flex;align-items:center;font-weight:700}
+.lr-source{margin-top:40px;border-top:1px solid var(--lr-border);padding-top:16px;font-size:14px;color:var(--lr-text-muted)}
+.lr-source ul{padding-left:20px}
+.lr-footer{border-top:1px solid var(--lr-border);padding:22px 0 36px;color:var(--lr-text-muted);font-size:14px}
+.lr-footer p{margin:4px 0}
+@media(max-width:560px){.lr-row{grid-template-columns:1fr}.lr-lead{font-size:16.5px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}

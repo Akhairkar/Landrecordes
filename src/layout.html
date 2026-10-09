@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <base href="{{base}}">
+  <meta name="robots" content="{{robots}}">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%232c5b3c%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2714%27 font-family=%27sans-serif%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23fff%27%3ELR%3C/text%3E%3C/svg%3E">
+  <link rel="canonical" href="{{canonical}}">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/shell.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+{{schema}}
+</head>
+<body>
+  <a class="lr-skip" href="{{self}}#main">मुख्य सामग्री पर जाएँ / Skip to content</a>
+  <div data-landrecord-shell></div>
+  <main id="main" class="lr-container lr-page-main">
+{{breadcrumbs}}
+{{body}}
+{{faq}}
+{{sources}}
+  </main>
+  <footer class="lr-footer">
+    <div class="lr-container">
+      <p>LandRecord स्वतंत्र सूचना प्लेटफ़ॉर्म है, सरकारी वेबसाइट नहीं। / LandRecord is an independent information platform, not a government website.</p>
+      <p><a href="about/">About</a> · <a href="sources/">Sources</a> · <a href="disclaimer/">Disclaimer</a></p>
+    </div>
+  </footer>
+  <script src="assets/js/site-shell.js"></script>
+  <script>LandRecordShell.mount({active:"{{active}}"});</script>
+{{scripts}}
+</body>
+</html>
