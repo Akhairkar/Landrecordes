@@ -1,0 +1,247 @@
+{
+  "https://digitalsatbara.mahabhumi.gov.in/DSLR": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://apnakhata.rajasthan.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 404,
+    "error": null
+  },
+  "https://apnakhata.raj.nic.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://mpbhulekh.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://anyror.gujarat.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://jamabandi.nic.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "http://plrs.org.in/": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "http://dlrc.delhigovt.nic.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://bhulekh.uk.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://himbhoomi.nic.in/": {
+    "checked": "2026-10-09",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://himbhoomilmk.nic.in/": {
+    "checked": "2026-10-09",
+    "status": 404,
+    "error": null
+  },
+  "https://landrecords.jk.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://landrecords.karnataka.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://meebhoomi.ap.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://eservices.tn.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://banglarbhumi.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://bhulekh.ori.nic.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://bhulekh.odisha.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://bhuiyan.cg.nic.in/": {
+    "checked": "2026-10-09",
+    "status": 401,
+    "error": null
+  },
+  "https://jharbhoomi.nic.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://jharbhoomi.jharkhand.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://www.bajajfinserv.in/marla-to-kanal": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://bajajfinserv.in/guntha-to-acre": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://1acre.in/land-unit-converter/cent-to-sqft": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://dilrmp.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://www.bajajfinserv.in/bhulekh-login-using-state-bhulekh-portals": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://www.drishtiias.com/state-pcs-current-affairs/the-e-fard-system-implemented-in-the-state/print_manually": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://revenue.delhi.gov.in/sites/default/files/revenue/important-news/1817_1.pdf": {
+    "checked": "2026-10-09",
+    "status": 503,
+    "error": null
+  },
+  "https://www.tatacapital.com/hindi/blog/medical-loan/devbhoomi-uttaranchal-land-records/": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://www.dailyexcelsior.com/?p=1239588": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://techobserver.in/news/egov/dilrmp-3-land-records-digitisation-bhu-aadhaar-328937/": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://homenesto.com/blog/dilrmp-3-0-and-bhu-aadhaar-what-the-14-digit-land-id-means-for-property-owners/": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://housing.com/news/cts-number/": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://bb.bankbazaar.com/home-loan/bhoomi-karnataka.html": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://deccanchronicle.com/southern-states/telangana/bhu-bharati-portal-goes-live-replaces-dharani-1873120": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://www.theweek.in/wire-updates/national/2025/04/14/mes18-tl-cm-land-portal.html": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://cleartax.in/s/mee-bhoomi-ap-gov-portal": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://groww.in/p/tax/banglarbhumi/": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://www.bajajfinserv.in/about-bhulekh-odisha": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://1acre.in/guides/chhattisgarh/khasra-b1-nakal-chhattisgarh": {
+    "checked": "2026-10-09",
+    "status": 403,
+    "error": null
+  },
+  "https://upbhulekh.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 200,
+    "error": null
+  },
+  "https://bhulekh.mahabhumi.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 200,
+    "error": null
+  },
+  "https://biharbhumi.bihar.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 200,
+    "error": null
+  },
+  "https://jamabandi.punjab.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 200,
+    "error": null
+  },
+  "https://dlrc.delhi.gov.in/": {
+    "checked": "2026-10-09",
+    "status": 200,
+    "error": null
+  },
+  "https://thane.nic.in/service/computerised-7-12/": {
+    "checked": "2026-10-09",
+    "status": 200,
+    "error": null
+  },
+  "https://hpkinnaur.nic.in/?p=2872": {
+    "checked": "2026-10-09",
+    "status": 200,
+    "error": null
+  },
+  "https://services.india.gov.in/service/detail/e-services-of-land-records": {
+    "checked": "2026-10-09",
+    "status": 200,
+    "error": null
+  },
+  "https://ramgarh.nic.in/service/land-records/": {
+    "checked": "2026-10-09",
+    "status": 200,
+    "error": null
+  }
+}

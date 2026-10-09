@@ -28,6 +28,9 @@ async function init() {
       if (t.usage.length) {
         const wrap = document.createElement("div");
         wrap.className = "lr-table-wrap";
+        wrap.tabIndex = 0;
+        wrap.setAttribute("role", "region");
+        wrap.setAttribute("aria-label", `${t.hi}: राज्य-वार नाम`);
         const table = document.createElement("table");
         table.className = "lr-table";
         table.style.minWidth = "0";

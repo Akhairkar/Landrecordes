@@ -154,5 +154,101 @@
     "url": "https://housing.com/news/cts-number/",
     "kind": "secondary",
     "basis": "Explains the CTS (city survey) number and that it appears on the property card (malmatta patrak). Check Mahabhulekh / the local CTS office for current procedure."
+  },
+  "portal-ka": {
+    "org": "Bhoomi — Karnataka Revenue Department land records",
+    "url": "https://landrecords.karnataka.gov.in/",
+    "kind": "portal",
+    "basis": "Karnataka RTC/mutation-report portal; address corroborated by guides; live check pending."
+  },
+  "ka-guide": {
+    "org": "BankBazaar — Bhoomi Karnataka guide (secondary source)",
+    "url": "https://bb.bankbazaar.com/home-loan/bhoomi-karnataka.html",
+    "kind": "secondary",
+    "basis": "Describes RTC (Record of Rights, Tenancy and Crops), mutation extract and the 'View RTC and MR' route. Fees are not reproduced here."
+  },
+  "tg-news-dc": {
+    "org": "Deccan Chronicle — Bhu Bharati portal goes live, replaces Dharani (news)",
+    "url": "https://deccanchronicle.com/southern-states/telangana/bhu-bharati-portal-goes-live-replaces-dharani-1873120",
+    "kind": "secondary",
+    "basis": "Reports Bhu Bharati launched 14 April 2025 replacing Dharani. The official domain was not confirmed from the sources found."
+  },
+  "tg-news-theweek": {
+    "org": "The Week (PTI) — Telangana CM launches Bhu Bharati portal",
+    "url": "https://www.theweek.in/wire-updates/national/2025/04/14/mes18-tl-cm-land-portal.html",
+    "kind": "secondary",
+    "basis": "Wire report on the Bhu Bharati launch and the new land-records law."
+  },
+  "portal-ap": {
+    "org": "Meebhoomi — Andhra Pradesh Revenue Department",
+    "url": "https://meebhoomi.ap.gov.in/",
+    "kind": "portal",
+    "basis": "Andhra Pradesh Adangal / 1-B portal; address corroborated by guides; live check pending."
+  },
+  "ap-guide": {
+    "org": "ClearTax — Mee Bhoomi AP guide (secondary source)",
+    "url": "https://cleartax.in/s/mee-bhoomi-ap-gov-portal",
+    "kind": "secondary",
+    "basis": "Describes Adangal and 1-B lookups on Meebhoomi. Confirm menus on the portal."
+  },
+  "tn-india-gov": {
+    "org": "India.gov.in — e-Services of land records (Tamil Nadu)",
+    "url": "https://services.india.gov.in/service/detail/e-services-of-land-records",
+    "kind": "official",
+    "basis": "National services directory entry stating that Tamil Nadu e-Services lets citizens view and verify Pattas and A-Register extracts."
+  },
+  "portal-tn": {
+    "org": "Tamil Nadu e-Services (Revenue Department)",
+    "url": "https://eservices.tn.gov.in/",
+    "kind": "portal",
+    "basis": "Tamil Nadu Patta/Chitta, A-Register, FMB and TSLR extract service."
+  },
+  "portal-wb": {
+    "org": "Banglarbhumi — Land & Land Reforms Department, West Bengal",
+    "url": "https://banglarbhumi.gov.in/",
+    "kind": "portal",
+    "basis": "West Bengal khatian/plot information portal; address corroborated by guides; live check pending."
+  },
+  "wb-guide": {
+    "org": "Groww — Banglarbhumi guide (secondary source)",
+    "url": "https://groww.in/p/tax/banglarbhumi/",
+    "kind": "secondary",
+    "basis": "Describes khatian and plot search by district, block and mouza."
+  },
+  "portal-od": {
+    "org": "Bhulekh Odisha",
+    "url": "https://bhulekh.ori.nic.in/",
+    "kind": "portal",
+    "basis": "Odisha RoR (Khatiyan) portal. Most guides use bhulekh.ori.nic.in; one lists bhulekh.odisha.gov.in; confirm which is live."
+  },
+  "od-guide": {
+    "org": "Bajaj Finserv — Bhulekh Odisha guide (secondary source)",
+    "url": "https://www.bajajfinserv.in/about-bhulekh-odisha",
+    "kind": "secondary",
+    "basis": "Describes RoR search by district, tahasil, RI circle and village, and BhuNaksha for maps. Fees are not reproduced here."
+  },
+  "portal-cg": {
+    "org": "Bhuiyan — Chhattisgarh land records",
+    "url": "https://bhuiyan.cg.nic.in/",
+    "kind": "portal",
+    "basis": "Chhattisgarh B-1/P-II (khasra nakal) portal; address corroborated by guides; live check pending."
+  },
+  "cg-guide": {
+    "org": "1acre — Chhattisgarh khasra / B-1 nakal document guide (secondary source)",
+    "url": "https://1acre.in/guides/chhattisgarh/khasra-b1-nakal-chhattisgarh",
+    "kind": "secondary",
+    "basis": "Describes B-1 and the route via district, tehsil, RI and village. Sources disagree on whether a digitally signed copy is accepted for loans/registration."
+  },
+  "portal-jh": {
+    "org": "Jharbhoomi — Jharkhand land records",
+    "url": "https://jharbhoomi.nic.in/",
+    "kind": "portal",
+    "basis": "Jharkhand khatiyan/jamabandi portal. Another listed address is jharbhoomi.jharkhand.gov.in; confirm which is live."
+  },
+  "jh-district": {
+    "org": "Ramgarh District (NIC) — land records service page",
+    "url": "https://ramgarh.nic.in/service/land-records/",
+    "kind": "official",
+    "basis": "District government page that links the Jharbhoomi service."
   }
 }

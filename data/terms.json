@@ -54,6 +54,38 @@
         {
           "state": "jammu-and-kashmir",
           "term_hi": "जमाबंदी"
+        },
+        {
+          "state": "karnataka",
+          "term_hi": "RTC (पहाणी)"
+        },
+        {
+          "state": "telangana",
+          "term_hi": "ROR-1B / पहाणी"
+        },
+        {
+          "state": "andhra-pradesh",
+          "term_hi": "1-B और अडंगल"
+        },
+        {
+          "state": "tamil-nadu",
+          "term_hi": "पट्टा / चिट्टा"
+        },
+        {
+          "state": "west-bengal",
+          "term_hi": "खतियान"
+        },
+        {
+          "state": "odisha",
+          "term_hi": "खतियान (RoR)"
+        },
+        {
+          "state": "chhattisgarh",
+          "term_hi": "बी-1 (खसरा नकल)"
+        },
+        {
+          "state": "jharkhand",
+          "term_hi": "खतियान"
         }
       ],
       "sources": [
@@ -113,6 +145,38 @@
         {
           "state": "jammu-and-kashmir",
           "term_hi": "खसरा संख्या"
+        },
+        {
+          "state": "karnataka",
+          "term_hi": "सर्वे नंबर + हिस्सा संख्या"
+        },
+        {
+          "state": "telangana",
+          "term_hi": "सर्वे नंबर"
+        },
+        {
+          "state": "andhra-pradesh",
+          "term_hi": "सर्वे नंबर"
+        },
+        {
+          "state": "tamil-nadu",
+          "term_hi": "सर्वे और उप-विभाजन नंबर"
+        },
+        {
+          "state": "west-bengal",
+          "term_hi": "प्लॉट नंबर"
+        },
+        {
+          "state": "odisha",
+          "term_hi": "प्लॉट नंबर"
+        },
+        {
+          "state": "chhattisgarh",
+          "term_hi": "खसरा संख्या"
+        },
+        {
+          "state": "jharkhand",
+          "term_hi": "प्लॉट नंबर"
         }
       ],
       "sources": [
@@ -172,6 +236,26 @@
         {
           "state": "jammu-and-kashmir",
           "term_hi": "खाता / खेवट"
+        },
+        {
+          "state": "andhra-pradesh",
+          "term_hi": "खाता नंबर"
+        },
+        {
+          "state": "tamil-nadu",
+          "term_hi": "पट्टा नंबर"
+        },
+        {
+          "state": "west-bengal",
+          "term_hi": "खतियान नंबर"
+        },
+        {
+          "state": "odisha",
+          "term_hi": "खतियान नंबर"
+        },
+        {
+          "state": "jharkhand",
+          "term_hi": "खतियान नंबर"
         }
       ],
       "sources": [
@@ -231,6 +315,38 @@
         {
           "state": "jammu-and-kashmir",
           "term_hi": "इंतकाल (म्यूटेशन)"
+        },
+        {
+          "state": "karnataka",
+          "term_hi": "म्यूटेशन (MR)"
+        },
+        {
+          "state": "telangana",
+          "term_hi": "म्यूटेशन"
+        },
+        {
+          "state": "andhra-pradesh",
+          "term_hi": "म्यूटेशन"
+        },
+        {
+          "state": "tamil-nadu",
+          "term_hi": "पट्टा में नाम परिवर्तन"
+        },
+        {
+          "state": "west-bengal",
+          "term_hi": "म्यूटेशन"
+        },
+        {
+          "state": "odisha",
+          "term_hi": "म्यूटेशन"
+        },
+        {
+          "state": "chhattisgarh",
+          "term_hi": "नामांतरण"
+        },
+        {
+          "state": "jharkhand",
+          "term_hi": "दाखिल-खारिज"
         }
       ],
       "sources": [

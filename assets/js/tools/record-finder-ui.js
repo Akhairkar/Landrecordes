@@ -27,11 +27,14 @@ async function init() {
     const g = goal.value, h = have.value;
     const box = el("div", null, "lr-result");
     box.append(el("h3", `${s.name_hi}: ${s.portal_name}`));
-    const p = el("p");
-    const a = el("a", "पोर्टल खोलें (नई विंडो)");
-    a.href = s.url; a.target = "_blank"; a.rel = "noopener noreferrer";
-    p.append(a, document.createTextNode(` · ${s.url.replace(/^https?:\/\//, "")}`));
-    box.append(p, el("p", CONF[s.confidence]));
+    if (s.url) {
+      const p = el("p");
+      const a = el("a", "पोर्टल खोलें (नई विंडो)");
+      a.href = s.url; a.target = "_blank"; a.rel = "noopener noreferrer";
+      p.append(a, document.createTextNode(` · ${s.url.replace(/^https?:\/\//, "")}`));
+      box.append(p);
+    }
+    box.append(el("p", CONF[s.confidence]));
     if (s.alt_urls.length) box.append(el("p", `अन्य पते: ${s.alt_urls.join(", ")}`));
     box.append(el("p", `आपके राज्य में इसे कहते हैं: ${g === "mutation" ? s.mutation_hi : s.record_hi}`));
     out.append(box);

@@ -13,25 +13,38 @@ const NEIGHBOURS = {
   "madhya-pradesh": ["rajasthan", "uttar-pradesh"], bihar: ["uttar-pradesh", "madhya-pradesh"], gujarat: ["maharashtra", "rajasthan"],
   haryana: ["punjab", "delhi"], punjab: ["haryana", "himachal-pradesh"], delhi: ["haryana", "uttar-pradesh"],
   uttarakhand: ["uttar-pradesh", "himachal-pradesh"], "himachal-pradesh": ["punjab", "uttarakhand"], "jammu-and-kashmir": ["punjab", "himachal-pradesh"],
+  karnataka: ["telangana", "andhra-pradesh"], telangana: ["andhra-pradesh", "karnataka"], "andhra-pradesh": ["telangana", "tamil-nadu"], "tamil-nadu": ["andhra-pradesh", "karnataka"],
+  "west-bengal": ["odisha", "jharkhand"], odisha: ["west-bengal", "jharkhand"], chhattisgarh: ["madhya-pradesh", "jharkhand"], jharkhand: ["bihar", "odisha"],
 };
 const MAIN_RECORD_PAGE = { maharashtra: ["records/satbara-7-12/", "7/12 उतारा और 8-अ क्या हैं"], gujarat: ["records/satbara-7-12/", "7/12 उतारा और 8-अ क्या हैं"], haryana: ["records/jamabandi-fard/", "जमाबंदी और फर्द क्या हैं"], punjab: ["records/jamabandi-fard/", "जमाबंदी और फर्द क्या हैं"], rajasthan: ["records/jamabandi-fard/", "जमाबंदी और फर्द क्या हैं"], "himachal-pradesh": ["records/jamabandi-fard/", "जमाबंदी और फर्द क्या हैं"], "jammu-and-kashmir": ["records/jamabandi-fard/", "जमाबंदी और फर्द क्या हैं"], bihar: ["records/jamabandi-fard/", "जमाबंदी और फर्द क्या हैं"] };
 
+function liveNote(entry) {
+  if (!entry) return "";
+  const d = entry.checked;
+  if (entry.status >= 200 && entry.status < 400) return `स्वचालित जाँच (${d}): यह पता खुला (HTTP ${entry.status})।`;
+  if (entry.error === "ENOTFOUND") return `स्वचालित जाँच (${d}): यह पता हमारी जाँच में खुला ही नहीं (डोमेन नहीं मिला)। सावधानी से पुष्टि करें।`;
+  if (entry.status === 404) return `स्वचालित जाँच (${d}): इस पते ने 'पेज नहीं मिला' (404) दिया; सही पता राज्य विभाग की साइट से देखें।`;
+  return `स्वचालित जाँच (${d}): हमारे सर्वर से नहीं खुला (${entry.status || entry.error}); इसे बंद न समझें, खुद खोलकर देखें।`;
+}
+
 export function generate({ readJson, esc }) {
+  let linkStatus = {};
+  try { linkStatus = readJson("data/link-status.json"); } catch { linkStatus = {}; }
   const { states, reviewed_on } = readJson("data/states.json");
   const byId = Object.fromEntries(states.map((s) => [s.id, s]));
   const out = [];
   const trim = (s, n) => (s.length <= n ? s : s.slice(0, n - 1).trimEnd() + "…");
-  const a = (s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.url.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a>`;
+  const a = (s) => !s.url ? "" : `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.url.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a>`;
 
   // ---- states hub ----
   const rows = states
-    .map((s) => `<tr><th scope="row"><a href="states/${s.id}/">${esc(s.name_hi)}</a> <span class="lr-en">${esc(s.name_en)}</span></th><td>${esc(s.portal_name)}</td><td>${esc(s.record_hi)}</td><td>${esc(s.mutation_hi)}</td><td><span class="lr-badge ${CONF[s.confidence][0]}">${esc({ "official-doc": "सरकारी दस्तावेज़ में", "multi-source": "कई स्रोत", conflicting: "पते अलग-अलग", "single-source": "एक स्रोत", unconfirmed: "पुष्टि जारी" }[s.confidence])}</span></td></tr>`)
+    .map((s) => `<tr><th scope="row"><a href="states/${s.id}/">${esc(s.name_hi)}</a> <span class="lr-en">${esc(s.name_en)}</span></th><td>${esc(s.portal_name)}</td><td>${esc(s.record_hi)}</td><td>${esc(s.mutation_hi)}</td><td>${s.url ? "" : ""}<span class="lr-badge ${CONF[s.confidence][0]}">${esc({ "official-doc": "सरकारी दस्तावेज़ में", "multi-source": "कई स्रोत", conflicting: "पते अलग-अलग", "single-source": "एक स्रोत", unconfirmed: "पुष्टि जारी" }[s.confidence])}</span></td></tr>`)
     .join("");
   out.push({
     rel: "states/index.html",
     meta: {
       title: "राज्य-वार भूमि रिकॉर्ड पोर्टल और स्थानीय शब्द | LandRecord",
-      description: "12 राज्यों में जमीन का रिकॉर्ड देखने के पोर्टल, वहाँ के स्थानीय शब्द (खतौनी, जमाबंदी, 7/12) और नाम बदलवाने की प्रक्रिया का नाम, एक तालिका में।",
+      description: "20 राज्यों में जमीन का रिकॉर्ड देखने के पोर्टल, वहाँ के स्थानीय शब्द (खतौनी, जमाबंदी, 7/12) और नाम बदलवाने की प्रक्रिया का नाम, एक तालिका में।",
       type: "hub", status: "draft", reviewed_on, active: "states",
       intent: "Pick the state to see its land-record portal, local terms and mutation term.",
       unique_value: "Side-by-side table of portal, record names, mutation term and address-confidence per state; each row links to a state page.",
@@ -41,7 +54,7 @@ export function generate({ readJson, esc }) {
       related: [{ path: "tools/record-finder/", label: "रिकॉर्ड-खोज मार्गदर्शक" }, { path: "tools/land-terms/", label: "शब्दकोश: खतौनी = जमाबंदी = 7/12" }],
     },
     body: `<h1>राज्य-वार भूमि रिकॉर्ड पोर्टल <span class="lr-en">/ Land records by state</span></h1>
-<p class="lr-lead">हर राज्य में जमीन के रिकॉर्ड के नाम, पोर्टल और प्रक्रिया अलग हैं। अपना राज्य चुनें और देखें कि वहाँ रिकॉर्ड को क्या कहते हैं, कहाँ देखते हैं और किन बातों का ध्यान रखें। अभी 12 राज्य जोड़े गए हैं; बाकी राज्य सत्यापित जानकारी मिलने पर ही जोड़े जाएँगे।</p>
+<p class="lr-lead">हर राज्य में जमीन के रिकॉर्ड के नाम, पोर्टल और प्रक्रिया अलग हैं। अपना राज्य चुनें और देखें कि वहाँ रिकॉर्ड को क्या कहते हैं, कहाँ देखते हैं और किन बातों का ध्यान रखें। अभी 20 राज्य जोड़े गए हैं; बाकी राज्य सत्यापित जानकारी मिलने पर ही जोड़े जाएँगे।</p>
 <div class="lr-table-wrap"><table class="lr-table" style="min-width:680px"><caption class="lr-en" style="text-align:left;padding:8px 0">States covered so far</caption><thead><tr><th scope="col">राज्य</th><th scope="col">पोर्टल</th><th scope="col">मुख्य रिकॉर्ड</th><th scope="col">म्यूटेशन को कहते हैं</th><th scope="col">पोर्टल का पता</th></tr></thead><tbody>${rows}</tbody></table></div>
 <div class="lr-prose"><h2>"पोर्टल का पता" वाला स्तंभ क्या बताता है?</h2>
 <p>हर राज्य के पोर्टल का पता हमने अलग-अलग स्रोतों से मिलाया है। जहाँ स्रोत आपस में सहमत नहीं थे, वहाँ हमने सभी पते दिखाए और उसे साफ लिखा है। जहाँ आधिकारिक पता पक्का नहीं हो पाया, वहाँ "पुष्टि जारी" लिखा है। यह पुष्टि आप राज्य के राजस्व विभाग की वेबसाइट से कर सकते हैं।</p>
@@ -82,21 +95,22 @@ export function generate({ readJson, esc }) {
 <p class="lr-lead">${esc(s.intro_hi)}</p>
 <section class="lr-card" aria-labelledby="portal-h"><h2 id="portal-h" style="margin-top:0">आधिकारिक पोर्टल <span class="lr-en">/ Official portal</span></h2>
 <p><strong>${esc(s.portal_name)}</strong></p>
-<p><a class="lr-btn" style="display:inline-flex;align-items:center;text-decoration:none" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">पोर्टल खोलें (नई विंडो)</a></p>
-<p>पता: ${a(s)} <span class="lr-badge ${cls}">${esc(confText)}</span></p>${alt}
-<p class="lr-en">Always confirm the address on the state revenue department's official site; LandRecord is not the portal.</p></section>
+${s.url ? `<p><a class="lr-btn" style="display:inline-flex;align-items:center;text-decoration:none" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">पोर्टल खोलें (नई विंडो)</a></p>
+<p>पता: ${a(s)} <span class="lr-badge ${cls}">${esc(confText)}</span></p>` : `<p><span class="lr-badge ${cls}">${esc(confText)}</span></p>`}${alt}
+${[s.url, ...s.alt_urls].filter(Boolean).map((u) => (linkStatus[u] ? `<p class="lr-en" style="margin:2px 0">${esc(u.replace(/^https?:\/\//, ""))} — ${esc(liveNote(linkStatus[u]))}</p>` : "")).join("")}</section>
 <div class="lr-prose">
 <h2>यहाँ रिकॉर्ड को क्या कहते हैं <span class="lr-en">/ Local terms</span></h2>
 <ul><li><strong>मुख्य रिकॉर्ड:</strong> ${esc(s.record_hi)}</li><li><strong>म्यूटेशन (नाम परिवर्तन):</strong> ${esc(s.mutation_hi)}</li><li><strong>क्षेत्रफल की इकाइयाँ:</strong> ${esc(s.units_hi)}</li></ul>
 <h2>रिकॉर्ड खोजने का सामान्य क्रम <span class="lr-en">/ Typical steps</span></h2>
-<p>स्रोतों में बताए गए चरण नीचे हैं। पोर्टल के मेनू बदलते रहते हैं, इसलिए स्क्रीन पर जो दिखे उसे प्राथमिकता दें।</p>
 <ol>${s.steps_hi.map((x) => `<li>${esc(x)}</li>`).join("")}</ol>
 <h2>${esc(s.name_hi)} में ध्यान रखने की बातें <span class="lr-en">/ Cautions</span></h2>
 <ul>${s.watch_hi.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
-<h2>नक्शा और स्थान का संदर्भ <span class="lr-en">/ Map context</span></h2>
-<p>भू-नक्शे की उपलब्धता राज्य के पोर्टल पर देखें। LandRecord कोई नक्शा या सीमा नहीं दिखाता और तीसरे पक्ष के नक्शों को आधिकारिक भू-नक्शा नहीं मानना चाहिए।</p>
+${s.example_hi ? `<h2>पढ़ने का उदाहरण <span class="lr-en">/ Example</span></h2>
+<p>${esc(s.example_hi)}</p>
+` : ""}<h2>नक्शा और स्थान का संदर्भ <span class="lr-en">/ Map context</span></h2>
+<p>भू-नक्शा राज्य के पोर्टल पर देखें; LandRecord कोई नक्शा या सीमा नहीं दिखाता।</p>
 <h2>उपयोगी टूल <span class="lr-en">/ Tools</span></h2>
-<ul><li><a href="tools/record-finder/">रिकॉर्ड-खोज मार्गदर्शक</a>: अपने पास की जानकारी के हिसाब से अगला कदम</li><li><a href="tools/land-unit-converter/">जमीन नापने का कैलकुलेटर</a> और <a href="tools/plot-area-calculator/">खेत का क्षेत्रफल</a></li><li><a href="tools/land-terms/">शब्दकोश</a>: ${esc(s.name_hi)} और दूसरे राज्यों के शब्द साथ-साथ</li></ul>
+<p><a href="tools/record-finder/">रिकॉर्ड-खोज मार्गदर्शक</a> · <a href="tools/land-unit-converter/">इकाई कैलकुलेटर</a> · <a href="tools/land-terms/">शब्दकोश</a></p>
 </div>`,
     });
   }
@@ -106,7 +120,7 @@ export function generate({ readJson, esc }) {
     rel: "tools/land-terms/index.html",
     meta: {
       title: "भूमि रिकॉर्ड शब्दकोश: खतौनी, जमाबंदी, 7/12 का मतलब",
-      description: "खतौनी, जमाबंदी, 7/12, खसरा, खेवट, फर्द और इंतकाल जैसे शब्दों का मतलब, और 12 राज्यों में किस काम के लिए कौन-सा नाम चलता है, खोजकर देखें।",
+      description: "खतौनी, जमाबंदी, 7/12, खसरा, खेवट, फर्द और इंतकाल जैसे शब्दों का मतलब, और 20 राज्यों में किस काम के लिए कौन-सा नाम चलता है, खोजकर देखें।",
       type: "tool", tool: true, status: "draft", reviewed_on, active: "tools",
       intent: "Translate a land-record term into what it is called in another state.",
       unique_value: "Searchable state-by-state term mapping drawn from the sourced portal data.",
@@ -117,7 +131,7 @@ export function generate({ readJson, esc }) {
       related: [{ path: "states/", label: "राज्य-वार पोर्टल" }, { path: "records/ror/", label: "अधिकार-अभिलेख (RoR) क्या है" }],
     },
     body: `<h1>भूमि रिकॉर्ड शब्दकोश <span class="lr-en">/ Land-record terms</span></h1>
-<p class="lr-lead">एक ही चीज़ के लिए हर राज्य में अलग नाम चलता है। कोई शब्द खोजें (जैसे &quot;खतौनी&quot; या &quot;इंतकाल&quot;) और देखें कि 12 राज्यों में उसे क्या कहते हैं।</p>
+<p class="lr-lead">एक ही चीज़ के लिए हर राज्य में अलग नाम चलता है। कोई शब्द खोजें (जैसे &quot;खतौनी&quot; या &quot;इंतकाल&quot;) और देखें कि 20 राज्यों में उसे क्या कहते हैं।</p>
 <section class="lr-card" aria-labelledby="tt-h"><h2 id="tt-h" style="margin-top:0">शब्द खोजें <span class="lr-en">/ Search</span></h2>
 <div class="lr-field"><label for="tt-q">शब्द या राज्य <span class="lr-en">/ Term or state</span></label><input class="lr-input" id="tt-q" type="search" autocomplete="off" placeholder="जैसे: खतौनी, 7/12, इंतकाल, पंजाब"></div>
 <p id="tt-status" role="status" aria-live="polite" class="lr-en"></p><div id="tt-out"></div></section>
