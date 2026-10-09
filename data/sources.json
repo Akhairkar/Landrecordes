@@ -1,0 +1,26 @@
+{
+  "intl-foot-definition": {
+    "org": "International yard and pound agreement (1959) — definition",
+    "url": null,
+    "kind": "definition",
+    "basis": "1 foot = 0.3048 m exactly, so 1 sq ft = 0.09290304 m². 1 acre = 43,560 sq ft. 1 hectare = 10,000 m². 1 sq yd (gaj) = 9 sq ft. These are definitions, not survey data."
+  },
+  "bajaj-marla-kanal": {
+    "org": "Bajaj Finserv — Marla to Kanal guide (secondary source)",
+    "url": "https://www.bajajfinserv.in/marla-to-kanal",
+    "kind": "secondary",
+    "basis": "1 kanal = 20 marla; marla standardised at 272.25 sq ft (30.25 sq yd). Some regions use other marla sizes."
+  },
+  "bajaj-guntha-acre": {
+    "org": "Bajaj Finserv — Guntha to Acre guide (secondary source)",
+    "url": "https://bajajfinserv.in/guntha-to-acre",
+    "kind": "secondary",
+    "basis": "1 guntha = 1,089 sq ft; 40 guntha = 1 acre."
+  },
+  "1acre-cent": {
+    "org": "1acre.in — Cent to sq ft converter (secondary source)",
+    "url": "https://1acre.in/land-unit-converter/cent-to-sqft",
+    "kind": "secondary",
+    "basis": "1 cent = 1/100 acre = 435.6 sq ft; 'decimal' is the same area."
+  }
+}
