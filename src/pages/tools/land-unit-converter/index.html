@@ -1,0 +1,99 @@
+<!--meta
+{
+ "title": "जमीन नापने का कैलकुलेटर: बीघा, बिस्वा, एकड़, कनाल",
+ "description": "बीघा, बिस्वा, कट्ठा, एकड़, हेक्टेयर, गुंटा, कनाल और वर्ग फुट में जमीन का क्षेत्रफल बदलें। स्थानीय माप खुद भरें, फॉर्मूला और स्रोत देखें।",
+ "type": "tool",
+ "tool": true,
+ "status": "draft",
+ "reviewed_on": "2026-10-09",
+ "active": "tools",
+ "intent": "User wants to convert land area between Indian units (esp. Hindi/Hinglish 'jamin napne ka calculator/formula').",
+ "unique_value": "Sourced fixed-unit table plus user-supplied local bigha/biswa/katha values instead of one disputed factor; shows formula and shareable result.",
+ "breadcrumbs": [
+  {
+   "name": "Tools",
+   "path": "tools/"
+  },
+  {
+   "name": "जमीन नापने का कैलकुलेटर",
+   "path": "tools/land-unit-converter/"
+  }
+ ],
+ "sources": [
+  "intl-foot-definition",
+  "bajaj-marla-kanal",
+  "bajaj-guntha-acre",
+  "1acre-cent"
+ ],
+ "scripts": [
+  "assets/js/tools/land-units-ui.js"
+ ],
+ "faq": [
+  {
+   "q": "1 बीघा में कितने वर्ग फुट होते हैं?",
+   "a": "कोई एक देशव्यापी उत्तर नहीं है। बीघे का माप राज्य, ज़िले और कई बार गाँव की परंपरा के अनुसार बदलता है। इसलिए इस कैलकुलेटर में आप अपने खसरा/जमाबंदी या तहसील से मिला मान वर्ग फुट में खुद भरते हैं।"
+  },
+  {
+   "q": "1 एकड़ में कितने गुंटा, सेंट और कनाल होते हैं?",
+   "a": "1 एकड़ = 43,560 वर्ग फुट। इसलिए 1 एकड़ = 40 गुंटा, 100 सेंट (डिसमिल) और 8 कनाल (1 कनाल = 5,445 वर्ग फुट मानने पर)।"
+  },
+  {
+   "q": "क्या इस कैलकुलेटर का नतीजा रजिस्ट्री में मान्य है?",
+   "a": "नहीं। रजिस्ट्री, नामांतरण या कानूनी काम में राजस्व रिकॉर्ड (खसरा/खतौनी/जमाबंदी) में दर्ज क्षेत्रफल ही मान्य होता है। यह टूल केवल अनुमान और समझ के लिए है।"
+  },
+  {
+   "q": "1 हेक्टेयर में कितने एकड़ होते हैं?",
+   "a": "1 हेक्टेयर = 10,000 वर्ग मीटर ≈ 2.4711 एकड़। यह परिभाषा पर आधारित सटीक रूपांतरण है।"
+  }
+ ]
+}
+-->
+<h1>जमीन नापने का कैलकुलेटर: बीघा, बिस्वा, एकड़, कनाल</h1>
+<p class="lr-lead">क्षेत्रफल एक इकाई से दूसरी में बदलें। पक्के माप (एकड़, हेक्टेयर, वर्ग फुट) सीधे बदलते हैं; बीघा, बिस्वा, कट्ठा जैसी स्थानीय इकाइयों का मान आप अपने क्षेत्र के हिसाब से भरते हैं। <span class="lr-en">Convert land area between Indian units. Local units like bigha need your own local value.</span></p>
+
+<section class="lr-card" aria-labelledby="tool-h" id="converter">
+  <h2 id="tool-h" style="margin-top:0">रूपांतरण टूल <span class="lr-en">/ Converter</span></h2>
+  <form id="conv-form" novalidate>
+    <div class="lr-row">
+      <div class="lr-field"><label for="conv-value">क्षेत्रफल <span class="lr-en">/ Area</span></label>
+        <input class="lr-input" id="conv-value" inputmode="decimal" autocomplete="off" placeholder="जैसे 2.5 या २५०"></div>
+      <div class="lr-field"><label for="conv-from">इकाई <span class="lr-en">/ Unit</span></label>
+        <select class="lr-select" id="conv-from"></select></div>
+    </div>
+    <details id="local-box" class="lr-field">
+      <summary class="lr-label">स्थानीय इकाइयों का मान (बीघा, बिस्वा, कट्ठा, धुर) — वर्ग फुट में <span class="lr-en">/ Local unit values in sq ft</span></summary>
+      <p><small>अपने खसरा/जमाबंदी, तहसील या पटवारी से मान पूछकर भरें। हम यहाँ कोई अनुमानित मान नहीं भरते क्योंकि यह जगह-जगह बदलता है।</small></p>
+      <div id="local-fields" class="lr-row"></div>
+    </details>
+    <div class="lr-row" style="margin-top:8px">
+      <button class="lr-btn" type="submit">बदलें <span class="lr-en">/ Convert</span></button>
+      <button class="lr-btn secondary" type="button" id="conv-copy">लिंक कॉपी करें <span class="lr-en">/ Copy link</span></button>
+    </div>
+  </form>
+  <p id="conv-status" role="status" aria-live="polite" class="lr-en"></p>
+  <div class="lr-table-wrap">
+    <table class="lr-table" id="conv-table" hidden>
+      <caption class="lr-en" style="text-align:left;padding:8px 0">Result in every unit</caption>
+      <thead><tr><th scope="col">इकाई</th><th scope="col">मान</th></tr></thead>
+      <tbody id="conv-body"></tbody>
+    </table>
+  </div>
+  <noscript><p class="lr-notice">इस टूल के लिए JavaScript चाहिए। नीचे दी गई तालिका से हाथ से गणना कर सकते हैं।</p></noscript>
+</section>
+
+<p class="lr-notice" style="margin-top:16px"><strong>ध्यान दें:</strong> यह अनुमान और समझ के लिए है। रजिस्ट्री, नामांतरण या कानूनी काम में राजस्व रिकॉर्ड में दर्ज क्षेत्रफल ही मान्य है। <span class="lr-en">Approximate; not for registry or legal use. Verify with revenue records.</span></p>
+
+<div class="lr-prose">
+<h2>फॉर्मूला: कैसे होती है गणना <span class="lr-en">/ How it works</span></h2>
+<p>हर इकाई को पहले वर्ग फुट में बदला जाता है, फिर जिस इकाई में चाहिए उसके वर्ग फुट से भाग दिया जाता है:</p>
+<p><strong>नया मान = (मान × इकाई के वर्ग फुट) ÷ लक्ष्य इकाई के वर्ग फुट</strong></p>
+<p>उदाहरण: 2 एकड़ को गुंटा में बदलना है। 2 × 43,560 = 87,120 वर्ग फुट। 87,120 ÷ 1,089 = <strong>80 गुंटा</strong>।</p>
+
+<h2>बीघा, बिस्वा, कट्ठा का मान हर जगह अलग क्यों? <span class="lr-en">/ Why local units differ</span></h2>
+<p>बीघा, बिस्वा, कट्ठा और धुर सरकारी रूप से एक राष्ट्रीय मानक में तय नहीं हैं। इनका आकार राज्य, ज़िले और कई बार स्थानीय परंपरा पर निर्भर करता है। इंटरनेट पर अलग-अलग साइटें एक ही इकाई के अलग मान देती हैं, इसलिए हम कोई एक मान थोपते नहीं। आपको अपने जमीन के दस्तावेज़ में दर्ज माप-पद्धति या तहसील से पुष्टि करनी चाहिए।</p>
+<p>स्थानीय मान जानने के तरीके: (1) अपनी जमाबंदी/खतौनी/खसरे में क्षेत्रफल की इकाई देखें; (2) तहसील या पटवारी/लेखपाल/तलाठी से पूछें; (3) राज्य के राजस्व विभाग की आधिकारिक वेबसाइट देखें।</p>
+
+<h2>पक्के और प्रचलित माप <span class="lr-en">/ Fixed and customary units</span></h2>
+<p>नीचे की तालिका इस टूल में इस्तेमाल हो रहे मान और उनके स्रोत दिखाती है। &quot;प्रचलित&quot; वाले मान कई जगह चलते हैं, पर कुछ क्षेत्रों में अलग हो सकते हैं।</p>
+{{units_table}}
+</div>
