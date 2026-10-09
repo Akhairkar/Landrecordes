@@ -1,0 +1,127 @@
+<!--meta
+{
+ "title": "खेत और प्लॉट का क्षेत्रफल निकालने का कैलकुलेटर",
+ "description": "नापी हुई भुजाओं से आयत, त्रिभुज, चतुर्भुज या बेढंगे खेत का क्षेत्रफल निकालें और बीघा, एकड़, गुंटा, वर्ग फुट में देखें। फॉर्मूला भी दिखता है।",
+ "type": "tool",
+ "tool": true,
+ "status": "draft",
+ "reviewed_on": "2026-10-09",
+ "active": "tools",
+ "intent": "User measured a plot with a tape/chain and wants its area ('jamin napne ka formula', 'khet ka kshetrafal').",
+ "unique_value": "Shapes incl. quadrilateral-by-diagonal and coordinate polygon with self-crossing detection; custom length unit for kadi/jarib; shows steps and all area units.",
+ "breadcrumbs": [
+  {
+   "name": "Tools",
+   "path": "tools/"
+  },
+  {
+   "name": "खेत/प्लॉट का क्षेत्रफल",
+   "path": "tools/plot-area-calculator/"
+  }
+ ],
+ "sources": [
+  "intl-foot-definition",
+  "bajaj-marla-kanal",
+  "bajaj-guntha-acre",
+  "1acre-cent"
+ ],
+ "scripts": [
+  "assets/js/tools/plot-area-ui.js"
+ ],
+ "faq": [
+  {
+   "q": "चार भुजाओं वाले टेढ़े-मेढ़े खेत का क्षेत्रफल कैसे निकालें?",
+   "a": "चारों भुजाओं के साथ एक विकर्ण (कोने से सामने के कोने तक की दूरी) भी नापें। विकर्ण खेत को दो त्रिभुजों में बाँट देता है और टूल दोनों का क्षेत्रफल जोड़ देता है। सिर्फ चार भुजाओं से आकार तय नहीं होता, इसलिए विकर्ण ज़रूरी है।"
+  },
+  {
+   "q": "खेत की चारों भुजाएँ दो-दो बराबर हैं तो क्या वह आयत है?",
+   "a": "ज़रूरी नहीं। आमने-सामने की भुजाएँ बराबर होने पर भी आकार समांतर चतुर्भुज हो सकता है, जिसका क्षेत्रफल आयत से कम होता है। कोण सही न पता हो तो विकर्ण भी नापें और चतुर्भुज वाला विकल्प चुनें।"
+  },
+  {
+   "q": "कड़ी, जरीब या हाथ जैसी माप इकाई कैसे भरें?",
+   "a": "लंबाई की इकाई में \"अपनी इकाई\" चुनें और बताएँ कि आपके यहाँ 1 कड़ी/जरीब/हाथ कितने फुट का होता है। यह माप क्षेत्र-अनुसार बदलती है, इसलिए हम कोई मान पहले से नहीं भरते।"
+  },
+  {
+   "q": "क्या यह नतीजा खसरा/जमाबंदी के क्षेत्रफल जैसा ही होगा?",
+   "a": "ज़रूरी नहीं। हाथ से नापने में छोटी गलतियाँ होती हैं और राजस्व रिकॉर्ड का क्षेत्रफल सर्वे से तय होता है। कानूनी या रजिस्ट्री के काम में रिकॉर्ड का आँकड़ा ही मान्य है।"
+  }
+ ]
+}
+-->
+<h1>खेत और प्लॉट का क्षेत्रफल निकालने का कैलकुलेटर</h1>
+<p class="lr-lead">टेप या जरीब से नापी हुई भुजाएँ भरें। टूल क्षेत्रफल निकालकर वर्ग फुट, गज, एकड़, गुंटा और अन्य इकाइयों में दिखाता है, साथ में गणना के चरण भी। <span class="lr-en">Enter measured sides to get plot area in every land unit.</span></p>
+
+<section class="lr-card" id="tool" aria-labelledby="pa-h">
+  <h2 id="pa-h" style="margin-top:0">क्षेत्रफल टूल <span class="lr-en">/ Plot area</span></h2>
+  <div class="lr-row">
+    <div class="lr-field"><label for="pa-shape">आकार <span class="lr-en">/ Shape</span></label>
+      <select class="lr-select" id="pa-shape">
+        <option value="rect">आयत (लंबाई × चौड़ाई)</option>
+        <option value="trih">त्रिभुज (आधार और ऊँचाई)</option>
+        <option value="tri3">त्रिभुज (तीनों भुजाएँ)</option>
+        <option value="quad">चतुर्भुज (चार भुजाएँ + एक विकर्ण)</option>
+        <option value="poly">बेढंगा खेत (कोनों के निर्देशांक)</option>
+      </select></div>
+    <div class="lr-field"><label for="pa-unit">लंबाई की इकाई <span class="lr-en">/ Length unit</span></label>
+      <select class="lr-select" id="pa-unit">
+        <option value="ft">फुट (ft)</option>
+        <option value="m">मीटर (m)</option>
+        <option value="yd">गज = 1 यार्ड = 3 फुट</option>
+        <option value="in">इंच (in)</option>
+        <option value="custom">अपनी इकाई (कड़ी, जरीब, हाथ…)</option>
+      </select></div>
+  </div>
+  <div class="lr-field" id="pa-custom-wrap" hidden><label for="pa-custom">आपकी इकाई में 1 = कितने फुट? <span class="lr-en">/ Feet per your unit</span></label>
+    <input class="lr-input" id="pa-custom" inputmode="decimal" autocomplete="off"><small>अपने इलाके की माप पटवारी/तहसील से पूछकर भरें।</small></div>
+
+  <div class="lr-diagrams" aria-hidden="true" style="color:var(--lr-brand);margin:4px 0 12px">
+    <svg data-shape-svg="rect" viewBox="0 0 220 110" width="220" height="110"><rect x="30" y="20" width="160" height="70" fill="var(--lr-brand-soft)" stroke="currentColor" stroke-width="2"/><text x="110" y="14" text-anchor="middle" font-size="12" fill="currentColor">लंबाई</text><text x="14" y="58" text-anchor="middle" font-size="12" fill="currentColor">चौ.</text></svg>
+    <svg data-shape-svg="trih" viewBox="0 0 220 110" width="220" height="110" hidden><polygon points="30,95 190,95 120,15" fill="var(--lr-brand-soft)" stroke="currentColor" stroke-width="2"/><line x1="120" y1="15" x2="120" y2="95" stroke="currentColor" stroke-dasharray="4 3"/><text x="110" y="107" font-size="12" fill="currentColor">आधार</text><text x="126" y="58" font-size="12" fill="currentColor">ऊँचाई</text></svg>
+    <svg data-shape-svg="tri3" viewBox="0 0 220 110" width="220" height="110" hidden><polygon points="30,95 190,95 120,15" fill="var(--lr-brand-soft)" stroke="currentColor" stroke-width="2"/><text x="100" y="107" font-size="12" fill="currentColor">c</text><text x="62" y="48" font-size="12" fill="currentColor">a</text><text x="162" y="48" font-size="12" fill="currentColor">b</text></svg>
+    <svg data-shape-svg="quad" viewBox="0 0 220 110" width="220" height="110" hidden><polygon points="25,90 160,100 195,30 60,15" fill="var(--lr-brand-soft)" stroke="currentColor" stroke-width="2"/><line x1="25" y1="90" x2="195" y2="30" stroke="currentColor" stroke-dasharray="4 3"/><text x="14" y="95" font-size="12" fill="currentColor">A</text><text x="160" y="108" font-size="12" fill="currentColor">B</text><text x="198" y="28" font-size="12" fill="currentColor">C</text><text x="56" y="12" font-size="12" fill="currentColor">D</text></svg>
+    <svg data-shape-svg="poly" viewBox="0 0 220 110" width="220" height="110" hidden><polygon points="20,80 70,100 150,90 200,50 140,15 60,25" fill="var(--lr-brand-soft)" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="80" r="3" fill="currentColor"/><text x="26" y="76" font-size="11" fill="currentColor">1</text><circle cx="70" cy="100" r="3" fill="currentColor"/><text x="76" y="98" font-size="11" fill="currentColor">2</text></svg>
+  </div>
+
+  <div id="pa-fields" class="lr-row"></div>
+  <div id="pa-poly-box" class="lr-field" hidden>
+    <label for="pa-poly">कोनों के बिंदु, हर लाइन में एक: x, y <span class="lr-en">/ Corner points</span></label>
+    <textarea class="lr-input" id="pa-poly" rows="6" placeholder="0, 0&#10;40, 0&#10;45, 30&#10;10, 35"></textarea>
+    <small>किसी एक कोने को (0, 0) मानकर बाकी कोनों की दूरी दो दिशाओं में नापें, और बिंदु सीमा के साथ-साथ क्रम में लिखें (घड़ी की दिशा में या उल्टी, दोनों चलेगा)।</small>
+  </div>
+  <details id="pa-local-box" class="lr-field">
+      <summary class="lr-label">नतीजे में बीघा/बिस्वा/कट्ठा/धुर चाहिए? अपना स्थानीय मान (वर्ग फुट) भरें <span class="lr-en">/ Optional local values</span></summary>
+      <p><small>खाली छोड़ने पर ये इकाइयाँ नतीजे में &quot;अपना मान भरें&quot; दिखाएँगी। हम इनके लिए कोई अंदाज़ा नहीं भरते।</small></p>
+      <div id="pa-local-fields" class="lr-row"></div>
+    </details>
+  <button class="lr-btn secondary" type="button" id="pa-copy">लिंक कॉपी करें <span class="lr-en">/ Copy link</span></button>
+  <p id="pa-status" role="status" aria-live="polite"></p>
+  <ol id="pa-steps" class="lr-en"></ol>
+  <div class="lr-table-wrap">
+    <table class="lr-table" id="pa-table" hidden style="min-width:0">
+      <caption class="lr-en" style="text-align:left;padding:8px 0">Area in every unit</caption>
+      <thead><tr><th scope="col">इकाई</th><th scope="col">क्षेत्रफल</th></tr></thead>
+      <tbody id="pa-body"></tbody>
+    </table>
+  </div>
+  <noscript><p class="lr-notice">इस टूल के लिए JavaScript चाहिए।</p></noscript>
+</section>
+<p class="lr-notice" style="margin-top:16px"><strong>ध्यान दें:</strong> यह हाथ से नापी हुई मापों पर आधारित अनुमान है। रजिस्ट्री, नामांतरण या कानूनी काम में राजस्व रिकॉर्ड का क्षेत्रफल ही मान्य है। <span class="lr-en">Approximate; verify with revenue records.</span></p>
+
+<div class="lr-prose">
+<h2>कौन-सा आकार चुनें? <span class="lr-en">/ Which shape?</span></h2>
+<ul>
+<li><strong>आयत:</strong> चारों कोने 90° के हों। लंबाई × चौड़ाई।</li>
+<li><strong>त्रिभुज (आधार, ऊँचाई):</strong> आधार से सामने के कोने तक की सीधी (लंबवत) दूरी पता हो तो। क्षेत्रफल = ½ × आधार × ऊँचाई।</li>
+<li><strong>त्रिभुज (तीन भुजाएँ):</strong> केवल तीनों भुजाएँ नापी हों। टूल हीरोन का सूत्र लगाता है: s = (a+b+c)/2, क्षेत्रफल = √(s(s−a)(s−b)(s−c))। अगर दो भुजाओं का योग तीसरी से बड़ा नहीं है, तो त्रिभुज बन ही नहीं सकता और टूल चेतावनी देता है।</li>
+<li><strong>चतुर्भुज:</strong> चार भुजाओं के साथ एक विकर्ण नापें। विकर्ण से खेत दो त्रिभुजों में बँट जाता है।</li>
+<li><strong>बेढंगा खेत:</strong> कोनों के निर्देशांक भरें। टूल शू-लेस सूत्र से क्षेत्रफल निकालता है और जाँचता है कि सीमा खुद को काट तो नहीं रही।</li>
+</ul>
+<h2>नापते समय सावधानियाँ</h2>
+<ul>
+<li>टेप को ज़मीन के समतल पर कसकर खींचें; ढीला टेप लंबाई ज़्यादा दिखाता है।</li>
+<li>ढलान वाली ज़मीन पर क्षैतिज दूरी लें, ढलान के साथ की दूरी नहीं।</li>
+<li>हर दूरी दो बार नापें। दोनों में फर्क आए तो औसत लें या फिर नापें।</li>
+<li>मेड़ की चौड़ाई कहाँ से गिनी जा रही है, यह तय कर लें, वरना पड़ोसी के साथ माप में फर्क आएगा।</li>
+<li>&quot;गज&quot; का अर्थ इलाके के अनुसार बदल सकता है। शक हो तो &quot;अपनी इकाई&quot; चुनकर फुट में मान भरें।</li>
+</ul>
+</div>

@@ -1,0 +1,91 @@
+<!--meta
+{
+ "title": "बँटवारा कैलकुलेटर: जमीन का हिस्सा-वार हिसाब",
+ "description": "कुल जमीन को बराबर हिस्सों या अपने तय किए अनुपात (1/2, 25%) में बाँटकर हर हिस्से का क्षेत्रफल देखें। केवल अंकगणित है, कानूनी हक़ तय नहीं करता।",
+ "type": "tool",
+ "tool": true,
+ "status": "draft",
+ "reviewed_on": "2026-10-09",
+ "active": "tools",
+ "intent": "User wants the arithmetic of dividing a plot among several people (batwara hisab).",
+ "unique_value": "Shares must sum to exactly 100% or the tool reports the gap instead of guessing; results in chosen unit and sq ft; explicit non-legal boundary.",
+ "breadcrumbs": [
+  {
+   "name": "Tools",
+   "path": "tools/"
+  },
+  {
+   "name": "बँटवारा कैलकुलेटर",
+   "path": "tools/partition-calculator/"
+  }
+ ],
+ "sources": [
+  "intl-foot-definition",
+  "bajaj-marla-kanal",
+  "bajaj-guntha-acre",
+  "1acre-cent"
+ ],
+ "scripts": [
+  "assets/js/tools/partition-ui.js"
+ ],
+ "faq": [
+  {
+   "q": "क्या यह टूल बताता है कि किसे कितना हिस्सा मिलना चाहिए?",
+   "a": "नहीं। हिस्से की मात्रा आप खुद भरते हैं। उत्तराधिकार और बँटवारे के हक़ कानून, व्यक्तिगत कानून, वसीयत और राजस्व रिकॉर्ड पर निर्भर करते हैं, इसलिए उनके लिए तहसील/राजस्व न्यायालय या योग्य वकील से सलाह लें।"
+  },
+  {
+   "q": "हिस्सों का योग 100% न हो तो क्या होगा?",
+   "a": "टूल नतीजा नहीं दिखाता और बताता है कि कितना हिस्सा बाकी है या कितना ज़्यादा है। इससे गलती से पूरा या अधूरा बँटवारा लिखने से बचाव होता है।"
+  },
+  {
+   "q": "1/3 जैसे हिस्से का दशमलव अंत में थोड़ा कम-ज़्यादा क्यों दिखता है?",
+   "a": "1/3 दशमलव में पूरा नहीं लिखा जाता, इसलिए दिखाए गए आँकड़े गोल किए हुए होते हैं। असली बँटवारे में माप सर्वेयर या राजस्व अधिकारी तय करते हैं।"
+  }
+ ]
+}
+-->
+<h1>बँटवारा कैलकुलेटर: जमीन का हिस्सा-वार हिसाब</h1>
+<p class="lr-lead">कुल जमीन और हिस्सेदारों के हिस्से भरें; टूल हर हिस्से का क्षेत्रफल निकाल देगा। यह सिर्फ अंकगणित है। हक़ किसका कितना है, यह यह टूल तय नहीं करता। <span class="lr-en">Arithmetic split only; it does not decide legal entitlement.</span></p>
+
+<section class="lr-card" id="tool" aria-labelledby="pt-h">
+  <h2 id="pt-h" style="margin-top:0">बँटवारा टूल <span class="lr-en">/ Partition</span></h2>
+  <div class="lr-row">
+    <div class="lr-field"><label for="pt-total">कुल क्षेत्रफल <span class="lr-en">/ Total area</span></label><input class="lr-input" id="pt-total" inputmode="decimal" autocomplete="off" placeholder="जैसे 2.5"></div>
+    <div class="lr-field"><label for="pt-unit">इकाई <span class="lr-en">/ Unit</span></label><select class="lr-select" id="pt-unit"></select></div>
+  </div>
+  <details id="pt-local-box" class="lr-field">
+      <summary class="lr-label">नतीजे में बीघा/बिस्वा/कट्ठा/धुर चाहिए? अपना स्थानीय मान (वर्ग फुट) भरें <span class="lr-en">/ Optional local values</span></summary>
+      <p><small>खाली छोड़ने पर ये इकाइयाँ नतीजे में &quot;अपना मान भरें&quot; दिखाएँगी। हम इनके लिए कोई अंदाज़ा नहीं भरते।</small></p>
+      <div id="pt-local-fields" class="lr-row"></div>
+    </details>
+  <div class="lr-field"><label for="pt-mode">बाँटने का तरीका <span class="lr-en">/ Method</span></label>
+    <select class="lr-select" id="pt-mode"><option value="equal">बराबर हिस्से</option><option value="shares">अपने तय किए हिस्से (1/2, 25%…)</option></select></div>
+  <div id="pt-equal-box" class="lr-field"><label for="pt-count">कितने हिस्सेदार? <span class="lr-en">/ People</span></label><input class="lr-input" id="pt-count" type="number" min="1" max="100" value="2"></div>
+  <div id="pt-shares-box" hidden>
+    <p class="lr-label">हिस्सेदार और उनके हिस्से <span class="lr-en">/ Names and shares</span></p>
+    <div id="pt-shares"></div>
+    <div class="lr-row"><button class="lr-btn secondary" type="button" id="pt-add">+ हिस्सेदार जोड़ें</button><button class="lr-btn secondary" type="button" id="pt-remove">− आख़िरी हटाएँ</button></div>
+    <p><small>हिस्सों का योग ठीक 100% (यानी 1) होना चाहिए।</small></p>
+  </div>
+  <button class="lr-btn secondary" type="button" id="pt-copy">लिंक कॉपी करें <span class="lr-en">/ Copy link</span></button>
+  <p id="pt-status" role="status" aria-live="polite"></p>
+  <div class="lr-table-wrap">
+    <table class="lr-table" id="pt-table" hidden style="min-width:0">
+      <caption class="lr-en" style="text-align:left;padding:8px 0">Share of each person</caption>
+      <thead><tr><th scope="col">हिस्सेदार</th><th scope="col">क्षेत्रफल</th><th scope="col">वर्ग फुट</th></tr></thead>
+      <tbody id="pt-body"></tbody>
+    </table>
+  </div>
+  <noscript><p class="lr-notice">इस टूल के लिए JavaScript चाहिए।</p></noscript>
+</section>
+<p class="lr-notice" style="margin-top:16px"><strong>ज़रूरी:</strong> यह कानूनी सलाह या हक़ का निर्धारण नहीं है। असली बँटवारा राजस्व रिकॉर्ड, कानून और संबंधित अधिकारी/न्यायालय के निर्णय से होता है। <span class="lr-en">Not legal advice.</span></p>
+
+<div class="lr-prose">
+<h2>हिसाब कैसे होता है <span class="lr-en">/ How it works</span></h2>
+<p>हर हिस्सेदार का क्षेत्रफल = कुल क्षेत्रफल × उसका हिस्सा। उदाहरण: 2.4 एकड़ को 1/2, 1/4 और 1/4 में बाँटें तो 1.2, 0.6 और 0.6 एकड़ मिलते हैं। तीनों का योग 2.4 एकड़ है।</p>
+<p>बराबर बँटवारे में हिस्सा = कुल ÷ हिस्सेदारों की संख्या। 900 वर्ग गज के तीन बराबर हिस्से हों तो हर एक 300 वर्ग गज का होगा।</p>
+<h2>हिस्सा लिखने के तरीके</h2>
+<ul><li>भिन्न: <code>1/2</code>, <code>1/3</code>, <code>3/8</code></li><li>प्रतिशत: <code>25%</code></li><li>दशमलव: <code>0.25</code></li><li>देवनागरी अंक भी चलते हैं: <code>१/४</code></li></ul>
+<h2>असल बँटवारे में आगे क्या?</h2>
+<p>आपसी सहमति से बँटवारे और विवादित बँटवारे की प्रक्रिया राज्य के राजस्व कानूनों के अनुसार अलग होती है। आम तौर पर खाता/खतौनी में दर्ज हिस्सेदार, उनके हिस्से और भूमि का सटीक माप देखे जाते हैं और अंतिम निर्णय तहसील/राजस्व न्यायालय या उपयुक्त प्राधिकारी करते हैं। अपने राज्य की सही प्रक्रिया के लिए तहसील कार्यालय या योग्य वकील से पूछें।</p>
+</div>
