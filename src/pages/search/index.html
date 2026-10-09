@@ -1,0 +1,33 @@
+<!--meta
+{
+ "title": "खोजें: जमीन के रिकॉर्ड, टूल्स और गाइड | LandRecord",
+ "description": "खतौनी, जमाबंदी, 7/12, म्यूटेशन, राज्य के पोर्टल, कैलकुलेटर और गाइड एक जगह खोजें। हिंदी, अंग्रेज़ी और हिंग्लिश तीनों में खोज चलती है।",
+ "type": "tool",
+ "tool": true,
+ "status": "draft",
+ "reviewed_on": "2026-10-09",
+ "active": "",
+ "intent": "Find any page by exact term or natural-language goal.",
+ "unique_value": "Client-side search over the site index with Hinglish aliases, results grouped by type.",
+ "keywords": [
+  "search",
+  "खोज"
+ ],
+ "breadcrumbs": [
+  {
+   "name": "खोजें",
+   "path": "search/"
+  }
+ ],
+ "sources": [
+  "editorial-general"
+ ],
+ "scripts": [
+  "assets/js/search-ui.js"
+ ]
+}
+-->
+<h1>खोजें <span class="lr-en">/ Search</span></h1>
+<p class="lr-lead">शब्द या अपना सवाल लिखें, जैसे &quot;खतौनी&quot;, &quot;7/12&quot;, &quot;म्यूटेशन अटका&quot;, &quot;khasra kaise nikale&quot; या &quot;पंजाब जमाबंदी&quot;।</p>
+<form id="s-form" role="search" class="lr-card"><div class="lr-field"><label for="s-q">क्या खोज रहे हैं? <span class="lr-en">/ What are you looking for?</span></label><input class="lr-input" id="s-q" type="search" autocomplete="off" autofocus></div><button class="lr-btn" type="submit">खोजें</button></form>
+<p id="s-status" role="status" aria-live="polite" class="lr-en"></p><div id="s-out"></div>

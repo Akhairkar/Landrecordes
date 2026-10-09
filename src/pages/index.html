@@ -1,41 +1,62 @@
 <!--meta
 {
- "title": "LandRecord: जमीन के काम के लिए सरल टूल्स और जानकारी",
- "description": "जमीन नापने, क्षेत्रफल की इकाइयाँ बदलने और बँटवारे का हिसाब लगाने के मुफ़्त टूल्स, सरल हिंदी में। स्वतंत्र प्लेटफ़ॉर्म, सरकारी वेबसाइट नहीं।",
+ "title": "LandRecord: जमीन के रिकॉर्ड, टूल्स और गाइड, सरल हिंदी में",
+ "description": "खतौनी, जमाबंदी, 7/12 जैसे जमीन के रिकॉर्ड समझें, अपने राज्य का पोर्टल खोजें और कैलकुलेटर इस्तेमाल करें। स्वतंत्र प्लेटफ़ॉर्म, सरकारी वेबसाइट नहीं।",
  "type": "home",
  "status": "draft",
  "reviewed_on": "2026-10-09",
  "active": "",
- "intent": "Entry point: help the visitor pick the right land tool.",
- "unique_value": "Task-first entry to sourced land tools with clear independence/limits statement.",
+ "intent": "Entry point: help the visitor pick the right land tool, record page or state.",
+ "unique_value": "Task-first entry with search, tools, records, states and recently reviewed list; independence statement is in the footer.",
+ "keywords": [
+  "land record",
+  "bhulekh",
+  "जमीन रिकॉर्ड"
+ ],
  "breadcrumbs": []
 }
 -->
 <section class="lr-hero">
-  <h1>जमीन से जुड़े काम, सरल हिंदी में</h1>
-  <p class="lr-lead">जमीन नापें, इकाइयाँ बदलें और बँटवारे का हिसाब लगाएँ, सीधे अपने फोन पर, बिना लॉगिन के। हर टूल बताता है कि उसका नतीजा कहाँ तक भरोसे लायक है। <span class="lr-en">Free, Hindi-first land tools. Independent, not a government website.</span></p>
-  <p><a class="lr-btn" href="tools/land-unit-converter/" style="display:inline-flex;align-items:center;text-decoration:none">जमीन नापने का कैलकुलेटर खोलें</a>
-  <a class="lr-btn secondary" href="tools/" style="display:inline-flex;align-items:center;text-decoration:none;margin-left:8px">सभी टूल्स</a></p>
+  <h1>जमीन के रिकॉर्ड और काम, सरल हिंदी में</h1>
+  <p class="lr-lead">खतौनी, जमाबंदी, 7/12 जैसे रिकॉर्ड समझें, अपने राज्य का पोर्टल खोजें, और जमीन नापने-बाँटने के टूल बिना लॉगिन के इस्तेमाल करें। <span class="lr-en">Hindi-first land records, state portals and free tools.</span></p>
+  <form class="lr-card" action="search/" method="get" role="search" style="max-width:720px"><div class="lr-field" style="margin-bottom:10px"><label for="home-q">क्या जानना है? <span class="lr-en">/ What do you need?</span></label><input class="lr-input" id="home-q" name="q" type="search" autocomplete="off" placeholder="जैसे: खतौनी कैसे देखें, म्यूटेशन अटका, बीघा से एकड़"></div><button class="lr-btn" type="submit">खोजें</button></form>
 </section>
 
 <section aria-labelledby="need-h">
   <h2 id="need-h">आपको क्या करना है? <span class="lr-en">/ What do you need to do?</span></h2>
   <div class="lr-grid">
-    <a class="lr-card lr-link-card" href="tools/land-unit-converter/"><h3>बीघा, एकड़, गुंटा जैसी इकाइयाँ बदलनी हैं</h3><p>क्षेत्रफल को किसी भी इकाई में देखें। बीघा, बिस्वा जैसे स्थानीय माप आप अपने इलाके के हिसाब से भरते हैं।</p></a>
-    <a class="lr-card lr-link-card" href="tools/plot-area-calculator/"><h3>खेत या प्लॉट नापकर क्षेत्रफल निकालना है</h3><p>आयत, त्रिभुज, चतुर्भुज या बेढंगा खेत: भुजाएँ भरें, क्षेत्रफल और गणना के चरण पाएँ।</p></a>
-    <a class="lr-card lr-link-card" href="tools/partition-calculator/"><h3>जमीन का हिस्सा-वार हिसाब लगाना है</h3><p>कुल जमीन को बराबर या तय अनुपात में बाँटें। यह सिर्फ अंकगणित है, कानूनी हक़ तय नहीं करता।</p></a>
+    <a class="lr-card lr-link-card" href="tools/record-finder/"><h3>रिकॉर्ड कहाँ और कैसे देखें</h3><p>राज्य और अपने पास की जानकारी चुनें; सही पोर्टल और अगला कदम पाएँ।</p></a>
+    <a class="lr-card lr-link-card" href="tools/land-unit-converter/"><h3>बीघा, एकड़, गुंटा बदलना है</h3><p>क्षेत्रफल किसी भी इकाई में देखें; स्थानीय माप आप खुद भरते हैं।</p></a>
+    <a class="lr-card lr-link-card" href="tools/plot-area-calculator/"><h3>खेत नापकर क्षेत्रफल निकालना है</h3><p>आयत, त्रिभुज, चतुर्भुज या बेढंगे खेत के लिए।</p></a>
+    <a class="lr-card lr-link-card" href="guides/mutation-pending/"><h3>म्यूटेशन अटका है</h3><p>स्थिति जाँचने और आगे बढ़ने के सामान्य कदम।</p></a>
+    <a class="lr-card lr-link-card" href="guides/buying-land-document-check/"><h3>जमीन खरीदने जा रहे हैं</h3><p>खरीद से पहले जाँचने की सामान्य सूची।</p></a>
+    <a class="lr-card lr-link-card" href="tools/land-terms/"><h3>रिकॉर्ड के शब्द समझने हैं</h3><p>खतौनी, जमाबंदी, 7/12, इंतकाल का राज्य-वार मतलब।</p></a>
   </div>
+</section>
+
+<section aria-labelledby="st-h">
+  <h2 id="st-h">अपना राज्य चुनें <span class="lr-en">/ By state</span></h2>
+  <p class="lr-prose">हर राज्य में रिकॉर्ड के नाम और पोर्टल अलग हैं। अभी 12 राज्य जोड़े गए हैं और बाकी जाँच के बाद जुड़ेंगे।</p>
+  <p class="lr-chips">{{state_chips}}</p>
+  <p><a href="states/">सभी राज्यों की तालिका</a></p>
+</section>
+
+<section aria-labelledby="rec-h">
+  <h2 id="rec-h">रिकॉर्ड समझें <span class="lr-en">/ Records explained</span></h2>
+  <p class="lr-chips"><a href="records/ror/">अधिकार-अभिलेख (RoR)</a> <a href="records/khasra-number/">खसरा नंबर</a> <a href="records/khatauni/">खतौनी</a> <a href="records/jamabandi-fard/">जमाबंदी और फर्द</a> <a href="records/satbara-7-12/">7/12 और 8-अ</a> <a href="records/property-card/">प्रॉपर्टी कार्ड</a> <a href="records/mutation/">म्यूटेशन</a> <a href="records/bhu-aadhaar/">भू-आधार</a></p>
+</section>
+
+<section class="lr-prose" aria-labelledby="recent-h">
+  <h2 id="recent-h">हाल में जाँचे गए पन्ने <span class="lr-en">/ Recently reviewed</span></h2>
+  {{recent_pages}}
 </section>
 
 <section class="lr-prose" aria-labelledby="trust-h">
   <h2 id="trust-h">हम कैसे काम करते हैं <span class="lr-en">/ How we work</span></h2>
   <ul>
-    <li><strong>स्वतंत्र:</strong> LandRecord सरकारी वेबसाइट नहीं है और भूमि रिकॉर्ड जारी या सत्यापित नहीं करता।</li>
-    <li><strong>स्रोत के साथ:</strong> हर पेज बताता है कि मान कहाँ से लिए गए और कब जाँचे गए। देखें <a href="sources/">हमारे स्रोत</a>।</li>
-    <li><strong>अंदाज़े नहीं:</strong> जो माप जगह के हिसाब से बदलता है (जैसे बीघा), उसका कोई मान हम खुद नहीं भरते।</li>
-    <li><strong>आपका डेटा आपके पास:</strong> टूल आपके ब्राउज़र में चलते हैं; आपकी भरी हुई जानकारी हमें नहीं भेजी जाती।</li>
+    <li><strong>स्वतंत्र:</strong> हम सरकारी वेबसाइट नहीं हैं और भूमि रिकॉर्ड जारी या सत्यापित नहीं करते (पूरा अस्वीकरण पन्ने के नीचे है)।</li>
+    <li><strong>स्रोत के साथ:</strong> हर पन्ना बताता है कि जानकारी कहाँ से आई और कब जाँची गई। देखें <a href="sources/">हमारे स्रोत</a>।</li>
+    <li><strong>अंदाज़े नहीं:</strong> जो माप या पता पक्का नहीं है (जैसे बीघा, या कुछ पोर्टल के पते), उसके लिए हम साफ लिखते हैं कि पुष्टि बाकी है।</li>
+    <li><strong>आपका डेटा आपके पास:</strong> टूल आपके ब्राउज़र में चलते हैं। <a href="privacy/">गोपनीयता</a> देखें।</li>
   </ul>
-  <h2>आगे क्या आ रहा है</h2>
-  <p>राज्य-वार भूमि रिकॉर्ड पोर्टल की जानकारी, खसरा-खतौनी जैसे शब्दों की सरल व्याख्या और रिकॉर्ड खोजने में मार्गदर्शन। इन्हें हम तभी जोड़ेंगे जब आधिकारिक स्रोत से जाँच हो चुकी हो।</p>
-  <p class="lr-en">Coming next: state-wise official portal guidance, plain-language record terms and a record-finder, each added only after source verification.</p>
 </section>
