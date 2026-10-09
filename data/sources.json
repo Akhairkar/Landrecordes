@@ -22,5 +22,137 @@
     "url": "https://1acre.in/land-unit-converter/cent-to-sqft",
     "kind": "secondary",
     "basis": "1 cent = 1/100 acre = 435.6 sq ft; 'decimal' is the same area."
+  },
+  "dilrmp": {
+    "org": "Department of Land Resources, Govt of India — DILRMP",
+    "url": "https://dilrmp.gov.in/",
+    "kind": "official",
+    "basis": "National land-records modernisation programme; publishes the State/UT RoR portal directory and modernisation status. Treated as the national discovery layer, not proof that every state offers identical services."
+  },
+  "bajaj-bhulekh-portals": {
+    "org": "Bajaj Finserv — Bhulekh portals by state (secondary source)",
+    "url": "https://www.bajajfinserv.in/bhulekh-login-using-state-bhulekh-portals",
+    "kind": "secondary",
+    "basis": "Lists commonly used state Bhulekh portals; used only to corroborate portal names/domains. Confirm the live address on the state portal."
+  },
+  "portal-up": {
+    "org": "UP Bhulekh — Revenue Department, Uttar Pradesh",
+    "url": "https://upbhulekh.gov.in/",
+    "kind": "portal",
+    "basis": "State portal for khatauni/khasra-gata records. Domain corroborated by several guides; live check pending."
+  },
+  "portal-mh-thane": {
+    "org": "Thane District (NIC) — Computerised 7/12 service page",
+    "url": "https://thane.nic.in/service/computerised-7-12/",
+    "kind": "official",
+    "basis": "District government page describing Mahabhulekh (bhulekh.mahabhumi.gov.in) as the portal for 7/12 utara, 8A and property card, and listing the digital-signature service."
+  },
+  "portal-rj": {
+    "org": "Apna Khata — Board of Revenue, Rajasthan",
+    "url": "https://apnakhata.rajasthan.gov.in/",
+    "kind": "portal",
+    "basis": "Rajasthan jamabandi/khata portal. Some sources give apnakhata.raj.nic.in; confirm the current domain."
+  },
+  "portal-mp": {
+    "org": "MP Bhulekh — Government of Madhya Pradesh",
+    "url": "https://mpbhulekh.gov.in/",
+    "kind": "portal",
+    "basis": "Madhya Pradesh khasra/khatauni/Bhu-Naksha portal. Domain corroborated by guides; live check pending."
+  },
+  "portal-br": {
+    "org": "Bihar Bhumi — Department of Revenue and Land Reforms, Bihar",
+    "url": "https://biharbhumi.bihar.gov.in/",
+    "kind": "portal",
+    "basis": "Bihar land-records portal (jamabandi, dakhil-kharij services). Domain corroborated by guides; live check pending."
+  },
+  "portal-gj": {
+    "org": "AnyRoR Gujarat — Revenue Department, Gujarat",
+    "url": "https://anyror.gujarat.gov.in/",
+    "kind": "portal",
+    "basis": "Gujarat Record of Rights (7/12, 8-A) portal. Domain corroborated by guides; live check pending."
+  },
+  "portal-hr-news": {
+    "org": "Drishti IAS — e-Fard system implemented in Haryana (secondary source)",
+    "url": "https://www.drishtiias.com/state-pcs-current-affairs/the-e-fard-system-implemented-in-the-state/print_manually",
+    "kind": "secondary",
+    "basis": "Reports Haryana's digitally signed Jamabandi (e-Fard) via jamabandi.nic.in from 6 May 2023. Fees are not reproduced here; check the portal."
+  },
+  "portal-hr": {
+    "org": "Haryana Jamabandi portal",
+    "url": "https://jamabandi.nic.in/",
+    "kind": "portal",
+    "basis": "Haryana jamabandi / fard portal as named in news coverage; live check pending."
+  },
+  "portal-pb": {
+    "org": "Punjab Land Records Society (PLRS) — Jamabandi",
+    "url": "https://jamabandi.punjab.gov.in/",
+    "kind": "portal",
+    "basis": "Punjab jamabandi/fard portal. Some guides route via plrs.org.in; confirm the current domain."
+  },
+  "portal-dl-doc": {
+    "org": "Revenue Department, Delhi — notice listing Indraprastha Bhu-Lekh",
+    "url": "https://revenue.delhi.gov.in/sites/default/files/revenue/important-news/1817_1.pdf",
+    "kind": "official",
+    "basis": "Official Delhi revenue document linking the ROR service to Indraprastha Bhu-Lekh at dlrc.delhigovt.nic.in; other sources give dlrc.delhi.gov.in."
+  },
+  "portal-dl": {
+    "org": "Delhi Land Records (DLRC) — Indraprastha Bhu-Lekh",
+    "url": "https://dlrc.delhi.gov.in/",
+    "kind": "portal",
+    "basis": "Delhi Khasra-Khatauni (DLR Act) service. Two domains appear in sources; check both before use."
+  },
+  "portal-uk-guide": {
+    "org": "Tata Capital — Devbhoomi Uttarakhand land records guide (secondary source)",
+    "url": "https://www.tatacapital.com/hindi/blog/medical-loan/devbhoomi-uttaranchal-land-records/",
+    "kind": "secondary",
+    "basis": "Describes Bhulekh Uttarakhand public ROR lookup. The official domain could not be confirmed from the sources found; verify on the Uttarakhand revenue department site."
+  },
+  "portal-hp-district": {
+    "org": "Kinnaur District (NIC) — HimBhoomi nakal/jamabandi note",
+    "url": "https://hpkinnaur.nic.in/?p=2872",
+    "kind": "official",
+    "basis": "District government page noting public nakals of jamabandi and shajra nasb via the HimBhoomi software against nominal charges."
+  },
+  "portal-hp": {
+    "org": "HimBhoomi — Revenue Department, Himachal Pradesh",
+    "url": "https://himbhoomi.nic.in/",
+    "kind": "portal",
+    "basis": "Himachal jamabandi portal. Sources also list himbhoomilmk.nic.in; confirm the live domain."
+  },
+  "portal-jk-news": {
+    "org": "Daily Excelsior — J&K revenue services report (secondary source)",
+    "url": "https://www.dailyexcelsior.com/?p=1239588",
+    "kind": "secondary",
+    "basis": "Reports that Jamabandi, Massavi, Mutation and Girdawari records can be accessed without registration on the online portal."
+  },
+  "portal-jk": {
+    "org": "J&K Land Records Information System",
+    "url": "https://landrecords.jk.gov.in/",
+    "kind": "portal",
+    "basis": "Jammu & Kashmir Revenue Department land records portal; live check pending."
+  },
+  "editorial-general": {
+    "org": "LandRecord editorial — general educational overview (no jurisdiction-specific legal source cited)",
+    "url": null,
+    "kind": "editorial",
+    "basis": "General explanatory guidance in plain language. It cites no section numbers, fees, time limits or outcomes. State rules differ; confirm with the revenue office or a qualified lawyer."
+  },
+  "techobserver-dilrmp3": {
+    "org": "Tech Observer — DILRMP 3.0 and Bhu-Aadhaar report (secondary source)",
+    "url": "https://techobserver.in/news/egov/dilrmp-3-land-records-digitisation-bhu-aadhaar-328937/",
+    "kind": "secondary",
+    "basis": "Reports DILRMP 3.0 (2026–2031) with Bhu-Aadhaar. Figures and dates must be re-verified on dolr.gov.in / dilrmp.gov.in."
+  },
+  "homenesto-bhuaadhaar": {
+    "org": "HomeNesto — DILRMP 3.0 and Bhu-Aadhaar explainer (secondary source)",
+    "url": "https://homenesto.com/blog/dilrmp-3-0-and-bhu-aadhaar-what-the-14-digit-land-id-means-for-property-owners/",
+    "kind": "secondary",
+    "basis": "Describes Bhu-Aadhaar as a 14-digit land-parcel ID. Treat as a pointer; confirm details with the Department of Land Resources."
+  },
+  "housing-cts": {
+    "org": "Housing.com — CTS number in Mumbai (secondary source)",
+    "url": "https://housing.com/news/cts-number/",
+    "kind": "secondary",
+    "basis": "Explains the CTS (city survey) number and that it appears on the property card (malmatta patrak). Check Mahabhulekh / the local CTS office for current procedure."
   }
 }

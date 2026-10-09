@@ -1,0 +1,365 @@
+{
+  "reviewed_on": "2026-10-09",
+  "terms": [
+    {
+      "id": "ror",
+      "hi": "अधिकार-अभिलेख (RoR)",
+      "en": "Record of Rights",
+      "meaning_hi": "जमीन के स्वामी/काश्तकार, क्षेत्रफल और भूमि के प्रकार का राजस्व रिकॉर्ड। अलग-अलग राज्यों में इसके अलग नाम और रूप हैं।",
+      "usage": [
+        {
+          "state": "uttar-pradesh",
+          "term_hi": "खतौनी"
+        },
+        {
+          "state": "maharashtra",
+          "term_hi": "7/12 उतारा (सातबारा)"
+        },
+        {
+          "state": "gujarat",
+          "term_hi": "7/12 (सात-बारा)"
+        },
+        {
+          "state": "rajasthan",
+          "term_hi": "जमाबंदी"
+        },
+        {
+          "state": "madhya-pradesh",
+          "term_hi": "खतौनी (बी-1)"
+        },
+        {
+          "state": "bihar",
+          "term_hi": "जमाबंदी"
+        },
+        {
+          "state": "haryana",
+          "term_hi": "जमाबंदी"
+        },
+        {
+          "state": "punjab",
+          "term_hi": "जमाबंदी"
+        },
+        {
+          "state": "delhi",
+          "term_hi": "खसरा-खतौनी"
+        },
+        {
+          "state": "uttarakhand",
+          "term_hi": "खतौनी"
+        },
+        {
+          "state": "himachal-pradesh",
+          "term_hi": "जमाबंदी"
+        },
+        {
+          "state": "jammu-and-kashmir",
+          "term_hi": "जमाबंदी"
+        }
+      ],
+      "sources": [
+        "dilrmp"
+      ]
+    },
+    {
+      "id": "plot",
+      "hi": "भूखंड/खेत की संख्या",
+      "en": "Plot / survey number",
+      "meaning_hi": "गाँव में एक अलग टुकड़े (प्लॉट) की पहचान संख्या; रिकॉर्ड खोजने की सबसे सटीक कुंजी।",
+      "usage": [
+        {
+          "state": "uttar-pradesh",
+          "term_hi": "खसरा / गाटा संख्या"
+        },
+        {
+          "state": "maharashtra",
+          "term_hi": "सर्वे नंबर / गट नंबर"
+        },
+        {
+          "state": "gujarat",
+          "term_hi": "सर्वे / ब्लॉक नंबर"
+        },
+        {
+          "state": "rajasthan",
+          "term_hi": "खसरा संख्या"
+        },
+        {
+          "state": "madhya-pradesh",
+          "term_hi": "खसरा संख्या"
+        },
+        {
+          "state": "bihar",
+          "term_hi": "खेसरा संख्या"
+        },
+        {
+          "state": "haryana",
+          "term_hi": "खसरा संख्या"
+        },
+        {
+          "state": "punjab",
+          "term_hi": "खसरा संख्या"
+        },
+        {
+          "state": "delhi",
+          "term_hi": "खसरा संख्या"
+        },
+        {
+          "state": "uttarakhand",
+          "term_hi": "खसरा संख्या"
+        },
+        {
+          "state": "himachal-pradesh",
+          "term_hi": "खसरा संख्या"
+        },
+        {
+          "state": "jammu-and-kashmir",
+          "term_hi": "खसरा संख्या"
+        }
+      ],
+      "sources": [
+        "dilrmp"
+      ]
+    },
+    {
+      "id": "holding",
+      "hi": "खाता / खेवट (जोत)",
+      "en": "Holding / account",
+      "meaning_hi": "एक खातेदार (या संयुक्त खातेदारों) की जोत का खाता-संख्या, जिसके नीचे कई खसरे आ सकते हैं।",
+      "usage": [
+        {
+          "state": "uttar-pradesh",
+          "term_hi": "खाता संख्या"
+        },
+        {
+          "state": "maharashtra",
+          "term_hi": "खाता (8-अ में)"
+        },
+        {
+          "state": "gujarat",
+          "term_hi": "खाता नंबर (8-अ)"
+        },
+        {
+          "state": "rajasthan",
+          "term_hi": "खाता संख्या"
+        },
+        {
+          "state": "madhya-pradesh",
+          "term_hi": "खाता"
+        },
+        {
+          "state": "bihar",
+          "term_hi": "खाता"
+        },
+        {
+          "state": "haryana",
+          "term_hi": "खेवट / खतौनी"
+        },
+        {
+          "state": "punjab",
+          "term_hi": "खेवट / खतौनी"
+        },
+        {
+          "state": "delhi",
+          "term_hi": "खाता संख्या"
+        },
+        {
+          "state": "uttarakhand",
+          "term_hi": "खाता"
+        },
+        {
+          "state": "himachal-pradesh",
+          "term_hi": "खेवट / खतौनी"
+        },
+        {
+          "state": "jammu-and-kashmir",
+          "term_hi": "खाता / खेवट"
+        }
+      ],
+      "sources": [
+        "dilrmp"
+      ]
+    },
+    {
+      "id": "mutation",
+      "hi": "म्यूटेशन (नाम परिवर्तन)",
+      "en": "Mutation",
+      "meaning_hi": "खरीद, उत्तराधिकार आदि के बाद राजस्व रिकॉर्ड में नया नाम दर्ज कराने की प्रक्रिया। रजिस्ट्री अपने आप राजस्व रिकॉर्ड नहीं बदलती।",
+      "usage": [
+        {
+          "state": "uttar-pradesh",
+          "term_hi": "दाखिल-खारिज"
+        },
+        {
+          "state": "maharashtra",
+          "term_hi": "फेरफार"
+        },
+        {
+          "state": "gujarat",
+          "term_hi": "नोंध (हक्क-पत्रक में)"
+        },
+        {
+          "state": "rajasthan",
+          "term_hi": "नामांतरण"
+        },
+        {
+          "state": "madhya-pradesh",
+          "term_hi": "नामांतरण"
+        },
+        {
+          "state": "bihar",
+          "term_hi": "दाखिल-खारिज"
+        },
+        {
+          "state": "haryana",
+          "term_hi": "इंतकाल"
+        },
+        {
+          "state": "punjab",
+          "term_hi": "इंतकाल"
+        },
+        {
+          "state": "delhi",
+          "term_hi": "म्यूटेशन"
+        },
+        {
+          "state": "uttarakhand",
+          "term_hi": "दाखिल-खारिज"
+        },
+        {
+          "state": "himachal-pradesh",
+          "term_hi": "इंतकाल"
+        },
+        {
+          "state": "jammu-and-kashmir",
+          "term_hi": "इंतकाल (म्यूटेशन)"
+        }
+      ],
+      "sources": [
+        "dilrmp"
+      ]
+    },
+    {
+      "id": "copy",
+      "hi": "नकल / फर्द (प्रति)",
+      "en": "Extract / copy",
+      "meaning_hi": "रिकॉर्ड की निकाली गई प्रति। 'सूचना हेतु' ऑनलाइन प्रति और प्रमाणित/डिजिटली साइन्ड प्रति अलग हो सकती हैं।",
+      "usage": [
+        {
+          "state": "haryana",
+          "term_hi": "फर्द (ई-फर्द)"
+        },
+        {
+          "state": "punjab",
+          "term_hi": "फर्द"
+        },
+        {
+          "state": "rajasthan",
+          "term_hi": "जमाबंदी नकल"
+        },
+        {
+          "state": "himachal-pradesh",
+          "term_hi": "नकल"
+        },
+        {
+          "state": "maharashtra",
+          "term_hi": "डिजिटली साइन्ड 7/12 (अलग सेवा)"
+        },
+        {
+          "state": "uttar-pradesh",
+          "term_hi": "खतौनी की नकल"
+        }
+      ],
+      "sources": [
+        "dilrmp"
+      ]
+    },
+    {
+      "id": "girdawari",
+      "hi": "गिरदावरी",
+      "en": "Girdawari",
+      "meaning_hi": "खेत में असल में कौन-सी फसल है और उसे कौन जोत रहा है, इसका आवधिक निरीक्षण-रिकॉर्ड।",
+      "usage": [
+        {
+          "state": "jammu-and-kashmir",
+          "term_hi": "गिरदावरी"
+        }
+      ],
+      "sources": [
+        "dilrmp",
+        "portal-jk-news"
+      ]
+    },
+    {
+      "id": "shajra",
+      "hi": "शजरा नसब",
+      "en": "Shajra nasab",
+      "meaning_hi": "परिवार/खातेदारों की वंशावली का राजस्व दस्तावेज़, जो उत्तराधिकार संबंधी कामों में संदर्भ बनता है।",
+      "usage": [
+        {
+          "state": "himachal-pradesh",
+          "term_hi": "शजरा नसब"
+        }
+      ],
+      "sources": [
+        "dilrmp",
+        "portal-hp-district"
+      ]
+    },
+    {
+      "id": "map",
+      "hi": "भू-नक्शा / मस्सावी",
+      "en": "Cadastral map",
+      "meaning_hi": "गाँव के खेतों/खसरों का राजस्व नक्शा। उपलब्धता राज्य के अनुसार अलग है; तीसरे पक्ष के नक्शे आधिकारिक नक्शा नहीं माने जाते।",
+      "usage": [
+        {
+          "state": "madhya-pradesh",
+          "term_hi": "भू-नक्शा"
+        },
+        {
+          "state": "jammu-and-kashmir",
+          "term_hi": "मस्सावी (नक्शा)"
+        }
+      ],
+      "sources": [
+        "dilrmp",
+        "portal-mp",
+        "portal-jk-news"
+      ]
+    },
+    {
+      "id": "property-card",
+      "hi": "प्रॉपर्टी कार्ड (मालमत्ता पत्रक)",
+      "en": "Property card",
+      "meaning_hi": "शहरी/नगर सर्वेक्षित क्षेत्र की जमीन का रिकॉर्ड; हर सिटी सर्वे नंबर (CTS) के लिए बनता है।",
+      "usage": [
+        {
+          "state": "maharashtra",
+          "term_hi": "प्रॉपर्टी कार्ड / CTS नंबर"
+        }
+      ],
+      "sources": [
+        "dilrmp",
+        "portal-mh-thane"
+      ]
+    },
+    {
+      "id": "rakba",
+      "hi": "रकबा",
+      "en": "Area recorded",
+      "meaning_hi": "रिकॉर्ड में दर्ज क्षेत्रफल। इसकी इकाई (बीघा, एकड़, हेक्टेयर आदि) रिकॉर्ड में देखना ज़रूरी है।",
+      "usage": [],
+      "sources": [
+        "dilrmp"
+      ]
+    },
+    {
+      "id": "bhu-aadhaar",
+      "hi": "भू-आधार (ULPIN)",
+      "en": "Bhu-Aadhaar / ULPIN",
+      "meaning_hi": "भूखंड की विशिष्ट पहचान संख्या जो DILRMP के तहत दी जा रही है। राज्य-वार उपलब्धता अलग है और सत्यापन आधिकारिक स्रोत से करें।",
+      "usage": [],
+      "sources": [
+        "dilrmp"
+      ]
+    }
+  ]
+}

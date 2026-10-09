@@ -1,18 +1,130 @@
 {
   "reviewed_on": "2026-10-09",
   "units": [
-    {"id":"sqft","en":"Square foot","hi":"वर्ग फुट","sqft":1,"kind":"exact","source":"intl-foot-definition"},
-    {"id":"sqm","en":"Square metre","hi":"वर्ग मीटर","sqft":10.763910416709722,"kind":"exact","source":"intl-foot-definition"},
-    {"id":"sqyd","en":"Square yard / Gaj","hi":"वर्ग गज (गज)","sqft":9,"kind":"exact","source":"intl-foot-definition"},
-    {"id":"acre","en":"Acre","hi":"एकड़","sqft":43560,"kind":"exact","source":"intl-foot-definition"},
-    {"id":"hectare","en":"Hectare","hi":"हेक्टेयर","sqft":107639.10416709722,"kind":"exact","source":"intl-foot-definition"},
-    {"id":"guntha","en":"Guntha","hi":"गुंटा","sqft":1089,"kind":"customary","source":"bajaj-guntha-acre","note_hi":"40 गुंटा = 1 एकड़ (महाराष्ट्र, कर्नाटक, तेलंगाना आदि में प्रचलित)।","note_en":"40 guntha = 1 acre (used in Maharashtra, Karnataka, Telangana and nearby)."},
-    {"id":"cent","en":"Cent / Decimal","hi":"सेंट / डिसमिल","sqft":435.6,"kind":"customary","source":"1acre-cent","note_hi":"100 सेंट = 1 एकड़। बिहार-झारखंड में इसे डिसमिल कहते हैं।","note_en":"100 cent = 1 acre. Called decimal (dismil) in Bihar/Jharkhand."},
-    {"id":"marla","en":"Marla","hi":"मरला","sqft":272.25,"kind":"customary","source":"bajaj-marla-kanal","note_hi":"पंजाब-हरियाणा मानक: 1 मरला = 272.25 वर्ग फुट। कुछ क्षेत्रों में माप अलग हो सकता है।","note_en":"Punjab/Haryana standard: 1 marla = 272.25 sq ft. Other regions may differ."},
-    {"id":"kanal","en":"Kanal","hi":"कनाल","sqft":5445,"kind":"customary","source":"bajaj-marla-kanal","note_hi":"1 कनाल = 20 मरला।","note_en":"1 kanal = 20 marla."},
-    {"id":"bigha","en":"Bigha","hi":"बीघा","sqft":null,"kind":"local","note_hi":"बीघा हर राज्य (कई बार ज़िले) में अलग होता है। अपने खसरा/जमाबंदी या तहसील से वर्ग फुट में मान लेकर नीचे भरें।","note_en":"A bigha differs by state and sometimes district. Enter your local value in sq ft from your record or tehsil."},
-    {"id":"biswa","en":"Biswa","hi":"बिस्वा","sqft":null,"kind":"local","note_hi":"बिस्वा बीघे का हिस्सा है, पर माप क्षेत्र के अनुसार बदलता है।","note_en":"A biswa is a fraction of a bigha and varies by region."},
-    {"id":"katha","en":"Katha / Kattha","hi":"कट्ठा","sqft":null,"kind":"local","note_hi":"बिहार, झारखंड, बंगाल और असम में अलग-अलग माप।","note_en":"Different sizes in Bihar, Jharkhand, Bengal and Assam."},
-    {"id":"dhur","en":"Dhur","hi":"धुर","sqft":null,"kind":"local","note_hi":"कट्ठे का हिस्सा; क्षेत्र के अनुसार अलग।","note_en":"A fraction of a katha; varies by region."}
+    {
+      "id": "sqft",
+      "en": "Square foot",
+      "hi": "वर्ग फुट",
+      "sqft": 1,
+      "kind": "exact",
+      "source": "intl-foot-definition"
+    },
+    {
+      "id": "sqm",
+      "en": "Square metre",
+      "hi": "वर्ग मीटर",
+      "sqft": 10.763910416709722,
+      "kind": "exact",
+      "source": "intl-foot-definition"
+    },
+    {
+      "id": "sqyd",
+      "en": "Square yard / Gaj",
+      "hi": "वर्ग गज (गज)",
+      "sqft": 9,
+      "kind": "exact",
+      "source": "intl-foot-definition"
+    },
+    {
+      "id": "acre",
+      "en": "Acre",
+      "hi": "एकड़",
+      "sqft": 43560,
+      "kind": "exact",
+      "source": "intl-foot-definition"
+    },
+    {
+      "id": "hectare",
+      "en": "Hectare",
+      "hi": "हेक्टेयर",
+      "sqft": 107639.10416709722,
+      "kind": "exact",
+      "source": "intl-foot-definition"
+    },
+    {
+      "id": "guntha",
+      "en": "Guntha",
+      "hi": "गुंटा",
+      "sqft": 1089,
+      "kind": "customary",
+      "source": "bajaj-guntha-acre",
+      "note_hi": "40 गुंटा = 1 एकड़ (महाराष्ट्र, कर्नाटक, तेलंगाना आदि में प्रचलित)।",
+      "note_en": "40 guntha = 1 acre (used in Maharashtra, Karnataka, Telangana and nearby)."
+    },
+    {
+      "id": "cent",
+      "en": "Cent / Decimal",
+      "hi": "सेंट / डिसमिल",
+      "sqft": 435.6,
+      "kind": "customary",
+      "source": "1acre-cent",
+      "note_hi": "100 सेंट = 1 एकड़। बिहार-झारखंड में इसे डिसमिल कहते हैं।",
+      "note_en": "100 cent = 1 acre. Called decimal (dismil) in Bihar/Jharkhand."
+    },
+    {
+      "id": "marla",
+      "en": "Marla",
+      "hi": "मरला",
+      "sqft": 272.25,
+      "kind": "customary",
+      "source": "bajaj-marla-kanal",
+      "note_hi": "पंजाब-हरियाणा मानक: 1 मरला = 272.25 वर्ग फुट। कुछ क्षेत्रों में माप अलग हो सकता है।",
+      "note_en": "Punjab/Haryana standard: 1 marla = 272.25 sq ft. Other regions may differ."
+    },
+    {
+      "id": "kanal",
+      "en": "Kanal",
+      "hi": "कनाल",
+      "sqft": 5445,
+      "kind": "customary",
+      "source": "bajaj-marla-kanal",
+      "note_hi": "1 कनाल = 20 मरला।",
+      "note_en": "1 kanal = 20 marla."
+    },
+    {
+      "id": "bigha",
+      "en": "Bigha",
+      "hi": "बीघा",
+      "sqft": null,
+      "kind": "local",
+      "note_hi": "बीघा हर राज्य (कई बार ज़िले) में अलग होता है। अपने खसरा/जमाबंदी या तहसील से वर्ग फुट में मान लेकर नीचे भरें।",
+      "note_en": "A bigha differs by state and sometimes district. Enter your local value in sq ft from your record or tehsil."
+    },
+    {
+      "id": "biswa",
+      "en": "Biswa",
+      "hi": "बिस्वा",
+      "sqft": null,
+      "kind": "local",
+      "note_hi": "बिस्वा बीघे का हिस्सा है, पर माप क्षेत्र के अनुसार बदलता है।",
+      "note_en": "A biswa is a fraction of a bigha and varies by region."
+    },
+    {
+      "id": "katha",
+      "en": "Katha / Kattha",
+      "hi": "कट्ठा",
+      "sqft": null,
+      "kind": "local",
+      "note_hi": "बिहार, झारखंड, बंगाल और असम में अलग-अलग माप।",
+      "note_en": "Different sizes in Bihar, Jharkhand, Bengal and Assam."
+    },
+    {
+      "id": "dhur",
+      "en": "Dhur",
+      "hi": "धुर",
+      "sqft": null,
+      "kind": "local",
+      "note_hi": "कट्ठे का हिस्सा; क्षेत्र के अनुसार अलग।",
+      "note_en": "A fraction of a katha; varies by region."
+    },
+    {
+      "id": "nali",
+      "en": "Nali",
+      "hi": "नाली",
+      "sqft": null,
+      "kind": "local",
+      "note_hi": "उत्तराखंड के पहाड़ी इलाकों में प्रचलित; माप क्षेत्र के अनुसार अलग।",
+      "note_en": "Used in the hills of Uttarakhand; size varies by area."
+    }
   ]
 }
