@@ -8,7 +8,8 @@ Authority: `RULEBOOK.md` > this file > `docs/architecture/MASTER_PLAN.md`. Nothi
 A1. **Source gate** — every factual claim rendered from data (portal URL, unit factor, fee, form, deadline) must come from `data/*.json` with `source_url`, `source_org`, `jurisdiction`, `reviewed_on`. Missing field ⇒ build error.
 A2. **Link gate** — no broken internal links; official external links checked weekly; failing 14 days ⇒ page shows "link under review".
 A3. **SEO gate** — unique `<title>` (≤ 60 chars) and meta description (120–160 chars), one `<h1>`, absolute canonical, `lang`, valid JSON-LD that matches visible content.
-A4. **Thin/duplicate gate** — among pages of the same template: word-trigram Jaccard similarity < 0.35 and ≥ 400 words of *unique* visible text or a working tool. Evidence for the threshold: the old district pages measured 0.89. Pages failing the gate are `status: draft` and excluded from the sitemap.
+A4. **Thin/duplicate gate** — among pages of the same template: word-trigram Jaccard similarity < 0.35, and a per-type minimum of visible words (FAQ text counts) or a working tool: content 400, record 320, guide 320, state 300, hub 120, home 120, legal 80. Hindi text is counted by whitespace tokens. Length alone never makes a page pass; uniqueness and sources decide. Evidence for the threshold: the old district pages measured 0.89. Pages failing the gate are `status: draft` and excluded from the sitemap.
+A9. **Related-links gate** — record, guide and state pages need ≥ 2 `meta.related` links and ≥ 1 link to a tool (Rulebook §13).
 A5. **Sitemap gate** — `sitemap.xml` generated only from `status: published` pages; never hand-edited.
 A6. **Performance gate** — Lighthouse CI on mobile: Performance ≥ 90, Accessibility ≥ 95, SEO ≥ 95; budgets in MASTER_PLAN §6.
 A7. **Accessibility gate** — axe has no serious/critical issues; keyboard test per component.
@@ -30,6 +31,7 @@ C2. AI-assisted drafts are permitted only if a human checks each claim against t
 C3. Each page records its purpose: user intent, unique value, primary source, parent hub, 2+ sibling links, 1+ tool link (`docs/content/page-register.md` row or front-matter).
 C4. No copy from competitors or government sites beyond short attributed quotes; no government logos, seals or lookalike styling.
 C5. No fake reviews, counters, testimonials, "X users served", or invented statistics.
+C7. Source kinds: `official`, `portal`, `secondary`, `definition`, `editorial`. `editorial` (no URL) may back only general explanatory guidance and must never carry section numbers, fees, deadlines or outcomes. Portal addresses carry a confidence label (`official-doc`, `multi-source`, `conflicting`, `single-source`, `unconfirmed`) that is shown on the page; conflicting or unconfirmed addresses are never presented as settled.
 C6. Legal topics: state named, source named, reviewed date visible, "educational information, not legal advice".
 
 ## D. Architecture & code
@@ -47,6 +49,7 @@ E1. URLs lowercase, stable, human-readable; one canonical per intent; no languag
 E2. Until launch approval: every page `noindex,nofollow` and absent from sitemap/robots allow-list (Rulebook §26).
 E3. No old BhumiRecord URL with impressions is abandoned: each gets a mapped target in `data/redirects.json` before launch.
 E4. Never bulk-generate geographic pages. A district/tehsil page needs ≥ 3 verified local facts that differ from its parent and sibling pages (offices, local portal differences, local unit practice, circle-rate source, helpline) and passes A4.
+E6. Disclaimer placement: the independence/no-legal-advice disclaimer lives in the page footer on every page (owner decision 2026-10-09); no banner above the header.
 E5. Page-budget guard: CI prints published-page count by type; adding >30 pages of one type in a single PR requires owner approval.
 
 ## F. Process
