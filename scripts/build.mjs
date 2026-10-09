@@ -3,6 +3,7 @@
 import { readFileSync, writeFileSync, mkdirSync, cpSync, readdirSync, rmSync, existsSync } from "node:fs";
 import { join, relative, dirname, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { generate } from "./generators.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(ROOT, "dist");
@@ -11,7 +12,8 @@ const SITE = (process.env.SITE_URL ?? "https://akhairkar.github.io/Landrecordes"
 const INDEXABLE = process.env.INDEXABLE === "true"; // stays false until launch approval (Rulebook §26)
 
 const SIMILARITY_MAX = 0.35;
-const MIN_WORDS = { home: 120, content: 400, hub: 120, legal: 80, tool: 0 };
+const MIN_WORDS = { home: 120, content: 400, record: 320, guide: 320, state: 300, hub: 120, legal: 80, tool: 0 };
+const NEEDS_RELATED = new Set(["record", "guide", "state"]); // BUILD_RULES §A9 / Rulebook §13
 const errors = [];
 const warnings = [];
 const err = (page, msg) => errors.push(`${page}: ${msg}`);
@@ -27,8 +29,8 @@ const walk = (dir) =>
 const sources = readJson("data/sources.json");
 for (const [id, s] of Object.entries(sources)) {
   if (!s.org) err(`sources/${id}`, "missing org");
-  if (!s.url && s.kind !== "definition") err(`sources/${id}`, "missing url (only kind=definition may omit it)");
-  if (s.kind === "definition" && !s.basis) err(`sources/${id}`, "definition needs basis");
+  if (!s.url && !["definition", "editorial"].includes(s.kind)) err(`sources/${id}`, "missing url (only kind=definition may omit it)");
+  if (["definition", "editorial"].includes(s.kind) && !s.basis) err(`sources/${id}`, `${s.kind} needs basis`);
 }
 const unitData = readJson("data/units.json");
 for (const u of unitData.units) {
@@ -60,6 +62,11 @@ for (const file of walk(pagesDir).filter((f) => f.endsWith(".html"))) {
   pages.push({ rel, slug, meta, body, url: slug ? `${slug}/` : "" });
 }
 
+for (const g of generate({ sources, readJson, esc })) {
+  const slug = g.rel.replace(/(^|\/)index\.html$/, "").replace(/\.html$/, "");
+  pages.push({ rel: `[gen] ${g.rel}`, slug, meta: g.meta, body: g.body, url: slug ? `${slug}/` : "" });
+}
+
 const text = (html) =>
   html.replace(/<(script|style)[\s\S]*?<\/\1>/g, " ").replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ").replace(/\s+/g, " ").trim();
 const trigrams = (t) => {
@@ -89,9 +96,16 @@ for (const p of pages) {
   if ((body.match(/<h1[\s>]/g) || []).length !== 1) err(rel, "exactly one <h1> required");
   if (!["legal", "home"].includes(meta.type) && (!Array.isArray(meta.sources) || meta.sources.length === 0)) err(rel, "meta.sources required");
   for (const sid of meta.sources || []) if (!sources[sid]) err(rel, `unknown source id "${sid}"`);
-  const words = text(body).split(" ").filter(Boolean).length;
-  const min = meta.tool ? 0 : MIN_WORDS[meta.type] ?? 0;
+  const faqText = (meta.faq || []).map((f) => `${f.q} ${f.a}`).join(" ");
+  const words = `${text(body)} ${faqText}`.split(" ").filter(Boolean).length;
+  const min = meta.tool || meta.output ? 0 : MIN_WORDS[meta.type] ?? 0;
   if (words < min) err(rel, `thin content: ${words} words < ${min} (type=${meta.type})`);
+  if (NEEDS_RELATED.has(meta.type)) {
+    const rel2 = meta.related || [];
+    if (rel2.length < 2) err(rel, "needs ≥2 meta.related links (Rulebook §13)");
+    const hasTool = rel2.some((r) => r.path.startsWith("tools/")) || /href="tools\//.test(body);
+    if (!hasTool) err(rel, "needs ≥1 link to a tool (Rulebook §13)");
+  }
   p.words = words;
   p.tri = trigrams(text(body));
 }
@@ -114,6 +128,14 @@ const unitsTable = `<div class="lr-table-wrap"><table class="lr-table"><thead><t
       `<tr><th scope="row">${esc(u.hi)} <span class="lr-en">/ ${esc(u.en)}</span></th><td class="num">${u.sqft != null ? esc(new Intl.NumberFormat("en-IN", { maximumFractionDigits: 4 }).format(u.sqft)) : '<span class="lr-muted-cell">क्षेत्र के अनुसार</span>'}</td><td>${KIND_LABEL[u.kind]}</td><td>${esc(u.note_hi || "")}</td></tr>`
   )
   .join("")}</tbody></table></div>`;
+
+const stateChips = readJson("data/states.json").states.map((st) => `<a href="states/${st.id}/">${esc(st.name_hi)}</a>`).join(" ");
+const recentList = `<ul class="lr-recent">${[...pages]
+  .filter((p) => !["legal", "home"].includes(p.meta.type))
+  .sort((a, b) => (b.meta.reviewed_on > a.meta.reviewed_on ? 1 : b.meta.reviewed_on < a.meta.reviewed_on ? -1 : a.meta.title.localeCompare(b.meta.title)))
+  .slice(0, 8)
+  .map((p) => `<li><a href="${esc(p.url)}">${esc(p.meta.title)}</a> <span class="lr-en">· ${esc(p.meta.reviewed_on)}</span></li>`)
+  .join("")}</ul>`;
 
 // ---------- render ----------
 const depthPrefix = ""; // <base> makes all hrefs base-relative
@@ -149,6 +171,11 @@ for (const p of pages) {
         return `<li>${s.url ? `<a href="${esc(s.url)}" rel="noopener noreferrer">${esc(s.org)}</a>` : esc(s.org)} — ${esc(s.basis || "")}</li>`;
       })
       .join("")}</ul><p>अंतिम समीक्षा / Last reviewed: <time datetime="${esc(meta.reviewed_on)}">${esc(meta.reviewed_on)}</time>. यह मार्गदर्शन शैक्षिक जानकारी है, कानूनी सलाह या आधिकारिक रिकॉर्ड नहीं। / Educational guidance, not legal advice or an official record.</p></section>`;
+  const relatedHtml = meta.related?.length
+    ? `<section class="lr-related lr-prose" aria-labelledby="rel-h"><h2 id="rel-h">यह भी देखें <span class="lr-en">/ Related</span></h2><ul>${meta.related
+        .map((r) => `<li><a href="${esc(r.path)}">${esc(r.label)}</a></li>`)
+        .join("")}</ul></section>`
+    : "";
   const scripts = (meta.scripts || []).map((s) => `<script type="module" src="${esc(s)}"></script>`).join("\n");
   const html = layout
     .replace("{{base}}", esc(BASE))
@@ -158,18 +185,28 @@ for (const p of pages) {
     .replace("{{canonical}}", esc(canonical))
     .replace("{{schema}}", ld.map((o) => `  <script type="application/ld+json">${JSON.stringify(o)}</script>`).join("\n"))
     .replace("{{breadcrumbs}}", crumbHtml)
-    .replace("{{self}}", esc(p.url))
+    .replace("{{self}}", meta.output ? "" : esc(p.url))
     .replace("{{pathprefix}}", depthPrefix)
     .replace("{{active}}", esc(meta.active || ""))
-    .replace("{{body}}", () => p.body.replace("{{units_table}}", unitsTable))
-    .replace("{{faq}}", () => faqHtml)
+    .replace("{{body}}", () => p.body.replace("{{units_table}}", unitsTable).replace("{{recent_pages}}", () => recentList).replace("{{state_chips}}", () => stateChips))
+    .replace("{{faq}}", () => relatedHtml + faqHtml)
     .replace("{{sources}}", () => srcHtml)
     .replace("{{scripts}}", () => scripts);
-  const outPath = join(DIST, p.url, "index.html");
+  const outPath = meta.output ? join(DIST, meta.output) : join(DIST, p.url, "index.html");
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, html);
   outPages.push({ ...p, html, canonical });
 }
+
+// ---------- search index ----------
+writeFileSync(
+  join(DIST, "search-index.json"),
+  JSON.stringify(
+    outPages
+      .filter((p) => !p.meta.output)
+      .map((p) => ({ t: p.meta.title, d: p.meta.description, u: p.url, y: p.meta.type, k: p.meta.keywords || [] }))
+  )
+);
 
 // ---------- link gate (A2, internal) ----------
 const exists = (path) => {
