@@ -8,7 +8,7 @@
   const basePath = (document.querySelector("base")?.getAttribute("href") || "/").replace(/\/$/,"");
   const route = (path) => basePath + (path.startsWith("/") ? path : "/" + path);
   const getLanguage = () => localStorage.getItem("landrecord-language") || document.documentElement.lang || "en";
-  const getTheme = () => localStorage.getItem("landrecord-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const getTheme = () => localStorage.getItem("landrecord-theme") || "light";
   function setLanguage(lang){ localStorage.setItem("landrecord-language",lang); document.documentElement.lang=lang; document.dispatchEvent(new CustomEvent("landrecord:languagechange",{detail:{lang}})); }
   function setTheme(theme){ localStorage.setItem("landrecord-theme",theme); document.documentElement.dataset.theme=theme; document.dispatchEvent(new CustomEvent("landrecord:themechange",{detail:{theme}})); }
   function mount(options){

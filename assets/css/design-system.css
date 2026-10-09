@@ -58,19 +58,19 @@
 [data-theme="dark"] {
   color-scheme: dark;
 
-  --lr-bg: #14110c;
-  --lr-surface: #1d1a13;
-  --lr-surface-muted: #28241a;
-  --lr-text: #f3eee3;
-  --lr-text-muted: #c0b6a3;
-  --lr-border: #393322;
-  --lr-border-strong: #4d4530;
+  --lr-bg: #262116;
+  --lr-surface: #312b1e;
+  --lr-surface-muted: #3c3526;
+  --lr-text: #f6f1e6;
+  --lr-text-muted: #d3c9b6;
+  --lr-border: #51492f;
+  --lr-border-strong: #665c3e;
 
   --lr-brand: #8fcf9f;
   --lr-brand-strong: #b4e2bf;
-  --lr-brand-soft: #1f3626;
+  --lr-brand-soft: #2a4030;
   --lr-accent: #e2a574;
-  --lr-accent-soft: #3b2716;
+  --lr-accent-soft: #4a3220;
 
   --lr-success: #63c58d;
   --lr-warning: #f0c36b;
