@@ -11,7 +11,7 @@ const SITE = (process.env.SITE_URL ?? "https://akhairkar.github.io/Landrecordes"
 const INDEXABLE = process.env.INDEXABLE === "true"; // stays false until launch approval (Rulebook §26)
 
 const SIMILARITY_MAX = 0.35;
-const MIN_WORDS = { content: 400, hub: 120, legal: 80, tool: 0 };
+const MIN_WORDS = { home: 120, content: 400, hub: 120, legal: 80, tool: 0 };
 const errors = [];
 const warnings = [];
 const err = (page, msg) => errors.push(`${page}: ${msg}`);
@@ -42,11 +42,6 @@ mkdirSync(DIST, { recursive: true });
 cpSync(join(ROOT, "assets"), join(DIST, "assets"), { recursive: true });
 cpSync(join(ROOT, "data"), join(DIST, "data"), { recursive: true });
 if (existsSync(join(ROOT, "CNAME"))) cpSync(join(ROOT, "CNAME"), join(DIST, "CNAME"));
-// Legacy hand-written homepage (rebuilt in M3c): keep, but align <base> with the build target.
-writeFileSync(
-  join(DIST, "index.html"),
-  readFileSync(join(ROOT, "index.html"), "utf8").replace(/<base href="[^"]*">/, `<base href="${BASE}">`)
-);
 
 // ---------- pages ----------
 const layout = readFileSync(join(ROOT, "src/layout.html"), "utf8");
@@ -92,7 +87,7 @@ for (const p of pages) {
   if (seenDescs.has(meta.description)) err(rel, `duplicate description with ${seenDescs.get(meta.description)}`);
   seenDescs.set(meta.description, rel);
   if ((body.match(/<h1[\s>]/g) || []).length !== 1) err(rel, "exactly one <h1> required");
-  if (meta.type !== "legal" && (!Array.isArray(meta.sources) || meta.sources.length === 0)) err(rel, "meta.sources required");
+  if (!["legal", "home"].includes(meta.type) && (!Array.isArray(meta.sources) || meta.sources.length === 0)) err(rel, "meta.sources required");
   for (const sid of meta.sources || []) if (!sources[sid]) err(rel, `unknown source id "${sid}"`);
   const words = text(body).split(" ").filter(Boolean).length;
   const min = meta.tool ? 0 : MIN_WORDS[meta.type] ?? 0;
@@ -127,7 +122,7 @@ for (const p of pages) {
   const canonical = `${SITE}/${p.url}`;
   const robots = INDEXABLE && meta.status === "published" ? "index,follow" : "noindex,nofollow";
   const crumbs = [{ name: "Home", path: "" }, ...(meta.breadcrumbs || [])];
-  const crumbHtml = `<nav class="lr-crumbs" aria-label="Breadcrumb">${crumbs
+  const crumbHtml = crumbs.length < 2 ? "" : `<nav class="lr-crumbs" aria-label="Breadcrumb">${crumbs
     .map((c, i) => (i === crumbs.length - 1 && c.path === p.url ? esc(c.name) : `<a href="${c.path}">${esc(c.name)}</a>`))
     .join(" › ")}</nav>`;
   const ld = [
