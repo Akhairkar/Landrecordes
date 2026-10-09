@@ -176,3 +176,9 @@ Do not use:
 - desktop-first layouts that collapse poorly on mobile
 - hamburger-only primary navigation
 - decorative animations that delay task completion
+
+## Colour direction (owner-approved 2026-10-09)
+
+Land-inspired, not government-like: warm paper background, deep field green as the brand colour, soil/terracotta as the accent, wheat-toned neutral surfaces. Blue-and-saffron or emblem-like palettes remain forbidden.
+
+All text/background pairs used by components meet WCAG AA (measured 5.0:1 or higher for muted text, brand and accent on their surfaces, in both themes). Change tokens in `assets/css/design-system.css` only; components must not hard-code colours.
