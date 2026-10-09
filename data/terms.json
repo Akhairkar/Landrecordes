@@ -9,88 +9,109 @@
       "usage": [
         {
           "state": "uttar-pradesh",
-          "term_hi": "खतौनी"
+          "term_hi": "खतौनी",
+          "term_en": "Khatauni"
         },
         {
           "state": "maharashtra",
-          "term_hi": "7/12 उतारा (सातबारा)"
+          "term_hi": "7/12 उतारा (सातबारा)",
+          "term_en": "7/12 extract (Satbara)"
         },
         {
           "state": "gujarat",
-          "term_hi": "7/12 (सात-बारा)"
+          "term_hi": "7/12 (सात-बारा)",
+          "term_en": "7/12 (Sat-bara)"
         },
         {
           "state": "rajasthan",
-          "term_hi": "जमाबंदी"
+          "term_hi": "जमाबंदी",
+          "term_en": "Jamabandi"
         },
         {
           "state": "madhya-pradesh",
-          "term_hi": "खतौनी (बी-1)"
+          "term_hi": "खतौनी (बी-1)",
+          "term_en": "Khatauni (B-1)"
         },
         {
           "state": "bihar",
-          "term_hi": "जमाबंदी"
+          "term_hi": "जमाबंदी",
+          "term_en": "Jamabandi"
         },
         {
           "state": "haryana",
-          "term_hi": "जमाबंदी"
+          "term_hi": "जमाबंदी",
+          "term_en": "Jamabandi"
         },
         {
           "state": "punjab",
-          "term_hi": "जमाबंदी"
+          "term_hi": "जमाबंदी",
+          "term_en": "Jamabandi"
         },
         {
           "state": "delhi",
-          "term_hi": "खसरा-खतौनी"
+          "term_hi": "खसरा-खतौनी",
+          "term_en": "Khasra-khatauni"
         },
         {
           "state": "uttarakhand",
-          "term_hi": "खतौनी"
+          "term_hi": "खतौनी",
+          "term_en": "Khatauni"
         },
         {
           "state": "himachal-pradesh",
-          "term_hi": "जमाबंदी"
+          "term_hi": "जमाबंदी",
+          "term_en": "Jamabandi"
         },
         {
           "state": "jammu-and-kashmir",
-          "term_hi": "जमाबंदी"
+          "term_hi": "जमाबंदी",
+          "term_en": "Jamabandi"
         },
         {
           "state": "karnataka",
-          "term_hi": "RTC (पहाणी)"
+          "term_hi": "RTC (पहाणी)",
+          "term_en": "RTC (Pahani)"
         },
         {
           "state": "telangana",
-          "term_hi": "ROR-1B / पहाणी"
+          "term_hi": "ROR-1B / पहाणी",
+          "term_en": "ROR-1B / Pahani"
         },
         {
           "state": "andhra-pradesh",
-          "term_hi": "1-B और अडंगल"
+          "term_hi": "1-B और अडंगल",
+          "term_en": "1-B and Adangal"
         },
         {
           "state": "tamil-nadu",
-          "term_hi": "पट्टा / चिट्टा"
+          "term_hi": "पट्टा / चिट्टा",
+          "term_en": "Patta / Chitta"
         },
         {
           "state": "west-bengal",
-          "term_hi": "खतियान"
+          "term_hi": "खतियान",
+          "term_en": "Khatian"
         },
         {
           "state": "odisha",
-          "term_hi": "खतियान (RoR)"
+          "term_hi": "खतियान (RoR)",
+          "term_en": "Khatiyan (RoR)"
         },
         {
           "state": "chhattisgarh",
-          "term_hi": "बी-1 (खसरा नकल)"
+          "term_hi": "बी-1 (खसरा नकल)",
+          "term_en": "B-1 (khasra nakal)"
         },
         {
           "state": "jharkhand",
-          "term_hi": "खतियान"
+          "term_hi": "खतियान",
+          "term_en": "Khatian"
         }
       ],
       "sources": [
         "dilrmp"
-      ]
+      ],
+      "meaning_en": "The revenue record of land holders/cultivators, area and land type. States use different names and forms for it."
     },
     {
       "id": "plot",
@@ -100,88 +121,109 @@
       "usage": [
         {
           "state": "uttar-pradesh",
-          "term_hi": "खसरा / गाटा संख्या"
+          "term_hi": "खसरा / गाटा संख्या",
+          "term_en": "Khasra / gata number"
         },
         {
           "state": "maharashtra",
-          "term_hi": "सर्वे नंबर / गट नंबर"
+          "term_hi": "सर्वे नंबर / गट नंबर",
+          "term_en": "Survey / gat number"
         },
         {
           "state": "gujarat",
-          "term_hi": "सर्वे / ब्लॉक नंबर"
+          "term_hi": "सर्वे / ब्लॉक नंबर",
+          "term_en": "Survey / block number"
         },
         {
           "state": "rajasthan",
-          "term_hi": "खसरा संख्या"
+          "term_hi": "खसरा संख्या",
+          "term_en": "Khasra number"
         },
         {
           "state": "madhya-pradesh",
-          "term_hi": "खसरा संख्या"
+          "term_hi": "खसरा संख्या",
+          "term_en": "Khasra number"
         },
         {
           "state": "bihar",
-          "term_hi": "खेसरा संख्या"
+          "term_hi": "खेसरा संख्या",
+          "term_en": "Khesra number"
         },
         {
           "state": "haryana",
-          "term_hi": "खसरा संख्या"
+          "term_hi": "खसरा संख्या",
+          "term_en": "Khasra number"
         },
         {
           "state": "punjab",
-          "term_hi": "खसरा संख्या"
+          "term_hi": "खसरा संख्या",
+          "term_en": "Khasra number"
         },
         {
           "state": "delhi",
-          "term_hi": "खसरा संख्या"
+          "term_hi": "खसरा संख्या",
+          "term_en": "Khasra number"
         },
         {
           "state": "uttarakhand",
-          "term_hi": "खसरा संख्या"
+          "term_hi": "खसरा संख्या",
+          "term_en": "Khasra number"
         },
         {
           "state": "himachal-pradesh",
-          "term_hi": "खसरा संख्या"
+          "term_hi": "खसरा संख्या",
+          "term_en": "Khasra number"
         },
         {
           "state": "jammu-and-kashmir",
-          "term_hi": "खसरा संख्या"
+          "term_hi": "खसरा संख्या",
+          "term_en": "Khasra number"
         },
         {
           "state": "karnataka",
-          "term_hi": "सर्वे नंबर + हिस्सा संख्या"
+          "term_hi": "सर्वे नंबर + हिस्सा संख्या",
+          "term_en": "Survey number + hissa number"
         },
         {
           "state": "telangana",
-          "term_hi": "सर्वे नंबर"
+          "term_hi": "सर्वे नंबर",
+          "term_en": "Survey number"
         },
         {
           "state": "andhra-pradesh",
-          "term_hi": "सर्वे नंबर"
+          "term_hi": "सर्वे नंबर",
+          "term_en": "Survey number"
         },
         {
           "state": "tamil-nadu",
-          "term_hi": "सर्वे और उप-विभाजन नंबर"
+          "term_hi": "सर्वे और उप-विभाजन नंबर",
+          "term_en": "Survey and sub-division number"
         },
         {
           "state": "west-bengal",
-          "term_hi": "प्लॉट नंबर"
+          "term_hi": "प्लॉट नंबर",
+          "term_en": "Plot number"
         },
         {
           "state": "odisha",
-          "term_hi": "प्लॉट नंबर"
+          "term_hi": "प्लॉट नंबर",
+          "term_en": "Plot number"
         },
         {
           "state": "chhattisgarh",
-          "term_hi": "खसरा संख्या"
+          "term_hi": "खसरा संख्या",
+          "term_en": "Khasra number"
         },
         {
           "state": "jharkhand",
-          "term_hi": "प्लॉट नंबर"
+          "term_hi": "प्लॉट नंबर",
+          "term_en": "Plot number"
         }
       ],
       "sources": [
         "dilrmp"
-      ]
+      ],
+      "meaning_en": "The ID of one separate piece (plot) of land in a village; the most precise key for finding a record."
     },
     {
       "id": "holding",
@@ -191,76 +233,94 @@
       "usage": [
         {
           "state": "uttar-pradesh",
-          "term_hi": "खाता संख्या"
+          "term_hi": "खाता संख्या",
+          "term_en": "Khata number"
         },
         {
           "state": "maharashtra",
-          "term_hi": "खाता (8-अ में)"
+          "term_hi": "खाता (8-अ में)",
+          "term_en": "Khata (in 8-A)"
         },
         {
           "state": "gujarat",
-          "term_hi": "खाता नंबर (8-अ)"
+          "term_hi": "खाता नंबर (8-अ)",
+          "term_en": "Khata number (8-A)"
         },
         {
           "state": "rajasthan",
-          "term_hi": "खाता संख्या"
+          "term_hi": "खाता संख्या",
+          "term_en": "Khata number"
         },
         {
           "state": "madhya-pradesh",
-          "term_hi": "खाता"
+          "term_hi": "खाता",
+          "term_en": "Khata"
         },
         {
           "state": "bihar",
-          "term_hi": "खाता"
+          "term_hi": "खाता",
+          "term_en": "Khata"
         },
         {
           "state": "haryana",
-          "term_hi": "खेवट / खतौनी"
+          "term_hi": "खेवट / खतौनी",
+          "term_en": "Khewat / khatauni"
         },
         {
           "state": "punjab",
-          "term_hi": "खेवट / खतौनी"
+          "term_hi": "खेवट / खतौनी",
+          "term_en": "Khewat / khatauni"
         },
         {
           "state": "delhi",
-          "term_hi": "खाता संख्या"
+          "term_hi": "खाता संख्या",
+          "term_en": "Khata number"
         },
         {
           "state": "uttarakhand",
-          "term_hi": "खाता"
+          "term_hi": "खाता",
+          "term_en": "Khata"
         },
         {
           "state": "himachal-pradesh",
-          "term_hi": "खेवट / खतौनी"
+          "term_hi": "खेवट / खतौनी",
+          "term_en": "Khewat / khatauni"
         },
         {
           "state": "jammu-and-kashmir",
-          "term_hi": "खाता / खेवट"
+          "term_hi": "खाता / खेवट",
+          "term_en": "Khata / khewat"
         },
         {
           "state": "andhra-pradesh",
-          "term_hi": "खाता नंबर"
+          "term_hi": "खाता नंबर",
+          "term_en": "Khata number"
         },
         {
           "state": "tamil-nadu",
-          "term_hi": "पट्टा नंबर"
+          "term_hi": "पट्टा नंबर",
+          "term_en": "Patta number"
         },
         {
           "state": "west-bengal",
-          "term_hi": "खतियान नंबर"
+          "term_hi": "खतियान नंबर",
+          "term_en": "Khatian number"
         },
         {
           "state": "odisha",
-          "term_hi": "खतियान नंबर"
+          "term_hi": "खतियान नंबर",
+          "term_en": "Khatian number"
         },
         {
           "state": "jharkhand",
-          "term_hi": "खतियान नंबर"
+          "term_hi": "खतियान नंबर",
+          "term_en": "Khatian number"
         }
       ],
       "sources": [
         "dilrmp"
-      ]
+      ],
+      "meaning_en": "The account number of a holder's (or joint holders') holding, which can contain several plots."
     },
     {
       "id": "mutation",
@@ -270,88 +330,109 @@
       "usage": [
         {
           "state": "uttar-pradesh",
-          "term_hi": "दाखिल-खारिज"
+          "term_hi": "दाखिल-खारिज",
+          "term_en": "Dakhil-kharij"
         },
         {
           "state": "maharashtra",
-          "term_hi": "फेरफार"
+          "term_hi": "फेरफार",
+          "term_en": "Ferfar"
         },
         {
           "state": "gujarat",
-          "term_hi": "नोंध (हक्क-पत्रक में)"
+          "term_hi": "नोंध (हक्क-पत्रक में)",
+          "term_en": "Nondh (in hakk-patrak)"
         },
         {
           "state": "rajasthan",
-          "term_hi": "नामांतरण"
+          "term_hi": "नामांतरण",
+          "term_en": "Namantaran"
         },
         {
           "state": "madhya-pradesh",
-          "term_hi": "नामांतरण"
+          "term_hi": "नामांतरण",
+          "term_en": "Namantaran"
         },
         {
           "state": "bihar",
-          "term_hi": "दाखिल-खारिज"
+          "term_hi": "दाखिल-खारिज",
+          "term_en": "Dakhil-kharij"
         },
         {
           "state": "haryana",
-          "term_hi": "इंतकाल"
+          "term_hi": "इंतकाल",
+          "term_en": "Intkal"
         },
         {
           "state": "punjab",
-          "term_hi": "इंतकाल"
+          "term_hi": "इंतकाल",
+          "term_en": "Intkal"
         },
         {
           "state": "delhi",
-          "term_hi": "म्यूटेशन"
+          "term_hi": "म्यूटेशन",
+          "term_en": "Mutation"
         },
         {
           "state": "uttarakhand",
-          "term_hi": "दाखिल-खारिज"
+          "term_hi": "दाखिल-खारिज",
+          "term_en": "Dakhil-kharij"
         },
         {
           "state": "himachal-pradesh",
-          "term_hi": "इंतकाल"
+          "term_hi": "इंतकाल",
+          "term_en": "Intkal"
         },
         {
           "state": "jammu-and-kashmir",
-          "term_hi": "इंतकाल (म्यूटेशन)"
+          "term_hi": "इंतकाल (म्यूटेशन)",
+          "term_en": "Intkal (mutation)"
         },
         {
           "state": "karnataka",
-          "term_hi": "म्यूटेशन (MR)"
+          "term_hi": "म्यूटेशन (MR)",
+          "term_en": "Mutation (MR)"
         },
         {
           "state": "telangana",
-          "term_hi": "म्यूटेशन"
+          "term_hi": "म्यूटेशन",
+          "term_en": "Mutation"
         },
         {
           "state": "andhra-pradesh",
-          "term_hi": "म्यूटेशन"
+          "term_hi": "म्यूटेशन",
+          "term_en": "Mutation"
         },
         {
           "state": "tamil-nadu",
-          "term_hi": "पट्टा में नाम परिवर्तन"
+          "term_hi": "पट्टा में नाम परिवर्तन",
+          "term_en": "Name change in patta"
         },
         {
           "state": "west-bengal",
-          "term_hi": "म्यूटेशन"
+          "term_hi": "म्यूटेशन",
+          "term_en": "Mutation"
         },
         {
           "state": "odisha",
-          "term_hi": "म्यूटेशन"
+          "term_hi": "म्यूटेशन",
+          "term_en": "Mutation"
         },
         {
           "state": "chhattisgarh",
-          "term_hi": "नामांतरण"
+          "term_hi": "नामांतरण",
+          "term_en": "Namantaran"
         },
         {
           "state": "jharkhand",
-          "term_hi": "दाखिल-खारिज"
+          "term_hi": "दाखिल-खारिज",
+          "term_en": "Dakhil-kharij"
         }
       ],
       "sources": [
         "dilrmp"
-      ]
+      ],
+      "meaning_en": "The process of recording a new name in the revenue record after a purchase, inheritance etc. Registration does not change the revenue record by itself."
     },
     {
       "id": "copy",
@@ -361,32 +442,39 @@
       "usage": [
         {
           "state": "haryana",
-          "term_hi": "फर्द (ई-फर्द)"
+          "term_hi": "फर्द (ई-फर्द)",
+          "term_en": "Fard (e-Fard)"
         },
         {
           "state": "punjab",
-          "term_hi": "फर्द"
+          "term_hi": "फर्द",
+          "term_en": "Fard"
         },
         {
           "state": "rajasthan",
-          "term_hi": "जमाबंदी नकल"
+          "term_hi": "जमाबंदी नकल",
+          "term_en": "Jamabandi nakal"
         },
         {
           "state": "himachal-pradesh",
-          "term_hi": "नकल"
+          "term_hi": "नकल",
+          "term_en": "Nakal"
         },
         {
           "state": "maharashtra",
-          "term_hi": "डिजिटली साइन्ड 7/12 (अलग सेवा)"
+          "term_hi": "डिजिटली साइन्ड 7/12 (अलग सेवा)",
+          "term_en": "Digitally signed 7/12 (separate service)"
         },
         {
           "state": "uttar-pradesh",
-          "term_hi": "खतौनी की नकल"
+          "term_hi": "खतौनी की नकल",
+          "term_en": "Khatauni nakal"
         }
       ],
       "sources": [
         "dilrmp"
-      ]
+      ],
+      "meaning_en": "A copy taken from the record. An online 'for information' copy and a certified/digitally signed copy may differ."
     },
     {
       "id": "girdawari",
@@ -396,13 +484,15 @@
       "usage": [
         {
           "state": "jammu-and-kashmir",
-          "term_hi": "गिरदावरी"
+          "term_hi": "गिरदावरी",
+          "term_en": "Girdawari"
         }
       ],
       "sources": [
         "dilrmp",
         "portal-jk-news"
-      ]
+      ],
+      "meaning_en": "A periodic inspection record of which crop is actually in a field and who cultivates it."
     },
     {
       "id": "shajra",
@@ -412,13 +502,15 @@
       "usage": [
         {
           "state": "himachal-pradesh",
-          "term_hi": "शजरा नसब"
+          "term_hi": "शजरा नसब",
+          "term_en": "Shajra nasab"
         }
       ],
       "sources": [
         "dilrmp",
         "portal-hp-district"
-      ]
+      ],
+      "meaning_en": "A revenue document of the family/holders' genealogy, used as a reference in inheritance matters."
     },
     {
       "id": "map",
@@ -428,18 +520,21 @@
       "usage": [
         {
           "state": "madhya-pradesh",
-          "term_hi": "भू-नक्शा"
+          "term_hi": "भू-नक्शा",
+          "term_en": "Bhu-Naksha"
         },
         {
           "state": "jammu-and-kashmir",
-          "term_hi": "मस्सावी (नक्शा)"
+          "term_hi": "मस्सावी (नक्शा)",
+          "term_en": "Massavi (map)"
         }
       ],
       "sources": [
         "dilrmp",
         "portal-mp",
         "portal-jk-news"
-      ]
+      ],
+      "meaning_en": "The village revenue map of fields/plots. Availability differs by state; third-party maps are not official maps."
     },
     {
       "id": "property-card",
@@ -449,13 +544,15 @@
       "usage": [
         {
           "state": "maharashtra",
-          "term_hi": "प्रॉपर्टी कार्ड / CTS नंबर"
+          "term_hi": "प्रॉपर्टी कार्ड / CTS नंबर",
+          "term_en": "Property card / CTS number"
         }
       ],
       "sources": [
         "dilrmp",
         "portal-mh-thane"
-      ]
+      ],
+      "meaning_en": "Record of land in city-surveyed urban areas; made for each city survey number (CTS)."
     },
     {
       "id": "rakba",
@@ -465,7 +562,8 @@
       "usage": [],
       "sources": [
         "dilrmp"
-      ]
+      ],
+      "meaning_en": "The area written in the record. Always check its unit (bigha, acre, hectare etc.)."
     },
     {
       "id": "bhu-aadhaar",
@@ -475,7 +573,8 @@
       "usage": [],
       "sources": [
         "dilrmp"
-      ]
+      ],
+      "meaning_en": "A unique ID for a land parcel being assigned under DILRMP. Availability varies by state; verify with the official source."
     }
   ]
 }

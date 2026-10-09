@@ -2,6 +2,7 @@
 <html lang="hi">
 <head>
   <meta charset="utf-8">
+  <script>try{var l=localStorage.getItem("landrecord-language");if(l==="en"||l==="hi")document.documentElement.lang=l;document.documentElement.dataset.theme=localStorage.getItem("landrecord-theme")||"light"}catch(e){document.documentElement.dataset.theme="light"}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <base href="{{base}}">
   <meta name="robots" content="{{robots}}">
@@ -15,7 +16,7 @@
 {{schema}}
 </head>
 <body>
-  <a class="lr-skip" href="{{self}}#main">मुख्य सामग्री पर जाएँ / Skip to content</a>
+  <a class="lr-skip" href="{{self}}#main"><span data-l="hi">मुख्य सामग्री पर जाएँ</span><span data-l="en">Skip to content</span></a>
   <div data-landrecord-shell></div>
   <main id="main" class="lr-container lr-page-main">
 {{breadcrumbs}}
@@ -26,12 +27,13 @@
   <footer class="lr-footer">
     <div class="lr-container">
       <section class="lr-disclaimer" role="note" aria-labelledby="disc-h">
-        <h2 id="disc-h">अस्वीकरण / Disclaimer</h2>
-        <p>LandRecord एक स्वतंत्र सूचना प्लेटफ़ॉर्म है, सरकारी वेबसाइट नहीं। हम भूमि रिकॉर्ड जारी, सत्यापित या बदलते नहीं हैं और कानूनी सलाह नहीं देते। आधिकारिक रिकॉर्ड और निर्णय के लिए संबंधित राज्य के सरकारी पोर्टल और राजस्व कार्यालय ही प्रामाणिक स्रोत हैं। टूल के नतीजे अनुमान हैं।</p>
-        <p class="lr-en">LandRecord is an independent information platform, not a government website. It does not issue or verify land records and gives no legal advice. Official portals and revenue offices remain the authoritative source. Tool results are estimates.</p>
+        <h2 id="disc-h"><span data-l="hi">अस्वीकरण</span><span data-l="en">Disclaimer</span></h2>
+        <p data-l="hi">LandRecord एक स्वतंत्र सूचना प्लेटफ़ॉर्म है, सरकारी वेबसाइट नहीं। हम भूमि रिकॉर्ड जारी, सत्यापित या बदलते नहीं हैं और कानूनी सलाह नहीं देते। आधिकारिक रिकॉर्ड और निर्णय के लिए संबंधित राज्य के सरकारी पोर्टल और राजस्व कार्यालय ही प्रामाणिक स्रोत हैं। टूल के नतीजे अनुमान हैं।</p>
+        <p data-l="en">LandRecord is an independent information platform, not a government website. It does not issue or verify land records and gives no legal advice. Official portals and revenue offices remain the authoritative source. Tool results are estimates.</p>
       </section>
-      <p class="lr-footer-links"><a href="tools/">Tools</a> · <a href="records/">Records</a> · <a href="states/">States</a> · <a href="guides/">Guides</a> · <a href="search/">Search</a> · <a href="sources/">Sources</a> · <a href="about/">About</a> · <a href="privacy/">Privacy</a> · <a href="disclaimer/">Disclaimer</a></p>
-      <p>© LandRecord · Independent land-information platform</p>
+      <p class="lr-footer-links" data-l="hi"><a href="tools/">टूल्स</a> · <a href="records/">रिकॉर्ड</a> · <a href="states/">राज्य</a> · <a href="guides/">गाइड</a> · <a href="search/">खोज</a> · <a href="sources/">स्रोत</a> · <a href="about/">हमारे बारे में</a> · <a href="privacy/">गोपनीयता</a> · <a href="disclaimer/">अस्वीकरण</a></p>
+      <p class="lr-footer-links" data-l="en"><a href="tools/">Tools</a> · <a href="records/">Records</a> · <a href="states/">States</a> · <a href="guides/">Guides</a> · <a href="search/">Search</a> · <a href="sources/">Sources</a> · <a href="about/">About</a> · <a href="privacy/">Privacy</a> · <a href="disclaimer/">Disclaimer</a></p>
+      <p>© LandRecord · <span data-l="hi">स्वतंत्र भूमि-सूचना प्लेटफ़ॉर्म</span><span data-l="en">Independent land-information platform</span></p>
     </div>
   </footer>
   <script src="assets/js/site-shell.js"></script>

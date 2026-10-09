@@ -1,12 +1,12 @@
 import { parseNumber } from "./land-units.js";
-import { $, loadUnits, mountLocalFields, renderAreaRows, copyLink } from "./shared-ui.js";
+import { $, L, pick, loadUnits, mountLocalFields, renderAreaRows, copyLink } from "./shared-ui.js";
 import * as plot from "./plot-area.js";
 
 const SHAPES = {
   rect: { fields: [["l", "लंबाई / Length"], ["w", "चौड़ाई / Width"]] },
   tri3: { fields: [["a", "भुजा a / Side a"], ["b", "भुजा b / Side b"], ["c", "भुजा c / Side c"]] },
   trih: { fields: [["b", "आधार / Base"], ["h", "ऊँचाई / Height"]] },
-  quad: { fields: [["a", "भुजा AB"], ["b", "भुजा BC"], ["c", "भुजा CD"], ["d", "भुजा DA"], ["e", "विकर्ण AC / Diagonal"]] },
+  quad: { fields: [["a", "भुजा AB / Side AB"], ["b", "भुजा BC / Side BC"], ["c", "भुजा CD / Side CD"], ["d", "भुजा DA / Side DA"], ["e", "विकर्ण AC / Diagonal AC"]] },
   poly: { fields: [] },
 };
 const ERR = {
@@ -33,7 +33,7 @@ async function init() {
       wrap.className = "lr-field";
       const l = document.createElement("label");
       l.htmlFor = `pa-f-${id}`;
-      l.textContent = label;
+      l.textContent = pick(label);
       const i = document.createElement("input");
       i.className = "lr-input";
       i.id = `pa-f-${id}`;
@@ -64,19 +64,19 @@ async function init() {
       case "poly": {
         if (!poly.value.trim()) return;
         const pts = plot.parsePoints(poly.value, parseNumber);
-        if (!pts) { status.textContent = "हर लाइन में दो संख्याएँ लिखें: x, y. / Each line needs two numbers: x, y."; return; }
+        if (!pts) { status.textContent = pick("हर लाइन में दो संख्याएँ लिखें: x, y. / Each line needs two numbers: x, y."); return; }
         r = plot.polygon(pts.map(([x, y]) => [lengthToFt(x), lengthToFt(y)]));
         break;
       }
     }
     if (!r.ok) {
       const anyInput = [...document.querySelectorAll("#pa-fields input")].some((i) => i.value.trim()) || poly.value.trim();
-      if (anyInput) status.textContent = ERR[r.reason] || ERR.invalid;
+      if (anyInput) status.textContent = pick(ERR[r.reason] || ERR.invalid);
       return;
     }
     renderAreaRows($("pa-body"), units, r.area, local.read());
     for (const s of r.steps) { const li = document.createElement("li"); li.textContent = s; steps.append(li); }
-    status.textContent = "क्षेत्रफल (सभी इकाइयों में): / Area in every unit:";
+    status.textContent = pick("क्षेत्रफल (सभी इकाइयों में): / Area in every unit:");
     table.hidden = false;
     writeUrl();
   }
@@ -104,4 +104,4 @@ async function init() {
   buildFields();
   calc();
 }
-init().catch(() => { $("pa-status").textContent = "टूल लोड नहीं हो सका. कृपया पेज रीफ़्रेश करें. / Tool failed to load."; });
+init().catch(() => { $("pa-status").textContent = pick("टूल लोड नहीं हो सका. कृपया पेज रीफ़्रेश करें. / Tool failed to load."); });

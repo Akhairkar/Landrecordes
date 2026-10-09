@@ -1,5 +1,5 @@
 import { parseNumber, convertAll, formatNumber } from "./land-units.js";
-import { $, loadUnits, fillUnitSelect, mountLocalFields, copyLink } from "./shared-ui.js";
+import { $, L, pick, uname, loadUnits, fillUnitSelect, mountLocalFields, copyLink } from "./shared-ui.js";
 
 async function init() {
   const units = await loadUnits();
@@ -22,14 +22,14 @@ async function init() {
     if (!raw.trim()) { table.hidden = true; status.textContent = ""; return; }
     if (!Number.isFinite(n) || n < 0) {
       table.hidden = true;
-      status.textContent = "कृपया सही संख्या लिखें (शून्य या उससे बड़ी). / Enter a valid non-negative number.";
+      status.textContent = pick("कृपया सही संख्या लिखें (शून्य या उससे बड़ी). / Enter a valid non-negative number.");
       return;
     }
     const loc = local.read();
     const fromUnit = units.find((u) => u.id === from.value);
     if (fromUnit.kind === "local" && !loc[fromUnit.id]) {
       table.hidden = true;
-      status.textContent = `${fromUnit.hi} बदलने के लिए ऊपर "स्थानीय इकाइयों का मान" खोलकर 1 ${fromUnit.hi} के वर्ग फुट भरें. / Enter your local value for ${fromUnit.en}.`;
+      status.textContent = pick(`${fromUnit.hi} बदलने के लिए ऊपर "स्थानीय इकाइयों का मान" खोलकर 1 ${fromUnit.hi} के वर्ग फुट भरें. / Enter your local value for ${fromUnit.en}.`);
       $("local-box").open = true;
       return;
     }
@@ -38,14 +38,14 @@ async function init() {
       const tr = document.createElement("tr");
       const th = document.createElement("th");
       th.scope = "row";
-      th.textContent = `${u.hi} / ${u.en}`;
+      th.textContent = uname(u);
       const td = document.createElement("td");
-      if (all[u.id] == null) { td.textContent = "अपना मान भरें"; td.className = "lr-muted-cell"; }
+      if (all[u.id] == null) { td.textContent = L("अपना मान भरें", "Enter your value"); td.className = "lr-muted-cell"; }
       else { td.textContent = formatNumber(all[u.id]); td.className = "num"; }
       tr.append(th, td);
       body.append(tr);
     }
-    status.textContent = `${formatNumber(n)} ${fromUnit.hi} के बराबर: / Equivalent values:`;
+    status.textContent = pick(`${formatNumber(n)} ${fromUnit.hi} के बराबर: / Equivalent values:`);
     table.hidden = false;
     writeUrl(raw.trim(), from.value, loc);
   }
@@ -62,4 +62,4 @@ async function init() {
   if (local.locals.some((u) => q.get(u.id))) $("local-box").open = true;
   render();
 }
-init().catch(() => { $("conv-status").textContent = "टूल लोड नहीं हो सका. कृपया पेज रीफ़्रेश करें. / Tool failed to load."; });
+init().catch(() => { $("conv-status").textContent = pick("टूल लोड नहीं हो सका. कृपया पेज रीफ़्रेश करें. / Tool failed to load."); });

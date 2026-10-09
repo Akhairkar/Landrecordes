@@ -28,21 +28,21 @@ const origin = `http://localhost:${server.address().port}${BASE}`;
 
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_PATH || undefined, args: ["--no-sandbox"] });
 const problems = [];
-for (const theme of ["light", "dark"]) {
+for (const [theme, lang] of [["light", "hi"], ["dark", "hi"], ["light", "en"], ["dark", "en"]]) {
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
-  await ctx.addInitScript((t) => { try { localStorage.setItem("landrecord-theme", t); } catch {} }, theme);
+  await ctx.addInitScript(([t, l]) => { try { localStorage.setItem("landrecord-theme", t); localStorage.setItem("landrecord-language", l); } catch {} }, [theme, lang]);
   const page = await ctx.newPage();
   for (const it of index) {
     await page.goto(origin + it.u, { waitUntil: "load" });
     await page.waitForTimeout(250);
     await page.addScriptTag({ content: axeSrc });
     const r = await page.evaluate(() => axe.run(document, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "best-practice"] } }));
-    for (const v of r.violations) problems.push(`${theme} /${it.u}: ${v.id} [${v.impact}] ${v.help} — ${v.nodes[0].html.slice(0, 120)}`);
+    for (const v of r.violations) problems.push(`${theme}/${lang} /${it.u}: ${v.id} [${v.impact}] ${v.help} — ${v.nodes[0].html.slice(0, 120)}`);
   }
   await ctx.close();
 }
 await browser.close();
 server.close();
-console.log(`axe: ${index.length} pages × 2 themes`);
+console.log(`axe: ${index.length} pages × 2 themes × 2 languages`);
 if (problems.length) { console.error(`${problems.length} accessibility violation(s):`); for (const p of problems) console.error(" ✗", p); process.exit(1); }
 console.log("no accessibility violations");

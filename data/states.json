@@ -38,6 +38,32 @@
           "q": "UP में नाम बदलवाने की प्रक्रिया को क्या कहते हैं?",
           "a": "आम बोलचाल में इसे दाखिल-खारिज (म्यूटेशन) कहा जाता है। आवेदन की सही प्रक्रिया और स्थिति तहसील/आधिकारिक पोर्टल से देखें।"
         }
+      ],
+      "portal_en": "UP Bhulekh",
+      "record_en": "Khatauni (holding-wise), khasra/gata number",
+      "mutation_en": "Dakhil-kharij",
+      "units_en": "Bigha-biswa is common in many districts and varies by place; check the unit in the khasra/khatauni.",
+      "intro_en": "In Uttar Pradesh the main land document is the khatauni, which lists all holders of a khata (holding), their shares and all gata/khasra numbers in it. Records are viewed online on the UP Bhulekh portal.",
+      "steps_en": [
+        "Choose the option to view the khatauni on the portal.",
+        "Select district, tehsil and village.",
+        "Search by holder's name, khasra/gata number or khata/khatauni number, whichever you have.",
+        "Enter the captcha and open the record."
+      ],
+      "watch_en": [
+        "The copy you see online and the certified copy needed for legal/bank work are different. Ask the tehsil/portal about the current certified-copy process.",
+        "Spelling differences in village or holder names commonly cause 'record not found'; searching by khasra/gata number is usually more reliable.",
+        "One khata can have many gatas and one gata many holders; match both the right khata and the right gata."
+      ],
+      "faq_en": [
+        {
+          "q": "What is the difference between khatauni and khasra in UP?",
+          "a": "The khasra/gata is the number of one plot, while the khatauni is the holding record listing holders, shares and all gatas in that khata."
+        },
+        {
+          "q": "What is name change in UP records called?",
+          "a": "Commonly dakhil-kharij (mutation). Check the process and status with the tehsil/official portal."
+        }
       ]
     },
     {
@@ -77,6 +103,32 @@
         {
           "q": "महाराष्ट्र में म्यूटेशन को क्या कहते हैं?",
           "a": "इसे फेरफार कहा जाता है। फेरफार की प्रविष्टियाँ 7/12 से जुड़ी होती हैं।"
+        }
+      ],
+      "portal_en": "Mahabhulekh",
+      "record_en": "7/12 extract (satbara), 8-A, property card (urban)",
+      "mutation_en": "Ferfar",
+      "units_en": "Area in the 7/12 is usually in hectare-are; guntha (40 guntha = 1 acre) and acres are also used.",
+      "intro_en": "In Maharashtra the main rural land record is the 7/12 extract (satbara), and 8-A summarises a holder's holding. Urban areas use the property card (malmatta patrak). According to the district administration's official site, all three are available on Mahabhulekh.",
+      "steps_en": [
+        "On Mahabhulekh choose land records under free services.",
+        "Choose your division/district and continue.",
+        "Pick 7/12, 8-A or property card.",
+        "Select district, taluka and village and search by survey/gat number or name."
+      ],
+      "watch_en": [
+        "The unsigned online copy is for information only; for official/legal work there is a separate paid service for digitally signed copies. Check the current fee on the portal.",
+        "Read the 'other rights' and ferfar columns of the 7/12 before buying; they show encumbrances and entries.",
+        "A digitally signed document can be verified on the portal with its verification number."
+      ],
+      "faq_en": [
+        {
+          "q": "What is the difference between 7/12 and 8-A?",
+          "a": "The 7/12 is the record of one survey/gat number, while 8-A summarises the holder's whole holding khata-wise."
+        },
+        {
+          "q": "What is mutation called in Maharashtra?",
+          "a": "Ferfar. Ferfar entries are linked to the 7/12."
         }
       ]
     },
@@ -118,6 +170,32 @@
           "q": "राजस्थान में नाम चढ़वाने की प्रक्रिया को क्या कहते हैं?",
           "a": "आम तौर पर नामांतरण। आवेदन और उसकी स्थिति पोर्टल/तहसील से देखें।"
         }
+      ],
+      "portal_en": "Apna Khata",
+      "record_en": "Jamabandi, khasra, khata/khatedar",
+      "mutation_en": "Namantaran",
+      "units_en": "People speak of pakka and kachcha bigha; go by the unit recorded in the khasra/jamabandi.",
+      "intro_en": "In Rajasthan the main record of agricultural land is the jamabandi, viewed on the Apna Khata portal. Sources give different addresses for the portal, so use the link you confirm from the official revenue department site.",
+      "steps_en": [
+        "Choose the district (map or list), then tehsil and village. Pick the village's revenue (official) name.",
+        "Choose the jamabandi year.",
+        "Search by khata number, khasra number or holder's name; the khasra number is usually most precise.",
+        "Open the nakal on screen and save it as PDF."
+      ],
+      "watch_en": [
+        "One source says the portal copy is an information copy and cannot replace a certified copy in courts/offices; certified copies come from the patwari/tehsil.",
+        "Some sources say name, mobile and OTP are asked before opening a nakal; this may change.",
+        "If your village isn't listed, its record may not be digitised yet; contact the patwari."
+      ],
+      "faq_en": [
+        {
+          "q": "Is 'Apna Khata' only for Rajasthan?",
+          "a": "Yes. It is Rajasthan's agricultural land portal; land in Bihar or other states will not appear there."
+        },
+        {
+          "q": "What is mutation called in Rajasthan?",
+          "a": "Usually namantaran. Check the application and its status on the portal/tehsil."
+        }
       ]
     },
     {
@@ -155,6 +233,31 @@
         {
           "q": "बी-1 क्या है?",
           "a": "बी-1 मध्य प्रदेश में खतौनी जैसा अधिकार-अभिलेख माना जाता है, जिसमें भूमिस्वामी और खसरे की जानकारी रहती है। सटीक रूप और उपयोग के लिए राजस्व विभाग से पुष्टि करें।"
+        }
+      ],
+      "portal_en": "MP Bhulekh",
+      "record_en": "Khasra, khatauni (B-1), map (Bhu-Naksha)",
+      "mutation_en": "Namantaran",
+      "units_en": "Acres/hectares are common in records; bigha-biswa vary locally.",
+      "intro_en": "In Madhya Pradesh, MP Bhulekh is reported to provide khasra, khatauni and Bhu-Naksha information. The most useful key is the khasra number; the khatauni (B-1) shows the bhumiswami (owner) and shares for that khasra.",
+      "steps_en": [
+        "Choose khasra/khatauni or map on the portal, whichever you need.",
+        "Select district, tehsil, RI circle/halka and village.",
+        "Search by khasra number or owner's name."
+      ],
+      "watch_en": [
+        "Seeing the map does not settle a boundary dispute; demarcation is a separate process, ask the tehsil.",
+        "Before buying, match the area/shares in the B-1 and khasra with the situation on the ground.",
+        "Portal menus and features change; older guides may show different steps."
+      ],
+      "faq_en": [
+        {
+          "q": "What is mutation called in MP?",
+          "a": "Namantaran. Check application status on the official portal or tehsil."
+        },
+        {
+          "q": "What is B-1?",
+          "a": "B-1 is treated as a khatauni-like record of rights in Madhya Pradesh, showing the owner and khasra details. Confirm its exact form and use with the revenue department."
         }
       ]
     },
@@ -195,7 +298,33 @@
           "a": "डिसमिल, सेंट के बराबर माप है: 1 डिसमिल = 1/100 एकड़ = 435.6 वर्ग फुट।"
         }
       ],
-      "example_hi": "मान लीजिए जमाबंदी में लिखा है: रैयत 'रामलाल', खाता 123, खेसरा 456, रकबा 12 कट्ठा 5 धुर। पहले जाँचें कि आपके अंचल में 1 कट्ठा और 1 धुर कितने वर्ग फुट का माना जाता है। फिर कैलकुलेटर में कट्ठा और धुर का वही मान भरकर रकबे को डिसमिल या एकड़ में बदलें। यह उदाहरण काल्पनिक है।"
+      "example_hi": "मान लीजिए जमाबंदी में लिखा है: रैयत 'रामलाल', खाता 123, खेसरा 456, रकबा 12 कट्ठा 5 धुर। पहले जाँचें कि आपके अंचल में 1 कट्ठा और 1 धुर कितने वर्ग फुट का माना जाता है। फिर कैलकुलेटर में कट्ठा और धुर का वही मान भरकर रकबे को डिसमिल या एकड़ में बदलें। यह उदाहरण काल्पनिक है।",
+      "portal_en": "Bihar Bhumi",
+      "record_en": "Jamabandi, khata-khesra",
+      "mutation_en": "Dakhil-kharij",
+      "units_en": "Katha, dhur and decimal (1 decimal = 1 cent) are common; bigha-katha sizes are reported to vary by place.",
+      "intro_en": "In Bihar land is usually identified by the jamabandi (land recorded in a raiyat's name) and khata-khesra numbers. The Bihar Bhumi portal provides jamabandi viewing and information on services such as dakhil-kharij.",
+      "steps_en": [
+        "Choose the option to see your jamabandi/raiyat details.",
+        "Select district, anchal (circle) and mauza (village).",
+        "Search by khata/khesra number or raiyat's name."
+      ],
+      "watch_en": [
+        "Katha and bigha sizes are reported to vary by circle/area, so enter your local value in the tool.",
+        "Match raiyat's name, khata, khesra and area in the jamabandi; any mismatch is corrected at the circle office.",
+        "The new name appears in the jamabandi only after dakhil-kharij; registration alone is not enough."
+      ],
+      "faq_en": [
+        {
+          "q": "What is dakhil-kharij in Bihar?",
+          "a": "The process of changing the name in the government revenue record after a purchase, inheritance etc. Check its current status on the portal/circle office."
+        },
+        {
+          "q": "What is a decimal?",
+          "a": "A decimal equals a cent: 1 decimal = 1/100 acre = 435.6 sq ft."
+        }
+      ],
+      "example_en": "Suppose the jamabandi says: raiyat 'Ramlal', khata 123, khesra 456, area 12 katha 5 dhur. First check how many square feet 1 katha and 1 dhur are in your circle. Then enter those values in the calculator and convert the area to decimals or acres. This example is hypothetical."
     },
     {
       "id": "gujarat",
@@ -234,7 +363,33 @@
           "a": "8-अ खातेदार की होल्डिंग का सार है, यानी उसके नाम दर्ज सभी सर्वे नंबरों का खाता-वार ब्योरा।"
         }
       ],
-      "example_hi": "मान लीजिए 7/12 में रकबा 0-45-50 लिखा है, यानी 0 हेक्टेयर, 45 आर और 50 वर्ग मीटर। 1 आर = 100 वर्ग मीटर, इसलिए कुल 4,550 वर्ग मीटर हुआ, जो करीब 1.12 एकड़ है। इस माप को कैलकुलेटर से एकड़ या गुंठा में बदलकर समझ सकते हैं। यह उदाहरण काल्पनिक है।"
+      "example_hi": "मान लीजिए 7/12 में रकबा 0-45-50 लिखा है, यानी 0 हेक्टेयर, 45 आर और 50 वर्ग मीटर। 1 आर = 100 वर्ग मीटर, इसलिए कुल 4,550 वर्ग मीटर हुआ, जो करीब 1.12 एकड़ है। इस माप को कैलकुलेटर से एकड़ या गुंठा में बदलकर समझ सकते हैं। यह उदाहरण काल्पनिक है।",
+      "portal_en": "AnyRoR Gujarat",
+      "record_en": "7/12 (sat-bara), 8-A, hakk-patrak entries",
+      "mutation_en": "Nondh (entry in the hakk-patrak)",
+      "units_en": "Vigha, guntha and are-sq m are used; the size of a vigha varies.",
+      "intro_en": "Gujarat's land records also rest on the 7/12 and 8-A, viewed through the AnyRoR portal. Entries (nondh) in the hakk-patrak (village form 6) show which right or change was recorded and when.",
+      "steps_en": [
+        "On AnyRoR choose 'Land Record'/7-12.",
+        "Select district, taluka and village.",
+        "Search by survey/block number."
+      ],
+      "watch_en": [
+        "Don't decide from the 7/12 alone; read the linked entries (nondh).",
+        "Survey number and new block number may differ (after resurvey); match both.",
+        "Online and certified copies differ; check the portal's current rules for official work."
+      ],
+      "faq_en": [
+        {
+          "q": "What does a Gujarat 7/12 show?",
+          "a": "The record of one survey/block number: area, holder, type of cultivation and rights."
+        },
+        {
+          "q": "What is 8-A?",
+          "a": "A summary of the holder's holding, i.e. all survey numbers in their name, khata-wise."
+        }
+      ],
+      "example_en": "Suppose a 7/12 shows area 0-45-50, i.e. 0 hectare, 45 are and 50 square metres. 1 are = 100 square metres, so the total is 4,550 square metres, about 1.12 acres. You can convert it to acres or guntha with the calculator. This example is hypothetical."
     },
     {
       "id": "haryana",
@@ -271,6 +426,31 @@
         {
           "q": "एक कनाल में कितने मरला?",
           "a": "1 कनाल = 20 मरला; आम माप के अनुसार 1 मरला = 272.25 वर्ग फुट। कुछ जगह माप अलग हो सकता है।"
+        }
+      ],
+      "portal_en": "Jamabandi (jamabandi.nic.in)",
+      "record_en": "Jamabandi, fard, khewat, khatauni, khasra",
+      "mutation_en": "Intkal",
+      "units_en": "Marla and kanal (1 kanal = 20 marla) are common; acres are also used.",
+      "intro_en": "In Haryana the jamabandi is the main land record and its copy is called a fard. News sources say the digitally signed jamabandi (e-Fard) has been available from the portal since 6 May 2023, reducing visits to the patwari.",
+      "steps_en": [
+        "On the portal choose jamabandi nakal under 'Jamabandi'.",
+        "Select district, tehsil and village.",
+        "Search by owner's name, khewat, khasra/survey number or intkal date."
+      ],
+      "watch_en": [
+        "The e-Fard fee was reported to depend on the number of khewats and may change; check the current fee on the portal before paying.",
+        "Khewat (ownership unit) and khatauni (cultivator details) are different; read both.",
+        "The new name does not appear in the jamabandi until intkal (mutation) is entered."
+      ],
+      "faq_en": [
+        {
+          "q": "What is a fard?",
+          "a": "A copy taken from the jamabandi. In Haryana news sources record that a digitally signed e-Fard is available from the portal."
+        },
+        {
+          "q": "How many marla make a kanal?",
+          "a": "1 kanal = 20 marla; by the common standard 1 marla = 272.25 sq ft. Some places may differ."
         }
       ]
     },
@@ -310,6 +490,31 @@
         {
           "q": "पंजाब में म्यूटेशन को क्या कहते हैं?",
           "a": "इंतकाल। उसकी स्थिति तहसील/पोर्टल से देखें।"
+        }
+      ],
+      "portal_en": "PLRS Jamabandi (Punjab Land Records Society)",
+      "record_en": "Jamabandi, fard, khewat, khatauni, khasra",
+      "mutation_en": "Intkal",
+      "units_en": "Marla and kanal are common; acres are also used.",
+      "intro_en": "In Punjab the jamabandi is viewed on the Punjab Land Records Society (PLRS) portal, where the 'Fard' option gives a report after choosing village, tehsil, district and year. Guides give two different addresses for the portal.",
+      "steps_en": [
+        "Choose 'Fard' on the PLRS portal.",
+        "Select district, tehsil, village and jamabandi year.",
+        "Search by khewat, khasra, khatauni number or owner's name."
+      ],
+      "watch_en": [
+        "Guides disagree on whether a downloaded fard is accepted by banks/offices without tehsil attestation; ask the receiving institution first.",
+        "Some sources say ownership changes first appear in the remarks column; read it before buying.",
+        "There are warnings that no official mobile app exists; avoid fake apps/sites."
+      ],
+      "faq_en": [
+        {
+          "q": "What is PLRS?",
+          "a": "Punjab Land Records Society, the body that runs Punjab's land-records portal."
+        },
+        {
+          "q": "What is mutation called in Punjab?",
+          "a": "Intkal. Check its status at the tehsil/portal."
         }
       ]
     },
@@ -351,6 +556,31 @@
           "q": "दिल्ली भूलेख के दो पते क्यों दिखते हैं?",
           "a": "अलग-अलग स्रोत अलग-अलग डोमेन देते हैं (एक सरकारी दस्तावेज़ में NIC वाला पता है)। जो चालू और आधिकारिक लगे, वही इस्तेमाल करें और नकली साइटों से बचें।"
         }
+      ],
+      "portal_en": "Indraprastha Bhulekh (DLRC)",
+      "record_en": "Khasra-khatauni (under the Delhi Land Reforms Act, 1954)",
+      "mutation_en": "Mutation",
+      "units_en": "Square yards (gaj) and square feet are common in urban areas.",
+      "intro_en": "In Delhi the khasra-khatauni is the record only for land in revenue villages. A Delhi revenue department document mentions Indraprastha Bhu-Lekh (dlrc.delhigovt.nic.in), while other sources give dlrc.delhi.gov.in, so check both addresses.",
+      "steps_en": [
+        "Open the section like 'Khasra-Khatauni Details under DLR Act' on the home page.",
+        "Select district, sub-division and village.",
+        "Search by khata number, khasra number or owner's name."
+      ],
+      "watch_en": [
+        "Secondary sources say DDA flats, planned colonies, lal dora and unauthorised colonies may fall outside this record; for such property see the registered documents and the relevant agency's records.",
+        "Sources also disagree on how far the portal record is proof in court; confirm with the sub-registrar/tehsildar before important transactions.",
+        "Many guides say certified physical copies require an application at the tehsildar's office; ask there for the current process."
+      ],
+      "faq_en": [
+        {
+          "q": "Will every Delhi property be on this portal?",
+          "a": "No. It covers only land in revenue villages; not all kinds of property are included."
+        },
+        {
+          "q": "Why are there two addresses for Delhi Bhulekh?",
+          "a": "Different sources give different domains (a government document uses the NIC address). Use the one that is live and official and avoid fake sites."
+        }
       ]
     },
     {
@@ -387,6 +617,31 @@
         {
           "q": "उत्तराखंड में नाली क्या है?",
           "a": "पहाड़ी इलाकों में चलने वाली स्थानीय क्षेत्रफल इकाई। उसका माप क्षेत्र के अनुसार बदल सकता है, इसलिए हम कोई मान नहीं भरते।"
+        }
+      ],
+      "portal_en": "Bhulekh Uttarakhand",
+      "record_en": "Khatauni, khasra",
+      "mutation_en": "Dakhil-kharij",
+      "units_en": "Local units such as nali are used in the hills, and the size may differ by area.",
+      "intro_en": "The Uttarakhand revenue department's Bhulekh portal is described as providing khatauni/khasra, dakhil-kharij information and maps. We could not confirm its official address from a second source, so the address below is 'confirmation pending'.",
+      "steps_en": [
+        "Look for an option like 'Public ROR' on the portal's home page.",
+        "Select district, tehsil and village.",
+        "Search by khata, khasra number or name."
+      ],
+      "watch_en": [
+        "We have not confirmed the portal's correct address from an official source; confirm the link from the state revenue department's site before use.",
+        "Searches for 'Devbhoomi' or 'Bhulekh' show many fake or helper sites; only the government (gov.in) domain is reliable.",
+        "Hill villages have fragmented holdings and local units; check the unit when reading the area."
+      ],
+      "faq_en": [
+        {
+          "q": "Where can I get the khatauni in Uttarakhand?",
+          "a": "On the state's Bhulekh portal. We have not yet confirmed its official address, so verify it from the revenue department's website."
+        },
+        {
+          "q": "What is a nali in Uttarakhand?",
+          "a": "A local unit of area used in the hills. Its size may vary by area, so we don't prefill any value."
         }
       ]
     },
@@ -428,6 +683,31 @@
           "q": "हिमाचल में म्यूटेशन को क्या कहते हैं?",
           "a": "इंतकाल। उसके चरण और स्थिति पोर्टल/तहसील से देखें।"
         }
+      ],
+      "portal_en": "HimBhoomi",
+      "record_en": "Jamabandi, nakal, shajra nasab, khewat/khatauni/khasra",
+      "mutation_en": "Intkal",
+      "units_en": "Local units like bigha-biswa are used; check the unit in the khasra/jamabandi.",
+      "intro_en": "In Himachal the jamabandi (record of rights) is viewed through the HimBhoomi software. According to Kinnaur district's government site, the public gets jamabandi and shajra nasab copies through it for a nominal fee.",
+      "steps_en": [
+        "Open an option like 'View Land Record' on the revenue department/HimBhoomi portal.",
+        "Select district, tehsil, village and jamabandi year.",
+        "Enter the captcha and search by khasra, khewat or khatauni number."
+      ],
+      "watch_en": [
+        "Sources give two HimBhoomi addresses (himbhoomi.nic.in and himbhoomilmk.nic.in); use the one linked from the official department site.",
+        "Shajra nasab (genealogy) and jamabandi are different documents; both can help in inheritance matters.",
+        "Guides mention starting mutation online, but check current availability on the portal."
+      ],
+      "faq_en": [
+        {
+          "q": "What is shajra nasab?",
+          "a": "A revenue document of the family genealogy, used as a reference in inheritance matters."
+        },
+        {
+          "q": "What is mutation called in Himachal?",
+          "a": "Intkal. Check its steps and status at the portal/tehsil."
+        }
       ]
     },
     {
@@ -465,6 +745,31 @@
         {
           "q": "मस्सावी क्या है?",
           "a": "भूमि का नक्शा/मानचित्र रिकॉर्ड। उपलब्धता और रूप पोर्टल पर देखें।"
+        }
+      ],
+      "portal_en": "J&K Land Records Information System (Aapki Zameen)",
+      "record_en": "Jamabandi, girdawari, massavi, khasra/khata/khewat",
+      "mutation_en": "Intkal (mutation)",
+      "units_en": "The unit is recorded in the jamabandi; local measures may differ by area.",
+      "intro_en": "The J&K revenue department's land records portal is described as offering jamabandi, girdawari (crop/possession record) and mutation information. A news report says jamabandi, massavi, mutation and girdawari can be viewed without registration.",
+      "steps_en": [
+        "Choose the jamabandi/girdawari option on the portal.",
+        "Select district, tehsil and village.",
+        "Search by khasra, khata, khewat number or name; the khasra number is usually more reliable."
+      ],
+      "watch_en": [
+        "The online copy updates on a cycle, so a recent sale/inheritance may not show yet; confirm with the tehsil.",
+        "Name search works only where records are digitised; the khasra number is the safest route.",
+        "Guides say deed and encumbrance checks run on a separate system; check this with the official source."
+      ],
+      "faq_en": [
+        {
+          "q": "What is girdawari?",
+          "a": "A periodic record of which crop is actually grown in a field and who cultivates it."
+        },
+        {
+          "q": "What is massavi?",
+          "a": "The land map record. Check its availability and form on the portal."
         }
       ]
     },
@@ -505,6 +810,32 @@
           "q": "कर्नाटक में 'हिस्सा' क्या है?",
           "a": "सर्वे नंबर का उप-विभाजन। एक सर्वे नंबर कई हिस्सों में बँटा हो सकता है और हर हिस्से का अलग रिकॉर्ड होता है।"
         }
+      ],
+      "portal_en": "Bhoomi — RTC",
+      "record_en": "RTC (Record of Rights, Tenancy and Crops; pahani), mutation report",
+      "mutation_en": "Mutation (mutation register/report)",
+      "units_en": "Guntha and acres (40 guntha = 1 acre) are common; read the area in the unit recorded in the RTC.",
+      "intro_en": "Karnataka's main land record is the RTC — Record of Rights, Tenancy and Crops (pahani). It shows the current position, while the mutation report shows how and when ownership changed. Both are described as available on the Bhoomi portal.",
+      "steps_en": [
+        "Open 'View RTC and MR' on the portal.",
+        "Choose RTC or mutation report.",
+        "Fill district, taluk, hobli, village, survey number and hissa number.",
+        "Enter the captcha and fetch details."
+      ],
+      "watch_en": [
+        "You need the 'hissa' number along with the survey number; the survey number alone won't open the right piece.",
+        "Sources give different service paths; if a link fails, use the portal's own menu.",
+        "RTC and mutation report are different: one shows the current position, the other the history of changes."
+      ],
+      "faq_en": [
+        {
+          "q": "What is an RTC?",
+          "a": "Record of Rights, Tenancy and Crops: the record of rights showing holder, tenancy and crop details."
+        },
+        {
+          "q": "What is 'hissa' in Karnataka?",
+          "a": "A sub-division of a survey number. One survey number can be split into several hissas, each with its own record."
+        }
       ]
     },
     {
@@ -542,6 +873,31 @@
         {
           "q": "भू भारती का आधिकारिक पता क्या है?",
           "a": "हम इसे पक्का नहीं कर पाए। राज्य के राजस्व/पंजीकरण विभाग की साइट से लिंक लें और नकली साइटों से बचें।"
+        }
+      ],
+      "portal_en": "Bhu Bharati (replaced Dharani)",
+      "record_en": "ROR-1B, pahani",
+      "mutation_en": "Mutation",
+      "units_en": "Guntha and acres (40 guntha = 1 acre) are common; check the unit in the record.",
+      "intro_en": "News sources report that the Bhu Bharati portal started in Telangana on 14 April 2025 and replaced Dharani. Under the new law, processes such as registration, mutation, appeals and ROR correction are reported to be included. We could not confirm its official web address from any source, so no link is given below.",
+      "steps_en": [
+        "Get the Bhu Bharati link from the official website of the state revenue or registration-stamps department.",
+        "Look for the option to view ROR-1B or pahani on the portal.",
+        "Search by district, mandal, village and survey number."
+      ],
+      "watch_en": [
+        "Old Dharani links or guides may no longer work, as news sources report Bhu Bharati replaced Dharani; don't rely on outdated information.",
+        "Sources disagree on pilot mandals and rollout dates; ask the portal/tehsil whether the service is live in your mandal.",
+        "We have not verified details such as which officer handles which application (e.g. corrections)."
+      ],
+      "faq_en": [
+        {
+          "q": "Is Dharani still working?",
+          "a": "News sources report that Bhu Bharati replaced Dharani. Check the current position in your area from the official source."
+        },
+        {
+          "q": "What is Bhu Bharati's official address?",
+          "a": "We could not confirm it. Get the link from the state revenue/registration department's site and avoid fake sites."
         }
       ]
     },
@@ -583,6 +939,32 @@
           "q": "सेंट क्या है?",
           "a": "1 सेंट = 1/100 एकड़ = 435.6 वर्ग फुट।"
         }
+      ],
+      "portal_en": "Meebhoomi",
+      "record_en": "Adangal, 1-B, khata",
+      "mutation_en": "Mutation",
+      "units_en": "Guntha/cent and acres are common; 100 cent = 1 acre.",
+      "intro_en": "In Andhra Pradesh two records matter most: the adangal, which shows what is actually on the land, and the 1-B, which shows the holder as the record of rights. Both are viewed on Meebhoomi, a site described as mainly in Telugu.",
+      "steps_en": [
+        "Choose the Adangal or 1-B tab on the home page.",
+        "Choose 'your' or 'whole village'.",
+        "Select district, mandal and village.",
+        "Search by survey number, khata number or landowner's name and enter the captcha."
+      ],
+      "watch_en": [
+        "One guide says survey numbers may change in resurveyed (Bhu Hakku) villages; match with the latest adangal.",
+        "Guides list MeeSeva or the MRO/tahsildar office for certified copies; ask there for the current process and fee.",
+        "The site is in Telugu; Hindi speakers may need help from a Telugu reader, or note the survey number in advance."
+      ],
+      "faq_en": [
+        {
+          "q": "What is the difference between adangal and 1-B?",
+          "a": "The adangal shows what is actually sown or used on the land, while the 1-B is the record of rights showing the holder."
+        },
+        {
+          "q": "What is a cent?",
+          "a": "1 cent = 1/100 acre = 435.6 sq ft."
+        }
       ]
     },
     {
@@ -621,6 +1003,32 @@
         {
           "q": "FMB क्या है?",
           "a": "Field Measurement Book का रेखाचित्र, जो एक सर्वे नंबर की सीमा/आकार दिखाता है।"
+        }
+      ],
+      "portal_en": "Tamil Nadu e-Services (Patta/Chitta, A-Register, FMB)",
+      "record_en": "Patta/chitta, A-Register (adangal), FMB (boundary sketch), TSLR",
+      "mutation_en": "Name change in the patta",
+      "units_en": "Cents, grounds and acres are used; check the unit in the record.",
+      "intro_en": "In Tamil Nadu records are known as patta and chitta. One source says a separate chitta has not been issued since 2015 and the patta itself carries holder, survey number, classification and area. The national services directory lists viewing patta and A-Register on Tamil Nadu e-Services.",
+      "steps_en": [
+        "On e-Services choose 'View Patta & FMB / Chitta / TSLR Extract' or 'View A Register Extract'.",
+        "Choose the district, then rural or urban.",
+        "Choose taluk and village (or town and ward for urban).",
+        "Enter survey and sub-division numbers and view with the captcha."
+      ],
+      "watch_en": [
+        "Guides say the encumbrance certificate comes from the registration department's separate system (TNREGINET), not revenue e-Services.",
+        "One guide says a name change in the patta cannot be done online and needs an office visit; ask the portal/taluk office about the current position.",
+        "The FMB (boundary sketch) and A-Register are different records; some sources mix them up, so check the document name on the portal."
+      ],
+      "faq_en": [
+        {
+          "q": "What was the difference between patta and chitta?",
+          "a": "The patta gave ownership-like details and the chitta cultivation/use. One source says since 2015 a separate chitta is not issued and the details are in one patta."
+        },
+        {
+          "q": "What is FMB?",
+          "a": "The Field Measurement Book sketch showing a survey number's boundary/shape."
         }
       ]
     },
@@ -662,6 +1070,32 @@
           "q": "RS और LR नंबर का फर्क क्यों?",
           "a": "अलग-अलग सर्वे/संशोधन के समय अलग प्लॉट नंबर दिए गए हो सकते हैं; पुराने कागज़ में RS और नए रिकॉर्ड में LR नंबर मिल सकता है।"
         }
+      ],
+      "portal_en": "Banglarbhumi",
+      "record_en": "Khatian, plot information, RS-LR plot information",
+      "mutation_en": "Mutation",
+      "units_en": "Units such as decimal, katha and acre are used; check the unit in the record.",
+      "intro_en": "In West Bengal land records are seen as khatian and plot details. The Banglarbhumi portal is described as showing information by khatian or plot number after choosing district, block and mouza.",
+      "steps_en": [
+        "Open an option like 'Know Your Property' on the portal.",
+        "Select district, block and mouza.",
+        "Search by khatian number or plot number.",
+        "Enter the captcha and view."
+      ],
+      "watch_en": [
+        "RS (revisional survey) and LR (land record) plot numbers may differ; the portal is said to offer conversion between them.",
+        "Some sources say basic search works without an account, others that some services need login; go by what the screen shows.",
+        "A separate paid certified porcha (e-porcha) service is mentioned; check the current fee and status on the portal."
+      ],
+      "faq_en": [
+        {
+          "q": "What is a khatian?",
+          "a": "The record of a holder showing name, share and the list of their plots."
+        },
+        {
+          "q": "Why do RS and LR numbers differ?",
+          "a": "Different plot numbers may have been given in different surveys/revisions; old papers may have RS numbers and new records LR numbers."
+        }
       ]
     },
     {
@@ -701,6 +1135,31 @@
         {
           "q": "किसम क्या है?",
           "a": "जमीन का वर्ग (जैसे कृषि, आवासीय), जो उसके उपयोग और बिक्री/रूपांतरण की संभावनाओं पर असर डालता है।"
+        }
+      ],
+      "portal_en": "Bhulekh Odisha",
+      "record_en": "Khatiyan (RoR), plot list, Bhu-Naksha (separate site)",
+      "mutation_en": "Mutation",
+      "units_en": "Acres and decimals are common; also check the 'kisam' (land class) in the record.",
+      "intro_en": "In Odisha the record of rights is called the khatiyan. One guide says it is prima facie evidence of possession, not conclusive proof of ownership. Most sources give the Bhulekh address as bhulekh.ori.nic.in and one gives bhulekh.odisha.gov.in.",
+      "steps_en": [
+        "Select district, tahasil, RI circle and village; choosing the right RI circle is said to be essential.",
+        "Choose search type: khatiyan number, plot number, tenant name or plot list.",
+        "Read owner's name, father/husband's name, area and kisam in the record."
+      ],
+      "watch_en": [
+        "The record's 'kisam' (land class) decides whether land can be sold, converted or built on; read it before buying.",
+        "A separate Bhu-Naksha site is mentioned for maps; compare both, but don't treat the map as a final boundary decision.",
+        "Sources give two addresses; use the one linked from the official site."
+      ],
+      "faq_en": [
+        {
+          "q": "Does the khatiyan prove ownership?",
+          "a": "One guide says it is prima facie evidence of possession, not conclusive ownership. Also check the registered deed."
+        },
+        {
+          "q": "What is kisam?",
+          "a": "The land class (e.g. agricultural, residential), which affects its use and the possibility of sale/conversion."
         }
       ]
     },
@@ -745,6 +1204,35 @@
           "q": "छत्तीसगढ़ में म्यूटेशन को क्या कहते हैं?",
           "a": "आम तौर पर नामांतरण। आवेदन और स्थिति तहसील/पोर्टल से देखें।"
         }
+      ],
+      "portal_en": "Bhuiyan",
+      "record_en": "B-1 (khasra nakal, record of rights), P-II",
+      "mutation_en": "Namantaran",
+      "units_en": "Acres and hectares are common in records; check the unit of area.",
+      "intro_en": "Chhattisgarh was carved out of Madhya Pradesh in November 2000, so several old land-record terms (such as B-1 and P-II) are the same as in MP. The B-1 is treated as the main land register with khasra, owner, area, crop and encumbrance details, and is obtained from the Bhuiyan portal.",
+      "steps_en": [
+        "Choose 'B1/PII प्राप्त करें' (get B1/PII) in the portal menu.",
+        "Starting from your district, choose tehsil, revenue inspector (RI) circle and then village.",
+        "Enter the khasra number (owner-name search is also mentioned) and open the PDF."
+      ],
+      "watch_en": [
+        "Sources disagree on whether a digitally signed copy is accepted by banks or registration; ask the patwari or tehsil.",
+        "Read the encumbrance and remarks columns of the B-1 carefully before buying; entries there signal later problems.",
+        "Bhu-Naksha is mentioned as a separate service; check its availability and form on the portal."
+      ],
+      "faq_en": [
+        {
+          "q": "What is B-1?",
+          "a": "In Chhattisgarh, the main copy of the record of rights with khasra, owner, area, crop and encumbrance details."
+        },
+        {
+          "q": "How is Chhattisgarh's B-1 related to MP's B-1?",
+          "a": "The same name is used in both because Chhattisgarh was earlier part of MP. Each state still has its own form and portal, so use your own state's portal."
+        },
+        {
+          "q": "What is mutation called in Chhattisgarh?",
+          "a": "Usually namantaran. Check the application and status at the tehsil/portal."
+        }
       ]
     },
     {
@@ -784,6 +1272,31 @@
         {
           "q": "झारखंड में म्यूटेशन को क्या कहते हैं?",
           "a": "आम तौर पर दाखिल-खारिज। आवेदन और स्थिति पोर्टल/अंचल कार्यालय से देखें।"
+        }
+      ],
+      "portal_en": "Jharbhoomi",
+      "record_en": "Khatiyan (record of rights), Register-II (jamabandi and mutation details)",
+      "mutation_en": "Dakhil-kharij",
+      "units_en": "Katha, dhur, decimal and acre are common; sizes may vary by place.",
+      "intro_en": "In Jharkhand the khatiyan is the record of rights, listing the khatiyan number, plots, area, recorded holders and their shares, and a description of rights. Register-II shows jamabandi and mutation details. The district administration's site links to the Jharbhoomi service.",
+      "steps_en": [
+        "Choose the option to view your khatiyan/jamabandi on Jharbhoomi.",
+        "Select district, anchal (circle), mauza and khata/plot.",
+        "Search by khatiyan number, plot number or name."
+      ],
+      "watch_en": [
+        "The 'description of rights' may flag restrictions such as CNT/SPT; read it before buying and ask a lawyer about the special laws.",
+        "Sources give two Jharbhoomi addresses (nic.in and jharkhand.gov.in); use the one linked from the official site and avoid unofficial sites like jharbhoomi.com.",
+        "One source says the khatiyan does not create ownership; the ownership chain is seen from the registered deed."
+      ],
+      "faq_en": [
+        {
+          "q": "What is Register-II?",
+          "a": "The register holding jamabandi and mutation details, showing how the current entry was reached."
+        },
+        {
+          "q": "What is mutation called in Jharkhand?",
+          "a": "Usually dakhil-kharij. Check the application and status on the portal/circle office."
         }
       ]
     }

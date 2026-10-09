@@ -2,6 +2,14 @@
 import { parseNumber, convertAll, formatNumber } from "./land-units.js";
 
 export const $ = (id) => document.getElementById(id);
+export const lang = () => (document.documentElement.lang === "en" ? "en" : "hi");
+/** Pick the Hindi or English text for the current page language. */
+export const L = (hi, en) => (lang() === "en" ? en : hi);
+/** "हिंदी / English" → the part for the current language (splits on the last " / "). */
+export const pick = (s) => { const t = String(s); const i = t.lastIndexOf(" / "); return i < 0 ? t : lang() === "en" ? t.slice(i + 3) : t.slice(0, i); };
+export const uname = (u) => L(`${u.hi} (${u.en})`, `${u.en} (${u.hi})`);
+// Tool pages re-initialise in the new language; their inputs live in the URL, so nothing is lost.
+document.addEventListener("landrecord:languagechange", () => location.reload());
 
 export async function loadUnits() {
   const res = await fetch(new URL("data/units.json", document.baseURI));
@@ -13,7 +21,7 @@ export function fillUnitSelect(select, units) {
   for (const u of units) {
     const o = document.createElement("option");
     o.value = u.id;
-    o.textContent = `${u.hi} / ${u.en}`;
+    o.textContent = uname(u);
     select.append(o);
   }
 }
@@ -26,7 +34,7 @@ export function mountLocalFields(container, units, onInput) {
     wrap.className = "lr-field";
     const label = document.createElement("label");
     label.htmlFor = `local-${u.id}`;
-    label.textContent = `1 ${u.hi} = ? वर्ग फुट`;
+    label.textContent = L(`1 ${u.hi} = ? वर्ग फुट`, `1 ${u.en} = ? sq ft`);
     const input = document.createElement("input");
     input.className = "lr-input";
     input.id = `local-${u.id}`;
@@ -34,7 +42,7 @@ export function mountLocalFields(container, units, onInput) {
     input.autocomplete = "off";
     input.addEventListener("input", onInput);
     const hint = document.createElement("small");
-    hint.textContent = u.note_hi;
+    hint.textContent = L(u.note_hi, u.note_en);
     wrap.append(label, input, hint);
     container.append(wrap);
   }
@@ -60,9 +68,9 @@ export function renderAreaRows(tbody, units, sqft, local) {
     const tr = document.createElement("tr");
     const th = document.createElement("th");
     th.scope = "row";
-    th.textContent = `${u.hi} / ${u.en}`;
+    th.textContent = uname(u);
     const td = document.createElement("td");
-    if (all[u.id] == null) { td.textContent = "अपना मान भरें"; td.className = "lr-muted-cell"; }
+    if (all[u.id] == null) { td.textContent = L("अपना मान भरें", "Enter your value"); td.className = "lr-muted-cell"; }
     else { td.textContent = formatNumber(all[u.id]); td.className = "num"; }
     tr.append(th, td);
     tbody.append(tr);
@@ -71,7 +79,7 @@ export function renderAreaRows(tbody, units, sqft, local) {
 
 export function copyLink(statusEl) {
   return navigator.clipboard.writeText(location.href).then(
-    () => { statusEl.textContent = "लिंक कॉपी हो गया. / Link copied."; },
+    () => { statusEl.textContent = pick("लिंक कॉपी हो गया. / Link copied."); },
     () => { statusEl.textContent = "लिंक कॉपी नहीं हो सका; एड्रेस बार से कॉपी करें. / Copy from the address bar."; }
   );
 }

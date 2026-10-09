@@ -8,7 +8,7 @@ function update() {
   const done = boxes.filter((b) => b.checked).length;
   out.innerHTML = "";
   const s = document.createElement("strong");
-  s.textContent = `${done} / ${boxes.length} पूरे`;
+  s.textContent = document.documentElement.lang === "en" ? `${done} of ${boxes.length} done` : `${done} / ${boxes.length} पूरे`;
   out.append(s);
   try { localStorage.setItem(KEY, JSON.stringify(boxes.map((b) => b.checked))); } catch {}
 }
@@ -16,3 +16,4 @@ boxes.forEach((b) => b.addEventListener("change", update));
 document.getElementById("ck-reset").addEventListener("click", () => { boxes.forEach((b) => (b.checked = false)); update(); });
 document.getElementById("ck-print").addEventListener("click", () => window.print());
 update();
+document.addEventListener("landrecord:languagechange", update);

@@ -3,45 +3,58 @@
   "goals": [
     {
       "id": "view",
-      "label_hi": "रिकॉर्ड (खतौनी/जमाबंदी/7-12) देखना है"
+      "label_hi": "रिकॉर्ड (खतौनी/जमाबंदी/7-12) देखना है",
+      "label_en": "See my record (khatauni/jamabandi/7-12)"
     },
     {
       "id": "certified",
-      "label_hi": "बैंक/कोर्ट/कार्यालय के लिए प्रमाणित या आधिकारिक प्रति चाहिए"
+      "label_hi": "बैंक/कोर्ट/कार्यालय के लिए प्रमाणित या आधिकारिक प्रति चाहिए",
+      "label_en": "I need a certified/official copy for a bank/court/office"
     },
     {
       "id": "mutation",
-      "label_hi": "नाम बदलवाना है / म्यूटेशन की स्थिति देखनी है"
+      "label_hi": "नाम बदलवाना है / म्यूटेशन की स्थिति देखनी है",
+      "label_en": "Change the name / check mutation status"
     },
     {
       "id": "map",
-      "label_hi": "जमीन का नक्शा देखना है"
+      "label_hi": "जमीन का नक्शा देखना है",
+      "label_en": "See the land map"
     },
     {
       "id": "understand",
-      "label_hi": "रिकॉर्ड के शब्द समझने हैं"
+      "label_hi": "रिकॉर्ड के शब्द समझने हैं",
+      "label_en": "Understand the record's terms"
     }
   ],
   "haves": [
     {
       "id": "khasra",
       "label_hi": "मेरे पास खसरा / सर्वे / गट नंबर है",
-      "advice_hi": "यह सबसे सटीक खोज-कुंजी है। गाँव का सही राजस्व नाम चुनकर इसी से खोजें।"
+      "advice_hi": "यह सबसे सटीक खोज-कुंजी है। गाँव का सही राजस्व नाम चुनकर इसी से खोजें।",
+      "label_en": "I have a khasra / survey / gat number",
+      "advice_en": "This is the most precise search key. Choose the village's correct revenue name and search with it."
     },
     {
       "id": "khata",
       "label_hi": "मेरे पास खाता / खेवट / खतौनी नंबर है",
-      "advice_hi": "खाता-संख्या से रिकॉर्ड मिल जाता है, पर एक खाते में कई खसरे हो सकते हैं; अपना खसरा अलग से मिलाएँ।"
+      "advice_hi": "खाता-संख्या से रिकॉर्ड मिल जाता है, पर एक खाते में कई खसरे हो सकते हैं; अपना खसरा अलग से मिलाएँ।",
+      "label_en": "I have a khata / khewat / khatauni number",
+      "advice_en": "A khata number finds the record, but one khata can have several plots; match your khasra separately."
     },
     {
       "id": "owner",
       "label_hi": "मेरे पास सिर्फ मालिक का नाम है",
-      "advice_hi": "नाम की स्पेलिंग रिकॉर्ड में अलग हो सकती है और हर जगह नाम से खोज उपलब्ध/सही नहीं होती। कोशिश करें कि पहले पुरानी रजिस्ट्री या रसीद से खसरा/खाता निकाल लें।"
+      "advice_hi": "नाम की स्पेलिंग रिकॉर्ड में अलग हो सकती है और हर जगह नाम से खोज उपलब्ध/सही नहीं होती। कोशिश करें कि पहले पुरानी रजिस्ट्री या रसीद से खसरा/खाता निकाल लें।",
+      "label_en": "I only have the owner's name",
+      "advice_en": "Spellings may differ in the record and name search is not available/accurate everywhere. Try to get the khasra/khata from an old deed or receipt first."
     },
     {
       "id": "nothing",
       "label_hi": "मुझे कुछ भी नंबर नहीं पता",
-      "advice_hi": "पुरानी रजिस्ट्री, लगान/कर रसीद, बैंक/ऋण के कागज़ या परिवार के पुराने रिकॉर्ड में खसरा/खाता ढूँढें, या संबंधित पटवारी/लेखपाल/तलाठी/हल्का कर्मचारी से पूछें।"
+      "advice_hi": "पुरानी रजिस्ट्री, लगान/कर रसीद, बैंक/ऋण के कागज़ या परिवार के पुराने रिकॉर्ड में खसरा/खाता ढूँढें, या संबंधित पटवारी/लेखपाल/तलाठी/हल्का कर्मचारी से पूछें।",
+      "label_en": "I don't know any number",
+      "advice_en": "Look for the khasra/khata in an old deed, rent/tax receipt, bank/loan papers or old family records, or ask the local revenue official (patwari/lekhpal/talathi)."
     }
   ],
   "goal_advice": {
@@ -50,5 +63,12 @@
     "mutation": "रजिस्ट्री या उत्तराधिकार के बाद राजस्व रिकॉर्ड में नाम बदलवाने के लिए अलग आवेदन लगता है। आवेदन, समय-सीमा और स्थिति की जाँच आपके राज्य के पोर्टल/तहसील पर होती है; हमने इनकी राज्य-वार समय-सीमा या शुल्क सत्यापित नहीं किया है।",
     "map": "नक्शे की उपलब्धता राज्य-वार अलग है और राज्य पोर्टल पर देखनी होती है। LandRecord कोई आधिकारिक नक्शा नहीं देता, और तीसरे पक्ष के नक्शे को सरकारी भू-नक्शा न समझें।",
     "understand": "अपने राज्य में इन शब्दों का सही मतलब नीचे दिए 'राज्य में नाम' से देखें और शब्दकोश टूल खोलें।"
+  },
+  "goal_advice_en": {
+    "view": "The usual order for viewing a record on the state portal is shown above. The copy seen online is usually for information only.",
+    "certified": "The copy seen online and a certified/digitally signed copy may differ. Ask the institution you are submitting to which copy is accepted. Certified copies usually come from the tehsil/patwari office or the state's designated online service; check the current process and fee on the state portal — we have not verified them.",
+    "mutation": "After registration or inheritance a separate application is needed to change the name in the revenue record. Application, time limits and status checks are on your state's portal/tehsil; we have not verified state-wise time limits or fees.",
+    "map": "Map availability differs by state and must be checked on the state portal. LandRecord does not provide official maps, and third-party maps are not government cadastral maps.",
+    "understand": "See what these terms mean in your state from 'local name' above and open the glossary tool."
   }
 }
