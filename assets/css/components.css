@@ -68,3 +68,95 @@ textarea.lr-input{min-height:120px;resize:vertical}
 .lr-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .lr-link-card h2.lr-card-h{margin:0 0 6px;font-size:18px;color:var(--lr-brand)}
 .lr-table-wrap:focus-visible{outline:none;box-shadow:var(--lr-focus)}
+
+/* ===== Design v2 (land palette) ===== */
+body{background:var(--lr-bg)}
+h1{color:var(--lr-text)}
+main > h1::after,.lr-page-main > h1::after{content:"";display:block;width:72px;height:5px;margin-top:12px;border-radius:999px;background:linear-gradient(90deg,var(--lr-c-field) 0 40%,var(--lr-c-wheat) 40% 70%,var(--lr-c-soil) 70% 100%)}
+h2{color:var(--lr-text)}
+.lr-prose h2,.lr-page-main > section > h2{padding-left:12px;border-left:5px solid var(--lr-c-field)}
+.lr-prose h2:nth-of-type(4n+2){border-left-color:var(--lr-c-wheat)}
+.lr-prose h2:nth-of-type(4n+3){border-left-color:var(--lr-c-river)}
+.lr-prose h2:nth-of-type(4n+4){border-left-color:var(--lr-c-soil)}
+a{color:var(--lr-brand);text-underline-offset:3px}
+
+/* Hero: full-bleed band without horizontal overflow */
+.lr-hero{position:relative;color:var(--lr-hero-text);background:linear-gradient(135deg,var(--lr-hero-from),var(--lr-hero-to));box-shadow:0 0 0 100vmax var(--lr-hero-from);clip-path:inset(0 -100vmax);padding:clamp(28px,6vw,56px) 0 clamp(28px,5vw,44px);margin:-24px 0 28px}
+.lr-hero::before{content:"";position:absolute;inset:0 -100vmax;pointer-events:none;opacity:.14;background-image:repeating-linear-gradient(115deg,transparent 0 26px,rgb(255 255 255 / 55%) 26px 27px),repeating-linear-gradient(25deg,transparent 0 40px,rgb(255 224 138 / 60%) 40px 41px)}
+.lr-hero > *{position:relative}
+.lr-hero h1{color:var(--lr-hero-text)}
+.lr-hero h1::after{background:linear-gradient(90deg,#ffe08a 0 50%,#f6b48c 50% 100%)}
+.lr-hero .lr-lead,.lr-hero .lr-en{color:var(--lr-hero-muted)}
+.lr-hero .lr-card{color:var(--lr-text);border:0;box-shadow:0 18px 40px rgb(0 0 0 / 22%)}
+.lr-hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+.lr-hero-pills li{background:rgb(255 255 255 / 14%);border:1px solid rgb(255 255 255 / 30%);color:#fff;border-radius:999px;padding:6px 12px;font-size:14px;font-weight:600}
+
+/* Section bands */
+.lr-band{position:relative;padding:28px 0 32px;margin:28px 0;background:var(--lr-band,var(--lr-surface-muted));box-shadow:0 0 0 100vmax var(--lr-band,var(--lr-surface-muted));clip-path:inset(0 -100vmax)}
+.lr-band.field{--lr-band:var(--lr-c-field-soft)}
+.lr-band.wheat{--lr-band:var(--lr-c-wheat-soft)}
+.lr-band.river{--lr-band:var(--lr-c-river-soft)}
+.lr-eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--lr-accent);margin:0 0 4px}
+
+/* Colour cards */
+.lr-link-card{position:relative;border-top:5px solid var(--cc,var(--lr-c-field));transition:transform .15s ease,box-shadow .15s ease}
+.lr-link-card:hover{transform:translateY(-3px);box-shadow:var(--lr-shadow-lg)}
+.lr-link-card h3,.lr-link-card h2.lr-card-h{color:var(--cc,var(--lr-c-field))}
+.lr-grid > .lr-link-card:nth-child(5n+1){--cc:var(--lr-c-field);--cs:var(--lr-c-field-soft)}
+.lr-grid > .lr-link-card:nth-child(5n+2){--cc:var(--lr-c-soil);--cs:var(--lr-c-soil-soft)}
+.lr-grid > .lr-link-card:nth-child(5n+3){--cc:var(--lr-c-river);--cs:var(--lr-c-river-soft)}
+.lr-grid > .lr-link-card:nth-child(5n+4){--cc:var(--lr-c-wheat);--cs:var(--lr-c-wheat-soft)}
+.lr-grid > .lr-link-card:nth-child(5n+5){--cc:var(--lr-c-dusk);--cs:var(--lr-c-dusk-soft)}
+.lr-ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--cs,var(--lr-c-field-soft));color:var(--cc,var(--lr-c-field));margin-bottom:12px}
+.lr-ico svg{width:24px;height:24px}
+
+/* Tool / content cards */
+.lr-card{border-radius:var(--lr-radius-lg)}
+section.lr-card{border-top:5px solid var(--lr-c-field)}
+.lr-btn{background:var(--lr-brand);box-shadow:0 2px 0 var(--lr-brand-strong)}
+.lr-btn:hover{background:var(--lr-brand-strong)}
+.lr-notice{border-left:5px solid var(--lr-accent)}
+
+/* Chips: cycle land colours */
+.lr-chips a{border:0;background:var(--cs);color:var(--cc)}
+.lr-chips a:nth-child(5n+1){--cc:var(--lr-c-field);--cs:var(--lr-c-field-soft)}
+.lr-chips a:nth-child(5n+2){--cc:var(--lr-c-soil);--cs:var(--lr-c-soil-soft)}
+.lr-chips a:nth-child(5n+3){--cc:var(--lr-c-river);--cs:var(--lr-c-river-soft)}
+.lr-chips a:nth-child(5n+4){--cc:var(--lr-c-wheat);--cs:var(--lr-c-wheat-soft)}
+.lr-chips a:nth-child(5n+5){--cc:var(--lr-c-dusk);--cs:var(--lr-c-dusk-soft)}
+.lr-chips a:hover{filter:brightness(.96);text-decoration:underline}
+
+/* Tables */
+.lr-table thead th{background:var(--lr-brand);color:var(--lr-surface)}
+.lr-table tbody tr:nth-child(even){background:var(--lr-surface-muted)}
+.lr-table{background:var(--lr-surface);border-radius:var(--lr-radius-md);overflow:hidden}
+
+/* Badges */
+.lr-badge{background:var(--lr-c-wheat-soft);color:var(--lr-c-wheat);border:0}
+.lr-badge.ok{background:var(--lr-c-field-soft);color:var(--lr-c-field)}
+
+/* Results */
+.lr-result{border-left-color:var(--lr-c-river)}
+.lr-result:nth-child(3n+2){border-left-color:var(--lr-c-field)}
+.lr-result:nth-child(3n+3){border-left-color:var(--lr-c-soil)}
+
+/* Footer: deep green */
+.lr-footer{background:var(--lr-footer-bg);color:var(--lr-footer-text);border-top:0;margin-top:40px;padding-top:28px}
+.lr-footer p{color:var(--lr-footer-muted)}
+.lr-footer a{color:var(--lr-footer-link)}
+.lr-footer .lr-disclaimer{background:rgb(255 255 255 / 6%);border:1px solid rgb(255 255 255 / 18%)}
+.lr-footer .lr-disclaimer h2{color:var(--lr-footer-text)}
+.lr-footer .lr-disclaimer p{color:var(--lr-footer-muted)}
+.lr-footer .lr-en{color:var(--lr-footer-muted)}
+
+/* Language switching: one language visible at a time */
+html[lang="hi"] [data-l="en"],html[lang="en"] [data-l="hi"]{display:none!important}
+@media(prefers-reduced-motion:reduce){.lr-link-card{transition:none}.lr-link-card:hover{transform:none}}
+/* Full-bleed bands must never create sideways scroll */
+html,body{overflow-x:clip}
+@supports not (overflow:clip){html,body{overflow-x:hidden}}
+/* Full-bleed v2: extend bands with margins (html clips the extra width) so patterns span the whole width */
+.lr-hero,.lr-band{box-shadow:none;clip-path:none;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding-left:calc(50vw - 50%);padding-right:calc(50vw - 50%)}
+.lr-band{background:var(--lr-band,var(--lr-surface-muted))}
+.lr-hero::before{inset:0}
+.lr-band.lr-prose{max-width:none}

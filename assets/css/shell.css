@@ -12,3 +12,9 @@
 .lr-nav a:focus-visible,.lr-action:focus-visible,.lr-menu-toggle:focus-visible,.lr-mobile-nav a:focus-visible,.lr-brand:focus-visible{outline:none;box-shadow:var(--lr-focus)}
 @media(max-width:820px){.lr-header{gap:8px;padding:8px 12px}.lr-brand-text{font-size:16px}.lr-nav{display:none}.lr-actions{margin-left:auto}.lr-action span{display:none}.lr-menu-toggle{display:inline-flex;border:1px solid var(--lr-border)}.lr-mobile-nav{justify-content:flex-start}}
 @media(max-width:480px){.lr-header{min-height:60px}.lr-brand-mark{width:32px;height:32px}.lr-brand-text{max-width:104px;overflow:hidden;text-overflow:ellipsis}.lr-action,.lr-menu-toggle{padding:7px 9px}.lr-shell-disclaimer{text-align:left}}
+/* Design v2: land stripe on top of header, green brand mark */
+.lr-header::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--lr-c-field) 0 30%,var(--lr-c-wheat) 30% 55%,var(--lr-c-soil) 55% 80%,var(--lr-c-river) 80% 100%)}
+.lr-header{padding-top:14px}
+.lr-brand-mark{background:linear-gradient(135deg,var(--lr-hero-from),var(--lr-hero-to));color:#fff}
+.lr-nav a.is-active{color:var(--lr-brand);background:var(--lr-brand-soft);font-weight:700}
+.lr-search-action{background:var(--lr-brand-soft);border-color:transparent;color:var(--lr-brand)}
