@@ -182,3 +182,16 @@ Do not use:
 Land-inspired, not government-like: warm paper background, deep field green as the brand colour, soil/terracotta as the accent, wheat-toned neutral surfaces. Blue-and-saffron or emblem-like palettes remain forbidden.
 
 All text/background pairs used by components meet WCAG AA (measured 5.0:1 or higher for muted text, brand and accent on their surfaces, in both themes). Change tokens in `assets/css/design-system.css` only; components must not hard-code colours.
+
+## Design v2 — land palette (owner request 2026-10-09: "more attractive colours")
+
+- Category colours: field green, soil/terracotta, wheat/mustard, river blue, dusk violet (`--lr-c-*` with `-soft` backgrounds). Cards, chips, section rules and result boxes cycle through them; every foreground/soft pair passes WCAG AA in light and dark (verified by the axe gate).
+- Green gradient hero with a subtle field-furrow pattern, coloured full-bleed section bands, a four-colour land stripe on the header, deep-green footer.
+- Inline SVG icon set (`scripts/icons.mjs`, used as `{{icon:name}}`); no icon font or library.
+
+## Language architecture (decision 2026-10-09)
+
+- One URL per page; Hindi and English live on the same page and `html[lang]` decides which is shown (`[data-l="hi"]` / `[data-l="en"]`). The header toggle switches instantly and is remembered in the browser.
+- Sources: `index.en.html` next to a page holds its English body; tool pages carry inline `data-l` blocks so the interactive tool exists once; state pages render English from `*_en` fields in `data/states.json`.
+- `हिंदी <span class="lr-en">/ English</span>` in headings, labels and buttons is converted at build time into a language pair.
+- Meta title/description stay Hindi-first (primary audience). No separate language URLs, so no hreflang yet.

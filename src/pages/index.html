@@ -17,46 +17,66 @@
 }
 -->
 <section class="lr-hero">
-  <h1>जमीन के रिकॉर्ड और काम, सरल हिंदी में</h1>
-  <p class="lr-lead">खतौनी, जमाबंदी, 7/12 जैसे रिकॉर्ड समझें, अपने राज्य का पोर्टल खोजें, और जमीन नापने-बाँटने के टूल बिना लॉगिन के इस्तेमाल करें। <span class="lr-en">Hindi-first land records, state portals and free tools.</span></p>
-  <form class="lr-card" action="search/" method="get" role="search" style="max-width:720px"><div class="lr-field" style="margin-bottom:10px"><label for="home-q">क्या जानना है? <span class="lr-en">/ What do you need?</span></label><input class="lr-input" id="home-q" name="q" type="search" autocomplete="off" placeholder="जैसे: खतौनी कैसे देखें, म्यूटेशन अटका, बीघा से एकड़"></div><button class="lr-btn" type="submit">खोजें</button></form>
-</section>
-
-<section aria-labelledby="need-h">
-  <h2 id="need-h">आपको क्या करना है? <span class="lr-en">/ What do you need to do?</span></h2>
-  <div class="lr-grid">
-    <a class="lr-card lr-link-card" href="tools/record-finder/"><h3>रिकॉर्ड कहाँ और कैसे देखें</h3><p>राज्य और अपने पास की जानकारी चुनें; सही पोर्टल और अगला कदम पाएँ।</p></a>
-    <a class="lr-card lr-link-card" href="tools/land-unit-converter/"><h3>बीघा, एकड़, गुंटा बदलना है</h3><p>क्षेत्रफल किसी भी इकाई में देखें; स्थानीय माप आप खुद भरते हैं।</p></a>
-    <a class="lr-card lr-link-card" href="tools/plot-area-calculator/"><h3>खेत नापकर क्षेत्रफल निकालना है</h3><p>आयत, त्रिभुज, चतुर्भुज या बेढंगे खेत के लिए।</p></a>
-    <a class="lr-card lr-link-card" href="guides/mutation-pending/"><h3>म्यूटेशन अटका है</h3><p>स्थिति जाँचने और आगे बढ़ने के सामान्य कदम।</p></a>
-    <a class="lr-card lr-link-card" href="guides/buying-land-document-check/"><h3>जमीन खरीदने जा रहे हैं</h3><p>खरीद से पहले जाँचने की सामान्य सूची।</p></a>
-    <a class="lr-card lr-link-card" href="tools/land-terms/"><h3>रिकॉर्ड के शब्द समझने हैं</h3><p>खतौनी, जमाबंदी, 7/12, इंतकाल का राज्य-वार मतलब।</p></a>
+  <h1>जमीन के रिकॉर्ड और काम, सरल हिंदी में <span class="lr-en">/ Land records made simple</span></h1>
+  <div data-l="hi">
+  <p class="lr-lead">खतौनी, जमाबंदी, 7/12 जैसे रिकॉर्ड समझें, अपने राज्य का पोर्टल खोजें, और जमीन नापने-बाँटने के टूल बिना लॉगिन के इस्तेमाल करें।</p>
+  <form class="lr-card" action="search/" method="get" role="search" style="max-width:720px"><div class="lr-field" style="margin-bottom:10px"><label for="home-q">क्या जानना है?</label><input class="lr-input" id="home-q" name="q" type="search" autocomplete="off" placeholder="जैसे: खतौनी कैसे देखें, म्यूटेशन अटका, बीघा से एकड़"></div><button class="lr-btn" type="submit">खोजें</button></form>
+  <ul class="lr-hero-pills"><li>20 राज्य</li><li>8 रिकॉर्ड गाइड</li><li>7 मुफ़्त टूल</li><li>हर पन्ने पर स्रोत</li></ul>
+  </div>
+  <div data-l="en">
+  <p class="lr-lead">Understand records like khatauni, jamabandi and 7/12, find your state's official portal, and use free land tools without logging in.</p>
+  <form class="lr-card" action="search/" method="get" role="search" style="max-width:720px"><div class="lr-field" style="margin-bottom:10px"><label for="home-q-en">What do you need?</label><input class="lr-input" id="home-q-en" name="q" type="search" autocomplete="off" placeholder="e.g. how to see khatauni, mutation pending, bigha to acre"></div><button class="lr-btn" type="submit">Search</button></form>
+  <ul class="lr-hero-pills"><li>20 states</li><li>8 record guides</li><li>7 free tools</li><li>Sources on every page</li></ul>
   </div>
 </section>
 
-<section aria-labelledby="st-h">
-  <h2 id="st-h">अपना राज्य चुनें <span class="lr-en">/ By state</span></h2>
-  <p class="lr-prose">हर राज्य में रिकॉर्ड के नाम और पोर्टल अलग हैं। अभी 20 राज्य जोड़े गए हैं और बाकी जाँच के बाद जुड़ेंगे।</p>
-  <p class="lr-chips">{{state_chips}}</p>
-  <p><a href="states/">सभी राज्यों की तालिका</a></p>
+<section aria-labelledby="need-h">
+  <p class="lr-eyebrow"><span data-l="hi">शुरुआत करें</span><span data-l="en">Start here</span></p>
+  <h2 id="need-h">आपको क्या करना है? <span class="lr-en">/ What do you need to do?</span></h2>
+  <div class="lr-grid">
+    <a class="lr-card lr-link-card" href="tools/record-finder/"><span class="lr-ico">{{icon:search}}</span><h3>रिकॉर्ड कहाँ और कैसे देखें <span class="lr-en">/ Where to see my record</span></h3><p data-l="hi">राज्य और अपने पास की जानकारी चुनें; सही पोर्टल और अगला कदम पाएँ।</p><p data-l="en">Pick your state and what you have; get the right portal and next step.</p></a>
+    <a class="lr-card lr-link-card" href="tools/land-unit-converter/"><span class="lr-ico">{{icon:ruler}}</span><h3>बीघा, एकड़, गुंटा बदलना है <span class="lr-en">/ Convert bigha, acre, guntha</span></h3><p data-l="hi">क्षेत्रफल किसी भी इकाई में देखें; स्थानीय माप आप खुद भरते हैं।</p><p data-l="en">See area in any unit; you enter local units yourself.</p></a>
+    <a class="lr-card lr-link-card" href="tools/plot-area-calculator/"><span class="lr-ico">{{icon:shape}}</span><h3>खेत नापकर क्षेत्रफल निकालना है <span class="lr-en">/ Area from measurements</span></h3><p data-l="hi">आयत, त्रिभुज, चतुर्भुज या बेढंगे खेत के लिए।</p><p data-l="en">For rectangles, triangles, quadrilaterals and irregular fields.</p></a>
+    <a class="lr-card lr-link-card" href="guides/mutation-pending/"><span class="lr-ico">{{icon:clock}}</span><h3>म्यूटेशन अटका है <span class="lr-en">/ Mutation is stuck</span></h3><p data-l="hi">स्थिति जाँचने और आगे बढ़ने के सामान्य कदम।</p><p data-l="en">General steps to check status and move it forward.</p></a>
+    <a class="lr-card lr-link-card" href="guides/buying-land-document-check/"><span class="lr-ico">{{icon:check}}</span><h3>जमीन खरीदने जा रहे हैं <span class="lr-en">/ Buying land</span></h3><p data-l="hi">खरीद से पहले जाँचने की सामान्य सूची।</p><p data-l="en">A general list of checks before you buy.</p></a>
+    <a class="lr-card lr-link-card" href="tools/land-terms/"><span class="lr-ico">{{icon:book}}</span><h3>रिकॉर्ड के शब्द समझने हैं <span class="lr-en">/ Understand record terms</span></h3><p data-l="hi">खतौनी, जमाबंदी, 7/12, इंतकाल का राज्य-वार मतलब।</p><p data-l="en">State-wise meaning of khatauni, jamabandi, 7/12, intkal.</p></a>
+  </div>
+</section>
+
+<section class="lr-band field" aria-labelledby="st-h">
+  <p class="lr-eyebrow"><span data-l="hi">राज्य-वार</span><span data-l="en">By state</span></p>
+  <h2 id="st-h">अपना राज्य चुनें <span class="lr-en">/ Pick your state</span></h2>
+  <p data-l="hi">हर राज्य में रिकॉर्ड के नाम और पोर्टल अलग हैं। अभी 20 राज्य जोड़े गए हैं और बाकी जाँच के बाद जुड़ेंगे।</p>
+  <p data-l="en">Record names and portals differ in every state. 20 states are covered so far; others will be added after verification.</p>
+  <p class="lr-chips" data-l="hi">{{state_chips}}</p>
+  <p class="lr-chips" data-l="en">{{state_chips_en}}</p>
+  <p><a href="states/"><span data-l="hi">सभी राज्यों की तालिका →</span><span data-l="en">Table of all states →</span></a></p>
 </section>
 
 <section aria-labelledby="rec-h">
+  <p class="lr-eyebrow"><span data-l="hi">समझें</span><span data-l="en">Learn</span></p>
   <h2 id="rec-h">रिकॉर्ड समझें <span class="lr-en">/ Records explained</span></h2>
-  <p class="lr-chips"><a href="records/ror/">अधिकार-अभिलेख (RoR)</a> <a href="records/khasra-number/">खसरा नंबर</a> <a href="records/khatauni/">खतौनी</a> <a href="records/jamabandi-fard/">जमाबंदी और फर्द</a> <a href="records/satbara-7-12/">7/12 और 8-अ</a> <a href="records/property-card/">प्रॉपर्टी कार्ड</a> <a href="records/mutation/">म्यूटेशन</a> <a href="records/bhu-aadhaar/">भू-आधार</a></p>
+  <p class="lr-chips" data-l="hi"><a href="records/ror/">अधिकार-अभिलेख (RoR)</a> <a href="records/khasra-number/">खसरा नंबर</a> <a href="records/khatauni/">खतौनी</a> <a href="records/jamabandi-fard/">जमाबंदी और फर्द</a> <a href="records/satbara-7-12/">7/12 और 8-अ</a> <a href="records/property-card/">प्रॉपर्टी कार्ड</a> <a href="records/mutation/">म्यूटेशन</a> <a href="records/bhu-aadhaar/">भू-आधार</a></p>
+  <p class="lr-chips" data-l="en"><a href="records/ror/">Record of Rights</a> <a href="records/khasra-number/">Khasra number</a> <a href="records/khatauni/">Khatauni</a> <a href="records/jamabandi-fard/">Jamabandi &amp; fard</a> <a href="records/satbara-7-12/">7/12 &amp; 8-A</a> <a href="records/property-card/">Property card</a> <a href="records/mutation/">Mutation</a> <a href="records/bhu-aadhaar/">Bhu-Aadhaar</a></p>
 </section>
 
-<section class="lr-prose" aria-labelledby="recent-h">
+<section class="lr-band wheat lr-prose" aria-labelledby="recent-h">
   <h2 id="recent-h">हाल में जाँचे गए पन्ने <span class="lr-en">/ Recently reviewed</span></h2>
   {{recent_pages}}
 </section>
 
 <section class="lr-prose" aria-labelledby="trust-h">
   <h2 id="trust-h">हम कैसे काम करते हैं <span class="lr-en">/ How we work</span></h2>
-  <ul>
+  <ul data-l="hi">
     <li><strong>स्वतंत्र:</strong> हम सरकारी वेबसाइट नहीं हैं और भूमि रिकॉर्ड जारी या सत्यापित नहीं करते (पूरा अस्वीकरण पन्ने के नीचे है)।</li>
     <li><strong>स्रोत के साथ:</strong> हर पन्ना बताता है कि जानकारी कहाँ से आई और कब जाँची गई। देखें <a href="sources/">हमारे स्रोत</a>।</li>
     <li><strong>अंदाज़े नहीं:</strong> जो माप या पता पक्का नहीं है (जैसे बीघा, या कुछ पोर्टल के पते), उसके लिए हम साफ लिखते हैं कि पुष्टि बाकी है।</li>
     <li><strong>आपका डेटा आपके पास:</strong> टूल आपके ब्राउज़र में चलते हैं। <a href="privacy/">गोपनीयता</a> देखें।</li>
+  </ul>
+  <ul data-l="en">
+    <li><strong>Independent:</strong> we are not a government website and do not issue or verify land records (full disclaimer at the bottom).</li>
+    <li><strong>Sourced:</strong> every page says where information came from and when it was reviewed. See <a href="sources/">our sources</a>.</li>
+    <li><strong>No guesses:</strong> where a unit or address is not confirmed (like bigha, or some portal addresses) we say so clearly.</li>
+    <li><strong>Your data stays with you:</strong> tools run in your browser. See <a href="privacy/">privacy</a>.</li>
   </ul>
 </section>

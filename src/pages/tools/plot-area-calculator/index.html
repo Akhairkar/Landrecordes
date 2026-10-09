@@ -65,11 +65,30 @@
    "path": "records/khasra-number/",
    "label": "खसरा नंबर क्या है"
   }
+ ],
+ "faq_en": [
+  {
+   "q": "How do I find the area of a four-sided irregular field?",
+   "a": "Measure the four sides and one diagonal (corner to opposite corner). The diagonal splits the field into two triangles and the tool adds their areas. Four sides alone do not fix the shape, so the diagonal is needed."
+  },
+  {
+   "q": "If opposite sides are equal, is the field a rectangle?",
+   "a": "Not necessarily. With equal opposite sides it can still be a parallelogram, whose area is less than a rectangle's. If you aren't sure about the angles, measure a diagonal and use the quadrilateral option."
+  },
+  {
+   "q": "How do I enter units like kadi, jarib or haath?",
+   "a": "Choose \"your own unit\" for length and enter how many feet 1 kadi/jarib/haath is in your area. It varies by region, so we don't prefill a value."
+  },
+  {
+   "q": "Will the result match the area in my khasra/jamabandi?",
+   "a": "Not necessarily. Hand measurement has small errors and the revenue record's area comes from a survey. For legal or registration work, the record's figure counts."
+  }
  ]
 }
 -->
 <h1>खेत और प्लॉट का क्षेत्रफल निकालने का कैलकुलेटर</h1>
-<p class="lr-lead">टेप या जरीब से नापी हुई भुजाएँ भरें। टूल क्षेत्रफल निकालकर वर्ग फुट, गज, एकड़, गुंटा और अन्य इकाइयों में दिखाता है, साथ में गणना के चरण भी। <span class="lr-en">Enter measured sides to get plot area in every land unit.</span></p>
+<p class="lr-lead" data-l="hi">टेप या जरीब से नापी हुई भुजाएँ भरें। टूल क्षेत्रफल निकालकर वर्ग फुट, गज, एकड़, गुंटा और अन्य इकाइयों में दिखाता है, साथ में गणना के चरण भी।</p>
+<p class="lr-lead" data-l="en">Enter sides measured with a tape or chain. The tool calculates the area and shows it in square feet, square yards, acres, guntha and other units, along with the calculation steps.</p>
 
 <section class="lr-card" id="tool" aria-labelledby="pa-h">
   <h2 id="pa-h" style="margin-top:0">क्षेत्रफल टूल <span class="lr-en">/ Plot area</span></h2>
@@ -92,7 +111,7 @@
       </select></div>
   </div>
   <div class="lr-field" id="pa-custom-wrap" hidden><label for="pa-custom">आपकी इकाई में 1 = कितने फुट? <span class="lr-en">/ Feet per your unit</span></label>
-    <input class="lr-input" id="pa-custom" inputmode="decimal" autocomplete="off"><small>अपने इलाके की माप पटवारी/तहसील से पूछकर भरें।</small></div>
+    <input class="lr-input" id="pa-custom" inputmode="decimal" autocomplete="off"><small data-l="hi">अपने इलाके की माप पटवारी/तहसील से पूछकर भरें।</small><small data-l="en">Ask your patwari/tehsil for your area's measure.</small></div>
 
   <div class="lr-diagrams" aria-hidden="true" style="color:var(--lr-brand);margin:4px 0 12px">
     <svg data-shape-svg="rect" viewBox="0 0 220 110" width="220" height="110"><rect x="30" y="20" width="160" height="70" fill="var(--lr-brand-soft)" stroke="currentColor" stroke-width="2"/><text x="110" y="14" text-anchor="middle" font-size="12" fill="currentColor">लंबाई</text><text x="14" y="58" text-anchor="middle" font-size="12" fill="currentColor">चौ.</text></svg>
@@ -106,11 +125,11 @@
   <div id="pa-poly-box" class="lr-field" hidden>
     <label for="pa-poly">कोनों के बिंदु, हर लाइन में एक: x, y <span class="lr-en">/ Corner points</span></label>
     <textarea class="lr-input" id="pa-poly" rows="6" placeholder="0, 0&#10;40, 0&#10;45, 30&#10;10, 35"></textarea>
-    <small>किसी एक कोने को (0, 0) मानकर बाकी कोनों की दूरी दो दिशाओं में नापें, और बिंदु सीमा के साथ-साथ क्रम में लिखें (घड़ी की दिशा में या उल्टी, दोनों चलेगा)।</small>
+    <small data-l="hi">किसी एक कोने को (0, 0) मानकर बाकी कोनों की दूरी दो दिशाओं में नापें, और बिंदु सीमा के साथ-साथ क्रम में लिखें (घड़ी की दिशा में या उल्टी, दोनों चलेगा)।</small><small data-l="en">Take one corner as (0, 0), measure the other corners' distances in two directions, and list the points in order along the boundary (clockwise or anticlockwise both work).</small>
   </div>
   <details id="pa-local-box" class="lr-field">
       <summary class="lr-label">नतीजे में बीघा/बिस्वा/कट्ठा/धुर चाहिए? अपना स्थानीय मान (वर्ग फुट) भरें <span class="lr-en">/ Optional local values</span></summary>
-      <p><small>खाली छोड़ने पर ये इकाइयाँ नतीजे में &quot;अपना मान भरें&quot; दिखाएँगी। हम इनके लिए कोई अंदाज़ा नहीं भरते।</small></p>
+      <p><small data-l="hi">खाली छोड़ने पर ये इकाइयाँ नतीजे में &quot;अपना मान भरें&quot; दिखाएँगी। हम इनके लिए कोई अंदाज़ा नहीं भरते।</small><small data-l="en">If left blank, these units show "enter your value" in the result. We don't prefill guesses for them.</small></p>
       <div id="pa-local-fields" class="lr-row"></div>
     </details>
   <button class="lr-btn secondary" type="button" id="pa-copy">लिंक कॉपी करें <span class="lr-en">/ Copy link</span></button>
@@ -123,11 +142,12 @@
       <tbody id="pa-body"></tbody>
     </table>
   </div>
-  <noscript><p class="lr-notice">इस टूल के लिए JavaScript चाहिए।</p></noscript>
+  <noscript><p class="lr-notice" data-l="hi">इस टूल के लिए JavaScript चाहिए।</p>
+<p class="lr-notice" data-l="en"><strong>Note:</strong> this is an estimate based on hand measurements. For registration, mutation or legal work, only the area in the revenue record counts.</p></noscript>
 </section>
 <p class="lr-notice" style="margin-top:16px"><strong>ध्यान दें:</strong> यह हाथ से नापी हुई मापों पर आधारित अनुमान है। रजिस्ट्री, नामांतरण या कानूनी काम में राजस्व रिकॉर्ड का क्षेत्रफल ही मान्य है। <span class="lr-en">Approximate; verify with revenue records.</span></p>
 
-<div class="lr-prose">
+<div class="lr-prose" data-l="hi">
 <h2>कौन-सा आकार चुनें? <span class="lr-en">/ Which shape?</span></h2>
 <ul>
 <li><strong>आयत:</strong> चारों कोने 90° के हों। लंबाई × चौड़ाई।</li>
@@ -145,3 +165,19 @@
 <li>&quot;गज&quot; का अर्थ इलाके के अनुसार बदल सकता है। शक हो तो &quot;अपनी इकाई&quot; चुनकर फुट में मान भरें।</li>
 </ul>
 </div>
+<div class="lr-prose" data-l="en"><h2>Which shape should I choose?</h2>
+<ul>
+<li><strong>Rectangle:</strong> all four corners are 90°. Length × width.</li>
+<li><strong>Triangle (base, height):</strong> when you know the straight (perpendicular) distance from the base to the opposite corner. Area = ½ × base × height.</li>
+<li><strong>Triangle (three sides):</strong> when only the three sides were measured. The tool uses Heron's formula: s = (a+b+c)/2, area = √(s(s−a)(s−b)(s−c)). If two sides together are not longer than the third, no triangle is possible and the tool warns you.</li>
+<li><strong>Quadrilateral:</strong> measure the four sides and one diagonal. The diagonal splits the field into two triangles.</li>
+<li><strong>Irregular field:</strong> enter corner coordinates. The tool uses the shoelace formula and checks that the boundary doesn't cross itself.</li>
+</ul>
+<h2>Measuring tips</h2>
+<ul>
+<li>Pull the tape tight and level; a slack tape overstates length.</li>
+<li>On sloping land take the horizontal distance, not the distance along the slope.</li>
+<li>Measure each distance twice. If they differ, average or measure again.</li>
+<li>Agree where the boundary bund is counted from, or your measure will differ from your neighbour's.</li>
+<li>"Gaj" can mean different things in different areas. If unsure, choose "your own unit" and enter its value in feet.</li>
+</ul></div>

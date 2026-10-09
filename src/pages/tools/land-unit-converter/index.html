@@ -74,11 +74,34 @@
    "path": "records/khasra-number/",
    "label": "खसरा नंबर क्या है"
   }
+ ],
+ "faq_en": [
+  {
+   "q": "How many square feet are in 1 bigha?",
+   "a": "There is no single all-India answer. A bigha varies by state, district and sometimes village custom. So in this calculator you enter the value in square feet from your khasra/jamabandi or tehsil."
+  },
+  {
+   "q": "How many guntha, cent and kanal are in 1 acre?",
+   "a": "1 acre = 43,560 sq ft. So 1 acre = 40 guntha, 100 cent (decimal) and 8 kanal (taking 1 kanal = 5,445 sq ft)."
+  },
+  {
+   "q": "Is this calculator's result valid for registration?",
+   "a": "No. For registration, mutation or legal work only the area recorded in the revenue record (khasra/khatauni/jamabandi) counts. This tool is for estimates and understanding."
+  },
+  {
+   "q": "How many acres are in 1 hectare?",
+   "a": "1 hectare = 10,000 square metres ≈ 2.4711 acres. This is an exact conversion based on definitions."
+  },
+  {
+   "q": "How do I convert rakba (recorded area) to acres?",
+   "a": "Check the unit first. In square feet, divide by 43,560; in square metres, divide by 4,046.86; in hectares, multiply by 2.4711. For bigha or biswa, enter your local value in the tool first, then convert."
+  }
  ]
 }
 -->
 <h1>जमीन नापने का कैलकुलेटर: बीघा, बिस्वा, एकड़, कनाल</h1>
-<p class="lr-lead">क्षेत्रफल एक इकाई से दूसरी में बदलें। पक्के माप (एकड़, हेक्टेयर, वर्ग फुट) सीधे बदलते हैं; बीघा, बिस्वा, कट्ठा जैसी स्थानीय इकाइयों का मान आप अपने क्षेत्र के हिसाब से भरते हैं। <span class="lr-en">Convert land area between Indian units. Local units like bigha need your own local value.</span></p>
+<p class="lr-lead" data-l="hi">क्षेत्रफल एक इकाई से दूसरी में बदलें। पक्के माप (एकड़, हेक्टेयर, वर्ग फुट) सीधे बदलते हैं; बीघा, बिस्वा, कट्ठा जैसी स्थानीय इकाइयों का मान आप अपने क्षेत्र के हिसाब से भरते हैं।</p>
+<p class="lr-lead" data-l="en">Convert area from one unit to another. Fixed units (acre, hectare, square foot) convert directly; for local units like bigha, biswa and katha you enter your own local value.</p>
 
 <section class="lr-card" aria-labelledby="tool-h" id="converter">
   <h2 id="tool-h" style="margin-top:0">रूपांतरण टूल <span class="lr-en">/ Converter</span></h2>
@@ -91,7 +114,7 @@
     </div>
     <details id="local-box" class="lr-field">
       <summary class="lr-label">स्थानीय इकाइयों का मान (बीघा, बिस्वा, कट्ठा, धुर) — वर्ग फुट में <span class="lr-en">/ Local unit values in sq ft</span></summary>
-      <p><small>अपने खसरा/जमाबंदी, तहसील या पटवारी से मान पूछकर भरें। हम यहाँ कोई अनुमानित मान नहीं भरते क्योंकि यह जगह-जगह बदलता है।</small></p>
+      <p><small data-l="hi">अपने खसरा/जमाबंदी, तहसील या पटवारी से मान पूछकर भरें। हम यहाँ कोई अनुमानित मान नहीं भरते क्योंकि यह जगह-जगह बदलता है।</small><small data-l="en">Ask your patwari/tehsil or check your record for the value in square feet. We don't prefill any guess because it varies from place to place.</small></p>
       <div id="local-fields" class="lr-row"></div>
     </details>
     <div class="lr-row" style="margin-top:8px">
@@ -107,12 +130,13 @@
       <tbody id="conv-body"></tbody>
     </table>
   </div>
-  <noscript><p class="lr-notice">इस टूल के लिए JavaScript चाहिए। नीचे दी गई तालिका से हाथ से गणना कर सकते हैं।</p></noscript>
+  <noscript><p class="lr-notice" data-l="hi">इस टूल के लिए JavaScript चाहिए। नीचे दी गई तालिका से हाथ से गणना कर सकते हैं।</p>
+<p class="lr-notice" data-l="en"><strong>Note:</strong> this is for estimates and understanding. For registration, mutation or legal work, only the area recorded in the revenue record counts.</p></noscript>
 </section>
 
 <p class="lr-notice" style="margin-top:16px"><strong>ध्यान दें:</strong> यह अनुमान और समझ के लिए है। रजिस्ट्री, नामांतरण या कानूनी काम में राजस्व रिकॉर्ड में दर्ज क्षेत्रफल ही मान्य है। <span class="lr-en">Approximate; not for registry or legal use. Verify with revenue records.</span></p>
 
-<div class="lr-prose">
+<div class="lr-prose" data-l="hi">
 <h2>फॉर्मूला: कैसे होती है गणना <span class="lr-en">/ How it works</span></h2>
 <p>हर इकाई को पहले वर्ग फुट में बदला जाता है, फिर जिस इकाई में चाहिए उसके वर्ग फुट से भाग दिया जाता है:</p>
 <p><strong>नया मान = (मान × इकाई के वर्ग फुट) ÷ लक्ष्य इकाई के वर्ग फुट</strong></p>
@@ -126,3 +150,13 @@
 <p>नीचे की तालिका इस टूल में इस्तेमाल हो रहे मान और उनके स्रोत दिखाती है। &quot;प्रचलित&quot; वाले मान कई जगह चलते हैं, पर कुछ क्षेत्रों में अलग हो सकते हैं।</p>
 {{units_table}}
 </div>
+<div class="lr-prose" data-l="en"><h2>Formula: how it is calculated</h2>
+<p>Every unit is first converted to square feet, then divided by the square feet of the target unit:</p>
+<p><strong>New value = (value × square feet of unit) ÷ square feet of target unit</strong></p>
+<p>Example: convert 2 acres to guntha. 2 × 43,560 = 87,120 sq ft. 87,120 ÷ 1,089 = <strong>80 guntha</strong>.</p>
+<h2>Why bigha, biswa and katha differ everywhere</h2>
+<p>Bigha, biswa, katha and dhur are not fixed by one national standard. Their size depends on the state, district and sometimes local custom. Different websites give different values for the same unit, so we don't impose one. Confirm with the measurement system in your land documents or with the tehsil.</p>
+<p>Ways to find your local value: (1) check the unit in your jamabandi/khatauni/khasra; (2) ask the tehsil or patwari/lekhpal/talathi; (3) check the state revenue department's official website.</p>
+<h2>Fixed and customary units</h2>
+<p>The table below shows the values this tool uses and their sources. "Customary" values are common in many places but may differ in some areas.</p>
+{{units_table_en}}</div>
