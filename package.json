@@ -1,0 +1,16 @@
+{
+  "name": "landrecord",
+  "private": true,
+  "description": "LandRecord static site generator and quality checks. No runtime dependencies; dev dependencies are used only for the accessibility check in CI.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "a11y": "node scripts/a11y.mjs",
+    "links": "node scripts/check-links.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.2",
+    "playwright": "1.56.1"
+  }
+}

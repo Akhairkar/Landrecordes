@@ -1,0 +1,20 @@
+name: Official link health
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"   # weekly, Monday 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check portal and source links (non-blocking report)
+        run: node scripts/check-links.mjs

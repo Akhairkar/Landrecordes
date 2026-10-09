@@ -64,3 +64,7 @@ textarea.lr-input{min-height:120px;resize:vertical}
 @media print{.lr-header,.lr-footer,[data-landrecord-shell],.lr-btn,.lr-crumbs,.lr-skip{display:none!important}body{background:#fff;color:#000}}
 .lr-chips a{display:inline-flex;align-items:center;min-height:var(--lr-control-min);padding:6px 14px;margin:4px 6px 4px 0;border:1px solid var(--lr-border-strong);border-radius:999px;background:var(--lr-surface);text-decoration:none;font-weight:600}
 .lr-chips a:hover{background:var(--lr-brand-soft)}
+
+.lr-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lr-link-card h2.lr-card-h{margin:0 0 6px;font-size:18px;color:var(--lr-brand)}
+.lr-table-wrap:focus-visible{outline:none;box-shadow:var(--lr-focus)}

@@ -20,3 +20,9 @@ jobs:
         run: node --test tests/*.test.mjs
       - name: Build + quality gates (BUILD_RULES §A)
         run: node scripts/build.mjs
+      - name: Install dev dependencies (accessibility check only)
+        run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Accessibility gate (axe, light and dark)
+        run: node scripts/a11y.mjs

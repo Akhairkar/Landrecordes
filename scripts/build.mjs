@@ -177,7 +177,7 @@ for (const p of pages) {
         .join("")}</ul></section>`
     : "";
   const scripts = (meta.scripts || []).map((s) => `<script type="module" src="${esc(s)}"></script>`).join("\n");
-  const html = layout
+  let html = layout
     .replace("{{base}}", esc(BASE))
     .replace("{{robots}}", robots)
     .replace("{{title}}", esc(meta.title))
@@ -192,6 +192,8 @@ for (const p of pages) {
     .replace("{{faq}}", () => relatedHtml + faqHtml)
     .replace("{{sources}}", () => srcHtml)
     .replace("{{scripts}}", () => scripts);
+  let tableNo = 0;
+  html = html.replace(/<div class="lr-table-wrap">/g, () => `<div class="lr-table-wrap" tabindex="0" role="region" aria-label="तालिका ${++tableNo}: खिसकाकर पढ़ें">`);
   const outPath = meta.output ? join(DIST, meta.output) : join(DIST, p.url, "index.html");
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, html);
