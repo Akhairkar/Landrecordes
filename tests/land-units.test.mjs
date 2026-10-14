@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { parseNumber, convert, convertAll, formatNumber } from "../assets/js/tools/land-units.js";
+import { parseNumber, convert, convertAll, formatNumber, sqftPerUnit } from "../assets/js/tools/land-units.js";
 
 const { units } = JSON.parse(readFileSync(new URL("../data/units.json", import.meta.url), "utf8"));
 const close = (a, b, eps = 1e-6) => assert.ok(Math.abs(a - b) <= eps * Math.max(1, Math.abs(b)), `${a} !≈ ${b}`);
@@ -34,6 +34,8 @@ test("invalid inputs", () => {
   assert.equal(convert(units, -1, "acre", "sqft").ok, false);
   assert.equal(convert(units, NaN, "acre", "sqft").ok, false);
   assert.equal(convert(units, 1, "nope", "sqft").ok, false);
+  assert.equal(convert(units, Infinity, "acre", "sqft").ok, false);
+  assert.equal(convert(null, 1, "acre", "sqft").ok, false);
   close(val(0, "acre", "sqft"), 0);
 });
 
@@ -47,17 +49,33 @@ test("parseNumber: Devanagari, grouping, decimal comma", () => {
   assert.ok(Number.isNaN(parseNumber("1.2.3")));
   assert.ok(Number.isNaN(parseNumber("--2")));
   assert.equal(parseNumber(" १२ "), 12);
+  assert.ok(Number.isNaN(parseNumber(Infinity)));
+  assert.ok(Number.isNaN(parseNumber("1,2,3")));
+  assert.ok(Number.isNaN(parseNumber("12,34,567")));
+  assert.ok(Number.isNaN(parseNumber("1e9")));
 });
 
 test("convertAll leaves unset local units null", () => {
   const all = convertAll(units, 1, "acre");
   assert.equal(all.bigha, null);
   close(all.sqft, 43560);
+  assert.deepEqual(convertAll(null, 1, "acre"), {});
+});
+
+test("local unit factors must be positive and finite", () => {
+  assert.equal(sqftPerUnit({ id: "x", sqft: Infinity }), null);
+  assert.equal(sqftPerUnit({ id: "x", sqft: -1 }), null);
+  assert.equal(sqftPerUnit(null), null);
+});
+
+test("conversion overflow is reported instead of returning Infinity", () => {
+  assert.equal(convert(units, Number.MAX_VALUE, "acre", "sqft").reason, "out-of-range");
 });
 
 test("formatNumber", () => {
   assert.equal(formatNumber(null), "—");
   assert.equal(formatNumber(43560), "43,560");
+  assert.equal(formatNumber(Infinity), "—");
 });
 
 test("data integrity: every non-local unit has a source", () => {

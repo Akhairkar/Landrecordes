@@ -9,9 +9,9 @@ export function parseShare(input) {
   if (s.includes("/")) {
     const [a, b, ...rest] = s.split("/");
     const n = Number(a), d = Number(b);
-    if (rest.length || !Number.isFinite(n) || !Number.isFinite(d) || d === 0) return NaN;
+    if (rest.length || !Number.isFinite(n) || !Number.isFinite(d) || d <= 0) return NaN;
     const v = n / d;
-    return v > 0 && v <= 1 ? v : NaN;
+    return Number.isFinite(v) && v > 0 && v <= 1 ? v : NaN;
   }
   const v = Number(s);
   return Number.isFinite(v) && v > 0 && v <= 1 ? v : NaN;
@@ -19,14 +19,19 @@ export function parseShare(input) {
 
 export function splitEqual(total, n) {
   if (!Number.isFinite(total) || total <= 0 || !Number.isInteger(n) || n < 1 || n > 100) return { ok: false, reason: "invalid" };
-  return { ok: true, parts: Array.from({ length: n }, () => total / n), sum: 1 };
+  const part = total / n;
+  if (!Number.isFinite(part) || part <= 0) return { ok: false, reason: "invalid" };
+  return { ok: true, parts: Array.from({ length: n }, () => part), sum: 1 };
 }
 
 /** shares: array of fractions. Requires they sum to 1 (±1e-9); otherwise reports the gap instead of guessing. */
 export function splitByShares(total, shares) {
   if (!Number.isFinite(total) || total <= 0 || !Array.isArray(shares) || !shares.length || shares.some((s) => !Number.isFinite(s) || s <= 0 || s > 1)) return { ok: false, reason: "invalid" };
   const sum = shares.reduce((a, b) => a + b, 0);
+  if (!Number.isFinite(sum)) return { ok: false, reason: "invalid" };
   const diff = 1 - sum;
   if (Math.abs(diff) > 1e-9) return { ok: false, reason: diff > 0 ? "shares-under" : "shares-over", sum, diff };
-  return { ok: true, parts: shares.map((s) => total * s), sum };
+  const parts = shares.map((s) => total * s);
+  if (parts.some((p) => !Number.isFinite(p))) return { ok: false, reason: "invalid" };
+  return { ok: true, parts, sum };
 }
