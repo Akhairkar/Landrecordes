@@ -5,6 +5,7 @@
 export const LENGTH_FEET = { ft: 1, m: 1 / 0.3048, yd: 3, in: 1 / 12 };
 
 export function lengthToFeet(value, unit, localFeet = null) {
+  if (!Number.isFinite(value) || value <= 0) return NaN;
   if (unit === "custom") return Number.isFinite(localFeet) && localFeet > 0 ? value * localFeet : NaN;
   const f = LENGTH_FEET[unit];
   return f ? value * f : NaN;
@@ -41,7 +42,7 @@ export function quadrilateral(a, b, c, d, e) {
 
 /** Shoelace formula for a simple polygon given [[x,y],…] in the same length unit. Rejects <3 points / zero area / self-crossing. */
 export function polygon(points) {
-  if (!Array.isArray(points) || points.length < 3 || points.some((p) => !p.every(Number.isFinite))) return { ok: false, reason: "invalid" };
+  if (!Array.isArray(points) || points.length < 3 || points.some((p) => !Array.isArray(p) || p.length !== 2 || !p.every(Number.isFinite))) return { ok: false, reason: "invalid" };
   let sum = 0;
   for (let i = 0; i < points.length; i++) {
     const [x1, y1] = points[i];

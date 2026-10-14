@@ -44,6 +44,9 @@ test("parseNumber: Devanagari, grouping, decimal comma", () => {
   assert.equal(parseNumber("2.5"), 2.5);
   assert.ok(Number.isNaN(parseNumber("abc")));
   assert.ok(Number.isNaN(parseNumber("")));
+  assert.ok(Number.isNaN(parseNumber("1.2.3")));
+  assert.ok(Number.isNaN(parseNumber("--2")));
+  assert.equal(parseNumber(" १२ "), 12);
 });
 
 test("convertAll leaves unset local units null", () => {

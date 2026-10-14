@@ -78,7 +78,7 @@ export function generate({ readJson, esc }) {
 
   // ---- state pages ----
   for (const s of states) {
-    const [cls, confHi, confEn] = CONF[s.confidence];
+    const [cls, confHi, confEn] = CONF[s.confidence] || CONF.unconfirmed;
     const alt = s.alt_urls.length ? `<p>${bi("अन्य स्रोतों में दिखने वाले पते:", "Other addresses seen in sources:")} ${s.alt_urls.map(link).join(", ")}</p>` : "";
     const live = [s.url, ...s.alt_urls].filter(Boolean).filter((u) => linkStatus[u]).map((u) => {
       const [hi, en] = liveNote(linkStatus[u]);

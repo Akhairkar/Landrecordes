@@ -33,6 +33,13 @@ for (const [id, s] of Object.entries(sources)) {
   if (!s.url && !["definition", "editorial"].includes(s.kind)) err(`sources/${id}`, "missing url (only kind=definition may omit it)");
   if (["definition", "editorial"].includes(s.kind) && !s.basis) err(`sources/${id}`, `${s.kind} needs basis`);
 }
+const stateData = readJson("data/states.json");
+const allowedConfidence = new Set(["official-doc", "multi-source", "conflicting", "single-source", "unconfirmed"]);
+for (const s of stateData.states) {
+  if (!allowedConfidence.has(s.confidence)) err(`states/${s.id}`, `invalid portal confidence "${s.confidence}"`);
+  if (!Array.isArray(s.alt_urls)) err(`states/${s.id}`, "alt_urls must be an array");
+  if (!Array.isArray(s.sources) || s.sources.some((id) => !sources[id])) err(`states/${s.id}`, "sources must reference known source ids");
+}
 const unitData = readJson("data/units.json");
 for (const u of unitData.units) {
   if (u.kind !== "local" && !(u.sqft > 0)) err(`units/${u.id}`, "non-local unit needs positive sqft");

@@ -24,6 +24,9 @@ test("polygon shoelace", () => {
   close(polygon([[0, 0], [10, 0], [10, 5], [0, 5]]).area, 50);
   close(polygon([[0, 0], [4, 0], [0, 3]]).area, 6);
   assert.equal(polygon([[0, 0], [1, 1]]).ok, false);
+  assert.equal(polygon([[0, 0], [1], [0, 1]]).reason, "invalid");
+  assert.equal(polygon([[0, 0], null, [0, 1]]).reason, "invalid");
+  assert.equal(polygon([[0, 0], [1, Infinity], [0, 1]]).reason, "invalid");
   assert.equal(polygon([[0, 0], [1, 1], [2, 2]]).reason, "zero-area");
   assert.equal(polygon([[0, 0], [2, 2], [2, 0], [0, 2]]).reason, "self-intersecting"); // bow-tie
 });
@@ -40,6 +43,10 @@ test("length units", () => {
   close(lengthToFeet(2, "yd"), 6);
   close(lengthToFeet(10, "custom", 3), 30);
   assert.ok(Number.isNaN(lengthToFeet(10, "custom", null)));
+  assert.ok(Number.isNaN(lengthToFeet(0, "m")));
+  assert.ok(Number.isNaN(lengthToFeet(-1, "ft")));
+  assert.ok(Number.isNaN(lengthToFeet(Infinity, "m")));
+  assert.ok(Number.isNaN(lengthToFeet(10, "unknown")));
   // 10 m x 10 m = 100 m² = 1076.391 sq ft
   close(rectangle(lengthToFeet(10, "m"), lengthToFeet(10, "m")).area, 1076.3910416709722, 1e-9);
 });
@@ -59,6 +66,10 @@ test("partition splits", () => {
   const s = splitByShares(1000, [0.5, 0.25, 0.25]);
   assert.deepEqual(s.parts, [500, 250, 250]);
   assert.equal(splitByShares(1000, [0.5, 0.25]).reason, "shares-under");
+  assert.equal(splitByShares(1000, null).reason, "invalid");
+  assert.equal(splitByShares(1000, []).reason, "invalid");
+  assert.equal(splitByShares(1000, [-0.1, 1.1]).reason, "invalid");
+  assert.equal(splitByShares(1000, [0, 1]).reason, "invalid");
   assert.equal(splitByShares(1000, [0.6, 0.6]).reason, "shares-over");
   const thirds = splitByShares(300, [1 / 3, 1 / 3, 1 / 3]);
   assert.equal(thirds.ok, true); // float-safe sum

@@ -24,7 +24,7 @@ export function splitEqual(total, n) {
 
 /** shares: array of fractions. Requires they sum to 1 (±1e-9); otherwise reports the gap instead of guessing. */
 export function splitByShares(total, shares) {
-  if (!Number.isFinite(total) || total <= 0 || !shares.length || shares.some((s) => !Number.isFinite(s))) return { ok: false, reason: "invalid" };
+  if (!Number.isFinite(total) || total <= 0 || !Array.isArray(shares) || !shares.length || shares.some((s) => !Number.isFinite(s) || s <= 0 || s > 1)) return { ok: false, reason: "invalid" };
   const sum = shares.reduce((a, b) => a + b, 0);
   const diff = 1 - sum;
   if (Math.abs(diff) > 1e-9) return { ok: false, reason: diff > 0 ? "shares-under" : "shares-over", sum, diff };
