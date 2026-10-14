@@ -1,0 +1,70 @@
+<!--meta
+{
+ "title": "रिकॉर्ड खोज सहायक: राज्य और अगला कदम | LandRecord",
+ "description": "अपना राज्य, काम और उपलब्ध नंबर चुनें। सही रिकॉर्ड, आधिकारिक पोर्टल और अगले कदम की सामान्य दिशा हिंदी और अंग्रेज़ी में पाएँ।",
+ "type": "tool",
+ "tool": true,
+ "status": "draft",
+ "reviewed_on": "2026-10-14",
+ "active": "tools",
+ "intent": "Guide users from their land-record goal and available identifiers to relevant state portal and next steps.",
+ "unique_value": "A bilingual, state-aware, explainable record-finder using maintained state portal data and general rules; no personal details are collected.",
+ "keywords": ["record finder", "land record help", "खसरा", "खतौनी", "जमीन रिकॉर्ड"],
+ "breadcrumbs": [
+  {"name":"Tools","path":"tools/"},
+  {"name":"रिकॉर्ड खोज सहायक","path":"tools/record-finder/"}
+ ],
+ "sources": ["dilrmp", "editorial-general"],
+ "scripts": ["assets/js/tools/record-finder.js"],
+ "related": [
+  {"path":"records/khasra-number/","label":"खसरा नंबर समझें"},
+  {"path":"maps/","label":"आधिकारिक नक्शे खोजें"},
+  {"path":"tools/property-checklist/","label":"दस्तावेज़ जाँच-सूची"}
+ ]
+}
+-->
+<h1>रिकॉर्ड खोज सहायक <span class="lr-en">/ Land-record finder</span></h1>
+<p class="lr-lead" data-l="hi">अपना राज्य और काम चुनें। यह सहायक उपलब्ध जानकारी के आधार पर अगला उपयोगी कदम और संबंधित आधिकारिक पोर्टल दिखाता है; यह सरकारी रिकॉर्ड खोजता या किसी मालिकाना हक़ की पुष्टि नहीं करता।</p>
+<p class="lr-lead" data-l="en">Choose your state and goal. This assistant suggests a useful next step and the relevant official portal; it does not query government records or verify ownership.</p>
+
+<section class="lr-card" aria-labelledby="rf-heading" id="record-finder">
+  <h2 id="rf-heading" style="margin-top:0"><span data-l="hi">अपनी स्थिति चुनें</span><span data-l="en">Tell us what you need</span></h2>
+  <form id="rf-form">
+    <div class="lr-field">
+      <label for="rf-state"><span data-l="hi">राज्य / केंद्रशासित प्रदेश</span><span data-l="en">State / Union Territory</span></label>
+      <select class="lr-input" id="rf-state" name="state" required><option value="">राज्य लोड हो रहे हैं… / Loading states…</option></select>
+    </div>
+    <div class="lr-field">
+      <label for="rf-goal"><span data-l="hi">आपको क्या करना है?</span><span data-l="en">What do you need to do?</span></label>
+      <select class="lr-input" id="rf-goal" name="goal" required>
+        <option value="view">रिकॉर्ड देखना है / View a record</option>
+        <option value="certified">प्रमाणित प्रति चाहिए / Need a certified copy</option>
+        <option value="mutation">नाम बदलना या म्यूटेशन / Name change or mutation</option>
+        <option value="map">जमीन का नक्शा / Land map</option>
+        <option value="understand">रिकॉर्ड के शब्द समझना / Understand record terms</option>
+      </select>
+    </div>
+    <div class="lr-field">
+      <label for="rf-have"><span data-l="hi">आपके पास क्या जानकारी है?</span><span data-l="en">What information do you have?</span></label>
+      <select class="lr-input" id="rf-have" name="have" required>
+        <option value="khasra">खसरा / सर्वे / गट नंबर / Khasra, survey or gat number</option>
+        <option value="khata">खाता / खेवट / खतौनी नंबर / Khata, khewat or khatauni number</option>
+        <option value="owner">सिर्फ मालिक का नाम / Owner's name only</option>
+        <option value="nothing">कोई नंबर नहीं / No number available</option>
+      </select>
+    </div>
+    <p><button class="lr-btn" type="submit"><span data-l="hi">अगला कदम देखें</span><span data-l="en">Show next step</span></button></p>
+  </form>
+  <p id="rf-status" role="status" aria-live="polite">राज्य सूची लोड हो रही है… / Loading state list…</p>
+  <div id="rf-result" hidden aria-live="polite"></div>
+</section>
+
+<section class="lr-prose" aria-labelledby="rf-how">
+  <h2 id="rf-how"><span data-l="hi">यह कैसे काम करता है?</span><span data-l="en">How this works</span></h2>
+  <p data-l="hi">सुझाव सामान्य मार्गदर्शन हैं। रिकॉर्ड के नाम, उपलब्ध ऑनलाइन सेवा और आवेदन प्रक्रिया राज्य तथा जिले के अनुसार बदल सकती है। पोर्टल पर गाँव/राजस्व क्षेत्र सही चुनें और रिकॉर्ड की प्रविष्टियाँ मूल दस्तावेज़ से मिलाएँ।</p>
+  <p data-l="en">Suggestions are general guidance. Record names, online services and application processes vary by state and district. Select the correct revenue village/area on the portal and compare entries with original documents.</p>
+  <p><a href="maps/"><span data-l="hi">आधिकारिक नक्शा सेवाएँ देखें →</span><span data-l="en">Explore official map services →</span></a> · <a href="states/"><span data-l="hi">सभी राज्य देखें →</span><span data-l="en">Browse all states →</span></a></p>
+</section>
+
+<div class="lr-prose" data-l="hi"><h2>महत्वपूर्ण सीमा</h2><p>LandRecord स्वतंत्र सूचना प्लेटफ़ॉर्म है, सरकारी वेबसाइट नहीं। यह भूमि स्वामित्व, सीमा, खसरा नंबर या कानूनी स्थिति की पुष्टि नहीं करता। प्रमाणित प्रति, शुल्क और समय-सीमा के लिए संबंधित राज्य के आधिकारिक पोर्टल या राजस्व कार्यालय से पुष्टि करें।</p></div>
+<div class="lr-prose" data-l="en"><h2>Important limitation</h2><p>LandRecord is an independent information platform, not a government website. It does not verify ownership, boundaries, survey numbers or legal status. Confirm certified-copy requirements, fees and timelines with the relevant state portal or revenue office.</p></div>
