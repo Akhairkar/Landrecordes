@@ -42,6 +42,8 @@ test("invalid inputs", () => {
 test("parseNumber: Devanagari, grouping, decimal comma", () => {
   assert.equal(parseNumber("१२,५००"), 12500);
   assert.equal(parseNumber("1,250.5"), 1250.5);
+  assert.equal(parseNumber("12,34,567"), 1234567);
+  assert.equal(parseNumber("1,23,456.75"), 123456.75);
   assert.equal(parseNumber("12,5"), 12.5);
   assert.equal(parseNumber("2.5"), 2.5);
   assert.ok(Number.isNaN(parseNumber("abc")));
@@ -51,7 +53,7 @@ test("parseNumber: Devanagari, grouping, decimal comma", () => {
   assert.equal(parseNumber(" १२ "), 12);
   assert.ok(Number.isNaN(parseNumber(Infinity)));
   assert.ok(Number.isNaN(parseNumber("1,2,3")));
-  assert.ok(Number.isNaN(parseNumber("12,34,567")));
+  assert.ok(Number.isNaN(parseNumber("12,34,56")));
   assert.ok(Number.isNaN(parseNumber("1e9")));
 });
 

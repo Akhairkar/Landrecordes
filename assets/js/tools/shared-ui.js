@@ -14,10 +14,13 @@ document.addEventListener("landrecord:languagechange", () => location.reload());
 export async function loadUnits() {
   const res = await fetch(new URL("data/units.json", document.baseURI));
   if (!res.ok) throw new Error("units");
-  return (await res.json()).units;
+  const data = await res.json();
+  if (!Array.isArray(data.units) || data.units.length === 0 || data.units.some((u) => !u || typeof u.id !== "string" || typeof u.hi !== "string" || typeof u.en !== "string")) throw new Error("invalid units data");
+  return data.units;
 }
 
 export function fillUnitSelect(select, units) {
+  select.textContent = "";
   for (const u of units) {
     const o = document.createElement("option");
     o.value = u.id;
@@ -77,9 +80,14 @@ export function renderAreaRows(tbody, units, sqft, local) {
   }
 }
 
-export function copyLink(statusEl) {
-  return navigator.clipboard.writeText(location.href).then(
-    () => { statusEl.textContent = pick("लिंक कॉपी हो गया. / Link copied."); },
-    () => { statusEl.textContent = "लिंक कॉपी नहीं हो सका; एड्रेस बार से कॉपी करें. / Copy from the address bar."; }
-  );
+export async function copyLink(statusEl) {
+  try {
+    if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error("clipboard unavailable");
+    await navigator.clipboard.writeText(location.href);
+    statusEl.textContent = pick("लिंक कॉपी हो गया. / Link copied.");
+    return true;
+  } catch {
+    statusEl.textContent = pick("लिंक कॉपी नहीं हो सका; एड्रेस बार से कॉपी करें. / Copy from the address bar.");
+    return false;
+  }
 }

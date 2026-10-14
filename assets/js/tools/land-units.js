@@ -11,7 +11,7 @@ export function parseNumber(input) {
   s = s.replace(/[०-९]/g, (d) => String(d.charCodeAt(0) - DEVANAGARI_ZERO));
   s = s.replace(/\s+/g, "");
   if (s.includes(",")) {
-    if (/^\d{1,3}(,\d{3})+(\.\d+)?$/.test(s)) s = s.replace(/,/g, "");
+    if (/^\d{1,3}(,\d{3})+(\.\d+)?$/.test(s) || /^\d{1,2}(,\d{2})+,\d{3}(\.\d+)?$/.test(s)) s = s.replace(/,/g, "");
     else if (/^\d+,\d+$/.test(s)) s = s.replace(",", ".");
     else return NaN;
   }

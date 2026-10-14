@@ -86,6 +86,7 @@ async function init() {
     if (unit.value === "custom" && custom.value) p.set("cf", custom.value);
     if (shape.value === "poly") p.set("pts", poly.value.trim().split(/\n+/).join(";"));
     else for (const [id] of SHAPES[shape.value].fields) { const v = $(`pa-f-${id}`).value.trim(); if (v) p.set(id, v); }
+    for (const [id, n] of Object.entries(local.read())) p.set(id, String(n));
     history.replaceState(null, "", `${location.pathname}?${p}#tool`);
   }
 
@@ -100,6 +101,8 @@ async function init() {
   if (q.get("lu")) unit.value = q.get("lu");
   if (q.get("cf")) custom.value = q.get("cf");
   if (q.get("pts")) poly.value = q.get("pts").split(";").join("\n");
+  for (const u of local.locals) if (q.get(u.id)) local.set(u.id, q.get(u.id));
+  if (local.locals.some((u) => q.get(u.id))) $("pa-local-box").open = true;
   for (const [id] of SHAPES[shape.value].fields) if (q.get(id)) values[`${shape.value}.${id}`] = q.get(id);
   buildFields();
   calc();

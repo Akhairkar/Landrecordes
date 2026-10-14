@@ -16,10 +16,10 @@ async function init() {
       wrap.className = "lr-row";
       wrap.style.marginBottom = "8px";
       const name = document.createElement("input");
-      name.className = "lr-input"; name.placeholder = L(`नाम ${idx + 1}`, `Name ${idx + 1}`); name.value = r.name; name.setAttribute("aria-label", `हिस्सेदार ${idx + 1} का नाम`);
+      name.className = "lr-input"; name.placeholder = L(`नाम ${idx + 1}`, `Name ${idx + 1}`); name.value = r.name; name.setAttribute("aria-label", L(`हिस्सेदार ${idx + 1} का नाम`, `Name of person ${idx + 1}`));
       name.addEventListener("input", () => { r.name = name.value; calc(); });
       const share = document.createElement("input");
-      share.className = "lr-input"; share.placeholder = L("हिस्सा जैसे 1/2, 25%, 0.25", "Share e.g. 1/2, 25%, 0.25"); share.value = r.share; share.inputMode = "text"; share.setAttribute("aria-label", `हिस्सेदार ${idx + 1} का हिस्सा`);
+      share.className = "lr-input"; share.placeholder = L("हिस्सा जैसे 1/2, 25%, 0.25", "Share e.g. 1/2, 25%, 0.25"); share.value = r.share; share.inputMode = "text"; share.setAttribute("aria-label", L(`हिस्सेदार ${idx + 1} का हिस्सा`, `Share of person ${idx + 1}`));
       share.addEventListener("input", () => { r.share = share.value; calc(); });
       wrap.append(name, share);
       list.append(wrap);
@@ -76,7 +76,8 @@ async function init() {
     table.hidden = false;
     const p = new URLSearchParams({ t: total.value.trim(), u: unit.value, m: mode.value });
     if (mode.value === "equal") p.set("n", count.value);
-    else p.set("sh", rows.map((r) => `${r.name}~${r.share}`).join("|"));
+    else p.set("sh", JSON.stringify(rows));
+    for (const [id, n] of Object.entries(loc)) p.set(id, String(n));
     history.replaceState(null, "", `${location.pathname}?${p}#tool`);
   }
 
@@ -91,7 +92,17 @@ async function init() {
   if (q.get("u") && units.some((x) => x.id === q.get("u"))) unit.value = q.get("u");
   if (q.get("m") === "shares") mode.value = "shares";
   if (q.get("n")) count.value = q.get("n");
-  if (q.get("sh")) q.get("sh").split("|").slice(0, 30).forEach((s) => { const [name, share] = s.split("~"); rows.push({ name: name || "", share: share || "" }); });
+  if (q.get("sh")) {
+    const raw = q.get("sh");
+    try {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) parsed.slice(0, 30).forEach((r) => { if (r && typeof r === "object") rows.push({ name: String(r.name ?? ""), share: String(r.share ?? "") }); });
+    } catch {
+      raw.split("|").slice(0, 30).forEach((s) => { const at = s.lastIndexOf("~"); if (at >= 0) rows.push({ name: s.slice(0, at), share: s.slice(at + 1) }); });
+    }
+  }
+  for (const u of local.locals) if (q.get(u.id)) local.set(u.id, q.get(u.id));
+  if (local.locals.some((u) => q.get(u.id))) $("pt-local-box").open = true;
   renderRows(); syncMode(); calc();
 }
 init().catch(() => { $("pt-status").textContent = pick("टूल लोड नहीं हो सका. कृपया पेज रीफ़्रेश करें. / Tool failed to load."); });

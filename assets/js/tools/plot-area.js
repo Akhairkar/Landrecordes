@@ -67,9 +67,17 @@ export function polygon(points) {
 }
 
 function ccw(a, b, c) { return (c[1] - a[1]) * (b[0] - a[0]) - (b[1] - a[1]) * (c[0] - a[0]); }
+function onSegment(a, b, p) {
+  return Math.min(a[0], b[0]) <= p[0] && p[0] <= Math.max(a[0], b[0]) && Math.min(a[1], b[1]) <= p[1] && p[1] <= Math.max(a[1], b[1]);
+}
 function segmentsCross(p1, p2, p3, p4) {
-  const d1 = ccw(p3, p4, p1), d2 = ccw(p3, p4, p2), d3 = ccw(p1, p2, p3), d4 = ccw(p1, p2, p4);
-  return d1 * d2 < 0 && d3 * d4 < 0;
+  const d1 = ccw(p1, p2, p3), d2 = ccw(p1, p2, p4), d3 = ccw(p3, p4, p1), d4 = ccw(p3, p4, p2);
+  if (![d1, d2, d3, d4].every(Number.isFinite)) return true;
+  if (d1 === 0 && onSegment(p1, p2, p3)) return true;
+  if (d2 === 0 && onSegment(p1, p2, p4)) return true;
+  if (d3 === 0 && onSegment(p3, p4, p1)) return true;
+  if (d4 === 0 && onSegment(p3, p4, p2)) return true;
+  return (d1 > 0) !== (d2 > 0) && (d3 > 0) !== (d4 > 0);
 }
 function selfIntersects(pts) {
   const n = pts.length;

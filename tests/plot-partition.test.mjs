@@ -31,6 +31,7 @@ test("polygon shoelace", () => {
   assert.equal(polygon([[0, 0], [1, Infinity], [0, 1]]).reason, "invalid");
   assert.equal(polygon([[0, 0], [1, 1], [2, 2]]).reason, "zero-area");
   assert.equal(polygon([[0, 0], [2, 2], [2, 0], [0, 2]]).reason, "self-intersecting");
+  assert.equal(polygon([[0, 0], [4, 0], [2, 0], [2, 2], [0, 2]]).reason, "self-intersecting");
   assert.equal(polygon([[0, 0], [1e308, 0], [0, 1e308]]).reason, "invalid");
 });
 
