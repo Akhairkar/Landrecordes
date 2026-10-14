@@ -8,6 +8,8 @@ const sources = JSON.parse(readFileSync(new URL("../data/sources.json", import.m
 const nagpur = readFileSync(new URL("../src/pages/districts/nagpur-land-records/index.html", import.meta.url), "utf8");
 const nagpurEn = readFileSync(new URL("../src/pages/districts/nagpur-land-records/index.en.html", import.meta.url), "utf8");
 const strategy = readFileSync(new URL("../docs/seo/COMPETITOR_AND_GROWTH_PLAN.md", import.meta.url), "utf8");
+const pune = readFileSync(new URL("../src/pages/districts/pune-land-records/index.html", import.meta.url), "utf8");
+const puneEn = readFileSync(new URL("../src/pages/districts/pune-land-records/index.en.html", import.meta.url), "utf8");
 
 test("global layout exposes social preview metadata without ad placeholders", () => {
   for (const token of ['property="og:title"', 'property="og:description"', 'property="og:url"', 'name="twitter:card"']) assert.ok(layout.includes(token), token);
@@ -39,4 +41,21 @@ test("growth plan avoids fabricated traffic estimates and ad-code placeholders",
   assert.ok(strategy.includes("not a forecast or guarantee"));
   assert.ok(strategy.includes("Do **not** mass-create"));
   assert.ok(strategy.includes("No ad boxes, ad code"));
+});
+
+test("Pune local page has distinct official services, bilingual content and local FAQs", () => {
+  assert.ok(pune.includes('"status": "draft"'));
+  assert.ok(pune.includes('"pune-property-card"'));
+  assert.ok(pune.includes('"maharashtra-emojni"'));
+  assert.ok(pune.includes('"faq"') && pune.includes('"faq_en"'));
+  for (const url of ['https://pune.gov.in/en/service/view-property-card/', 'https://bhulekh.mahabhumi.gov.in/', 'https://emojni.mahabhumi.gov.in/citizensite/Contactus.aspx']) assert.ok(pune.includes(url), url);
+  for (const path of ['records/property-card/', 'records/satbara-7-12/', 'tools/land-unit-converter/', 'maps/', 'districts/nagpur-land-records/']) assert.ok(pune.includes(path), path);
+  assert.ok(puneEn.includes('Pune district land-records office'));
+});
+
+test("Pune office contact is backed by official district source", () => {
+  assert.equal(sources["pune-property-card"].kind, "official");
+  assert.equal(sources["pune-property-card"].url, "https://pune.gov.in/en/service/view-property-card/");
+  assert.equal(sources["maharashtra-emojni"].kind, "official");
+  assert.ok(sources["pune-property-card"].basis.includes("phone"));
 });

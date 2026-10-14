@@ -52,3 +52,13 @@ Do **not** mass-create city, tehsil or village pages by replacing place names. T
 2. Publish a small number of sourced local pages and improve existing core pages.
 3. Use Search Console impressions, query/page CTR, crawl/index status and real user feedback to choose the next pages.
 4. Expand only clusters that demonstrate demand and distinct utility. A million visits/day is a long-term ambition, not a forecast or guarantee.
+
+
+## Batch 2 update — Pune local intent (2026-10-14)
+
+Added a draft Pune district guide based on the district administration's official View Property Card service page. It provides the Mahabhulekh destination, district land-records office phone/address, rural 7/12 versus city-survey property-card guidance, eMojni route, FAQ content and links to calculators/record explainers/maps. The page remains draft and is not promoted into the sitemap; it needs editorial/owner launch approval.
+
+Official local source: https://pune.gov.in/en/service/view-property-card/
+Official measurement department source: https://emojni.mahabhumi.gov.in/citizensite/Contactus.aspx
+
+The Pune page is intentionally not a mass-generated template. It contains verified Pune-specific office information and service links. Continue to add districts only when a meaningful local source and distinct next steps exist.

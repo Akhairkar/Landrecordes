@@ -262,5 +262,17 @@
     "url": "https://mahabhumi.gov.in/Mahabhumilink/",
     "kind": "official",
     "basis": "Official state gateway for digitally signed 7/12, 8A, Ferfar, Property Card, e-Records, K-Prat and map services; service availability and fees must be confirmed on the live portal."
+  },
+  "pune-property-card": {
+    "org": "District Pune, Government of Maharashtra — View Property Card service",
+    "url": "https://pune.gov.in/en/service/view-property-card/",
+    "kind": "official",
+    "basis": "Official Pune district service page identifies the Superintendent of Land Records, links Mahabhulekh for property-card viewing, and lists the Yerawada office address, phone and email."
+  },
+  "maharashtra-emojni": {
+    "org": "Maharashtra Land Records Department — eMojni",
+    "url": "https://emojni.mahabhumi.gov.in/citizensite/Contactus.aspx",
+    "kind": "official",
+    "basis": "Official department page describes the online land-measurement application and lists the Maharashtra Land Records Commissioner office in Pune; use the live portal for current application steps."
   }
 }
