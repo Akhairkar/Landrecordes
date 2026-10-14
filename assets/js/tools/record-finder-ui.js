@@ -47,8 +47,11 @@ async function init() {
       next.append(ol);
     }
     next.append(el("p", L(rules.goal_advice[g], rules.goal_advice_en[g])), el("p", L(hv.advice_hi, hv.advice_en)));
-    if (g === "understand") {
-      const l = el("a", L("शब्दकोश खोलें", "Open the glossary")); l.href = "tools/land-terms/";
+    if (g === "understand" || g === "map") {
+      const l = g === "map"
+        ? el("a", L("नक्शा सेवाएँ देखें", "Explore map services"))
+        : el("a", L("शब्दकोश खोलें", "Open the glossary"));
+      l.href = g === "map" ? "maps/" : "tools/land-terms/";
       const q = el("p"); q.append(l); next.append(q);
     }
     out.append(next);
