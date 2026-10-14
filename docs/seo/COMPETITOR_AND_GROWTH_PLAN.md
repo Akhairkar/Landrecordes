@@ -62,3 +62,12 @@ Official local source: https://pune.gov.in/en/service/view-property-card/
 Official measurement department source: https://emojni.mahabhumi.gov.in/citizensite/Contactus.aspx
 
 The Pune page is intentionally not a mass-generated template. It contains verified Pune-specific office information and service links. Continue to add districts only when a meaningful local source and distinct next steps exist.
+
+
+## Batch 3 update — state portal trust and quality gates (2026-10-15)
+
+The state directory is a useful search-intent hub, but a portal URL alone is not enough. The next quality pass strengthens every generated state page with a Hindi/English safety note: users should confirm the destination through the official state/district website, never disclose OTPs/passwords to unknown agents, and use only fees/instructions published by the portal. This is practical fraud-prevention guidance, not a claim that every linked portal has the same login or fee flow.
+
+Added regression checks for all 20 state entries: HTTPS primary destinations where a URL is supplied, bilingual introductions, actionable steps, cautions, FAQs, and at least one official reference. The generator also has a test asserting the safety note appears on every state page. This improves trust and catches thin or incomplete data before deployment.
+
+**Next audit order:** (1) resolve entries explicitly marked conflicting/unconfirmed by checking state revenue-department or district-government sources; (2) validate any redirected or legacy domain manually before changing URLs; (3) update `data/states.json` only when the official evidence is clear. Automated HTTP failures are not proof that a government site is dead. Keep all pages draft/noindex until owner approval.

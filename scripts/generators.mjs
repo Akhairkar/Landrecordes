@@ -119,7 +119,8 @@ export function generate({ readJson, esc }) {
 <p><strong>${bi(esc(s.portal_name), esc(s.portal_en))}</strong></p>
 ${s.url ? `<p><a class="lr-btn" style="display:inline-flex;align-items:center;text-decoration:none" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${bi("पोर्टल खोलें (नई विंडो)", "Open portal (new window)")}</a></p>
 <p>${bi("पता:", "Address:")} ${link(s.url)} <span class="lr-badge ${cls}">${bi(esc(confHi), esc(confEn))}</span></p>` : `<p><span class="lr-badge ${cls}">${bi(esc(confHi), esc(confEn))}</span></p>`}${alt}
-${live}</section>
+${live}
+<p class="lr-security-note" role="note">${bi("सुरक्षा: पोर्टल का पता राज्य/जिला प्रशासन की आधिकारिक वेबसाइट से मिलाएँ। OTP, पासवर्ड या दस्तावेज़ किसी अनजान एजेंट को न दें; शुल्क हो तो केवल पोर्टल पर प्रकाशित आधिकारिक निर्देश देखें。", "Safety: confirm the portal address from the official state/district website. Never give an OTP, password or documents to an unknown agent; for any fee, follow only the official instructions published on the portal.")}</p></section>
 <div class="lr-prose" data-l="hi">
 <h2>यहाँ रिकॉर्ड को क्या कहते हैं</h2>
 <ul><li><strong>मुख्य रिकॉर्ड:</strong> ${esc(s.record_hi)}</li><li><strong>म्यूटेशन (नाम परिवर्तन):</strong> ${esc(s.mutation_hi)}</li><li><strong>क्षेत्रफल की इकाइयाँ:</strong> ${esc(s.units_hi)}</li></ul>

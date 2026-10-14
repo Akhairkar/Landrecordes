@@ -25,3 +25,28 @@ test("state portal addresses and source references are structurally valid", () =
     for (const sourceId of state.sources) assert.ok(sources[sourceId], `${state.id}: unknown source ${sourceId}`);
   }
 });
+
+
+test("state pages have useful bilingual content, FAQs and safe portal guidance", () => {
+  for (const state of states) {
+    assert.ok(state.url === null || new URL(state.url).protocol === "https:", `${state.id}: primary portal must use HTTPS`);
+    assert.ok(state.intro_hi?.length >= 80 && state.intro_en?.length >= 80, `${state.id}: bilingual introduction required`);
+    assert.ok(state.steps_hi?.length >= 3 && state.steps_en?.length >= 3, `${state.id}: actionable steps required`);
+    assert.ok(state.watch_hi?.length >= 2 && state.watch_en?.length >= 2, `${state.id}: bilingual cautions required`);
+    assert.ok(state.faq?.length >= 1 && state.faq_en?.length >= 1, `${state.id}: bilingual FAQs required`);
+    assert.ok(state.sources.some((id) => sources[id]?.kind === "official"), `${state.id}: at least one official reference required`);
+  }
+});
+
+test("all generated state pages include a bilingual portal-safety note", async () => {
+  const { generate } = await import("../scripts/generators.mjs");
+  const root = new URL("../", import.meta.url);
+  const readJson = (path) => JSON.parse(readFileSync(new URL(path, root), "utf8"));
+  const generated = generate({ readJson, esc: (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;") });
+  const pages = generated.filter((page) => page.rel.startsWith("states/") && page.rel.endsWith("/index.html") && page.rel.split("/").length === 3);
+  assert.equal(pages.length, states.length);
+  for (const page of pages) {
+    assert.ok(page.body.includes("OTP"), `${page.rel}: English safety note`);
+    assert.ok(page.body.includes("किसी अनजान एजेंट"), `${page.rel}: Hindi safety note`);
+  }
+});
