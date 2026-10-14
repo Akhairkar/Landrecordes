@@ -250,5 +250,17 @@
     "url": "https://ramgarh.nic.in/service/land-records/",
     "kind": "official",
     "basis": "District government page that links the Jharbhoomi service."
+  },
+  "nagpur-dslr": {
+    "org": "District Nagpur, Government of Maharashtra — District Superintendent Land Records",
+    "url": "https://nagpur.gov.in/district-superintendent-land-records/",
+    "kind": "official",
+    "basis": "Official district service directory listing measurement application, legal-heir mutation PDE, digitally signed property-card download, view-only property-card service and Right to Service links."
+  },
+  "mahabhumi-gateway": {
+    "org": "Maharashtra Bhumi Abhilekh — Mahabhumi land-record services",
+    "url": "https://mahabhumi.gov.in/Mahabhumilink/",
+    "kind": "official",
+    "basis": "Official state gateway for digitally signed 7/12, 8A, Ferfar, Property Card, e-Records, K-Prat and map services; service availability and fees must be confirmed on the live portal."
   }
 }

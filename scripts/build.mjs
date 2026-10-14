@@ -186,7 +186,35 @@ for (const p of pages) {
       "@type": "BreadcrumbList",
       itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: `${SITE}/${c.path}` })),
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: meta.title,
+      description: meta.description,
+      url: canonical,
+      inLanguage: ["hi", "en"],
+      dateModified: meta.reviewed_on,
+      isPartOf: { "@type": "WebSite", name: "LandRecord", url: SITE },
+      ...(meta.keywords?.length ? { keywords: meta.keywords.join(", ") } : {}),
+    },
   ];
+  if (p.url === "") {
+    ld.push({ "@context": "https://schema.org", "@type": "WebSite", name: "LandRecord", url: SITE, inLanguage: ["hi", "en"] });
+  }
+  if (["guide", "record", "content"].includes(meta.type)) {
+    ld.push({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: meta.title,
+      description: meta.description,
+      mainEntityOfPage: canonical,
+      url: canonical,
+      inLanguage: ["hi", "en"],
+      dateModified: meta.reviewed_on,
+      publisher: { "@type": "Organization", name: "LandRecord", url: SITE },
+      ...(meta.keywords?.length ? { keywords: meta.keywords.join(", ") } : {}),
+    });
+  }
   if (meta.tool)
     ld.push({ "@context": "https://schema.org", "@type": "WebApplication", name: meta.title, url: canonical, applicationCategory: "UtilitiesApplication", operatingSystem: "Any", inLanguage: ["hi", "en"], isAccessibleForFree: true });
   let faqHtml = "";
@@ -206,18 +234,27 @@ for (const p of pages) {
         return `<li>${s.url ? `<a href="${esc(s.url)}" rel="noopener noreferrer">${esc(s.org)}</a>` : esc(s.org)} — ${esc(s.basis || "")}</li>`;
       })
       .join("")}</ul><p data-l="hi">अंतिम समीक्षा: <time datetime="${esc(meta.reviewed_on)}">${esc(meta.reviewed_on)}</time>. यह मार्गदर्शन शैक्षिक जानकारी है, कानूनी सलाह या आधिकारिक रिकॉर्ड नहीं।</p><p data-l="en">Last reviewed: <time datetime="${esc(meta.reviewed_on)}">${esc(meta.reviewed_on)}</time>. Educational guidance, not legal advice or an official record.</p></section>`;
-  const relatedHtml = meta.related?.length
-    ? `<section class="lr-related lr-prose" aria-labelledby="rel-h"><h2 id="rel-h">यह भी देखें <span class="lr-en">/ Related</span></h2><ul>${meta.related
-        .map((r) => `<li><a href="${esc(r.path)}">${r.label_en ? `<span data-l="hi">${esc(r.label)}</span><span data-l="en">${esc(r.label_en)}</span>` : esc(r.label)}</a></li>`)
-        .join("")}</ul></section>`
-    : "";
+  const defaultRelated = [
+    { path: "states/", label: "राज्य-वार आधिकारिक पोर्टल", label_en: "State-wise official portals" },
+    { path: "records/", label: "भूमि रिकॉर्ड समझें", label_en: "Understand land records" },
+    { path: "guides/", label: "समस्या-आधारित गाइड", label_en: "Problem-solving guides" },
+    { path: "tools/", label: "जमीन के कैलकुलेटर और टूल", label_en: "Land calculators and tools" },
+    { path: "maps/", label: "जमीन का नक्शा खोजें", label_en: "Find a land map" },
+  ];
+  const relatedItems = [...(meta.related || []), ...defaultRelated]
+    .filter((r, i, arr) => r.path !== p.url && arr.findIndex((x) => x.path === r.path) === i)
+    .slice(0, 5);
+  const relatedHtml = `<section class="lr-related lr-prose" aria-labelledby="rel-h"><h2 id="rel-h">यह भी देखें <span class="lr-en">/ Related</span></h2><ul>${relatedItems
+    .map((r) => `<li><a href="${esc(r.path)}">${r.label_en ? `<span data-l="hi">${esc(r.label)}</span><span data-l="en">${esc(r.label_en)}</span>` : esc(r.label)}</a></li>`)
+    .join("")}</ul></section>`;
   const scripts = (meta.scripts || []).map((s) => `<script type="module" src="${esc(s)}"></script>`).join("\n");
   let html = layout
     .replace("{{base}}", esc(BASE))
     .replace("{{robots}}", robots)
-    .replace("{{title}}", esc(meta.title))
-    .replace("{{description}}", esc(meta.description))
-    .replace("{{canonical}}", esc(canonical))
+    .replaceAll("{{title}}", esc(meta.title))
+    .replaceAll("{{description}}", esc(meta.description))
+    .replace("{{ogtype}}", ["guide", "record", "content"].includes(meta.type) ? "article" : "website")
+    .replaceAll("{{canonical}}", esc(canonical))
     .replace("{{schema}}", ld.map((o) => `  <script type="application/ld+json">${JSON.stringify(o)}</script>`).join("\n"))
     .replace("{{breadcrumbs}}", crumbHtml)
     .replace("{{self}}", meta.output ? "" : esc(p.url))
@@ -234,6 +271,17 @@ for (const p of pages) {
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, html);
   outPages.push({ ...p, html, canonical });
+}
+
+// SEO readiness gate: every page must expose crawlable internal discovery, valid JSON-LD and WebPage metadata.
+for (const p of outPages) {
+  if (!p.html.includes('"@type":"WebPage"')) err(p.rel, "missing WebPage JSON-LD");
+  const rel = p.html.match(/<section class="lr-related lr-prose"[\s\S]*?<\/section>/);
+  if (!rel || [...rel[0].matchAll(/<a href="/g)].length < 3) err(p.rel, "needs at least 3 internal related links");
+  for (const match of p.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    try { JSON.parse(match[1]); } catch { err(p.rel, "invalid JSON-LD block"); }
+  }
+  if (["guide", "record", "content"].includes(p.meta.type) && !p.html.includes('"@type":"Article"')) err(p.rel, "content page missing Article JSON-LD");
 }
 
 // ---------- search index ----------
