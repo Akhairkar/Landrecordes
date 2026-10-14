@@ -33,7 +33,8 @@ async function init() {
       p.append(a, document.createTextNode(` · ${s.url.replace(/^https?:\/\//, "")}`));
       box.append(p);
     }
-    box.append(el("p", L(...CONF[s.confidence])));
+    const confidenceText = CONF[s.confidence] || CONF.unconfirmed;
+    box.append(el("p", L(...confidenceText)));
     if (s.alt_urls.length) box.append(el("p", `${L("अन्य पते", "Other addresses")}: ${s.alt_urls.join(", ")}`));
     box.append(el("p", `${L("आपके राज्य में इसे कहते हैं", "In your state this is called")}: ${g === "mutation" ? L(s.mutation_hi, s.mutation_en) : L(s.record_hi, s.record_en)}`));
     out.append(box);
