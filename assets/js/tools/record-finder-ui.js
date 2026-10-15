@@ -55,6 +55,11 @@ async function init() {
       const p = el("p");
       p.append(primaryLink, document.createTextNode(" · " + new URL(s.url).host));
       box.append(p);
+    } else {
+      box.append(el("p", L(
+        "इस राज्य का आधिकारिक पोर्टल लिंक अभी सत्यापित नहीं है। राज्य के राजस्व विभाग की सरकारी वेबसाइट से लिंक लें; विज्ञापन या अनजान साइट पर निजी जानकारी न भरें।",
+        "The official portal link for this state is not verified yet. Get it from the state revenue department’s government website; do not enter personal details on ads or unfamiliar sites."
+      ), "lr-muted-cell"));
     }
     const confidenceText = CONF[s.confidence] || CONF.unconfirmed;
     box.append(el("p", L(...confidenceText)));
