@@ -79,6 +79,13 @@ export function generate({ readJson, esc }) {
   // ---- state pages ----
   for (const s of states) {
     const [cls, confHi, confEn] = CONF[s.confidence] || CONF.unconfirmed;
+    const needsAddressCheck = ["conflicting", "single-source", "unconfirmed"].includes(s.confidence);
+    const portalHeading = needsAddressCheck
+      ? bi("पोर्टल का पता जाँचें", "Verify the portal address")
+      : bi("आधिकारिक पोर्टल", "Official portal");
+    const addressCheckNote = needsAddressCheck
+      ? `<p class="lr-security-note" role="note">${bi("पते की पुष्टि अधूरी है। राज्य/जिला प्रशासन की वेबसाइट से मिलाएँ; पुष्टि से पहले OTP, दस्तावेज़ या भुगतान न दें।", "Address is not fully confirmed. Verify it on the state/district administration website; do not submit OTPs, documents or payments before confirmation.")}</p>`
+      : "";
     const alt = s.alt_urls.length ? `<p>${bi("अन्य स्रोतों में दिखने वाले पते:", "Other addresses seen in sources:")} ${s.alt_urls.map(link).join(", ")}</p>` : "";
     const live = [s.url, ...s.alt_urls].filter(Boolean).filter((u) => linkStatus[u]).map((u) => {
       const [hi, en] = liveNote(linkStatus[u]);
@@ -115,8 +122,9 @@ export function generate({ readJson, esc }) {
       body: `<h1>${esc(s.name_hi)} में जमीन का रिकॉर्ड ऑनलाइन कैसे देखें <span class="lr-en">/ ${esc(s.name_en)} land records online</span></h1>
 <p class="lr-lead" data-l="hi">${esc(s.intro_hi)}</p>
 <p class="lr-lead" data-l="en">${esc(s.intro_en)}</p>
-<section class="lr-card" aria-labelledby="portal-h"><h2 id="portal-h" style="margin-top:0">आधिकारिक पोर्टल <span class="lr-en">/ Official portal</span></h2>
+<section class="lr-card" aria-labelledby="portal-h"><h2 id="portal-h" style="margin-top:0">${portalHeading}</h2>
 <p><strong>${bi(esc(s.portal_name), esc(s.portal_en))}</strong></p>
+${addressCheckNote}
 ${s.url ? `<p><a class="lr-btn" style="display:inline-flex;align-items:center;text-decoration:none" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${bi("पोर्टल खोलें (नई विंडो)", "Open portal (new window)")}</a></p>
 <p>${bi("पता:", "Address:")} ${link(s.url)} <span class="lr-badge ${cls}">${bi(esc(confHi), esc(confEn))}</span></p>` : `<p><span class="lr-badge ${cls}">${bi(esc(confHi), esc(confEn))}</span></p>`}${alt}
 ${live}

@@ -64,3 +64,20 @@ test("all generated state pages warn against treating an online extract as concl
     assert.ok(page.body.includes("conclusive proof of ownership"), `${page.rel}: English ownership caution`);
   }
 });
+
+
+test("state pages flag uncertain portal addresses before users follow them", async () => {
+  const { generate } = await import("../scripts/generators.mjs");
+  const root = new URL("../", import.meta.url);
+  const readJson = (path) => JSON.parse(readFileSync(new URL(path, root), "utf8"));
+  const generated = generate({ readJson, esc: (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;") });
+  const byRel = new Map(generated.map((page) => [page.rel, page]));
+  for (const state of states.filter((item) => ["conflicting", "single-source", "unconfirmed"].includes(item.confidence))) {
+    const page = byRel.get(`states/${state.id}/index.html`);
+    assert.ok(page, `${state.id}: generated page exists`);
+    assert.ok(page.body.includes("Verify the portal address"), `${state.id}: English uncertainty heading`);
+    assert.ok(page.body.includes("पोर्टल का पता जाँचें"), `${state.id}: Hindi uncertainty heading`);
+    assert.ok(page.body.includes("before confirmation"), `${state.id}: English safety guidance`);
+    assert.ok(page.body.includes("पुष्टि से पहले OTP"), `${state.id}: Hindi safety guidance`);
+  }
+});
