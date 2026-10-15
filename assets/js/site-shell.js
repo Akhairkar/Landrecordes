@@ -7,10 +7,33 @@
   };
   const basePath = (document.querySelector("base")?.getAttribute("href") || "/").replace(/\/$/,"");
   const route = (path) => basePath + (path.startsWith("/") ? path : "/" + path);
-  const getLanguage = () => localStorage.getItem("landrecord-language") || document.documentElement.lang || "en";
-  const getTheme = () => localStorage.getItem("landrecord-theme") || "light";
-  function setLanguage(lang){ localStorage.setItem("landrecord-language",lang); document.documentElement.lang=lang; document.dispatchEvent(new CustomEvent("landrecord:languagechange",{detail:{lang}})); }
-  function setTheme(theme){ localStorage.setItem("landrecord-theme",theme); document.documentElement.dataset.theme=theme; document.dispatchEvent(new CustomEvent("landrecord:themechange",{detail:{theme}})); }
+  function readPreference(key) {
+    try { return localStorage.getItem(key); } catch { return null; }
+  }
+  function writePreference(key, value) {
+    try { localStorage.setItem(key, value); } catch { /* Preferences still apply for this page view. */ }
+  }
+  const getLanguage = () => {
+    const stored = readPreference("landrecord-language");
+    if (stored === "hi" || stored === "en") return stored;
+    return document.documentElement.lang === "hi" ? "hi" : "en";
+  };
+  const getTheme = () => {
+    const stored = readPreference("landrecord-theme");
+    return stored === "dark" ? "dark" : "light";
+  };
+  function setLanguage(lang){
+    const next = lang === "hi" ? "hi" : "en";
+    writePreference("landrecord-language", next);
+    document.documentElement.lang = next;
+    document.dispatchEvent(new CustomEvent("landrecord:languagechange", { detail: { lang: next } }));
+  }
+  function setTheme(theme){
+    const next = theme === "dark" ? "dark" : "light";
+    writePreference("landrecord-theme", next);
+    document.documentElement.dataset.theme = next;
+    document.dispatchEvent(new CustomEvent("landrecord:themechange", { detail: { theme: next } }));
+  }
   function mount(options){
     const root=document.querySelector("[data-landrecord-shell]"); if(!root) return;
     const lang=getLanguage(), t=labels[lang]||labels.en, active=(options&&options.active)||"";
