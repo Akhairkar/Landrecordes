@@ -22,8 +22,16 @@ async function init() {
     const toks = tokens(q.value);
     out.textContent = "";
     if (!toks.length) { status.textContent = ""; return; }
-    const hits = index.map((i) => ({ i, s: score(i, toks) })).filter((x) => x.s > 0).sort((a, b) => b.s - a.s).slice(0, 20);
-    status.textContent = pick(hits.length ? `${hits.length} परिणाम / ${hits.length} result(s)` : "कोई परिणाम नहीं मिला। दूसरे शब्द आज़माएँ या नीचे की सूची देखें. / No results.");
+    const ranked = index.map((i) => ({ i, s: score(i, toks) })).filter((x) => x.s > 0).sort((a, b) => b.s - a.s);
+    const totalHits = ranked.length;
+    const hits = ranked.slice(0, 20);
+    status.textContent = pick(
+      totalHits
+        ? (totalHits > hits.length
+          ? `${hits.length} परिणाम दिखाए गए (कुल ${totalHits}) / Showing ${hits.length} of ${totalHits} results`
+          : `${totalHits} परिणाम / ${totalHits} result(s)`)
+        : "कोई परिणाम नहीं मिला। दूसरे शब्द आज़माएँ या नीचे की सूची देखें. / No results."
+    );
     for (const { i } of hits) {
       const box = document.createElement("div");
       box.className = "lr-result";
