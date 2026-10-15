@@ -64,7 +64,10 @@
     </nav>`;
     document.documentElement.dataset.theme=getTheme();
     root.querySelectorAll("[data-lr-language]").forEach(button=>button.onclick=()=>{setLanguage(getLanguage()==="hi"?"en":"hi");mount(options)});
-    const themeButton=root.querySelector("[data-lr-theme]");\n    const syncThemeLabel=()=>{const next=getTheme()==="dark"?(lang==="hi"?"हल्की थीम करें":"Switch to light theme"):(lang==="hi"?"गहरी थीम करें":"Switch to dark theme");themeButton.setAttribute("aria-label",next);themeButton.title=next;};\n    syncThemeLabel();\n    themeButton.onclick=()=>{setTheme(getTheme()==="dark"?"light":"dark");mount(options)};
+    const themeButton=root.querySelector("[data-lr-theme]");
+    const syncThemeLabel=()=>{const next=getTheme()==="dark"?(lang==="hi"?"हल्की थीम करें":"Switch to light theme"):(lang==="hi"?"गहरी थीम करें":"Switch to dark theme");themeButton.setAttribute("aria-label",next);themeButton.title=next;};
+    syncThemeLabel();
+    themeButton.onclick=()=>{setTheme(getTheme()==="dark"?"light":"dark");mount(options)};
     root.querySelector("[data-lr-menu]").onclick=e=>{const nav=root.querySelector("#lr-mobile-nav"),open=nav.hidden;nav.hidden=!open;e.currentTarget.setAttribute("aria-expanded",String(open));};
   }
   window.LandRecordShell={mount,setLanguage,setTheme};
