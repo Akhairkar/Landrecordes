@@ -41,9 +41,33 @@ for (const s of stateData.states) {
   if (!Array.isArray(s.sources) || s.sources.some((id) => !sources[id])) err(`states/${s.id}`, "sources must reference known source ids");
 }
 const unitData = readJson("data/units.json");
-for (const u of unitData.units) {
-  if (u.kind !== "local" && !(u.sqft > 0)) err(`units/${u.id}`, "non-local unit needs positive sqft");
-  if (u.kind !== "local" && !sources[u.source]) err(`units/${u.id}`, `unknown source "${u.source}"`);
+if (!unitData || !Array.isArray(unitData.units) || unitData.units.length === 0) {
+  err("data/units.json", "units must be a non-empty array");
+} else {
+  const unitIds = new Set();
+  const unitKinds = new Set(["exact", "customary", "local"]);
+  for (const [index, u] of unitData.units.entries()) {
+    const label = `units/#${index + 1}`;
+    if (!u || typeof u !== "object" || Array.isArray(u)) {
+      err(label, "unit entry must be an object");
+      continue;
+    }
+    const unitLabel = typeof u.id === "string" && u.id ? `units/${u.id}` : label;
+    if (typeof u.id !== "string" || !/^[a-z0-9-]+$/.test(u.id)) err(unitLabel, "id must use lowercase letters, digits and hyphens");
+    if (unitIds.has(u.id)) err(unitLabel, "duplicate unit id");
+    unitIds.add(u.id);
+    if (typeof u.hi !== "string" || !u.hi.trim()) err(unitLabel, "Hindi label is required");
+    if (typeof u.en !== "string" || !u.en.trim()) err(unitLabel, "English label is required");
+    if (!unitKinds.has(u.kind)) err(unitLabel, `invalid kind "${u.kind}"`);
+    if (u.kind === "local") {
+      if (u.sqft != null) err(unitLabel, "local units must use null sqft and require a user-supplied regional value");
+    } else if (unitKinds.has(u.kind)) {
+      if (typeof u.sqft !== "number" || !Number.isFinite(u.sqft) || u.sqft <= 0) err(unitLabel, "non-local unit needs a finite positive sqft factor");
+      if (typeof u.source !== "string" || !u.source.trim() || !sources[u.source]) err(unitLabel, `unknown or missing source "${u.source ?? ""}"`);
+    }
+    if (u.note_hi != null && typeof u.note_hi !== "string") err(unitLabel, "note_hi must be a string");
+    if (u.note_en != null && typeof u.note_en !== "string") err(unitLabel, "note_en must be a string");
+  }
 }
 
 // ---------- clean + static copy ----------
