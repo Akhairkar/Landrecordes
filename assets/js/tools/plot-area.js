@@ -49,9 +49,12 @@ export function quadrilateral(a, b, c, d, e) {
   return { ok: true, area, steps: ["विकर्ण AC से चतुर्भुज को दो त्रिभुजों में बाँटा", `त्रिभुज ABC = ${t1.area.toFixed(2)}`, `त्रिभुज ACD = ${t2.area.toFixed(2)}`] };
 }
 
-/** Shoelace formula for a simple polygon given [[x,y],…] in the same length unit. Rejects <3 points / zero area / self-crossing. */
+/** Maximum vertices accepted to keep the O(n²) self-intersection check responsive. */
+export const MAX_POLYGON_POINTS = 200;
+
+/** Shoelace formula for a simple polygon given [[x,y],…] in the same length unit. Rejects malformed, oversized, zero-area and self-crossing shapes. */
 export function polygon(points) {
-  if (!Array.isArray(points) || points.length < 3 || points.some((p) => !Array.isArray(p) || p.length !== 2 || !p.every(Number.isFinite))) return { ok: false, reason: "invalid" };
+  if (!Array.isArray(points) || points.length < 3 || points.length > MAX_POLYGON_POINTS || points.some((p) => !Array.isArray(p) || p.length !== 2 || !p.every(Number.isFinite))) return { ok: false, reason: "invalid" };
   let sum = 0;
   for (let i = 0; i < points.length; i++) {
     const [x1, y1] = points[i];
@@ -92,8 +95,10 @@ function selfIntersects(pts) {
 /** Parse lines like "0,0" / "10 5" / "१०, ५" into [[x,y],…]. Returns null on any bad line. */
 export function parsePoints(text, parse) {
   if (typeof parse !== "function") return null;
+  const lines = String(text).split(/\n+/).map((l) => l.trim()).filter(Boolean);
+  if (lines.length < 3 || lines.length > MAX_POLYGON_POINTS) return null;
   const pts = [];
-  for (const line of String(text).split(/\n+/).map((l) => l.trim()).filter(Boolean)) {
+  for (const line of lines) {
     const parts = line.split(/[;,\s]+/).filter(Boolean);
     if (parts.length !== 2) return null;
     const x = parse(parts[0]), y = parse(parts[1]);

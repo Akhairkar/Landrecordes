@@ -17,3 +17,9 @@ Date: 2026-10-15
 
 ## Validation
 - GitHub Actions CI and Pages deployment must pass before treating this slice as complete.
+
+
+## Additional tools safety check
+- Bounded polygon coordinate entry to 200 vertices. Self-intersection detection is quadratic, so oversized input now fails early rather than tying up the browser.
+- Added regression tests for oversized direct polygon calls and parsed coordinate input.
+- No APIs, SEO metadata, URLs, or indexing settings changed.

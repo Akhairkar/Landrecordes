@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { rectangle, triangleBaseHeight, triangleSides, quadrilateral, polygon, parsePoints, lengthToFeet } from "../assets/js/tools/plot-area.js";
+import { rectangle, triangleBaseHeight, triangleSides, quadrilateral, polygon, parsePoints, lengthToFeet, MAX_POLYGON_POINTS } from "../assets/js/tools/plot-area.js";
 import { parseShare, splitEqual, splitByShares } from "../assets/js/tools/partition.js";
 
 const close = (a, b, eps = 1e-9) => assert.ok(Math.abs(a - b) <= eps * Math.max(1, Math.abs(b)), `${a} !≈ ${b}`);
@@ -94,4 +94,14 @@ test("equal-split UI validates the count before allocating result labels", () =>
   const allocation = source.indexOf('names = Array.from({ length: n }', start);
   assert.ok(start >= 0 && invalid > start && allocation > invalid,
     "invalid counts must return before Array.from allocates labels");
+});
+
+
+test("polygon input has a bounded vertex count before quadratic geometry checks", () => {
+  const points = Array.from({ length: MAX_POLYGON_POINTS + 1 }, (_, i) => [i, i % 7]);
+  assert.equal(polygon(points).reason, "invalid");
+  const text = points.map(([x, y]) => `${x},${y}`).join("\n");
+  assert.equal(parsePoints(text, Number), null);
+  const withinLimit = Array.from({ length: 3 }, (_, i) => [i, i === 1 ? 1 : 0]);
+  assert.equal(polygon(withinLimit).ok, true);
 });
