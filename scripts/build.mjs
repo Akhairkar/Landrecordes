@@ -129,6 +129,7 @@ for (const p of pages) {
   for (const k of ["title", "description", "type", "status", "reviewed_on", "intent", "unique_value"])
     if (!meta[k]) err(rel, `meta.${k} required`);
   if (!["draft", "published"].includes(meta.status)) err(rel, "meta.status must be draft|published");
+  if (meta.status === "published" && (!meta.reviewed_by || !String(meta.reviewed_by).trim())) err(rel, "published pages require meta.reviewed_by human sign-off (BUILD_RULES §C2)");
   if (!(meta.type in MIN_WORDS)) err(rel, `meta.type must be one of ${Object.keys(MIN_WORDS).join("|")}`);
   if (meta.title && meta.title.length > 60) err(rel, `title ${meta.title.length} chars (max 60)`);
   if (meta.description && (meta.description.length < 110 || meta.description.length > 160))
