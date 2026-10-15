@@ -71,3 +71,10 @@ The state directory is a useful search-intent hub, but a portal URL alone is not
 Added regression checks for all 20 state entries: HTTPS primary destinations where a URL is supplied, bilingual introductions, actionable steps, cautions, FAQs, and at least one official reference. The generator also has a test asserting the safety note appears on every state page. This improves trust and catches thin or incomplete data before deployment.
 
 **Next audit order:** (1) resolve entries explicitly marked conflicting/unconfirmed by checking state revenue-department or district-government sources; (2) validate any redirected or legacy domain manually before changing URLs; (3) update `data/states.json` only when the official evidence is clear. Automated HTTP failures are not proof that a government site is dead. Keep all pages draft/noindex until owner approval.
+
+
+## Batch 4 update — land-record interpretation and ownership caution (2026-10-15)
+
+State portal pages now explicitly distinguish an online record/extract from conclusive proof of ownership. The Hindi and English warning directs readers to verify certified copies, registered documents, and the relevant revenue office before relying on a record for a consequential transaction. This avoids implying that LandRecord itself verifies title, boundaries, or legal ownership.
+
+A regression test checks the warning on all 20 generated state pages. This is a trust/safety improvement, not a claim about a uniform legal rule across every state. Keep pages draft/noindex and outside the sitemap until editorial review and owner approval.

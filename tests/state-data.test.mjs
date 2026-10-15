@@ -50,3 +50,17 @@ test("all generated state pages include a bilingual portal-safety note", async (
     assert.ok(page.body.includes("किसी अनजान एजेंट"), `${page.rel}: Hindi safety note`);
   }
 });
+
+
+test("all generated state pages warn against treating an online extract as conclusive ownership proof", async () => {
+  const { generate } = await import("../scripts/generators.mjs");
+  const root = new URL("../", import.meta.url);
+  const readJson = (path) => JSON.parse(readFileSync(new URL(path, root), "utf8"));
+  const generated = generate({ readJson, esc: (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;") });
+  const pages = generated.filter((page) => page.rel.startsWith("states/") && page.rel.endsWith("/index.html") && page.rel.split("/").length === 3);
+  assert.equal(pages.length, states.length);
+  for (const page of pages) {
+    assert.ok(page.body.includes("अंतिम प्रमाण न मानें"), `${page.rel}: Hindi ownership caution`);
+    assert.ok(page.body.includes("conclusive proof of ownership"), `${page.rel}: English ownership caution`);
+  }
+});
