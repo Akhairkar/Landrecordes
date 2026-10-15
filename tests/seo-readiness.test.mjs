@@ -107,3 +107,13 @@ test("six additional bilingual record/help pages have visible FAQs and matching 
     assert.match(en, /<h3>/);
   }
 });
+
+
+test("search form submits a named q parameter and search script restores deep-linked queries", () => {
+  const searchPage = readFileSync(new URL("../src/pages/search/index.html", import.meta.url), "utf8");
+  const searchScript = readFileSync(new URL("../assets/js/search-ui.js", import.meta.url), "utf8");
+  assert.match(searchPage, /<form[^>]*action=""[^>]*method="get">/);
+  assert.match(searchPage, /id="s-q" name="q" type="search"/);
+  assert.match(searchScript, /new URLSearchParams\(location\.search\)\.get\("q"\)/);
+  assert.match(searchScript, /if \(init\) \{ q\.value = init; render\(\); \}/);
+});
