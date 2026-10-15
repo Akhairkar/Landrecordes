@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import { rectangle, triangleBaseHeight, triangleSides, quadrilateral, polygon, parsePoints, lengthToFeet } from "../assets/js/tools/plot-area.js";
 import { parseShare, splitEqual, splitByShares } from "../assets/js/tools/partition.js";
 
@@ -83,4 +84,14 @@ test("partition splits validate total, share count and numeric overflow", () => 
   assert.equal(splitEqual(Number.MAX_VALUE, 1).ok, true);
   assert.equal(splitByShares(Number.MAX_VALUE, [1, 1]).reason, "shares-over");
   assert.equal(splitByShares(Number.MAX_VALUE, [0.5, 0.5]).ok, true);
+});
+
+
+test("equal-split UI validates the count before allocating result labels", () => {
+  const source = readFileSync(new URL("../assets/js/tools/partition-ui.js", import.meta.url), "utf8");
+  const start = source.indexOf('res = splitEqual(t, n);');
+  const invalid = source.indexOf('if (!res.ok)', start);
+  const allocation = source.indexOf('names = Array.from({ length: n }', start);
+  assert.ok(start >= 0 && invalid > start && allocation > invalid,
+    "invalid counts must return before Array.from allocates labels");
 });

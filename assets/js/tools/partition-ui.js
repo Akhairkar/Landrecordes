@@ -46,8 +46,9 @@ async function init() {
     if (mode.value === "equal") {
       const n = Number(count.value);
       res = splitEqual(t, n);
-      names = Array.from({ length: n }, (_, i) => L(`हिस्सेदार ${i + 1}`, `Person ${i + 1}`));
       if (!res.ok) { status.textContent = pick("हिस्सेदारों की संख्या 1 से 100 के बीच लिखें. / Enter 1–100 people."); return; }
+      // Validate before allocating rows: a pasted huge count must not freeze the browser.
+      names = Array.from({ length: n }, (_, i) => L(`हिस्सेदार ${i + 1}`, `Person ${i + 1}`));
     } else {
       const filled = rows.filter((r) => r.share.trim());
       const shares = filled.map((r) => parseShare(r.share));
