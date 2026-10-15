@@ -59,3 +59,24 @@ test("Pune office contact is backed by official district source", () => {
   assert.equal(sources["maharashtra-emojni"].kind, "official");
   assert.ok(sources["pune-property-card"].basis.includes("phone"));
 });
+
+
+test("core record guides include practical FAQs, official next steps and title limits in both languages", () => {
+  const recordPages = [
+    ["src/pages/records/satbara-7-12/index.html", "src/pages/records/satbara-7-12/index.en.html", "AnyRoR", "8-अ"],
+    ["src/pages/records/property-card/index.html", "src/pages/records/property-card/index.en.html", "Mahabhulekh", "CTS"],
+    ["src/pages/records/mutation/index.html", "src/pages/records/mutation/index.en.html", "mutation", "म्यूटेशन"]
+  ];
+  for (const [hiPath, enPath, officialOrTopic, localTerm] of recordPages) {
+    const hi = readFileSync(new URL("../" + hiPath, import.meta.url), "utf8");
+    const en = readFileSync(new URL("../" + enPath, import.meta.url), "utf8");
+    assert.match(hi, /अक्सर पूछे जाने वाले सवाल/);
+    assert.match(en, /Frequently asked questions/);
+    assert.ok(hi.includes(officialOrTopic) || hi.toLowerCase().includes(officialOrTopic.toLowerCase()), hiPath);
+    assert.ok(en.toLowerCase().includes(officialOrTopic.toLowerCase()), enPath);
+    assert.ok(hi.includes(localTerm) || hi.toLowerCase().includes(localTerm.toLowerCase()), hiPath);
+    assert.ok(en.toLowerCase().includes(localTerm.toLowerCase()), enPath);
+    assert.match(hi, /मालिकाना हक|टाइटल/);
+    assert.match(en, /ownership|title/i);
+  }
+});

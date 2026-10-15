@@ -78,3 +78,10 @@ Added regression checks for all 20 state entries: HTTPS primary destinations whe
 State portal pages now explicitly distinguish an online record/extract from conclusive proof of ownership. The Hindi and English warning directs readers to verify certified copies, registered documents, and the relevant revenue office before relying on a record for a consequential transaction. This avoids implying that LandRecord itself verifies title, boundaries, or legal ownership.
 
 A regression test checks the warning on all 20 generated state pages. This is a trust/safety improvement, not a claim about a uniform legal rule across every state. Keep pages draft/noindex and outside the sitemap until editorial review and owner approval.
+
+
+## Batch 5 update — core record guide usefulness (2026-10-15)
+
+Expanded the existing 7/12–8-A, property-card/CTS and mutation guides in Hindi and English with reader-facing FAQs, official next-step links and explicit limits on what an online revenue entry can establish. The pages connect common questions to official Maharashtra/Gujarat service destinations where relevant and avoid promising universal fees, processing times or legal outcomes. A regression test now checks the bilingual FAQ and ownership-limit coverage for all three guide pairs.
+
+This is a focused improvement to existing URLs, not a new page expansion. Existing page metadata and draft/noindex policy are preserved. Do not add the pages to the sitemap until editorial review and launch approval.
