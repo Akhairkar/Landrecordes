@@ -51,8 +51,12 @@ async function init() {
       names = Array.from({ length: n }, (_, i) => L(`हिस्सेदार ${i + 1}`, `Person ${i + 1}`));
     } else {
       const filled = rows.filter((r) => r.share.trim());
-      const shares = filled.map((r) => parseShare(r.share));
       if (!filled.length) { status.textContent = ""; return; }
+      if (filled.length !== rows.length) {
+        status.textContent = pick("हर जोड़े गए हिस्सेदार का हिस्सा भरें, या खाली हिस्सेदार को हटाएँ। / Enter a share for every added person, or remove the empty person.");
+        return;
+      }
+      const shares = filled.map((r) => parseShare(r.share));
       if (shares.some((s) => Number.isNaN(s))) { status.textContent = pick("हर हिस्सा 1/2, 25% या 0.25 जैसा लिखें (0 से बड़ा, 1 तक). / Use 1/2, 25% or 0.25."); return; }
       names = filled.map((r, i) => r.name.trim() || L(`हिस्सेदार ${i + 1}`, `Person ${i + 1}`));
       res = splitByShares(t, shares);
