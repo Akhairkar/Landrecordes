@@ -34,14 +34,20 @@ async function init() {
   ]);
   const st = $("rf-state"), goal = $("rf-goal"), have = $("rf-have"), out = $("rf-out");
   for (const s of states) st.append(new Option(L(s.name_hi, s.name_en), s.id));
+  goal.append(new Option(L("— चुनें —", "— Choose —"), ""));
+  have.append(new Option(L("— चुनें —", "— Choose —"), ""));
   for (const g of rules.goals) goal.append(new Option(L(g.label_hi, g.label_en), g.id));
   for (const h of rules.haves) have.append(new Option(L(h.label_hi, h.label_en), h.id));
 
   function render() {
     out.textContent = "";
     const s = states.find((x) => x.id === st.value);
-    if (!s) return;
     const g = goal.value, h = have.value;
+    if (!s || !g || !h) {
+      const prompt = el("p", L("सुझाव पाने के लिए राज्य, मकसद और उपलब्ध जानकारी—तीनों चुनें।", "Choose a state, your goal and what information you have to get a recommendation."), "lr-muted-cell");
+      out.append(prompt);
+      return;
+    }
     const box = el("div", null, "lr-result");
     box.append(el("h3", `${L(s.name_hi, s.name_en)}: ${L(s.portal_name, s.portal_en)}`));
     const primaryLink = externalLink(s.url, L("पोर्टल खोलें (नई विंडो)", "Open portal (new window)"));
