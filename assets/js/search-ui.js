@@ -55,6 +55,14 @@ async function init() {
     }
   }
   $("s-form").addEventListener("submit", (e) => { e.preventDefault(); render(); });
+  document.querySelectorAll("[data-search-query]").forEach((button) => {
+    button.addEventListener("click", () => {
+      q.value = button.dataset.searchQuery || "";
+      render();
+      q.focus();
+      history.replaceState(null, "", q.value.trim() ? `${location.pathname}?q=${encodeURIComponent(q.value.trim())}` : location.pathname);
+    });
+  });
   q.addEventListener("input", () => { render(); history.replaceState(null, "", q.value.trim() ? `${location.pathname}?q=${encodeURIComponent(q.value.trim())}` : location.pathname); });
   const init = new URLSearchParams(location.search).get("q");
   if (init) { q.value = init; render(); }
