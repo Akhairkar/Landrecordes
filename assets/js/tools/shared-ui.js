@@ -14,8 +14,34 @@ document.addEventListener("landrecord:languagechange", () => location.reload());
 export async function loadUnits() {
   const res = await fetch(new URL("data/units.json", document.baseURI));
   if (!res.ok) throw new Error("units");
-  const data = await res.json();
-  if (!Array.isArray(data.units) || data.units.length === 0 || data.units.some((u) => !u || typeof u.id !== "string" || typeof u.hi !== "string" || typeof u.en !== "string")) throw new Error("invalid units data");
+  let data;
+  try {
+    data = await res.json();
+  } catch {
+    throw new Error("invalid units JSON");
+  }
+
+  // Fail closed: bad conversion factors can silently produce plausible but incorrect land areas.
+  if (!data || !Array.isArray(data.units) || data.units.length === 0) throw new Error("invalid units data");
+  const ids = new Set();
+  const allowedKinds = new Set(["exact", "customary", "local"]);
+  for (const u of data.units) {
+    if (!u || typeof u !== "object" || Array.isArray(u)) throw new Error("invalid unit entry");
+    if (typeof u.id !== "string" || !/^[a-z0-9-]+$/.test(u.id)) throw new Error("invalid unit id");
+    if (ids.has(u.id)) throw new Error("duplicate unit id");
+    ids.add(u.id);
+    if (typeof u.hi !== "string" || !u.hi.trim()) throw new Error("missing Hindi unit label");
+    if (typeof u.en !== "string" || !u.en.trim()) throw new Error("missing English unit label");
+    if (!allowedKinds.has(u.kind)) throw new Error("invalid unit kind");
+    if (u.kind === "local") {
+      if (u.sqft != null) throw new Error("local units must not have a fixed factor");
+    } else {
+      if (typeof u.sqft !== "number" || !Number.isFinite(u.sqft) || u.sqft <= 0) throw new Error("invalid fixed unit factor");
+      if (typeof u.source !== "string" || !u.source.trim()) throw new Error("missing unit source");
+    }
+    if (u.note_hi != null && typeof u.note_hi !== "string") throw new Error("invalid Hindi unit note");
+    if (u.note_en != null && typeof u.note_en !== "string") throw new Error("invalid English unit note");
+  }
   return data.units;
 }
 
