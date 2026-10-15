@@ -63,11 +63,11 @@ test("Pune office contact is backed by official district source", () => {
 
 test("core record guides include practical FAQs, official next steps and title limits in both languages", () => {
   const recordPages = [
-    ["src/pages/records/satbara-7-12/index.html", "src/pages/records/satbara-7-12/index.en.html", "AnyRoR", "8-अ"],
-    ["src/pages/records/property-card/index.html", "src/pages/records/property-card/index.en.html", "Mahabhulekh", "CTS"],
-    ["src/pages/records/mutation/index.html", "src/pages/records/mutation/index.en.html", "mutation", "म्यूटेशन"]
+    ["src/pages/records/satbara-7-12/index.html", "src/pages/records/satbara-7-12/index.en.html", "AnyRoR", "8-अ", "8-A"],
+    ["src/pages/records/property-card/index.html", "src/pages/records/property-card/index.en.html", "Mahabhulekh", "CTS", "CTS"],
+    ["src/pages/records/mutation/index.html", "src/pages/records/mutation/index.en.html", "mutation", "म्यूटेशन", "mutation"]
   ];
-  for (const [hiPath, enPath, officialOrTopic, localTerm] of recordPages) {
+  for (const [hiPath, enPath, officialOrTopic, localTerm, localTermEn] of recordPages) {
     const hi = readFileSync(new URL("../" + hiPath, import.meta.url), "utf8");
     const en = readFileSync(new URL("../" + enPath, import.meta.url), "utf8");
     assert.match(hi, /अक्सर पूछे जाने वाले सवाल/);
@@ -75,8 +75,35 @@ test("core record guides include practical FAQs, official next steps and title l
     assert.ok(hi.includes(officialOrTopic) || hi.toLowerCase().includes(officialOrTopic.toLowerCase()), hiPath);
     assert.ok(en.toLowerCase().includes(officialOrTopic.toLowerCase()), enPath);
     assert.ok(hi.includes(localTerm) || hi.toLowerCase().includes(localTerm.toLowerCase()), hiPath);
-    assert.ok(en.toLowerCase().includes(localTerm.toLowerCase()), enPath);
+    assert.ok(en.toLowerCase().includes(localTermEn.toLowerCase()), enPath);
     assert.match(hi, /मालिकाना हक|टाइटल/);
     assert.match(en, /ownership|title/i);
+  }
+});
+
+
+test("six additional bilingual record/help pages have visible FAQs and matching FAQ schema inputs", () => {
+  const pages = [
+    ["records/khatauni", "खतौनी", "khatauni"],
+    ["records/jamabandi-fard", "फर्द", "jamabandi"],
+    ["records/khasra-number", "खसरा", "khasra"],
+    ["records/ror", "RoR", "record"],
+    ["guides/mutation-pending", "म्यूटेशन", "mutation"],
+    ["guides/record-mismatch-correction", "सुधार", "correction"]
+  ];
+  for (const [base, hindiToken, englishToken] of pages) {
+    const hi = readFileSync(new URL("../src/pages/" + base + "/index.html", import.meta.url), "utf8");
+    const en = readFileSync(new URL("../src/pages/" + base + "/index.en.html", import.meta.url), "utf8");
+    const metaMatch = hi.match(/<!--meta\s*\n([\s\S]*?)\n-->/);
+    assert.ok(metaMatch, base + " metadata");
+    const meta = JSON.parse(metaMatch[1]);
+    assert.match(hi, /अक्सर पूछे जाने वाले सवाल/);
+    assert.match(en, /Frequently asked questions/);
+    assert.ok(hi.includes(hindiToken) || hi.includes("खाते") || hi.includes("नाम"), base);
+    assert.ok(en.toLowerCase().includes(englishToken.toLowerCase()) || en.toLowerCase().includes("record"), base);
+    assert.ok(meta.faq?.length >= 2, base + " Hindi FAQ metadata");
+    assert.ok(meta.faq_en?.length >= 2, base + " English FAQ metadata");
+    assert.match(hi, /<h3>/);
+    assert.match(en, /<h3>/);
   }
 });

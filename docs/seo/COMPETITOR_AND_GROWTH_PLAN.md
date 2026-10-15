@@ -85,3 +85,10 @@ A regression test checks the warning on all 20 generated state pages. This is a 
 Expanded the existing 7/12–8-A, property-card/CTS and mutation guides in Hindi and English with reader-facing FAQs, official next-step links and explicit limits on what an online revenue entry can establish. The pages connect common questions to official Maharashtra/Gujarat service destinations where relevant and avoid promising universal fees, processing times or legal outcomes. A regression test now checks the bilingual FAQ and ownership-limit coverage for all three guide pairs.
 
 This is a focused improvement to existing URLs, not a new page expansion. Existing page metadata and draft/noindex policy are preserved. Do not add the pages to the sitemap until editorial review and launch approval.
+
+
+## Batch 6 update — bilingual FAQs and schema inputs (2026-10-15)
+
+Added visible Hindi/English FAQs and matching FAQ metadata to six existing pages: khatauni, jamabandi/fard, khasra number, Record of Rights, pending mutation and record-mismatch correction. Topics target genuine task questions—plot versus holding number, old jamabandi entries, pending applications, spelling/area corrections and the limits of revenue records. Internal links route readers to existing state directories and related guides rather than creating location-swapped doorway pages.
+
+This batch also fixes a language-specific assertion in the previous core-guide test: the English 7/12 page uses “8-A”, not the Hindi term “8-अ”. New regression tests verify bilingual FAQ content and metadata inputs. Existing SEO titles, descriptions, canonical URLs, slugs and draft/noindex policy remain unchanged.
