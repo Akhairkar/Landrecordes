@@ -10,7 +10,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(ROOT, "dist");
 const BASE = process.env.BASE_PATH ?? "/Landrecordes/";
 const SITE = (process.env.SITE_URL ?? "https://akhairkar.github.io/Landrecordes").replace(/\/$/, "");
-const INDEXABLE = process.env.INDEXABLE === "true"; // stays false until launch approval (Rulebook §26)
+const INDEXABLE = process.env.INDEXABLE === "true"; // fail-closed default; deployment may opt in, but only published pages enter the sitemap.
 
 const SIMILARITY_MAX = 0.35;
 const MIN_WORDS = { home: 120, content: 400, record: 320, guide: 320, state: 300, hub: 120, legal: 80, tool: 0 };
@@ -331,7 +331,9 @@ if (INDEXABLE) {
 // ---------- report ----------
 const byType = {};
 for (const p of outPages) byType[p.meta.type] = (byType[p.meta.type] || 0) + 1;
-console.log(`pages: ${outPages.length} (${Object.entries(byType).map(([k, v]) => `${k}:${v}`).join(", ")}) · published: ${published.length} · indexable: ${INDEXABLE}`);
+const draftCount = outPages.length - published.length;
+const sitemapCount = INDEXABLE ? published.length : 0;
+console.log(`pages: ${outPages.length} (${Object.entries(byType).map(([k, v]) => `${k}:${v}`).join(", ")}) · published: ${published.length} · draft: ${draftCount} · sitemap URLs: ${sitemapCount} · indexable: ${INDEXABLE}`);
 for (const w of warnings) console.warn("WARN ", w);
 if (errors.length) {
   console.error(`\n${errors.length} gate failure(s):`);
