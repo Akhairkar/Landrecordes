@@ -65,7 +65,19 @@ async function init() {
         if (!poly.value.trim()) return;
         const pts = plot.parsePoints(poly.value, parseNumber);
         if (!pts) { status.textContent = pick("हर लाइन में दो संख्याएँ लिखें: x, y. / Each line needs two numbers: x, y."); return; }
-        r = plot.polygon(pts.map(([x, y]) => [lengthToFt(x), lengthToFt(y)]));
+        // Polygon coordinates are offsets from an origin, so zero and negative coordinates are valid.
+        // Side measurements still use lengthToFeet(), which correctly requires positive lengths.
+        const coordinateFactor = unit.value === "custom" ? parseNumber(custom.value) : plot.LENGTH_FEET[unit.value];
+        if (!Number.isFinite(coordinateFactor) || coordinateFactor <= 0) {
+          status.textContent = pick("इस लंबाई की इकाई का सही मान भरें. / Enter a valid length-unit factor.");
+          return;
+        }
+        const feetPoints = pts.map(([x, y]) => [x * coordinateFactor, y * coordinateFactor]);
+        if (feetPoints.some(([x, y]) => !Number.isFinite(x) || !Number.isFinite(y))) {
+          status.textContent = pick("निर्देशांक बहुत बड़े हैं; छोटे माप दर्ज करें. / Coordinates are too large; enter smaller measurements.");
+          return;
+        }
+        r = plot.polygon(feetPoints);
         break;
       }
     }
