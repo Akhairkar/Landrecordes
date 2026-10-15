@@ -33,8 +33,10 @@ jobs:
         run: node --test tests/*.test.mjs
 
       - name: Build site and run quality gates
-        run: node scripts/build.mjs
-        # INDEXABLE stays false until the owner approves launch (RULEBOOK §26).
+        # Enable the indexability pipeline only for pages explicitly marked status: published.
+        # Draft pages still render noindex,nofollow and stay out of sitemap.xml (BUILD_RULES §E2/A5).
+        # Human review is still required before any page is marked published (BUILD_RULES §C2).
+        run: INDEXABLE=true node scripts/build.mjs
         # When a custom domain is attached set BASE_PATH=/ and SITE_URL=https://<domain>.
 
       - name: Configure Pages
