@@ -8,6 +8,24 @@ const CONF = {
   unconfirmed: ["आधिकारिक पता पक्का नहीं; राज्य राजस्व विभाग की साइट से पुष्टि करें", "Official address not confirmed; confirm on the state revenue department's site"],
 };
 const el = (tag, text, cls) => { const e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; };
+const ACTIONS = {
+  view: (s) => [`states/${s.id}/`, "राज्य का रिकॉर्ड मार्गदर्शक खोलें", "Open state record guide"],
+  certified: () => ["guides/online-vs-certified-copy/", "साधारण और प्रमाणित प्रति का अंतर समझें", "Understand ordinary vs certified copies"],
+  mutation: () => ["records/mutation/", "नामांतरण / म्यूटेशन की जानकारी देखें", "Read the mutation guide"],
+  map: () => ["maps/", "नक्शा सेवाएँ और उनकी सीमाएँ देखें", "Explore map services and their limits"],
+  understand: () => ["tools/land-terms/", "भूमि रिकॉर्ड शब्दकोश खोलें", "Open the land-record glossary"],
+};
+function externalLink(url, label) {
+  try {
+    const parsed = new URL(url);
+    if (!["http:", "https:"].includes(parsed.protocol)) return null;
+    const a = el("a", label);
+    a.href = parsed.href;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    return a;
+  } catch { return null; }
+}
 
 async function init() {
   const [{ states }, rules] = await Promise.all([
@@ -26,16 +44,21 @@ async function init() {
     const g = goal.value, h = have.value;
     const box = el("div", null, "lr-result");
     box.append(el("h3", `${L(s.name_hi, s.name_en)}: ${L(s.portal_name, s.portal_en)}`));
-    if (s.url) {
+    const primaryLink = externalLink(s.url, L("पोर्टल खोलें (नई विंडो)", "Open portal (new window)"));
+    if (primaryLink) {
       const p = el("p");
-      const a = el("a", L("पोर्टल खोलें (नई विंडो)", "Open portal (new window)"));
-      a.href = s.url; a.target = "_blank"; a.rel = "noopener noreferrer";
-      p.append(a, document.createTextNode(` · ${s.url.replace(/^https?:\/\//, "")}`));
+      p.append(primaryLink, document.createTextNode(" · " + new URL(s.url).host));
       box.append(p);
     }
     const confidenceText = CONF[s.confidence] || CONF.unconfirmed;
     box.append(el("p", L(...confidenceText)));
-    if (s.alt_urls.length) box.append(el("p", `${L("अन्य पते", "Other addresses")}: ${s.alt_urls.join(", ")}`));
+    if (Array.isArray(s.alt_urls) && s.alt_urls.length) {
+      const p = el("p");
+      p.append(document.createTextNode(L("अन्य स्रोतों के पते", "Other source addresses") + ": "));
+      const links = s.alt_urls.map((url) => externalLink(url, url.replace(/^https?:\\/\\//, ""))).filter(Boolean);
+      links.forEach((a, i) => { if (i) p.append(document.createTextNode(" · ")); p.append(a); });
+      if (links.length) box.append(p);
+    }
     box.append(el("p", `${L("आपके राज्य में इसे कहते हैं", "In your state this is called")}: ${g === "mutation" ? L(s.mutation_hi, s.mutation_en) : L(s.record_hi, s.record_en)}`));
     out.append(box);
 
@@ -48,12 +71,16 @@ async function init() {
       next.append(ol);
     }
     next.append(el("p", L(rules.goal_advice[g], rules.goal_advice_en[g])), el("p", L(hv.advice_hi, hv.advice_en)));
-    if (g === "understand" || g === "map") {
-      const l = g === "map"
-        ? el("a", L("नक्शा सेवाएँ देखें", "Explore map services"))
-        : el("a", L("शब्दकोश खोलें", "Open the glossary"));
-      l.href = g === "map" ? "maps/" : "tools/land-terms/";
-      const q = el("p"); q.append(l); next.append(q);
+    const action = ACTIONS[g]?.(s);
+    if (action) {
+      const a = el("a", L(action[1], action[2]));
+      a.href = action[0];
+      const p = el("p"); p.append(a); next.append(p);
+    }
+    if (h === "owner" || h === "nothing") {
+      const a = el("a", L("खसरा / सर्वे नंबर पता करने की गाइड", "Guide to finding a khasra / survey number"));
+      a.href = "guides/find-khasra-number/";
+      const p = el("p"); p.append(a); next.append(p);
     }
     out.append(next);
 

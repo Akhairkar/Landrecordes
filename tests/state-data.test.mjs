@@ -81,3 +81,16 @@ test("state pages flag uncertain portal addresses before users follow them", asy
     assert.ok(page.body.includes("पुष्टि से पहले OTP"), `${state.id}: Hindi safety guidance`);
   }
 });
+
+
+test("record finder offers goal-specific next guides and safe clickable alternative portals", async () => {
+  const ui = readFileSync(new URL("../assets/js/tools/record-finder-ui.js", import.meta.url), "utf8");
+  for (const goal of ["view", "certified", "mutation", "map", "understand"]) {
+    assert.ok(ui.includes(`${goal}:`), `action for ${goal}`);
+  }
+  assert.ok(ui.includes('guides/find-khasra-number/'));
+  assert.ok(ui.includes('new URL(url)'));
+  assert.ok(ui.includes('["http:", "https:"]'));
+  assert.ok(ui.includes('a.rel = "noopener noreferrer"'));
+  assert.ok(ui.includes('Other source addresses') || ui.includes('अन्य स्रोतों के पते'));
+});
