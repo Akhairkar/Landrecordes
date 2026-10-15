@@ -333,6 +333,7 @@ const byType = {};
 for (const p of outPages) byType[p.meta.type] = (byType[p.meta.type] || 0) + 1;
 const draftCount = outPages.length - published.length;
 const sitemapCount = INDEXABLE ? published.length : 0;
+if (INDEXABLE && published.length === 0) warnings.push("INDEXABLE=true but zero pages are published; sitemap.xml will contain no URLs. Review content and publish only human-verified pages.");
 console.log(`pages: ${outPages.length} (${Object.entries(byType).map(([k, v]) => `${k}:${v}`).join(", ")}) · published: ${published.length} · draft: ${draftCount} · sitemap URLs: ${sitemapCount} · indexable: ${INDEXABLE}`);
 for (const w of warnings) console.warn("WARN ", w);
 if (errors.length) {
