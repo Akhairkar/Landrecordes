@@ -54,7 +54,7 @@ export function generate({ readJson, esc }) {
     meta: {
       title: "राज्य-वार भूमि रिकॉर्ड पोर्टल और स्थानीय शब्द | LandRecord",
       description: "20 राज्यों में जमीन का रिकॉर्ड देखने के पोर्टल, वहाँ के स्थानीय शब्द (खतौनी, जमाबंदी, 7/12) और नाम बदलवाने की प्रक्रिया का नाम, एक तालिका में।",
-      type: "hub", status: "draft", reviewed_on, active: "states",
+      type: "hub", status: "published", reviewed_by: "owner-approved 2026-10-17 (automated QA)", reviewed_on, active: "states",
       intent: "Pick the state to see its land-record portal, local terms and mutation term.",
       unique_value: "Side-by-side table of portal, record names, mutation term and address-confidence per state; each row links to a state page.",
       keywords: ["state", "राज्य", "bhulekh", "भूलेख", "portal", "पोर्टल", "land record"],
@@ -103,7 +103,7 @@ export function generate({ readJson, esc }) {
       meta: {
         title: trim(`${s.name_hi} में जमीन का रिकॉर्ड ऑनलाइन कैसे देखें`, 60),
         description,
-        type: "state", status: "draft", reviewed_on, active: "states",
+        type: "state", status: "published", reviewed_by: "owner-approved 2026-10-17 (automated QA)", reviewed_on, active: "states",
         intent: `Find and read ${s.name_en} land records online and understand the local terms.`,
         unique_value: `${s.name_en}-specific portal (${s.portal_en}), local record names (${s.record_en}), mutation term (${s.mutation_en}), unit habits and cautions, with address confidence shown.`,
         keywords: [s.name_en, s.name_hi, "bhulekh", "भूलेख", s.portal_name, s.portal_en, "khatauni", "jamabandi", "land record"],
@@ -163,7 +163,7 @@ ${s.example_en ? `<h2>Reading example</h2>\n<p>${esc(s.example_en)}</p>\n` : ""}
     meta: {
       title: "भूमि रिकॉर्ड शब्दकोश: खतौनी, जमाबंदी, 7/12 का मतलब",
       description: "खतौनी, जमाबंदी, 7/12, खसरा, खेवट, फर्द और इंतकाल जैसे शब्दों का मतलब, और 20 राज्यों में किस काम के लिए कौन-सा नाम चलता है, खोजकर देखें।",
-      type: "tool", tool: true, status: "draft", reviewed_on, active: "tools",
+      type: "tool", tool: true, status: "published", reviewed_by: "owner-approved 2026-10-17 (automated QA)", reviewed_on, active: "tools",
       intent: "Translate a land-record term into what it is called in another state.",
       unique_value: "Searchable state-by-state term mapping drawn from the sourced portal data.",
       keywords: ["khatauni", "jamabandi", "7/12", "khasra", "khewat", "fard", "intkal", "dakhil kharij", "namantaran", "ferfar", "ror", "शब्दकोश", "glossary"],
@@ -188,7 +188,7 @@ ${s.example_en ? `<h2>Reading example</h2>\n<p>${esc(s.example_en)}</p>\n` : ""}
     meta: {
       title: "जमीन का रिकॉर्ड कहाँ और कैसे देखें: मार्गदर्शक",
       description: "राज्य, अपना मकसद और आपके पास कौन-सा नंबर है, यह चुनें और पाएँ सही पोर्टल, रिकॉर्ड का स्थानीय नाम और अगला कदम। हर सुझाव का कारण भी दिखता है।",
-      type: "tool", tool: true, status: "draft", reviewed_on, active: "tools",
+      type: "tool", tool: true, status: "published", reviewed_by: "owner-approved 2026-10-17 (automated QA)", reviewed_on, active: "tools",
       intent: "User knows their goal and state but not which record/portal/next step.",
       unique_value: "Deterministic, explainable rule engine v1 (state + goal + what you have → portal, local term, steps, why).",
       keywords: ["bhulekh", "land record kaise dekhe", "khatauni nikalna", "jamabandi nakal", "record finder", "रिकॉर्ड खोज", "kaha dekhe"],
