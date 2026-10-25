@@ -466,5 +466,17 @@
     "url": "https://homefirstindia.com/blog/article/khatauni-khasra-uttarakhand/",
     "kind": "secondary",
     "basis": "Describes the Uttarakhand Bhulekh portal for khatauni/khasra lookup; used only to corroborate the domain."
+  },
+  "osm-tile-policy": {
+    "org": "OpenStreetMap Foundation — Tile usage policy",
+    "url": "https://operations.osmfoundation.org/policies/tiles/",
+    "kind": "official",
+    "basis": "Terms for using the public OpenStreetMap map tiles shown in the map area tool (attribution required, light use only)."
+  },
+  "geo-mean-radius": {
+    "org": "Wikipedia — Earth radius (IUGG mean radius 6,371.0088 km)",
+    "url": "https://en.wikipedia.org/wiki/Earth_radius#Mean_radius",
+    "kind": "definition",
+    "basis": "Mean Earth radius used to turn latitude/longitude differences into metres."
   }
 }

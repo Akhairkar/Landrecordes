@@ -167,3 +167,7 @@ html,body{overflow-x:clip}
 .lr-share p{display:flex;flex-wrap:wrap;gap:10px;margin:0}
 a.lr-btn{display:inline-flex;align-items:center;text-decoration:none}
 @media print{.lr-share{display:none}}
+.lr-tool-actions{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.lr-map{height:min(60vh,420px);border-radius:var(--lr-radius-md);border:1px solid var(--lr-border-strong);margin:8px 0;z-index:0}
+.lr-points{font-family:ui-monospace,monospace;font-size:.9rem;padding-left:24px}
+.lr-btn:disabled{opacity:.55;cursor:not-allowed}

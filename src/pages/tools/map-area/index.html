@@ -1,0 +1,103 @@
+<!--meta
+{
+ "title": "GPS और नक्शे से खेत नापें: जमीन का क्षेत्रफल ऑनलाइन",
+ "description": "खेत के कोनों पर GPS से निशान लगाएँ या नक्शे पर टैप करें और बीघा, एकड़, हेक्टेयर, गज में अनुमानित क्षेत्रफल पाएँ। कोई ऐप या लॉगिन नहीं चाहिए।",
+ "type": "tool",
+ "tool": true,
+ "status": "published",
+ "reviewed_on": "2026-10-25",
+ "active": "tools",
+ "intent": "User wants to measure a field's area with phone GPS or by drawing on a map ('GPS se jamin napna', 'khet napne ka app', 'map se area nikale').",
+ "unique_value": "Walk-the-boundary GPS mode that works without map tiles, plus optional OSM map drawing; self-crossing check, GPS-accuracy warning, results in sourced fixed units and user-supplied local bigha/biswa values; shareable link.",
+ "breadcrumbs": [
+  { "name": "Tools", "path": "tools/" },
+  { "name": "GPS/नक्शे से खेत नापें", "path": "tools/map-area/" }
+ ],
+ "sources": ["intl-foot-definition", "geo-mean-radius", "osm-tile-policy", "bajaj-guntha-acre"],
+ "scripts": ["assets/js/tools/map-area-ui.js"],
+ "faq": [
+  { "q": "फ़ोन के GPS से खेत का क्षेत्रफल कितना सही आता है?", "a": "आम फ़ोन का GPS खुले मैदान में कुछ मीटर तक ऊपर-नीचे हो सकता है; पेड़, इमारत या बादल हों तो और ज़्यादा। छोटे प्लॉट में यह फर्क प्रतिशत में बड़ा होता है। टूल हर कोने के साथ GPS की सटीकता (±मीटर) दिखाता है ताकि आप अंदाज़ा लगा सकें। नतीजा अनुमान है, सरकारी नाप नहीं।" },
+  { "q": "बिना इंटरनेट के चलेगा?", "a": "GPS से कोने जोड़ना और क्षेत्रफल निकालना पेज खुलने के बाद बिना नक्शे के भी चलता है। नक्शे की तस्वीरें लाने के लिए इंटरनेट चाहिए।" },
+  { "q": "बीघा या बिस्वा में नतीजा क्यों नहीं दिखता?", "a": "बीघा, बिस्वा, कट्ठा का माप राज्य और ज़िले के अनुसार बदलता है। आप अपने इलाके का मान (वर्ग फुट में) भरेंगे तो टूल उसी से बदल देगा; हम अंदाज़े से कोई मान नहीं भरते।" },
+  { "q": "क्या यह नक्शा खसरा या भू-नक्शा जैसा है?", "a": "नहीं। यह सिर्फ आम नक्शा है जिस पर आप खुद निशान लगाते हैं। खसरा की आधिकारिक सीमा राज्य के भू-नक्शा पोर्टल और राजस्व रिकॉर्ड में होती है।" }
+ ],
+ "faq_en": [
+  { "q": "How accurate is phone GPS for field area?", "a": "Phone GPS can drift a few metres in open ground, more under trees, near buildings or under cloud. On small plots that is a large share of the area. The tool shows each corner's GPS accuracy (± metres) so you can judge. The result is an estimate, not a government measurement." },
+  { "q": "Does it work offline?", "a": "Adding corners by GPS and calculating the area work without the map once the page has loaded. Map images need internet." },
+  { "q": "Why is there no bigha or biswa result?", "a": "Bigha, biswa and katha vary by state and district. Enter your local value (in square feet) and the tool converts with it; we don't prefill guesses." },
+  { "q": "Is this the same as a khasra or Bhu-Naksha map?", "a": "No. It is a general map on which you place points yourself. The official khasra boundary is in the state's Bhu-Naksha portal and revenue records." }
+ ],
+ "keywords": ["GPS se jamin napna", "khet napne ka app", "जमीन नापने का ऐप", "map se area", "field area GPS", "खेत का क्षेत्रफल"],
+ "related": [
+  { "path": "tools/land-unit-converter/", "label": "इकाई बदलने का कैलकुलेटर", "label_en": "Land unit converter" },
+  { "path": "tools/plot-area-calculator/", "label": "भुजाओं से क्षेत्रफल", "label_en": "Area from measured sides" },
+  { "path": "maps/", "label": "सरकारी भू-नक्शा कहाँ देखें", "label_en": "Where to see official land maps" }
+ ],
+ "reviewed_by": "owner-approved 2026-10-25 (automated QA)"
+}
+-->
+<h1>GPS और नक्शे से खेत का क्षेत्रफल नापें</h1>
+<p class="lr-lead" data-l="hi">खेत की सीमा पर चलते हुए हर कोने पर <strong>"GPS से कोना जोड़ें"</strong> दबाएँ, या नक्शा खोलकर कोनों पर टैप करें। टूल अनुमानित क्षेत्रफल वर्ग फुट, गज, एकड़, हेक्टेयर, गुंटा और आपकी स्थानीय इकाई में दिखाता है।</p>
+<p class="lr-lead" data-l="en">Walk the field boundary and tap <strong>"Add corner by GPS"</strong> at each corner, or open the map and tap the corners. The tool shows the estimated area in square feet, square yards, acres, hectares, guntha and your local unit.</p>
+
+<section class="lr-card" id="tool" aria-labelledby="ma-h">
+  <h2 id="ma-h" style="margin-top:0">खेत नापें <span class="lr-en">/ Measure a field</span></h2>
+  <div class="lr-tool-actions">
+    <button class="lr-btn" type="button" id="ma-gps">GPS से कोना जोड़ें <span class="lr-en">/ Add corner by GPS</span></button>
+    <button class="lr-btn secondary" type="button" id="ma-open-map">नक्शा खोलें <span class="lr-en">/ Open map</span></button>
+  </div>
+  <p><small data-l="hi">नक्शा खोलने पर ही OpenStreetMap से तस्वीरें आती हैं। GPS वाला तरीका बिना नक्शे के भी चलता है।</small><small data-l="en">Map images load from OpenStreetMap only when you open the map. GPS mode works without it.</small></p>
+  <div id="ma-map" class="lr-map" hidden></div>
+  <p id="ma-map-help" hidden><small data-l="hi">नक्शे को ज़ूम करके खेत के कोनों पर क्रम से टैप करें (सीमा के साथ-साथ)।</small><small data-l="en">Zoom in and tap the field's corners in order around the boundary.</small></p>
+  <h3 style="margin-bottom:4px">जोड़े गए कोने <span class="lr-en">/ Corners</span></h3>
+  <ol id="ma-points" class="lr-points"></ol>
+  <div class="lr-tool-actions">
+    <button class="lr-btn secondary" type="button" id="ma-undo" disabled>आखिरी कोना हटाएँ <span class="lr-en">/ Undo</span></button>
+    <button class="lr-btn secondary" type="button" id="ma-clear" disabled>सब हटाएँ <span class="lr-en">/ Clear</span></button>
+    <button class="lr-btn secondary" type="button" id="ma-copy">लिंक कॉपी करें <span class="lr-en">/ Copy link</span></button>
+  </div>
+  <details id="ma-local-box" class="lr-field">
+    <summary class="lr-label">नतीजे में बीघा/बिस्वा/कट्ठा चाहिए? अपना स्थानीय मान (वर्ग फुट) भरें <span class="lr-en">/ Optional local values</span></summary>
+    <div id="ma-local-fields" class="lr-row"></div>
+  </details>
+  <p id="ma-status" role="status" aria-live="polite"></p>
+  <p id="ma-summary"></p>
+  <div class="lr-table-wrap">
+    <table class="lr-table" id="ma-table" hidden style="min-width:0">
+      <caption class="lr-en" style="text-align:left;padding:8px 0">Area in every unit</caption>
+      <thead><tr><th scope="col">इकाई</th><th scope="col">क्षेत्रफल</th></tr></thead>
+      <tbody id="ma-body"></tbody>
+    </table>
+  </div>
+  <noscript><p class="lr-notice">इस टूल के लिए JavaScript चाहिए। <span class="lr-en">This tool needs JavaScript.</span></p></noscript>
+</section>
+<p class="lr-notice" style="margin-top:16px"><strong>ध्यान दें:</strong> यह GPS या नक्शे पर लगाए निशानों से निकाला गया अनुमान है, सरकारी नाप या सीमांकन नहीं। रजिस्ट्री, नामांतरण या विवाद में राजस्व रिकॉर्ड और सरकारी पैमाइश ही मान्य है। <span class="lr-en">Approximate; not a survey. Verify with revenue records.</span></p>
+
+<div class="lr-prose" data-l="hi">
+<h2>GPS से सही नाप के लिए</h2>
+<ul>
+<li>खुले में खड़े होकर, हर कोने पर कुछ सेकंड स्थिर रहें, फिर बटन दबाएँ। पेड़ या दीवार के पास GPS भटकता है।</li>
+<li>कोने सीमा के साथ-साथ क्रम में जोड़ें (घड़ी की दिशा में या उल्टी)। टूल जाँचता है कि सीमा खुद को काट तो नहीं रही।</li>
+<li>टेढ़ी मेड़ हो तो मोड़ पर भी एक कोना जोड़ें; जितने ज़्यादा मोड़, उतना बेहतर अनुमान।</li>
+<li>हर कोने के साथ ±मीटर में सटीकता दिखती है। 10 मीटर से ज़्यादा हो तो दोबारा कोशिश करें।</li>
+<li>छोटे प्लॉट (कुछ सौ वर्ग फुट) के लिए टेप से नापकर <a href="tools/plot-area-calculator/">भुजाओं वाला कैलकुलेटर</a> ज़्यादा भरोसेमंद है।</li>
+</ul>
+<h2>गणना कैसे होती है</h2>
+<p>हर कोने का अक्षांश-देशांतर पृथ्वी की औसत त्रिज्या (6,371 किमी) से मीटर में बदला जाता है और फिर शू-लेस सूत्र से क्षेत्रफल निकाला जाता है। खेत जितने छोटे इलाके के लिए यह तरीका GPS की गलती से कहीं ज़्यादा सटीक है। मीटर से बाकी इकाइयाँ तय परिभाषा से बनती हैं: 1 फुट = 0.3048 मीटर, 1 एकड़ = 43,560 वर्ग फुट, 1 हेक्टेयर = 10,000 वर्ग मीटर।</p>
+<h2>आपकी जानकारी</h2>
+<p>GPS की जगह सिर्फ आपके फ़ोन में गणना के लिए इस्तेमाल होती है। कोनों के निर्देशांक लिंक में जुड़ते हैं ताकि आप नाप शेयर कर सकें; इससे ज़मीन की जगह पता चलती है, इसलिए लिंक सोच-समझकर भेजें। विवरण <a href="privacy/">गोपनीयता नीति</a> में है।</p>
+</div>
+<div class="lr-prose" data-l="en">
+<h2>For a better GPS measurement</h2>
+<ul>
+<li>Stand in the open and stay still for a few seconds at each corner before tapping. GPS drifts near trees and walls.</li>
+<li>Add corners in order around the boundary (clockwise or anticlockwise). The tool checks that the boundary does not cross itself.</li>
+<li>If a bund bends, add a corner at the bend too; more bends give a better estimate.</li>
+<li>Each corner shows its accuracy in ± metres. If it is over 10 m, try again.</li>
+<li>For small plots (a few hundred sq ft), measuring with a tape and using the <a href="tools/plot-area-calculator/">side-based calculator</a> is more reliable.</li>
+</ul>
+<h2>How it is calculated</h2>
+<p>Each corner's latitude and longitude are turned into metres using the mean Earth radius (6,371 km), then the shoelace formula gives the area. For field-sized areas this is far more precise than GPS error. Other units follow fixed definitions: 1 ft = 0.3048 m, 1 acre = 43,560 sq ft, 1 hectare = 10,000 m².</p>
+<h2>Your information</h2>
+<p>The GPS position is used only on your phone for the calculation. Corner coordinates go into the link so you can share it; they reveal where the land is, so share with care. Details are in the <a href="privacy/">privacy policy</a>.</p>
+</div>
