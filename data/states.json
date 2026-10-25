@@ -590,9 +590,11 @@
       "portal_name": "भूलेख उत्तराखंड (Bhulekh Uttarakhand)",
       "url": "https://bhulekh.uk.gov.in/",
       "alt_urls": [],
-      "confidence": "unconfirmed",
+      "confidence": "multi-source",
       "sources": [
         "portal-uk-guide",
+        "bajaj-uk-devbhoomi",
+        "homefirst-uk-khatauni",
         "dilrmp"
       ],
       "record_hi": "खतौनी, खसरा",
@@ -605,7 +607,7 @@
         "खाता, खसरा संख्या या नाम से खोजें।"
       ],
       "watch_hi": [
-        "हमने पोर्टल का सही पता आधिकारिक स्रोत से पक्का नहीं किया है; राज्य राजस्व विभाग की साइट से लिंक की पुष्टि करके ही इस्तेमाल करें।",
+        "तीन अलग स्रोत यही पता (bhulekh.uk.gov.in) बताते हैं, पर ये निजी गाइड हैं; खोलते समय पता बार में gov.in डोमेन ज़रूर देखें।",
         "खोज में 'देवभूमि', 'भूलेख' जैसे नाम से कई नकली या सहायक साइटें दिखती हैं; सरकारी (gov.in) डोमेन ही भरोसेमंद है।",
         "पहाड़ी गाँवों में टुकड़ों में बँटी जोत और स्थानीय इकाइयाँ मिलती हैं; रकबा पढ़ते समय इकाई ज़रूर देखें।"
       ],
@@ -630,7 +632,7 @@
         "Search by khata, khasra number or name."
       ],
       "watch_en": [
-        "We have not confirmed the portal's correct address from an official source; confirm the link from the state revenue department's site before use.",
+        "Three separate sources give this address (bhulekh.uk.gov.in), but they are private guides; check for the gov.in domain in the address bar when you open it.",
         "Searches for 'Devbhoomi' or 'Bhulekh' show many fake or helper sites; only the government (gov.in) domain is reliable.",
         "Hill villages have fragmented holdings and local units; check the unit when reading the area."
       ],

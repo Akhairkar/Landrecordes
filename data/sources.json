@@ -454,5 +454,17 @@
     "url": "https://housing.com/news/all-about-dadra-and-nagar-haveli-daman-and-diu-land-record",
     "kind": "secondary",
     "basis": "Describes Avanika (DNH) and SUGAM (Daman/Diu) portals."
+  },
+  "bajaj-uk-devbhoomi": {
+    "org": "Bajaj Finserv — Devbhoomi Bhulekh Uttarakhand guide (secondary source)",
+    "url": "https://www.bajajfinserv.in/devbhoomi-bhulekh-uttarakhand-land-record",
+    "kind": "secondary",
+    "basis": "Gives bhulekh.uk.gov.in as the Uttarakhand land-records portal; used only to corroborate the domain."
+  },
+  "homefirst-uk-khatauni": {
+    "org": "HomeFirst — Khatauni Khasra Uttarakhand guide (secondary source)",
+    "url": "https://homefirstindia.com/blog/article/khatauni-khasra-uttarakhand/",
+    "kind": "secondary",
+    "basis": "Describes the Uttarakhand Bhulekh portal for khatauni/khasra lookup; used only to corroborate the domain."
   }
 }
