@@ -162,3 +162,8 @@ html,body{overflow-x:clip}
 .lr-band.lr-prose{max-width:none}
 .lr-letter{white-space:pre-wrap;font-family:var(--lr-font-sans);line-height:1.7;background:var(--lr-surface);border:1px dashed var(--lr-border-strong);border-radius:var(--lr-radius-md);padding:16px;min-height:200px}
 @media print{body.lr-printing *{visibility:hidden}.lr-letter,.lr-letter *{visibility:visible}.lr-letter{position:absolute;left:0;top:0;border:0;width:100%}}
+.lr-share{margin:var(--lr-space-6,24px) 0;padding:16px;border-radius:var(--lr-radius-md);background:var(--lr-c-field-soft,var(--lr-surface-muted))}
+.lr-share h2{margin:0 0 8px;font-size:1.05rem}
+.lr-share p{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+a.lr-btn{display:inline-flex;align-items:center;text-decoration:none}
+@media print{.lr-share{display:none}}

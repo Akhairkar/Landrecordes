@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 // LandRecord static build + quality gates (BUILD_RULES §A). Zero dependencies.
 // Usage: node scripts/build.mjs   (env: BASE_PATH, SITE_URL, INDEXABLE=true|false)
 import { readFileSync, writeFileSync, mkdirSync, cpSync, readdirSync, rmSync, existsSync } from "node:fs";
@@ -76,6 +77,11 @@ mkdirSync(DIST, { recursive: true });
 cpSync(join(ROOT, "assets"), join(DIST, "assets"), { recursive: true });
 cpSync(join(ROOT, "data"), join(DIST, "data"), { recursive: true });
 if (existsSync(join(ROOT, "CNAME"))) cpSync(join(ROOT, "CNAME"), join(DIST, "CNAME"));
+// one stylesheet request instead of three; the hash busts browser caches after each change
+const siteCss = ["design-system", "shell", "components"].map((n) => readFileSync(join(ROOT, `assets/css/${n}.css`), "utf8")).join("\n");
+writeFileSync(join(DIST, "assets/css/site.css"), siteCss);
+writeFileSync(join(DIST, "manifest.webmanifest"), JSON.stringify({ name: "LandRecord — भूमि रिकॉर्ड जानकारी", short_name: "LandRecord", lang: "hi", start_url: BASE, scope: BASE, display: "standalone", background_color: "#faf7f0", theme_color: "#2c5b3c", icons: [{ src: `${BASE}assets/img/icon.svg`, sizes: "any", type: "image/svg+xml", purpose: "any" }] }));
+const cssVersion = createHash("sha256").update(siteCss).digest("hex").slice(0, 10);
 
 // ---------- pages ----------
 const layout = readFileSync(join(ROOT, "src/layout.html"), "utf8");
@@ -272,6 +278,8 @@ for (const p of pages) {
   const relatedHtml = `<section class="lr-related lr-prose" aria-labelledby="rel-h"><h2 id="rel-h">यह भी देखें <span class="lr-en">/ Related</span></h2><ul>${relatedItems
     .map((r) => `<li><a href="${esc(r.path)}">${r.label_en ? `<span data-l="hi">${esc(r.label)}</span><span data-l="en">${esc(r.label_en)}</span>` : esc(r.label)}</a></li>`)
     .join("")}</ul></section>`;
+  const shareText = encodeURIComponent(`${meta.title} ${canonical}`);
+  const shareHtml = ["legal", "hub"].includes(meta.type) || meta.status !== "published" ? "" : `<section class="lr-share" aria-labelledby="share-h"><h2 id="share-h">शेयर करें <span class="lr-en">/ Share</span></h2><p><a class="lr-btn lr-share-wa" href="https://wa.me/?text=${shareText}" rel="noopener noreferrer" target="_blank"><span data-l="hi">WhatsApp पर भेजें</span><span data-l="en">Send on WhatsApp</span></a> <button class="lr-btn secondary" type="button" data-lr-copy="${esc(canonical)}" hidden><span data-l="hi">लिंक कॉपी करें</span><span data-l="en">Copy link</span></button></p></section>`;
   const scripts = (meta.scripts || []).map((s) => `<script type="module" src="${esc(s)}"></script>`).join("\n");
   let html = layout
     .replace("{{base}}", esc(BASE))
@@ -286,7 +294,8 @@ for (const p of pages) {
     .replace("{{pathprefix}}", depthPrefix)
     .replace("{{active}}", esc(meta.active || ""))
     .replace("{{body}}", () => p.body.replace("{{units_table_en}}", unitsTableEn).replace("{{units_table}}", unitsTable).replace("{{recent_pages}}", () => recentList).replace("{{state_chips_en}}", () => stateChipsEn).replace("{{state_chips}}", () => stateChips).replace(/\{\{icon:([a-z]+)\}\}/g, (_, n) => icon(n)))
-    .replace("{{faq}}", () => relatedHtml + faqHtml)
+    .replace("{{faq}}", () => shareHtml + relatedHtml + faqHtml)
+    .replace("{{cssv}}", cssVersion)
     .replace("{{sources}}", () => srcHtml)
     .replace("{{scripts}}", () => scripts);
   html = html.replace(/<body>[\s\S]*<\/body>/, (b) => pairLang(b));

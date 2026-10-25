@@ -70,5 +70,6 @@
     themeButton.onclick=()=>{setTheme(getTheme()==="dark"?"light":"dark");mount(options)};
     root.querySelector("[data-lr-menu]").onclick=e=>{const nav=root.querySelector("#lr-mobile-nav"),open=nav.hidden;nav.hidden=!open;e.currentTarget.setAttribute("aria-expanded",String(open));};
   }
+  document.querySelectorAll("[data-lr-copy]").forEach(b=>{if(!navigator.clipboard)return;b.hidden=false;b.onclick=()=>navigator.clipboard.writeText(b.dataset.lrCopy).then(()=>{b.textContent=getLanguage()==="hi"?"लिंक कॉपी हो गया":"Link copied"})});
   window.LandRecordShell={mount,setLanguage,setTheme};
 })();
