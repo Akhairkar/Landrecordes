@@ -160,3 +160,5 @@ html,body{overflow-x:clip}
 .lr-band{background:var(--lr-band,var(--lr-surface-muted))}
 .lr-hero::before{inset:0}
 .lr-band.lr-prose{max-width:none}
+.lr-letter{white-space:pre-wrap;font-family:var(--lr-font-sans);line-height:1.7;background:var(--lr-surface);border:1px dashed var(--lr-border-strong);border-radius:var(--lr-radius-md);padding:16px;min-height:200px}
+@media print{body.lr-printing *{visibility:hidden}.lr-letter,.lr-letter *{visibility:visible}.lr-letter{position:absolute;left:0;top:0;border:0;width:100%}}

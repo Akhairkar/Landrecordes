@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 
 const states = JSON.parse(readFileSync(new URL("../data/states.json", import.meta.url), "utf8")).states;
 const sources = JSON.parse(readFileSync(new URL("../data/sources.json", import.meta.url), "utf8"));
-const allowedConfidence = new Set(["official-doc", "multi-source", "conflicting", "single-source", "unconfirmed"]);
+const allowedConfidence = new Set(["official-doc", "multi-source", "conflicting", "single-source", "unconfirmed", "offline"]);
 
 test("state data has unique IDs and a supported portal confidence label", () => {
   const ids = states.map((s) => s.id);

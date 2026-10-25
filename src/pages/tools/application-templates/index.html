@@ -1,0 +1,156 @@
+<!--meta
+{
+ "title": "जमीन से जुड़े आवेदन पत्र: नामांतरण, सुधार, नकल, कब्ज़ा",
+ "description": "नामांतरण/दाखिल-खारिज, रिकॉर्ड सुधार, प्रमाणित नकल, सीमांकन और अवैध कब्ज़े की शिकायत के आवेदन का ड्राफ्ट अपनी जानकारी भरकर बनाएँ, कॉपी या प्रिंट करें।",
+ "type": "tool",
+ "tool": true,
+ "status": "published",
+ "reviewed_by": "owner-approved 2026-10-25 (automated QA)",
+ "reviewed_on": "2026-10-25",
+ "active": "tools",
+ "intent": "User needs a draft application letter for a land matter (old site's forms page had demand).",
+ "unique_value": "Client-side generator for five common land applications in Hindi or English; no data leaves the browser; clearly labelled as a draft, not an official form.",
+ "keywords": [
+  "application",
+  "आवेदन पत्र",
+  "forms",
+  "फॉर्म",
+  "dakhil kharij application",
+  "नामांतरण आवेदन",
+  "अवैध कब्जा application",
+  "सीमांकन आवेदन",
+  "नकल आवेदन",
+  "record correction"
+ ],
+ "breadcrumbs": [
+  {
+   "name": "टूल्स",
+   "name_en": "Tools",
+   "path": "tools/"
+  },
+  {
+   "name": "आवेदन पत्र",
+   "name_en": "Application drafts",
+   "path": "tools/application-templates/"
+  }
+ ],
+ "sources": [
+  "editorial-general"
+ ],
+ "scripts": [
+  "assets/js/tools/templates-ui.js"
+ ],
+ "related": [
+  {
+   "path": "records/mutation/",
+   "label": "म्यूटेशन के अलग-अलग नाम",
+   "label_en": "Names for mutation"
+  },
+  {
+   "path": "guides/encroachment-overview/",
+   "label": "जमीन पर कब्ज़ा हो तो पहले क्या करें",
+   "label_en": "If your land is encroached"
+  },
+  {
+   "path": "guides/record-mismatch-correction/",
+   "label": "रिकॉर्ड में गलती सुधारना",
+   "label_en": "Correcting a record"
+  }
+ ],
+ "faq": [
+  {
+   "q": "क्या यह सरकारी फॉर्म है?",
+   "a": "नहीं। यह सामान्य आवेदन का ड्राफ्ट है। कई राज्यों में किसी काम के लिए तय फॉर्म या ऑनलाइन आवेदन होता है; पहले तहसील या राज्य पोर्टल से पूछें और वहाँ का फॉर्म हो तो वही भरें।"
+  },
+  {
+   "q": "क्या मेरी भरी जानकारी कहीं जाती है?",
+   "a": "नहीं। आवेदन आपके ब्राउज़र में ही बनता है; न हम उसे सेव करते हैं, न लिंक में डालते हैं।"
+  },
+  {
+   "q": "क्या इसमें कानूनी धारा लिखी है?",
+   "a": "नहीं। हम कोई धारा या समय-सीमा नहीं लिखते क्योंकि ये राज्य और मामले पर निर्भर हैं। ज़रूरत हो तो वकील से जुड़वाएँ।"
+  }
+ ],
+ "faq_en": [
+  {
+   "q": "Is this a government form?",
+   "a": "No. It is a general application draft. Many states prescribe a form or online application for a task; ask the tehsil or state portal first and use that form if one exists."
+  },
+  {
+   "q": "Does the information I enter go anywhere?",
+   "a": "No. The application is built in your browser; we neither save it nor put it in the link."
+  },
+  {
+   "q": "Does it cite legal sections?",
+   "a": "No. We don't write sections or time limits because they depend on the state and the case. Have a lawyer add them if needed."
+  }
+ ]
+}
+-->
+<h1>जमीन से जुड़े आवेदन पत्र <span class="lr-en">/ Land application drafts</span></h1>
+<p class="lr-lead" data-l="hi">आवेदन का प्रकार चुनें, अपनी जानकारी भरें और ड्राफ्ट तैयार करें। इसे कॉपी करके या प्रिंट करके अपने हिसाब से बदल सकते हैं। यह सरकारी फॉर्म नहीं, सामान्य ड्राफ्ट है।</p>
+<p class="lr-lead" data-l="en">Choose the type of application, fill in your details and generate a draft. Copy or print it and adjust as needed. This is a general draft, not a government form.</p>
+<section class="lr-card" id="tool" aria-labelledby="ap-h">
+  <h2 id="ap-h" style="margin-top:0">आवेदन बनाएँ <span class="lr-en">/ Build an application</span></h2>
+  <div class="lr-row">
+    <div class="lr-field"><label for="ap-type">आवेदन का प्रकार <span class="lr-en">/ Type</span></label><select class="lr-select" id="ap-type"></select></div>
+    <div class="lr-field"><label for="ap-lang">आवेदन की भाषा <span class="lr-en">/ Letter language</span></label><select class="lr-select" id="ap-lang"><option value="hi">हिंदी</option><option value="en">English</option></select></div>
+  </div>
+  <div class="lr-row">
+    <div class="lr-field"><label for="ap-to">किसे (पद) <span class="lr-en">/ To (designation)</span></label><input class="lr-input" id="ap-to" autocomplete="off"></div>
+    <div class="lr-field"><label for="ap-office">कार्यालय/स्थान <span class="lr-en">/ Office / place</span></label><input class="lr-input" id="ap-office" autocomplete="off" placeholder="तहसील ..."></div>
+  </div>
+  <div class="lr-row">
+    <div class="lr-field"><label for="ap-name">आवेदक का नाम <span class="lr-en">/ Applicant name</span></label><input class="lr-input" id="ap-name" autocomplete="name"></div>
+    <div class="lr-field"><label for="ap-rel">पिता/पति का नाम <span class="lr-en">/ Father's/husband's name</span></label><input class="lr-input" id="ap-rel" autocomplete="off"></div>
+  </div>
+  <div class="lr-field"><label for="ap-addr">पता <span class="lr-en">/ Address</span></label><input class="lr-input" id="ap-addr" autocomplete="street-address"></div>
+  <div class="lr-row">
+    <div class="lr-field"><label for="ap-phone">मोबाइल (वैकल्पिक) <span class="lr-en">/ Mobile (optional)</span></label><input class="lr-input" id="ap-phone" inputmode="tel" autocomplete="tel"></div>
+    <div class="lr-field"><label for="ap-village">गाँव/मौजा <span class="lr-en">/ Village</span></label><input class="lr-input" id="ap-village" autocomplete="off"></div>
+  </div>
+  <div class="lr-row">
+    <div class="lr-field"><label for="ap-tehsil">तहसील <span class="lr-en">/ Tehsil</span></label><input class="lr-input" id="ap-tehsil" autocomplete="off"></div>
+    <div class="lr-field"><label for="ap-district">जिला <span class="lr-en">/ District</span></label><input class="lr-input" id="ap-district" autocomplete="off"></div>
+  </div>
+  <div class="lr-row">
+    <div class="lr-field"><label for="ap-khasra">खसरा/सर्वे/दाग नंबर <span class="lr-en">/ Plot/survey number</span></label><input class="lr-input" id="ap-khasra" autocomplete="off"></div>
+    <div class="lr-field"><label for="ap-khata">खाता/खेवट/खतियान नंबर <span class="lr-en">/ Khata/holding number</span></label><input class="lr-input" id="ap-khata" autocomplete="off"></div>
+  </div>
+  <div class="lr-field"><label for="ap-area">रकबा (इकाई सहित) <span class="lr-en">/ Area with unit</span></label><input class="lr-input" id="ap-area" autocomplete="off" placeholder="0.25 हेक्टेयर"></div>
+  <div class="lr-field"><label for="ap-details">विवरण (आपकी बात, 2–4 वाक्य) <span class="lr-en">/ Details (2–4 sentences)</span></label><textarea class="lr-input" id="ap-details" rows="4"></textarea><small id="ap-hint"></small></div>
+  <div class="lr-row">
+    <button class="lr-btn" type="button" id="ap-copy">कॉपी करें <span class="lr-en">/ Copy</span></button>
+    <button class="lr-btn secondary" type="button" id="ap-print">प्रिंट करें <span class="lr-en">/ Print</span></button>
+  </div>
+  <p id="ap-status" role="status" aria-live="polite"></p>
+  <h3>ड्राफ्ट <span class="lr-en">/ Draft</span></h3>
+  <div id="ap-out" class="lr-letter" tabindex="0" aria-label="Draft letter"></div>
+  <noscript><p class="lr-notice">इस टूल के लिए JavaScript चाहिए। / This tool needs JavaScript.</p></noscript>
+</section>
+<p class="lr-notice" style="margin-top:16px" data-l="hi"><strong>ज़रूरी:</strong> यह कानूनी सलाह या सरकारी फॉर्म नहीं है। अगर आपके राज्य में इस काम के लिए तय फॉर्म, शुल्क या ऑनलाइन आवेदन है, तो वही इस्तेमाल करें। आवेदन के साथ ज़रूरी दस्तावेज़ों की प्रतियाँ लगाएँ और पावती ज़रूर लें।</p>
+<p class="lr-notice" style="margin-top:16px" data-l="en"><strong>Important:</strong> this is not legal advice or a government form. If your state prescribes a form, fee or online application for this task, use that. Attach copies of the required documents and always keep the acknowledgement.</p>
+<div class="lr-prose" data-l="hi">
+<h2>कौन-सा आवेदन कब</h2>
+<ul>
+<li><strong>नामांतरण/दाखिल-खारिज:</strong> खरीद, उत्तराधिकार या बँटवारे के बाद राजस्व रिकॉर्ड में नाम दर्ज कराने के लिए। देखें <a href="records/mutation/">म्यूटेशन के नाम</a>।</li>
+<li><strong>रिकॉर्ड में सुधार:</strong> नाम की स्पेलिंग, पिता का नाम या अंकों जैसी गलती के लिए। गंभीर विवाद में वकील की सलाह लें।</li>
+<li><strong>प्रमाणित नकल:</strong> बैंक, अदालत या कार्यालय के लिए प्रमाणित प्रति चाहिए हो तो।</li>
+<li><strong>सीमांकन/पैमाइश:</strong> खेत की सीमा मौके पर तय कराने के लिए।</li>
+<li><strong>अवैध कब्ज़े की शिकायत:</strong> किसी के आपकी जमीन पर कब्ज़ा करने पर राजस्व अधिकारी या थाने को लिखित सूचना के लिए। पहले <a href="guides/encroachment-overview/">यह गाइड</a> पढ़ें।</li>
+</ul>
+<h2>आवेदन देते समय</h2>
+<ul><li>दो प्रतियाँ बनाएँ: एक जमा करें, दूसरी पर पावती (रिसीविंग) लें।</li><li>पहचान-पत्र, रजिस्ट्री/उत्तराधिकार के कागज़ और ताज़ा रिकॉर्ड की प्रतियाँ साथ लगाएँ।</li><li>हस्ताक्षर और तारीख हाथ से करें।</li></ul>
+</div>
+<div class="lr-prose" data-l="en">
+<h2>Which application when</h2>
+<ul>
+<li><strong>Mutation (dakhil-kharij/namantaran):</strong> to record your name in the revenue record after a purchase, inheritance or partition. See <a href="records/mutation/">names for mutation</a>.</li>
+<li><strong>Record correction:</strong> for errors such as name spelling, father's name or digits. For serious disputes consult a lawyer.</li>
+<li><strong>Certified copy:</strong> when a bank, court or office needs a certified copy.</li>
+<li><strong>Demarcation:</strong> to get the field boundary fixed on the ground.</li>
+<li><strong>Encroachment complaint:</strong> written information to the revenue officer or police when someone occupies your land. Read <a href="guides/encroachment-overview/">this guide</a> first.</li>
+</ul>
+<h2>When submitting</h2>
+<ul><li>Make two copies: submit one and get an acknowledgement on the other.</li><li>Attach copies of ID, deed/succession papers and the latest record.</li><li>Sign and date by hand.</li></ul>
+</div>

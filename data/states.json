@@ -1299,6 +1299,1029 @@
           "a": "Usually dakhil-kharij. Check the application and status on the portal/circle office."
         }
       ]
+    },
+    {
+      "id": "kerala",
+      "name_hi": "केरल",
+      "name_en": "Kerala",
+      "portal_name": "ई-रेखा (E-Rekha)",
+      "portal_en": "E-Rekha",
+      "url": "https://erekha.kerala.gov.in/",
+      "alt_urls": [],
+      "confidence": "multi-source",
+      "sources": [
+        "portal-kl",
+        "kl-guide",
+        "dilrmp"
+      ],
+      "record_hi": "थंडपेर (Thandaper), BTR (बेसिक टैक्स रजिस्टर), भूमि रजिस्टर (LR), सर्वे नक्शे",
+      "record_en": "Thandaper, BTR (Basic Tax Register), Land Register (LR), survey maps",
+      "mutation_hi": "पोक्कुवरवु (नाम परिवर्तन)",
+      "mutation_en": "Pokkuvaravu (name transfer)",
+      "units_hi": "सेंट, आर और एकड़ आम हैं; 100 सेंट = 1 एकड़।",
+      "units_en": "Cents, ares and acres are common; 100 cents = 1 acre.",
+      "intro_hi": "केरल में सर्वे और पुनः सर्वे के रिकॉर्ड, सर्वे नक्शे और रजिस्टर ई-रेखा पोर्टल पर बताए जाते हैं, जो केरल भूमि सूचना मिशन के तहत चलता है। पुनः सर्वे वाले इलाकों में भूमि रजिस्टर (LR) और बेसिक टैक्स रजिस्टर (BTR) जैसे रजिस्टर काम आते हैं।",
+      "intro_en": "In Kerala, survey and resurvey records, survey maps and registers are described as available on the E-Rekha portal run under the Kerala Land Information Mission. In resurveyed areas, registers such as the Land Register (LR) and Basic Tax Register (BTR) are used.",
+      "steps_hi": [
+        "ई-रेखा पर ईमेल से रजिस्टर/लॉगिन करें।",
+        "'File Search' में पुराने सर्वे रिकॉर्ड, जिला नक्शे या पुनः सर्वे रिकॉर्ड चुनें।",
+        "जिला, तालुक, गाँव, ब्लॉक और शीट/सर्वे विवरण भरें।"
+      ],
+      "steps_en": [
+        "Register/log in on E-Rekha with an email ID.",
+        "Under 'File Search' choose old survey records, district maps or resurvey records.",
+        "Fill district, taluk, village, block and sheet/survey details."
+      ],
+      "watch_hi": [
+        "गाइडों के अनुसार देखना मुफ़्त है पर डाउनलोड के लिए शुल्क लगता है; वर्तमान शुल्क पोर्टल पर देखें।",
+        "पुराना सर्वे नंबर और पुनः सर्वे का नया नंबर अलग हो सकता है; 'करलेशन' रजिस्टर से मिलान करें।",
+        "थंडपेर नंबर से खाता पहचाना जाता है; रजिस्ट्री और कर रसीद में यही नंबर मिलाएँ।"
+      ],
+      "watch_en": [
+        "Guides say viewing is free but downloads are paid; check the current fee on the portal.",
+        "Old survey numbers and new resurvey numbers can differ; match them using the correlation register.",
+        "The thandaper number identifies the holding; match it in the deed and tax receipts."
+      ],
+      "faq": [
+        {
+          "q": "थंडपेर क्या है?",
+          "a": "केरल में भूमि-धारक के खाते (होल्डिंग) की संख्या/रिकॉर्ड, जो कर रसीद और रजिस्ट्री में मिलती है।"
+        },
+        {
+          "q": "BTR क्या है?",
+          "a": "बेसिक टैक्स रजिस्टर: पुनः सर्वे के बाद भूमि और कर का मूल रजिस्टर।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "What is a thandaper?",
+          "a": "In Kerala, the number/record of a landholder's holding, found in tax receipts and deeds."
+        },
+        {
+          "q": "What is BTR?",
+          "a": "Basic Tax Register: the base register of land and tax after resurvey."
+        }
+      ]
+    },
+    {
+      "id": "assam",
+      "name_hi": "असम",
+      "name_en": "Assam",
+      "portal_name": "धरित्री / ILRMS",
+      "portal_en": "Dharitree / ILRMS",
+      "url": "https://ilrms.assam.gov.in/",
+      "alt_urls": [
+        "https://landrevenue.assam.gov.in/",
+        "https://dharitree.assam.gov.in/"
+      ],
+      "confidence": "conflicting",
+      "sources": [
+        "portal-as",
+        "as-guide",
+        "dilrmp"
+      ],
+      "record_hi": "जमाबंदी (अधिकार-अभिलेख), चिठा (खेत-पुस्तिका), दाग नंबर, पट्टा",
+      "record_en": "Jamabandi (record of rights), chitha (field book), dag number, patta",
+      "mutation_hi": "नामजारी (म्यूटेशन)",
+      "mutation_en": "Namjari (mutation)",
+      "units_hi": "बीघा, कट्ठा और लेसा चलते हैं; माप रिकॉर्ड में देखें।",
+      "units_en": "Bigha, katha and lessa are used; check the measure in the record.",
+      "intro_hi": "असम में भूखंड को दाग नंबर से पहचाना जाता है, जमाबंदी अधिकार-अभिलेख है और चिठा खेत-पुस्तिका। रिकॉर्ड धरित्री/ILRMS प्रणाली से देखे जाते हैं, पर स्रोत इसके अलग-अलग पते बताते हैं।",
+      "intro_en": "In Assam a plot is identified by its dag number, the jamabandi is the record of rights and the chitha is the field book. Records are seen through the Dharitree/ILRMS system, but sources give different addresses for it.",
+      "steps_hi": [
+        "जमाबंदी या भूमि रिकॉर्ड का विकल्प चुनें।",
+        "जिला, सर्कल और गाँव (मौजा) चुनें।",
+        "दाग नंबर डालें; न पता हो तो पट्टादार का नाम या पट्टा नंबर से खोजें।"
+      ],
+      "steps_en": [
+        "Choose jamabandi or land record.",
+        "Select district, circle and village (mouza).",
+        "Enter the dag number; if unknown, search by pattadar name or patta number."
+      ],
+      "watch_hi": [
+        "गाइडों के अनुसार पोर्टल पर स्क्रीन-कीबोर्ड से ही टाइप होता है।",
+        "नक्शा या चिठा हिस्सा/स्वामित्व तय नहीं करता; सह-पट्टादारों के हिस्से जमाबंदी में पढ़ें।",
+        "सब इलाके अभी डिजिटल नहीं बताए जाते; रिकॉर्ड न मिले तो सर्कल ऑफिस जाएँ।"
+      ],
+      "watch_en": [
+        "Guides say the portal uses an on-screen keyboard for typing.",
+        "The map or chitha does not settle shares or title; read co-pattadars' shares in the jamabandi.",
+        "Not all areas are reported as digitised; if the record is missing visit the circle office."
+      ],
+      "faq": [
+        {
+          "q": "दाग नंबर क्या है?",
+          "a": "असम में भूखंड (प्लॉट) की पहचान संख्या, जो दूसरे राज्यों के खसरा/सर्वे नंबर जैसी है।"
+        },
+        {
+          "q": "चिठा और जमाबंदी में क्या फर्क है?",
+          "a": "चिठा खेत-पुस्तिका है जिसमें दाग का विवरण होता है; जमाबंदी अधिकार-अभिलेख है जिसमें पट्टादार और हिस्से होते हैं।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "What is a dag number?",
+          "a": "The plot identifier in Assam, like the khasra/survey number elsewhere."
+        },
+        {
+          "q": "What is the difference between chitha and jamabandi?",
+          "a": "The chitha is the field book with dag details; the jamabandi is the record of rights with pattadars and shares."
+        }
+      ]
+    },
+    {
+      "id": "goa",
+      "name_hi": "गोवा",
+      "name_en": "Goa",
+      "portal_name": "भूमि अभिलेख निदेशालय (DSLR) गोवा",
+      "portal_en": "Directorate of Settlement and Land Records (DSLR) Goa",
+      "url": "https://egov.goa.nic.in/dslr/",
+      "alt_urls": [],
+      "confidence": "multi-source",
+      "sources": [
+        "portal-ga",
+        "ga-news",
+        "dilrmp"
+      ],
+      "record_hi": "फॉर्म I और XIV (ग्रामीण), फॉर्म D (शहरी प्रॉपर्टी कार्ड)",
+      "record_en": "Form I & XIV (rural), Form D (urban property card)",
+      "mutation_hi": "म्यूटेशन (फॉर्म I और XIV में)",
+      "mutation_en": "Mutation (in Form I & XIV)",
+      "units_hi": "वर्ग मीटर और हेक्टेयर रिकॉर्ड में आम हैं।",
+      "units_en": "Square metres and hectares are common in records.",
+      "intro_hi": "गोवा में ग्रामीण जमीन का रिकॉर्ड फॉर्म I और XIV कहलाता है, जिसमें कुल क्षेत्रफल, मालिक, किरायेदार और जमीन खेती योग्य है या नहीं, यह दर्ज रहता है। शहरी हिस्सों में फॉर्म D (प्रॉपर्टी कार्ड) चलता है।",
+      "intro_en": "In Goa the rural land record is Form I & XIV, showing total area, owner, tenants and whether the land is cultivable. Urban areas use Form D (property card).",
+      "steps_hi": [
+        "DSLR पोर्टल पर 'Form I & Form XIV' चुनें।",
+        "तालुका, गाँव, सर्वे नंबर और उप-विभाग चुनें।",
+        "कैप्चा भरकर 'View Details' दबाएँ। शहरी जमीन के लिए फॉर्म D में शहर, PT शीट और चल्टा नंबर भरें।"
+      ],
+      "steps_en": [
+        "Choose 'Form I & Form XIV' on the DSLR portal.",
+        "Select taluka, village, survey number and subdivision.",
+        "Enter the captcha and click 'View Details'. For urban land use Form D with city, PT sheet and chalta number."
+      ],
+      "watch_hi": [
+        "2021 की एक समाचार रिपोर्ट के अनुसार कंप्यूटर से बने फॉर्म I और XIV आधिकारिक उपयोग के लिए बिना हस्ताक्षर मान्य किए गए; नियम बदले हों तो पोर्टल से जाँचें।",
+        "ग्रामीण म्यूटेशन की स्थिति म्यूटेशन नंबर से फॉर्म I और XIV वाले भाग में देखी जाती है।",
+        "किरायेदार (टेनेंट) वाला कॉलम खरीद से पहले ज़रूर पढ़ें।"
+      ],
+      "watch_en": [
+        "A 2021 news report says computer-generated Form I & XIV were made valid for official use without signature; check whether rules have changed.",
+        "Rural mutation status is checked with the mutation number under the Form I & XIV section.",
+        "Read the tenant column before buying."
+      ],
+      "faq": [
+        {
+          "q": "फॉर्म I और XIV क्या है?",
+          "a": "गोवा की ग्रामीण जमीन का अधिकार-अभिलेख, जिसमें मालिक, किरायेदार और खेती की जानकारी रहती है।"
+        },
+        {
+          "q": "गोवा में शहरी जमीन का रिकॉर्ड क्या है?",
+          "a": "फॉर्म D, यानी प्रॉपर्टी कार्ड, जो PT शीट और चल्टा नंबर से खोजा जाता है।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "What is Form I & XIV?",
+          "a": "Goa's record of rights for rural land, with owner, tenant and cultivation details."
+        },
+        {
+          "q": "What is the urban land record in Goa?",
+          "a": "Form D, the property card, searched by PT sheet and chalta number."
+        }
+      ]
+    },
+    {
+      "id": "tripura",
+      "name_hi": "त्रिपुरा",
+      "name_en": "Tripura",
+      "portal_name": "ई-जमी (e-Jami)",
+      "portal_en": "e-Jami",
+      "url": "https://jami.tripura.gov.in/",
+      "alt_urls": [],
+      "confidence": "single-source",
+      "sources": [
+        "portal-tr",
+        "tr-guide",
+        "dilrmp"
+      ],
+      "record_hi": "खतियान (RoR), प्लॉट, म्यूटेशन स्थिति",
+      "record_en": "Khatian (RoR), plot, mutation status",
+      "mutation_hi": "म्यूटेशन",
+      "mutation_en": "Mutation",
+      "units_hi": "कानी, गंडा और एकड़ जैसी इकाइयाँ चलती हैं; रिकॉर्ड की इकाई देखें।",
+      "units_en": "Units such as kani, ganda and acre are used; check the record's unit.",
+      "intro_hi": "त्रिपुरा में अधिकार-अभिलेख को खतियान कहते हैं। ई-जमी पोर्टल खतियान, प्लॉट और म्यूटेशन की खोज तथा स्थिति देखने वाला बताया जाता है, जहाँ जिला, तहसील, मौजा और खतियान/प्लॉट नंबर से खोज होती है।",
+      "intro_en": "In Tripura the record of rights is called the khatian. The e-Jami portal is described as offering khatian, plot and mutation search and status by district, tehsil, mouza and khatian/plot number.",
+      "steps_hi": [
+        "होमपेज पर 'Get Online ROR/Khatian' जैसा विकल्प खोलें।",
+        "नए उपयोगकर्ता पहले रजिस्टर करें।",
+        "जिला, तहसील, मौजा और खतियान या प्लॉट नंबर चुनें।"
+      ],
+      "steps_en": [
+        "Open an option like 'Get Online ROR/Khatian' on the home page.",
+        "New users register first.",
+        "Choose district, tehsil, mouza and khatian or plot number."
+      ],
+      "watch_hi": [
+        "स्रोत इस पर असहमत हैं कि बिना रजिस्ट्रेशन कितनी जानकारी दिखती है; RoR के लिए रजिस्ट्रेशन माँगा जा सकता है।",
+        "पोर्टल का पता एक ही स्रोत में मिला; खोलकर पुष्टि करें।",
+        "खतियान में हिस्से और प्लॉट दोनों मिलाएँ।"
+      ],
+      "watch_en": [
+        "Sources disagree on how much is visible without registration; RoR may require registration.",
+        "The address came from one source; open it to confirm.",
+        "Match both shares and plots in the khatian."
+      ],
+      "faq": [
+        {
+          "q": "त्रिपुरा में RoR को क्या कहते हैं?",
+          "a": "खतियान।"
+        },
+        {
+          "q": "ई-जमी पर क्या-क्या होता है?",
+          "a": "गाइडों के अनुसार खतियान/प्लॉट खोज, म्यूटेशन आवेदन और स्थिति, राजस्व भुगतान और सुधार सेवाएँ।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "What is the RoR called in Tripura?",
+          "a": "Khatian."
+        },
+        {
+          "q": "What does e-Jami offer?",
+          "a": "Per guides: khatian/plot search, mutation application and status, revenue payment and correction services."
+        }
+      ],
+      "example_hi": "मान लीजिए आपके पास किसी मौजा का खतियान नंबर 245 है। ई-जमी पर जिला, तहसील और मौजा चुनकर 245 डालें; खतियान में हर हिस्सेदार का अंश और उसके प्लॉट दिखेंगे। अगर आप सिर्फ एक प्लॉट खरीद रहे हैं, तो उसी प्लॉट नंबर से भी खोजकर मिलान करें कि वह किस खतियान में है और उसका वर्ग (जैसे धान का खेत या बसावट) क्या दर्ज है। कानी-गंडा में लिखा रकबा कैलकुलेटर में अपने इलाके का मान भरकर बदलें। यह उदाहरण काल्पनिक है।",
+      "example_en": "Suppose you have khatian number 245 of a mouza. On e-Jami choose district, tehsil and mouza and enter 245; the khatian shows each co-sharer's share and plots. If you are buying only one plot, also search by that plot number to confirm which khatian it is in and what class (e.g. paddy land or homestead) is recorded. Convert area written in kani-ganda by entering your local value in the calculator. This example is hypothetical."
+    },
+    {
+      "id": "ladakh",
+      "name_hi": "लद्दाख",
+      "name_en": "Ladakh",
+      "portal_name": "लद्दाख लैंड रिकॉर्ड्स (LaLR)",
+      "portal_en": "Ladakh Land Records (LaLR)",
+      "url": "https://landrecords.ladakh.gov.in/",
+      "alt_urls": [],
+      "confidence": "official-doc",
+      "sources": [
+        "portal-la",
+        "la-gov",
+        "la-news",
+        "dilrmp"
+      ],
+      "record_hi": "जमाबंदी, गिरदावरी, अधिकार-अभिलेख, फर्द (प्रमाणित प्रति)",
+      "record_en": "Jamabandi, girdawari, record of rights, fard (certified extract)",
+      "mutation_hi": "इंतकाल/दाखिल-खारिज (म्यूटेशन)",
+      "mutation_en": "Intkal/dakhil-kharij (mutation)",
+      "units_hi": "कनाल-मरला जैसी इकाइयाँ चलती हैं; जमाबंदी में दर्ज इकाई देखें।",
+      "units_en": "Units like kanal-marla are used; check the unit in the jamabandi.",
+      "intro_hi": "लद्दाख के राजस्व विभाग का वेब GIS पोर्टल (LaLR) अधिकार-अभिलेख, जमाबंदी, गिरदावरी और म्यूटेशन जैसी जानकारी देता है। जनवरी 2026 की एक समीक्षा रिपोर्ट के अनुसार लेह के 40 गाँवों का सर्वे पूरा था और बाकी गाँव बाकी थे, इसलिए हर गाँव का रिकॉर्ड अभी ऑनलाइन न हो।",
+      "intro_en": "Ladakh's revenue department Web GIS portal (LaLR) provides record of rights, jamabandi, girdawari and mutation details. A January 2026 review reported surveys complete in 40 villages of Leh with others pending, so not every village may be online yet.",
+      "steps_hi": [
+        "LaLR पोर्टल खोलें।",
+        "जिला (लेह/कारगिल), तहसील और गाँव चुनें।",
+        "खसरा/खेवट या नाम से रिकॉर्ड खोजें।"
+      ],
+      "steps_en": [
+        "Open the LaLR portal.",
+        "Select district (Leh/Kargil), tehsil and village.",
+        "Search the record by khasra/khewat or name."
+      ],
+      "watch_hi": [
+        "आपका गाँव डिजिटल हुआ है या नहीं, पहले जाँचें; न हो तो DC कार्यालय (लेह/कारगिल) से संपर्क करें।",
+        "कानूनी/बैंक काम के लिए प्रमाणित प्रति (फर्द) अलग से लेनी होती है।",
+        "म्यूटेशन पोर्टल या DC कार्यालय के ज़रिए होने की बात गाइडों में है; वर्तमान प्रक्रिया वहीं पूछें।"
+      ],
+      "watch_en": [
+        "First check whether your village is digitised; if not, contact the DC office (Leh/Kargil).",
+        "For legal/bank use a certified extract (fard) is obtained separately.",
+        "Guides say mutation runs through the portal or DC office; ask there for the current process."
+      ],
+      "faq": [
+        {
+          "q": "लद्दाख का भूमि रिकॉर्ड पोर्टल कौन-सा है?",
+          "a": "राजस्व विभाग का वेब GIS पोर्टल LaLR।"
+        },
+        {
+          "q": "फर्द क्या है?",
+          "a": "जमाबंदी की प्रमाणित प्रति, जो बैंक और अदालत के काम आती है।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "Which is Ladakh's land records portal?",
+          "a": "The revenue department's Web GIS portal LaLR."
+        },
+        {
+          "q": "What is a fard?",
+          "a": "A certified extract of the jamabandi used for bank and court work."
+        }
+      ]
+    },
+    {
+      "id": "chandigarh",
+      "name_hi": "चंडीगढ़",
+      "name_en": "Chandigarh",
+      "portal_name": "चंडीगढ़ राजस्व विभाग (जमाबंदी)",
+      "portal_en": "Chandigarh Revenue Department (jamabandi)",
+      "url": "https://revenue.chd.gov.in/",
+      "alt_urls": [],
+      "confidence": "single-source",
+      "sources": [
+        "portal-ch",
+        "ch-news",
+        "dilrmp"
+      ],
+      "record_hi": "जमाबंदी/नकल (राजस्व गाँव), एस्टेट ऑफिस रिकॉर्ड (सेक्टर)",
+      "record_en": "Jamabandi/nakal (revenue villages), Estate Office records (sectors)",
+      "mutation_hi": "इंतकाल",
+      "mutation_en": "Intkal",
+      "units_hi": "कनाल-मरला और वर्ग गज चलते हैं।",
+      "units_en": "Kanal-marla and square yards are used.",
+      "intro_hi": "चंडीगढ़ में दो अलग व्यवस्थाएँ हैं: बुड़ैल, धनास जैसे राजस्व गाँवों की जमीन जमाबंदी में दर्ज है, जबकि सेक्टर-17 जैसे नंबर वाले सेक्टर एस्टेट ऑफिस के अधीन आते हैं। खोज से पहले तय करें कि आपकी संपत्ति किस व्यवस्था में है।",
+      "intro_en": "Chandigarh has two systems: land in revenue villages such as Burail and Dhanas is in the jamabandi, while numbered sectors such as Sector 17 fall under the Estate Office. Decide which applies before searching.",
+      "steps_hi": [
+        "राजस्व विभाग के पोर्टल पर जमाबंदी/नकल विकल्प चुनें।",
+        "गाँव चुनें।",
+        "मालिक के नाम, खेवट या खसरा नंबर से खोजें।"
+      ],
+      "steps_en": [
+        "Choose jamabandi/nakal on the revenue department portal.",
+        "Select the village.",
+        "Search by owner name, khewat or khasra number."
+      ],
+      "watch_hi": [
+        "सेक्टर वाली संपत्ति जमाबंदी में नहीं मिलेगी; उसके लिए एस्टेट ऑफिस देखें।",
+        "पोर्टल का पता एक गाइड से मिला; खोलकर पुष्टि करें।",
+        "प्रमाणित प्रति के लिए शुल्क लगने की बात है; वर्तमान शुल्क पोर्टल/कार्यालय से पूछें।"
+      ],
+      "watch_en": [
+        "Sector property won't be in the jamabandi; check the Estate Office for it.",
+        "The address came from one guide; open it to confirm.",
+        "A fee applies for certified copies; ask the portal/office for the current fee."
+      ],
+      "faq": [
+        {
+          "q": "चंडीगढ़ के सेक्टर की संपत्ति का रिकॉर्ड कहाँ है?",
+          "a": "एस्टेट ऑफिस के पास; राजस्व विभाग की जमाबंदी केवल राजस्व गाँवों के लिए है।"
+        },
+        {
+          "q": "राजस्व गाँव कौन-से हैं?",
+          "a": "जैसे बुड़ैल, धनास, बहलाना। अपनी संपत्ति की स्थिति राजस्व विभाग से पुष्टि करें।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "Where is the record of a sector property in Chandigarh?",
+          "a": "With the Estate Office; the revenue jamabandi covers only revenue villages."
+        },
+        {
+          "q": "Which are revenue villages?",
+          "a": "For example Burail, Dhanas, Behlana. Confirm your property's status with the revenue department."
+        }
+      ],
+      "example_hi": "मान लीजिए आपका प्लॉट गाँव धनास में है और दूसरा सेक्टर-22 में। धनास वाली जमीन राजस्व विभाग की जमाबंदी में खेवट या खसरा नंबर से मिलेगी, जबकि सेक्टर-22 वाली संपत्ति का रिकॉर्ड एस्टेट ऑफिस के पास होगा, जमाबंदी में नहीं। इसलिए पहले पता करें कि जमीन राजस्व गाँव में है या सेक्टर में, फिर सही दफ़्तर का रिकॉर्ड देखें। यह उदाहरण काल्पनिक है।",
+      "example_en": "Suppose one plot is in village Dhanas and another in Sector 22. The Dhanas land appears in the revenue jamabandi by khewat or khasra number, while the Sector 22 property's record is with the Estate Office, not the jamabandi. So first find out whether the land is in a revenue village or a sector, then check the right office's record. This example is hypothetical."
+    },
+    {
+      "id": "puducherry",
+      "name_hi": "पुडुचेरी",
+      "name_en": "Puducherry",
+      "portal_name": "निलमगल (Nilamagal)",
+      "portal_en": "Nilamagal",
+      "url": "https://nilamagal.py.gov.in/public/",
+      "alt_urls": [],
+      "confidence": "official-doc",
+      "sources": [
+        "portal-py",
+        "py-district",
+        "dilrmp"
+      ],
+      "record_hi": "सेटलमेंट और चिट्टा रजिस्टर, पट्टा",
+      "record_en": "Settlement and chitta register, patta",
+      "mutation_hi": "पट्टा में नाम परिवर्तन",
+      "mutation_en": "Name transfer in patta",
+      "units_hi": "हेक्टेयर-आर और सेंट रिकॉर्ड में मिलते हैं।",
+      "units_en": "Hectare-are and cents appear in records.",
+      "intro_hi": "पुडुचेरी का भूमि रिकॉर्ड पोर्टल निलमगल है, जिसे सर्वे, सेटलमेंट और भूमि अभिलेख निदेशालय चलाता है। जिला प्रशासन की सरकारी साइटें इसी को सेटलमेंट और चिट्टा रजिस्टर देखने के लिए बताती हैं; पुडुचेरी, कराईकल, माहे और यानम चारों क्षेत्र इसमें आते हैं।",
+      "intro_en": "Puducherry's land records portal is Nilamagal, run by the Directorate of Survey, Settlement and Land Records. District government sites list it for the settlement and chitta register, covering Puducherry, Karaikal, Mahe and Yanam.",
+      "steps_hi": [
+        "निलमगल का पब्लिक पेज खोलें।",
+        "क्षेत्र (पुडुचेरी/कराईकल/माहे/यानम), तालुक और राजस्व गाँव चुनें।",
+        "भूमि का प्रकार और पट्टा नंबर या पुनः सर्वे नंबर भरें।"
+      ],
+      "steps_en": [
+        "Open Nilamagal's public page.",
+        "Select region (Puducherry/Karaikal/Mahe/Yanam), taluk and revenue village.",
+        "Choose land type and enter the patta number or re-survey number."
+      ],
+      "watch_hi": [
+        "पोर्टल का नतीजा अंतिम अपडेट हुए रिकॉर्ड पर निर्भर बताया गया है; हाल का बदलाव न दिखे तो तालुक कार्यालय से पूछें।",
+        "एन्कंब्रेंस सर्टिफिकेट पंजीकरण विभाग से अलग मिलता है।",
+        "पुराने पन्ने एक पुराना NIC पता बताते हैं; नया निलमगल पता पहले आज़माएँ।"
+      ],
+      "watch_en": [
+        "Results depend on the last updated records; if a recent change is missing, ask the taluk office.",
+        "The encumbrance certificate comes separately from the registration department.",
+        "Older pages point to an old NIC address; try the newer Nilamagal address first."
+      ],
+      "faq": [
+        {
+          "q": "पुडुचेरी का भूमि रिकॉर्ड कहाँ देखें?",
+          "a": "निलमगल पोर्टल पर, जिसे जिला प्रशासन की साइटें बताती हैं।"
+        },
+        {
+          "q": "क्या कराईकल, माहे और यानम भी इसमें हैं?",
+          "a": "हाँ, पोर्टल पर क्षेत्र चुनने में चारों क्षेत्र बताए गए हैं।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "Where to see Puducherry land records?",
+          "a": "On the Nilamagal portal, listed by the district administration sites."
+        },
+        {
+          "q": "Are Karaikal, Mahe and Yanam included?",
+          "a": "Yes, all four regions are listed when choosing the region."
+        }
+      ]
+    },
+    {
+      "id": "sikkim",
+      "name_hi": "सिक्किम",
+      "name_en": "Sikkim",
+      "portal_name": "ILRMS सिक्किम",
+      "portal_en": "ILRMS Sikkim",
+      "url": "https://ilrms.sikkim.gov.in/",
+      "alt_urls": [],
+      "confidence": "single-source",
+      "sources": [
+        "portal-sk",
+        "sk-news",
+        "dilrmp"
+      ],
+      "record_hi": "पर्चा (अधिकार-अभिलेख), खतियान, खसरा",
+      "record_en": "Parcha (record of rights), khatiyan, khasra",
+      "mutation_hi": "म्यूटेशन",
+      "mutation_en": "Mutation",
+      "units_hi": "एकड़ और डेसिमल रिकॉर्ड में मिलते हैं; इकाई देखें।",
+      "units_en": "Acres and decimals appear in records; check the unit.",
+      "intro_hi": "सिक्किम में अधिकार-अभिलेख को पर्चा कहते हैं। समाचार रिपोर्ट के अनुसार 17 अगस्त 2024 को ILRMS (एकीकृत भूमि रिकॉर्ड प्रबंधन प्रणाली) शुरू हुई, जिससे स्वामित्व, सीमा और म्यूटेशन स्थिति ऑनलाइन देखी जा सकती है।",
+      "intro_en": "In Sikkim the record of rights is called the parcha. A news report says ILRMS (Integrated Land Record Management System) launched on 17 August 2024, making ownership, boundaries and mutation status viewable online.",
+      "steps_hi": [
+        "ILRMS पोर्टल खोलें।",
+        "ब्लॉक और राजस्व सर्कल चुनें।",
+        "खतियान या खसरा नंबर (जहाँ उपलब्ध हो, नाम) से पर्चा खोजें।"
+      ],
+      "steps_en": [
+        "Open the ILRMS portal.",
+        "Select block and revenue circle.",
+        "Search the parcha by khatiyan or khasra number (or name where available)."
+      ],
+      "watch_hi": [
+        "ऑनलाइन पर्चा संदर्भ प्रति है; कानूनी काम के लिए राजस्व कार्यालय से हस्ताक्षरित प्रति लें।",
+        "गाइडों के अनुसार सिक्किम में भूमि स्वामित्व पर विशेष संवैधानिक व्यवस्था है; खरीद से पहले योग्यता के बारे में अधिकारी/वकील से पूछें।",
+        "कुछ स्रोत कहते हैं कि रिकॉर्ड मुख्यतः कार्यालय से मिलते हैं; पोर्टल पर अपना रिकॉर्ड जाँच लें।"
+      ],
+      "watch_en": [
+        "The online parcha is a reference copy; get a signed copy from the revenue office for legal work.",
+        "Guides note special constitutional provisions on land ownership in Sikkim; ask an officer/lawyer about eligibility before buying.",
+        "Some sources say records are mainly from the office; check your record on the portal."
+      ],
+      "faq": [
+        {
+          "q": "पर्चा क्या है?",
+          "a": "सिक्किम में अधिकार-अभिलेख, जिसमें धारक और भूमि का विवरण रहता है।"
+        },
+        {
+          "q": "ILRMS कब शुरू हुआ?",
+          "a": "समाचार रिपोर्ट के अनुसार 17 अगस्त 2024 को।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "What is a parcha?",
+          "a": "Sikkim's record of rights with holder and land details."
+        },
+        {
+          "q": "When did ILRMS start?",
+          "a": "According to a news report, on 17 August 2024."
+        }
+      ],
+      "example_hi": "मान लीजिए आपको किसी परिवार की जमीन का पर्चा देखना है। ILRMS पर ब्लॉक और राजस्व सर्कल चुनकर खतियान नंबर डालें; पर्चे में धारक का नाम, खसरा और रकबा दिखेगा। यह ऑनलाइन पर्चा सिर्फ संदर्भ के लिए है; बैंक या कोर्ट के लिए राजस्व कार्यालय से हस्ताक्षरित प्रति लें, और खरीदार की पात्रता के नियम पहले से जाँच लें। यह उदाहरण काल्पनिक है।",
+      "example_en": "Suppose you need to see a family's land parcha. On ILRMS choose block and revenue circle and enter the khatiyan number; the parcha shows holder name, khasra and area. This online parcha is only a reference; for a bank or court get a signed copy from the revenue office, and check buyer-eligibility rules first. This example is hypothetical."
+    },
+    {
+      "id": "meghalaya",
+      "name_hi": "मेघालय",
+      "name_en": "Meghalaya",
+      "portal_name": "कोई ऑनलाइन पोर्टल नहीं मिला (DLRS, ऑफ़लाइन)",
+      "portal_en": "No online portal found (DLRS, offline)",
+      "url": null,
+      "alt_urls": [],
+      "confidence": "offline",
+      "sources": [
+        "ml-guide",
+        "dilrmp"
+      ],
+      "record_hi": "पट्टा अर्क (ऑफ़लाइन), भू-नक्शा",
+      "record_en": "Patta extract (offline), Bhu-Naksha",
+      "mutation_hi": "म्यूटेशन (कार्यालय से)",
+      "mutation_en": "Mutation (through the office)",
+      "units_hi": "इकाई रिकॉर्ड में देखें।",
+      "units_en": "Check the unit in the record.",
+      "intro_hi": "ज़्यादातर स्रोतों के अनुसार मेघालय में भूमि रिकॉर्ड देखने का कोई सार्वजनिक ऑनलाइन पोर्टल नहीं है; भूमि अभिलेख और सर्वे निदेशालय (DLRS) पट्टा अर्क ऑफ़लाइन देता है। इसका एक कारण यह बताया जाता है कि यहाँ बहुत सी जमीन जनजातीय/सामुदायिक स्वामित्व में है।",
+      "intro_en": "Most sources say Meghalaya has no public online land-records portal; the Directorate of Land Records and Surveys (DLRS) issues patta extracts offline. One reason given is that much land is under tribal/community ownership.",
+      "steps_hi": [
+        "जिले के राजस्व/DLRS कार्यालय में संपर्क करें।",
+        "गाँव, प्लॉट और पट्टा विवरण के साथ लिखित आवेदन दें।",
+        "शुल्क और समय-सीमा कार्यालय से पूछें।"
+      ],
+      "steps_en": [
+        "Contact the district revenue/DLRS office.",
+        "Apply in writing with village, plot and patta details.",
+        "Ask the office about fees and timelines."
+      ],
+      "watch_hi": [
+        "एक स्रोत ऑनलाइन पोर्टल का दावा करता है, पर बाकी स्रोत इससे सहमत नहीं; 'तुरंत डाउनलोड' का दावा करने वाली साइटें नकली हो सकती हैं।",
+        "जनजातीय भूमि के हस्तांतरण पर विशेष नियम हो सकते हैं; खरीद से पहले अधिकारी या वकील से पूछें।",
+        "सामुदायिक भूमि में व्यक्तिगत रिकॉर्ड का रूप अलग हो सकता है।"
+      ],
+      "watch_en": [
+        "One source claims an online portal but others disagree; sites promising instant downloads may be fake.",
+        "Transfers of tribal land may have special rules; ask an officer or lawyer before buying.",
+        "For community land the form of individual records may differ."
+      ],
+      "faq": [
+        {
+          "q": "क्या मेघालय में भूमि रिकॉर्ड ऑनलाइन मिलते हैं?",
+          "a": "ज़्यादातर स्रोतों के अनुसार नहीं; DLRS कार्यालय से ऑफ़लाइन मिलते हैं।"
+        },
+        {
+          "q": "ऑनलाइन डाउनलोड का दावा करने वाली साइटें?",
+          "a": "सावधान रहें; वे नकली हो सकती हैं। सरकारी कार्यालय से ही प्रति लें।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "Are Meghalaya land records online?",
+          "a": "Most sources say no; they are obtained offline from the DLRS office."
+        },
+        {
+          "q": "Sites claiming online downloads?",
+          "a": "Be careful; they may be fake. Get copies only from the government office."
+        }
+      ],
+      "example_hi": "मान लीजिए आप शिलांग के पास किसी जमीन की खरीद की बात कर रहे हैं और कोई वेबसाइट उसका 'ऑनलाइन पट्टा' तुरंत भेजने की बात कहती है। ज़्यादातर स्रोतों के अनुसार यहाँ ऐसा कोई सरकारी ऑनलाइन पोर्टल नहीं है, इसलिए ऐसी प्रति पर भरोसा न करें। जमीन की जनजातीय या सामुदायिक स्थिति, स्थानीय परिषद की भूमिका और हस्तांतरण की शर्तें DLRS या ज़िला कार्यालय से लिखित में पूछें। यह उदाहरण काल्पनिक है।",
+      "example_en": "Suppose you are discussing buying land near Shillong and a website offers to send its 'online patta' instantly. Most sources say there is no such government online portal here, so don't trust such a copy. Ask DLRS or the district office in writing about the land's tribal or community status, the local council's role and transfer conditions. This example is hypothetical."
+    },
+    {
+      "id": "manipur",
+      "name_hi": "मणिपुर",
+      "name_en": "Manipur",
+      "portal_name": "लौचा पाथप (Loucha Pathap)",
+      "portal_en": "Loucha Pathap",
+      "url": null,
+      "alt_urls": [],
+      "confidence": "unconfirmed",
+      "sources": [
+        "mn-guide",
+        "dilrmp"
+      ],
+      "record_hi": "जमाबंदी, पट्टा, अधिकार-अभिलेख, दाग नंबर",
+      "record_en": "Jamabandi, patta, record of rights, dag number",
+      "mutation_hi": "म्यूटेशन",
+      "mutation_en": "Mutation",
+      "units_hi": "इकाई रिकॉर्ड में देखें।",
+      "units_en": "Check the unit in the record.",
+      "intro_hi": "मणिपुर का भूमि पोर्टल लौचा पाथप नाम से बताया जाता है, जहाँ जमाबंदी, पट्टा और अधिकार-अभिलेख देखे जा सकते हैं। पट्टा नंबर परिवार की जोत का खाता है और दाग नंबर भूखंड की पहचान। हमें इसका आधिकारिक पता किसी स्रोत में नहीं मिला, इसलिए लिंक नहीं दिया गया है।",
+      "intro_en": "Manipur's land portal is described as Loucha Pathap, where jamabandi, patta and record of rights can be viewed. The patta number is a family's holding account and the dag number identifies the plot. We found no official address in any source, so no link is given.",
+      "steps_hi": [
+        "राज्य राजस्व विभाग की आधिकारिक साइट से लौचा पाथप का लिंक लें।",
+        "जिला, सर्कल और गाँव चुनें।",
+        "नया पट्टा नंबर और नया दाग नंबर भरें।"
+      ],
+      "steps_en": [
+        "Get the Loucha Pathap link from the state revenue department's official site.",
+        "Select district, circle and village.",
+        "Enter the new patta number and new dag number."
+      ],
+      "watch_hi": [
+        "हमें पोर्टल का आधिकारिक पता पक्का नहीं मिला; नकली साइटों से बचें।",
+        "गाइडों के अनुसार ऑनलाइन म्यूटेशन तभी होता है जब संपत्ति पंजीकृत और अंतिम रूप से प्रकाशित हो।",
+        "पहाड़ी इलाकों में भूमि की व्यवस्था घाटी से अलग हो सकती है; स्थानीय कार्यालय से पुष्टि करें।"
+      ],
+      "watch_en": [
+        "We could not confirm the portal's official address; avoid fake sites.",
+        "Guides say online mutation is possible only after the property is registered and finally published.",
+        "Land arrangements in hill areas may differ from the valley; confirm with the local office."
+      ],
+      "faq": [
+        {
+          "q": "लौचा पाथप क्या है?",
+          "a": "मणिपुर का भूमि रिकॉर्ड पोर्टल, जैसा गाइडों में बताया गया है।"
+        },
+        {
+          "q": "दाग नंबर और पट्टा नंबर में क्या फर्क है?",
+          "a": "दाग नंबर भूखंड की पहचान है, पट्टा नंबर परिवार की जोत का खाता।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "What is Loucha Pathap?",
+          "a": "Manipur's land records portal as described in guides."
+        },
+        {
+          "q": "Dag number vs patta number?",
+          "a": "The dag number identifies the plot; the patta number is the family's holding account."
+        }
+      ]
+    },
+    {
+      "id": "mizoram",
+      "name_hi": "मिज़ोरम",
+      "name_en": "Mizoram",
+      "portal_name": "ई-राम (e-Ram)",
+      "portal_en": "e-Ram",
+      "url": "https://eram.mizoram.gov.in/",
+      "alt_urls": [],
+      "confidence": "single-source",
+      "sources": [
+        "portal-mz",
+        "mz-guide",
+        "dilrmp"
+      ],
+      "record_hi": "LSC (भूमि निपटान प्रमाणपत्र), पीरियॉडिक पट्टा, लैंड लीज़ पास",
+      "record_en": "LSC (Land Settlement Certificate), periodic patta, land lease pass",
+      "mutation_hi": "नाम हस्तांतरण",
+      "mutation_en": "Name transfer",
+      "units_hi": "इकाई दस्तावेज़ में देखें।",
+      "units_en": "Check the unit in the document.",
+      "intro_hi": "मिज़ोरम में मुख्य भूमि दस्तावेज़ LSC (भूमि निपटान प्रमाणपत्र), पीरियॉडिक पट्टा और लैंड लीज़ पास हैं। गाइडों के अनुसार राजस्व विभाग का ई-राम पोर्टल नवंबर 2024 से आइज़ोल ज़िले में पायलट के रूप में शुरू हुआ, और बाकी ज़िलों में काम अभी ज़्यादातर हाथ से होता है।",
+      "intro_en": "Mizoram's main land documents are the LSC (Land Settlement Certificate), periodic patta and land lease pass. Guides say the revenue department's e-Ram portal was piloted in Aizawl district from November 2024, while other districts still work largely manually.",
+      "steps_hi": [
+        "ई-राम पोर्टल खोलें और सेवा चुनें।",
+        "LSC या पट्टा का विवरण भरें।",
+        "आइज़ोल के बाहर हों तो ज़िला उपायुक्त/राजस्व कार्यालय से संपर्क करें।"
+      ],
+      "steps_en": [
+        "Open e-Ram and choose the service.",
+        "Enter the LSC or patta details.",
+        "Outside Aizawl, contact the district DC/revenue office."
+      ],
+      "watch_hi": [
+        "स्रोत इस पर असहमत हैं कि कितना ऑनलाइन है; अपने ज़िले में सेवा चालू है या नहीं, पहले पूछें।",
+        "पीरियॉडिक पट्टा सीमित अवधि का अधिकार है और गाइडों के अनुसार उसे गिरवी रखने तक के लिए सरकारी अनुमति चाहिए।",
+        "खरीद से पहले LSC की असलियत ज़िला कार्यालय से जाँचें।"
+      ],
+      "watch_en": [
+        "Sources disagree on how much is online; first ask whether the service is live in your district.",
+        "A periodic patta is a limited-tenure right and, per guides, even mortgaging it needs government permission.",
+        "Verify the LSC's authenticity with the district office before buying."
+      ],
+      "faq": [
+        {
+          "q": "LSC क्या है?",
+          "a": "भूमि निपटान प्रमाणपत्र, जिसे मिज़ोरम में सबसे मज़बूत भूमि दस्तावेज़ माना जाता है।"
+        },
+        {
+          "q": "पीरियॉडिक पट्टा क्या है?",
+          "a": "सीमित अवधि का भूमि अधिकार, जिस पर हस्तांतरण/गिरवी के लिए शर्तें लागू हो सकती हैं।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "What is an LSC?",
+          "a": "The Land Settlement Certificate, considered the strongest land document in Mizoram."
+        },
+        {
+          "q": "What is a periodic patta?",
+          "a": "A limited-tenure land right with conditions on transfer/mortgage."
+        }
+      ],
+      "example_hi": "मान लीजिए आपके पास आइज़ोल में किसी जमीन का LSC है और दूसरी जमीन पर सिर्फ पीरियॉडिक पट्टा। LSC वाली जमीन का विवरण ई-राम या ज़िला कार्यालय से सत्यापित करें। पीरियॉडिक पट्टा वाली जमीन पर अधिकार सीमित अवधि का होता है, इसलिए उसे गिरवी रखने या बेचने से पहले सरकारी अनुमति की ज़रूरत के बारे में राजस्व विभाग से पूछें। यह उदाहरण काल्पनिक है।",
+      "example_en": "Suppose you hold an LSC for one plot in Aizawl and only a periodic patta for another. Verify the LSC plot's details through e-Ram or the district office. Rights on the periodic-patta plot are limited in time, so before mortgaging or selling it ask the revenue department about the government permission required. This example is hypothetical."
+    },
+    {
+      "id": "nagaland",
+      "name_hi": "नागालैंड",
+      "name_en": "Nagaland",
+      "portal_name": "कोई ऑनलाइन पोर्टल नहीं मिला (ऑफ़लाइन)",
+      "portal_en": "No online portal found (offline)",
+      "url": null,
+      "alt_urls": [],
+      "confidence": "offline",
+      "sources": [
+        "nl-guide",
+        "dilrmp"
+      ],
+      "record_hi": "अधिकार-अभिलेख, पट्टा (कार्यालय से)",
+      "record_en": "Record of rights, patta (from the office)",
+      "mutation_hi": "म्यूटेशन (कार्यालय से)",
+      "mutation_en": "Mutation (through the office)",
+      "units_hi": "इकाई रिकॉर्ड में देखें।",
+      "units_en": "Check the unit in the record.",
+      "intro_hi": "स्रोतों के अनुसार नागालैंड में भूमि रिकॉर्ड ऑनलाइन देखने का विकल्प नहीं है। रिकॉर्ड उस ज़िले के सर्कल कार्यालय या उपायुक्त (DC) कार्यालय में लिखित आवेदन से मिलते हैं, और यहाँ बहुत-सी जमीन परंपरागत (कस्टमरी) व्यवस्था में आती है।",
+      "intro_en": "Sources say Nagaland has no option to view land records online. Records are obtained by written application at the circle office or Deputy Commissioner's office of the district, and much land falls under customary arrangements.",
+      "steps_hi": [
+        "जमीन जिस ज़िले में है, उसके सर्कल/DC कार्यालय जाएँ।",
+        "गाँव, प्लॉट नंबर, पट्टा विवरण या मालिक के नाम के साथ आवेदन दें।",
+        "शुल्क जमा करें और सत्यापन के बाद प्रति लें।"
+      ],
+      "steps_en": [
+        "Visit the circle/DC office of the district where the land is.",
+        "Apply with village, plot number, patta details or owner's name.",
+        "Pay the fee and collect the copy after verification."
+      ],
+      "watch_hi": [
+        "ऑनलाइन नकल का दावा करने वाली साइटों से सावधान रहें।",
+        "परंपरागत/सामुदायिक भूमि के नियम अलग हो सकते हैं; खरीद से पहले स्थानीय अधिकारी या वकील से पूछें।",
+        "भूमि कानूनों में बदलाव की चर्चा रही है; वर्तमान स्थिति कार्यालय से जाँचें।"
+      ],
+      "watch_en": [
+        "Be careful of sites claiming online copies.",
+        "Rules for customary/community land may differ; ask a local officer or lawyer before buying.",
+        "Changes to land laws have been discussed; check the current position with the office."
+      ],
+      "faq": [
+        {
+          "q": "क्या नागालैंड में भूमि रिकॉर्ड ऑनलाइन है?",
+          "a": "स्रोतों के अनुसार नहीं; ज़िले के सर्कल/DC कार्यालय से मिलते हैं।"
+        },
+        {
+          "q": "आवेदन में क्या चाहिए?",
+          "a": "गाँव, प्लॉट नंबर, पट्टा विवरण या मालिक का नाम; सटीक सूची कार्यालय से पूछें।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "Are Nagaland land records online?",
+          "a": "Sources say no; they come from the district circle/DC office."
+        },
+        {
+          "q": "What does the application need?",
+          "a": "Village, plot number, patta details or owner's name; ask the office for the exact list."
+        }
+      ],
+      "example_hi": "मान लीजिए दीमापुर में किसी जमीन के कागज़ देखने हैं। वहाँ ऑनलाइन रिकॉर्ड नहीं मिलेगा; उस ज़िले के सर्कल या DC कार्यालय में गाँव, प्लॉट और पट्टा विवरण के साथ आवेदन करें और शुल्क की रसीद लें। अगर जमीन परंपरागत (गाँव या कबीले की) व्यवस्था में है, तो ग्राम परिषद के दस्तावेज़ और स्थानीय नियम भी देखने पड़ सकते हैं। यह उदाहरण काल्पनिक है।",
+      "example_en": "Suppose you need to see a land's papers in Dimapur. No online record exists there; apply at that district's circle or DC office with village, plot and patta details and keep the fee receipt. If the land is under customary (village or clan) arrangements, village council documents and local rules may also matter. This example is hypothetical."
+    },
+    {
+      "id": "arunachal-pradesh",
+      "name_hi": "अरुणाचल प्रदेश",
+      "name_en": "Arunachal Pradesh",
+      "portal_name": "LISA (अरुणाचल भूमि सूचना प्रणाली)",
+      "portal_en": "LISA (Land Information System of Arunachal)",
+      "url": "https://lisa.arunachal.gov.in/",
+      "alt_urls": [],
+      "confidence": "single-source",
+      "sources": [
+        "ar-india-gov",
+        "portal-ar",
+        "dilrmp"
+      ],
+      "record_hi": "भूमि कब्ज़ा प्रमाणपत्र (LPC), भूमि धारण प्रमाणपत्र (LHC)",
+      "record_en": "Land Possession Certificate (LPC), Land Holding Certificate (LHC)",
+      "mutation_hi": "नाम हस्तांतरण",
+      "mutation_en": "Name transfer",
+      "units_hi": "इकाई प्रमाणपत्र में देखें।",
+      "units_en": "Check the unit in the certificate.",
+      "intro_hi": "अरुणाचल प्रदेश में भूमि का मुख्य दस्तावेज़ LPC (भूमि कब्ज़ा प्रमाणपत्र) है। राष्ट्रीय पोर्टल के अनुसार LISA प्रणाली भूमि आवंटन, राजस्व भुगतान और भूमि धारण प्रमाणपत्र जैसी सेवाएँ देती है, पर पूरे राज्य का पूरा रिकॉर्ड एक जगह ऑनलाइन न होने की बात भी स्रोतों में है।",
+      "intro_en": "In Arunachal Pradesh the main land document is the LPC (Land Possession Certificate). According to the national portal, LISA offers services such as land allotment, revenue payment and Land Holding Certificates, though sources say statewide records are not fully online in one place.",
+      "steps_hi": [
+        "LISA पर नागरिक लॉगिन से सेवा चुनें।",
+        "LPC/LHC या संबंधित सेवा का आवेदन भरें।",
+        "ज़रूरत हो तो ज़िले के उपायुक्त (DC) कार्यालय या राजस्व सर्कल से संपर्क करें।"
+      ],
+      "steps_en": [
+        "Choose the service via citizen login on LISA.",
+        "Fill the LPC/LHC or related application.",
+        "If needed, contact the district DC office or revenue circle."
+      ],
+      "watch_hi": [
+        "LISA का पता एक गाइड से मिला; राष्ट्रीय पोर्टल पर सेवा दर्ज है, पर पता खोलकर पुष्टि करें।",
+        "LPC आवेदन में वन विभाग और ग्राम परिषद की मंज़ूरी जैसी शर्तें बताई गई हैं।",
+        "2018 के संशोधन से स्वदेशी धारकों के अधिकार मज़बूत होने की बात है; विवरण के लिए अधिकारी/वकील से पूछें।"
+      ],
+      "watch_en": [
+        "The LISA address came from a guide; the national portal lists the service, but open the address to confirm.",
+        "LPC applications are said to need clearances such as from the forest department and village council.",
+        "A 2018 amendment is reported to have strengthened indigenous holders' rights; ask an officer/lawyer for details."
+      ],
+      "faq": [
+        {
+          "q": "LPC क्या है?",
+          "a": "भूमि कब्ज़ा प्रमाणपत्र, अरुणाचल प्रदेश में भूमि का मुख्य दस्तावेज़।"
+        },
+        {
+          "q": "LISA क्या है?",
+          "a": "अरुणाचल की भूमि सूचना प्रणाली, जो आवंटन, राजस्व भुगतान और LHC जैसी सेवाएँ देती है।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "What is an LPC?",
+          "a": "The Land Possession Certificate, the main land document in Arunachal Pradesh."
+        },
+        {
+          "q": "What is LISA?",
+          "a": "Arunachal's land information system offering allotment, revenue payment and LHC services."
+        }
+      ]
+    },
+    {
+      "id": "andaman-and-nicobar",
+      "name_hi": "अंडमान और निकोबार",
+      "name_en": "Andaman and Nicobar Islands",
+      "portal_name": "द्वीप भूमि (Dweep Bhoomi)",
+      "portal_en": "Dweep Bhoomi",
+      "url": "https://dweepbhoomi.andamannicobar.gov.in/",
+      "alt_urls": [],
+      "confidence": "official-doc",
+      "sources": [
+        "portal-an",
+        "an-dolr",
+        "dilrmp"
+      ],
+      "record_hi": "अधिकार-अभिलेख (RoR), प्रॉपर्टी कार्ड, भू-नक्शा",
+      "record_en": "Record of Rights (RoR), property card, Bhu-Naksha",
+      "mutation_hi": "म्यूटेशन",
+      "mutation_en": "Mutation",
+      "units_hi": "हेक्टेयर और वर्ग मीटर रिकॉर्ड में मिलते हैं।",
+      "units_en": "Hectares and square metres appear in records.",
+      "intro_hi": "अंडमान और निकोबार में भूमि रिकॉर्ड का आधिकारिक रास्ता द्वीप भूमि पोर्टल है, जिसे राजस्व विभाग ने पंजीकरण और सर्वे विभागों से जोड़कर बनाया है। यहाँ जमाबंदी के बराबर दस्तावेज़ को अधिकार-अभिलेख (RoR) कहा जाता है।",
+      "intro_en": "In the Andaman and Nicobar Islands the official route for land records is the Dweep Bhoomi portal, built by the revenue department integrated with the registration and survey departments. The jamabandi-equivalent document is called the Record of Rights (RoR).",
+      "steps_hi": [
+        "द्वीप भूमि पोर्टल खोलें।",
+        "सेवा के लिए नागरिक के रूप में रजिस्टर/लॉगिन करें।",
+        "RoR, प्रॉपर्टी कार्ड या नक्शे का विकल्प चुनें।"
+      ],
+      "steps_en": [
+        "Open the Dweep Bhoomi portal.",
+        "Register/log in as a citizen to apply for services.",
+        "Choose RoR, property card or map."
+      ],
+      "watch_hi": [
+        "कुछ गाइड दूसरा पता (andaman.gov.in वाला) बताते हैं; आधिकारिक andamannicobar.gov.in वाला पता इस्तेमाल करें।",
+        "स्रोत इस पर असहमत हैं कि बिना रजिस्ट्रेशन देखना संभव है या नहीं; स्क्रीन पर जो दिखे उसे मानें।",
+        "संपत्ति पंजीकरण की अलग ऑनलाइन व्यवस्था की बात समाचारों में है; उसे राजस्व रिकॉर्ड से न मिलाएँ।"
+      ],
+      "watch_en": [
+        "Some guides give another address (on andaman.gov.in); use the official andamannicobar.gov.in address.",
+        "Sources disagree on whether viewing works without registration; follow what the screen shows.",
+        "News reports mention a separate online property-registration system; don't confuse it with the revenue record."
+      ],
+      "faq": [
+        {
+          "q": "अंडमान में जमाबंदी को क्या कहते हैं?",
+          "a": "अधिकार-अभिलेख (RoR)।"
+        },
+        {
+          "q": "द्वीप भूमि क्या है?",
+          "a": "राजस्व विभाग का भूमि पोर्टल, जो पंजीकरण और सर्वे से जुड़ा है।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "What is the jamabandi called in Andaman?",
+          "a": "Record of Rights (RoR)."
+        },
+        {
+          "q": "What is Dweep Bhoomi?",
+          "a": "The revenue department's land portal linked with registration and survey."
+        }
+      ]
+    },
+    {
+      "id": "lakshadweep",
+      "name_hi": "लक्षद्वीप",
+      "name_en": "Lakshadweep",
+      "portal_name": "लक्षद्वीप भूमि रिकॉर्ड MIS",
+      "portal_en": "Lakshadweep Land Records MIS",
+      "url": "https://land.utl.gov.in/",
+      "alt_urls": [],
+      "confidence": "official-doc",
+      "sources": [
+        "portal-ld",
+        "ld-gov",
+        "dilrmp"
+      ],
+      "record_hi": "भूमि रजिस्टर अर्क, अधिकार-अभिलेख (पट्टा)",
+      "record_en": "Land register extract, record of rights (patta)",
+      "mutation_hi": "म्यूटेशन/हस्तांतरण",
+      "mutation_en": "Mutation/transfer",
+      "units_hi": "इकाई रिकॉर्ड में देखें।",
+      "units_en": "Check the unit in the record.",
+      "intro_hi": "लक्षद्वीप में भूमि रिकॉर्ड राजस्व विभाग (कवरत्ती) रखता है, जिसके आधिकारिक पन्ने पर भूमि रिकॉर्ड MIS पोर्टल का लिंक दिया गया है। इस पर द्वीप, सर्वे ब्लॉक, भूमि का प्रकार, सर्वे नंबर और उप-विभाग चुनकर भूमि रजिस्टर का अर्क देखा जा सकता है।",
+      "intro_en": "In Lakshadweep land records are kept by the Department of Revenue (Kavaratti), whose official page links the Land Records MIS portal. There you can view a land register extract by island, survey block, land type, survey number and subdivision.",
+      "steps_hi": [
+        "भूमि रिकॉर्ड MIS पोर्टल खोलें।",
+        "द्वीप चुनें।",
+        "सर्वे ब्लॉक, भूमि का प्रकार, सर्वे नंबर और उप-विभाग भरें।"
+      ],
+      "steps_en": [
+        "Open the Land Records MIS portal.",
+        "Choose the island.",
+        "Enter survey block, land type, survey number and subdivision."
+      ],
+      "watch_hi": [
+        "गाइडों के अनुसार गैर-द्वीपवासियों को प्रशासन की मंज़ूरी के बिना हस्तांतरण अमान्य हो सकता है; खरीद से पहले अधिकारी/वकील से पूछें।",
+        "भूमि निजी, जेनमम या पंडारम जैसी श्रेणियों में होने की बात है, जिनके नियम अलग हैं।",
+        "प्रस्तावित बदलावों पर स्रोतों में चर्चा है; वर्तमान नियम राजस्व विभाग से जाँचें।"
+      ],
+      "watch_en": [
+        "Guides say transfers to non-islanders without administration approval may be void; ask an officer/lawyer before buying.",
+        "Land is said to fall into categories such as private, jenmam or pandaram, with different rules.",
+        "Proposed changes are discussed in sources; check current rules with the revenue department."
+      ],
+      "faq": [
+        {
+          "q": "लक्षद्वीप में भूमि रिकॉर्ड कहाँ मिलता है?",
+          "a": "राजस्व विभाग के भूमि रिकॉर्ड MIS पोर्टल पर, जिसका लिंक विभाग के आधिकारिक पन्ने पर है।"
+        },
+        {
+          "q": "क्या कोई भी यहाँ जमीन खरीद सकता है?",
+          "a": "गाइडों के अनुसार गैर-द्वीपवासियों के लिए प्रतिबंध हैं; अधिकारी या वकील से पुष्टि करें।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "Where are Lakshadweep land records?",
+          "a": "On the revenue department's Land Records MIS portal, linked from its official page."
+        },
+        {
+          "q": "Can anyone buy land here?",
+          "a": "Guides say there are restrictions for non-islanders; confirm with an officer or lawyer."
+        }
+      ]
+    },
+    {
+      "id": "dadra-nagar-haveli-daman-diu",
+      "name_hi": "दादरा नगर हवेली और दमन दीव",
+      "name_en": "Dadra and Nagar Haveli and Daman and Diu",
+      "portal_name": "अवनिका (दादरा नगर हवेली) / सुगम (दमन-दीव)",
+      "portal_en": "Avanika (DNH) / SUGAM (Daman-Diu)",
+      "url": "https://dnh.nlrmp.in/avanika/",
+      "alt_urls": [
+        "https://sugam.dddgov.in/"
+      ],
+      "confidence": "conflicting",
+      "sources": [
+        "portal-dd",
+        "dd-guide",
+        "dilrmp"
+      ],
+      "record_hi": "फॉर्म 7/12 (सात-बारा), अधिकार-अभिलेख",
+      "record_en": "Form 7/12 (sat-bara), record of rights",
+      "mutation_hi": "म्यूटेशन",
+      "mutation_en": "Mutation",
+      "units_hi": "हेक्टेयर-आर और वर्ग मीटर रिकॉर्ड में मिलते हैं।",
+      "units_en": "Hectare-are and square metres appear in records.",
+      "intro_hi": "इस केंद्र-शासित प्रदेश में भी महाराष्ट्र-गुजरात की तरह 7/12 (फॉर्म 7 और 12) चलता है। गाइडों के अनुसार दादरा नगर हवेली के लिए अवनिका पोर्टल और दमन-दीव के लिए सुगम पोर्टल है, पर स्रोत पोर्टल को लेकर एकमत नहीं हैं।",
+      "intro_en": "This UT also uses the 7/12 (Forms 7 and 12) like Maharashtra and Gujarat. Guides say Dadra and Nagar Haveli uses the Avanika portal and Daman-Diu the SUGAM portal, but sources do not agree on which portal is current.",
+      "steps_hi": [
+        "अपने क्षेत्र के अनुसार अवनिका (DNH) या सुगम (दमन-दीव) खोलें।",
+        "फॉर्म 7/12 का विकल्प चुनें।",
+        "गाँव और सर्वे नंबर भरें।"
+      ],
+      "steps_en": [
+        "Open Avanika (DNH) or SUGAM (Daman-Diu) for your area.",
+        "Choose Form 7/12.",
+        "Enter village and survey number."
+      ],
+      "watch_hi": [
+        "स्रोत तीन अलग प्लेटफ़ॉर्म (अवनिका, सुगम, ई-धरा) बताते हैं; प्रदेश की आधिकारिक साइट से सही लिंक लें।",
+        "एक गाइड के अनुसार 7/12 नकल में विक्रेता की जनजातीय स्थिति भी देखी जा सकती है, जो खरीद के नियमों के लिए अहम है।",
+        "लंबित म्यूटेशन RoR में नहीं दिखते; हाल के बदलाव कार्यालय से पूछें।"
+      ],
+      "watch_en": [
+        "Sources mention three platforms (Avanika, SUGAM, e-Dhara); get the right link from the UT's official site.",
+        "One guide says the 7/12 can show the seller's tribal status, important for purchase rules.",
+        "Pending mutations don't show in the RoR; ask the office about recent changes."
+      ],
+      "faq": [
+        {
+          "q": "यहाँ कौन-सा रिकॉर्ड चलता है?",
+          "a": "7/12 (फॉर्म 7 और 12), जैसा महाराष्ट्र-गुजरात में।"
+        },
+        {
+          "q": "दमन-दीव का पोर्टल कौन-सा है?",
+          "a": "गाइडों के अनुसार सुगम; प्रदेश की आधिकारिक साइट से पुष्टि करें।"
+        }
+      ],
+      "faq_en": [
+        {
+          "q": "Which record is used here?",
+          "a": "The 7/12 (Forms 7 and 12), as in Maharashtra-Gujarat."
+        },
+        {
+          "q": "Which portal for Daman-Diu?",
+          "a": "SUGAM per guides; confirm on the UT's official site."
+        }
+      ]
     }
   ]
 }

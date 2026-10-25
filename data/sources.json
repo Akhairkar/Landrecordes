@@ -274,5 +274,185 @@
     "url": "https://emojni.mahabhumi.gov.in/citizensite/Contactus.aspx",
     "kind": "official",
     "basis": "Official department page describes the online land-measurement application and lists the Maharashtra Land Records Commissioner office in Pune; use the live portal for current application steps."
+  },
+  "portal-kl": {
+    "org": "E-Rekha — Kerala Survey and Land Records",
+    "url": "https://erekha.kerala.gov.in/",
+    "kind": "portal",
+    "basis": "Kerala survey/resurvey records portal run under the Kerala Land Information Mission; address corroborated by several guides."
+  },
+  "kl-guide": {
+    "org": "BankBazaar — E-Rekha Kerala guide (secondary source)",
+    "url": "https://bankbazaar.com/home-loan/erekha-kerala-land-record.html",
+    "kind": "secondary",
+    "basis": "Describes E-Rekha registration, file search and resurvey registers (LR, BTR). Fees not reproduced."
+  },
+  "portal-as": {
+    "org": "ILRMS / Dharitree — Assam land records",
+    "url": "https://ilrms.assam.gov.in/",
+    "kind": "portal",
+    "basis": "Assam integrated land records system. Guides also give landrevenue.assam.gov.in and dharitree.assam.gov.in; confirm which is live."
+  },
+  "as-guide": {
+    "org": "Housing.com — Dharitree Assam land records (secondary source)",
+    "url": "https://housing.com/news/dharitree-assam-land-record",
+    "kind": "secondary",
+    "basis": "Describes jamabandi search by district, circle, village and dag number."
+  },
+  "portal-ga": {
+    "org": "Directorate of Settlement and Land Records, Goa",
+    "url": "https://egov.goa.nic.in/dslr/",
+    "kind": "portal",
+    "basis": "Goa Form I & XIV (rural) and Form D (urban) records."
+  },
+  "ga-news": {
+    "org": "The Goan — Online land records valid for official use (news)",
+    "url": "https://www.thegoan.net/goa-news/online-land-records-are-now-valid-for-official-use/75617.html",
+    "kind": "secondary",
+    "basis": "Reports a 2021 circular making computer-generated Form I & XIV, Form D etc. valid without signature. Check whether rules have changed."
+  },
+  "portal-tr": {
+    "org": "e-Jami — Tripura land records",
+    "url": "https://jami.tripura.gov.in/",
+    "kind": "portal",
+    "basis": "Tripura RoR/khatian, plot and mutation services; address from guides; live check pending."
+  },
+  "tr-guide": {
+    "org": "Housing.com — Jami Tripura guide (secondary source)",
+    "url": "https://housing.com/news/jami-tripura",
+    "kind": "secondary",
+    "basis": "Describes RoR/khatian lookup and registration requirement."
+  },
+  "portal-la": {
+    "org": "Ladakh Land Records (LaLR) — Revenue Department",
+    "url": "https://landrecords.ladakh.gov.in/",
+    "kind": "portal",
+    "basis": "Web GIS land records portal of the UT of Ladakh."
+  },
+  "la-gov": {
+    "org": "UT Ladakh — official notice on the land records portal",
+    "url": "https://ladakh.gov.in/?p=52324",
+    "kind": "official",
+    "basis": "UT administration page on the launch of the Ladakh land records portal."
+  },
+  "la-news": {
+    "org": "Reach Ladakh — review of digital land records (news)",
+    "url": "https://reachladakh.com/news/social-news/chief-secretary-chairs-review-of-digital-land-records-system",
+    "kind": "secondary",
+    "basis": "Reports partial survey coverage (40 villages of Leh) as of January 2026."
+  },
+  "portal-ch": {
+    "org": "Chandigarh Revenue Department — jamabandi",
+    "url": "https://revenue.chd.gov.in/",
+    "kind": "portal",
+    "basis": "Jamabandi/nakal for Chandigarh revenue villages; sectors fall under the Estate Office. Address from a guide; live check pending."
+  },
+  "ch-news": {
+    "org": "The Tribune — land records of 23 UT villages online (news)",
+    "url": "https://www.tribuneindia.com/news/chandigarh/move-to-curb-frauds-keep-documents-updatednow-access-land-records-of-23-ut-villages-online-237039",
+    "kind": "secondary",
+    "basis": "Reports online access to land records of Chandigarh's villages."
+  },
+  "portal-py": {
+    "org": "Nilamagal — Directorate of Survey, Settlement and Land Records, Puducherry",
+    "url": "https://nilamagal.py.gov.in/public/",
+    "kind": "portal",
+    "basis": "Puducherry settlement and chitta register query."
+  },
+  "py-district": {
+    "org": "Puducherry District (official) — land records service page",
+    "url": "https://puducherry-dt.gov.in/service/land-records/",
+    "kind": "official",
+    "basis": "District government page linking Nilamagal for the settlement and chitta register."
+  },
+  "portal-sk": {
+    "org": "ILRMS — Land Revenue and Disaster Management Department, Sikkim",
+    "url": "https://ilrms.sikkim.gov.in/",
+    "kind": "portal",
+    "basis": "Sikkim integrated land record management system."
+  },
+  "sk-news": {
+    "org": "Dainik Asam — Sikkim CM launches web-based land record system (news)",
+    "url": "https://dainikasam.assamtribune.com/amp/north-east/sikkim-cm-launches-web-based-land-record-system-on-independence-day-1548160",
+    "kind": "secondary",
+    "basis": "Reports the August 2024 launch of ILRMS covering ownership, boundaries and mutation status."
+  },
+  "ml-guide": {
+    "org": "Tata Capital — Meghalaya land records (secondary source)",
+    "url": "https://www.tatacapital.com/blog/?p=45712",
+    "kind": "secondary",
+    "basis": "States DLRS Meghalaya provides land record details only offline. Sources conflict; one claims an online portal."
+  },
+  "mn-guide": {
+    "org": "Tata Capital — Manipur land records via Loucha Pathap (secondary source)",
+    "url": "https://www.tatacapital.com/hindi/blog/loan-for-home/manipur-land-records/",
+    "kind": "secondary",
+    "basis": "Describes Loucha Pathap: jamabandi/patta/RoR by district, circle, village, patta and dag number. Official address not given."
+  },
+  "portal-mz": {
+    "org": "e-Ram — Land Revenue and Settlement Department, Mizoram",
+    "url": "https://eram.mizoram.gov.in/",
+    "kind": "portal",
+    "basis": "Mizoram land services portal (piloted in Aizawl from November 2024) per guides; live check pending."
+  },
+  "mz-guide": {
+    "org": "Housing.com — Mizoram land records (secondary source)",
+    "url": "https://housing.com/news/mizoram-land-records/",
+    "kind": "secondary",
+    "basis": "Describes LSC, periodic patta and online verification; sources conflict on coverage."
+  },
+  "nl-guide": {
+    "org": "Housing.com — Nagaland land records (secondary source)",
+    "url": "https://housing.com/news/nagaland-land-records",
+    "kind": "secondary",
+    "basis": "Says Nagaland land records cannot be checked online; obtained offline from Circle/DC offices."
+  },
+  "ar-india-gov": {
+    "org": "India.gov.in — Land Information System of Arunachal (LISA)",
+    "url": "https://www.india.gov.in/land-information-system-arunachal-lisa-portal",
+    "kind": "official",
+    "basis": "National portal listing for LISA: land allotment, revenue payment and Land Holding Certificate services."
+  },
+  "portal-ar": {
+    "org": "LISA — Department of Land Management, Arunachal Pradesh",
+    "url": "https://lisa.arunachal.gov.in/",
+    "kind": "portal",
+    "basis": "Address from a guide; not confirmed on an official page."
+  },
+  "portal-an": {
+    "org": "Dweep Bhoomi — Revenue Department, Andaman & Nicobar",
+    "url": "https://dweepbhoomi.andamannicobar.gov.in/",
+    "kind": "portal",
+    "basis": "Official Dweep Bhoomi web application integrating revenue, registration and survey."
+  },
+  "an-dolr": {
+    "org": "Department of Land Resources — citizen centric services",
+    "url": "https://dolr.gov.in/citizen-centric-services/",
+    "kind": "official",
+    "basis": "DoLR page listing state/UT RoR portals."
+  },
+  "portal-ld": {
+    "org": "Lakshadweep Land Records MIS",
+    "url": "https://land.utl.gov.in/",
+    "kind": "portal",
+    "basis": "Land register extract by island, survey block and number."
+  },
+  "ld-gov": {
+    "org": "UT Lakshadweep — Department of Revenue",
+    "url": "https://lakshadweep.gov.in/department-of-revenue/",
+    "kind": "official",
+    "basis": "Official department page: maintenance of land records and certificates."
+  },
+  "portal-dd": {
+    "org": "Avanika — Dadra & Nagar Haveli land records",
+    "url": "https://dnh.nlrmp.in/avanika/",
+    "kind": "portal",
+    "basis": "Form 7/12 lookup for DNH per guides; Daman/Diu reportedly use SUGAM. Sources conflict."
+  },
+  "dd-guide": {
+    "org": "Housing.com — DNH & Daman Diu land records (secondary source)",
+    "url": "https://housing.com/news/all-about-dadra-and-nagar-haveli-daman-and-diu-land-record",
+    "kind": "secondary",
+    "basis": "Describes Avanika (DNH) and SUGAM (Daman/Diu) portals."
   }
 }
