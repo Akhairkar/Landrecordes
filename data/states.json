@@ -600,7 +600,7 @@
       "record_hi": "खतौनी, खसरा",
       "mutation_hi": "दाखिल-खारिज",
       "units_hi": "पहाड़ी इलाकों में नाली जैसी स्थानीय इकाइयाँ चलती हैं, और माप क्षेत्र के अनुसार अलग हो सकता है।",
-      "intro_hi": "उत्तराखंड के राजस्व विभाग का भूलेख पोर्टल खतौनी/खसरा, दाखिल-खारिज की जानकारी और नक्शे जैसी सेवाएँ देने वाला बताया जाता है। हमें इसका आधिकारिक पता दूसरे स्रोत से पक्का नहीं मिला, इसलिए नीचे दिया पता 'पुष्टि जारी' है।",
+      "intro_hi": "उत्तराखंड के राजस्व विभाग का भूलेख पोर्टल खतौनी/खसरा, दाखिल-खारिज की जानकारी और नक्शे जैसी सेवाएँ देने वाला बताया जाता है। तीन अलग निजी गाइड इसका पता bhulekh.uk.gov.in बताते हैं; कोई सरकारी दस्तावेज़ हमें नहीं मिला, इसलिए खोलते समय gov.in डोमेन देख लें।",
       "steps_hi": [
         "पोर्टल के होमपेज पर 'Public ROR' जैसा विकल्प ढूँढें।",
         "जिला, तहसील और गाँव चुनें।",
@@ -614,7 +614,7 @@
       "faq": [
         {
           "q": "उत्तराखंड में खतौनी कहाँ मिलती है?",
-          "a": "राज्य के भूलेख पोर्टल पर। हमने इसका आधिकारिक पता अभी पक्का नहीं किया है, इसलिए राजस्व विभाग की वेबसाइट से जाँच लें।"
+          "a": "राज्य के भूलेख पोर्टल (bhulekh.uk.gov.in, कई स्रोतों के अनुसार) पर। प्रमाणित नकल के लिए तहसील कार्यालय जाएँ।"
         },
         {
           "q": "उत्तराखंड में नाली क्या है?",
@@ -625,7 +625,7 @@
       "record_en": "Khatauni, khasra",
       "mutation_en": "Dakhil-kharij",
       "units_en": "Local units such as nali are used in the hills, and the size may differ by area.",
-      "intro_en": "The Uttarakhand revenue department's Bhulekh portal is described as providing khatauni/khasra, dakhil-kharij information and maps. We could not confirm its official address from a second source, so the address below is 'confirmation pending'.",
+      "intro_en": "The Uttarakhand revenue department's Bhulekh portal is described as providing khatauni/khasra, dakhil-kharij information and maps. Three separate private guides give its address as bhulekh.uk.gov.in; we found no government document, so check for the gov.in domain when you open it.",
       "steps_en": [
         "Look for an option like 'Public ROR' on the portal's home page.",
         "Select district, tehsil and village.",
@@ -639,7 +639,7 @@
       "faq_en": [
         {
           "q": "Where can I get the khatauni in Uttarakhand?",
-          "a": "On the state's Bhulekh portal. We have not yet confirmed its official address, so verify it from the revenue department's website."
+          "a": "On the state Bhulekh portal (bhulekh.uk.gov.in, per several sources). For a certified copy, visit the tehsil office."
         },
         {
           "q": "What is a nali in Uttarakhand?",
