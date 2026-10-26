@@ -478,5 +478,29 @@
     "url": "https://en.wikipedia.org/wiki/Earth_radius#Mean_radius",
     "kind": "definition",
     "basis": "Mean Earth radius used to turn latitude/longitude differences into metres."
+  },
+  "pib-ulpin-2022": {
+    "org": "PIB — Ministry of Rural Development, 22 Feb 2022 (post-budget webinar note on ULPIN)",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1800387",
+    "kind": "official",
+    "basis": "ULPIN is a 14-digit ID for every land parcel based on geo-referenced coordinates of the parcel's vertices; compared to Aadhaar for a person; follows ECCMA and OGC standards; stated benefits."
+  },
+  "pib-dolr-yer-2023": {
+    "org": "PIB — Year End Review 2023, Department of Land Resources",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1989671",
+    "kind": "official",
+    "basis": "Describes ULPIN/Bhu-Aadhar as a 14-digit alphanumeric parcel ID; lists 29 States/UTs where adopted and those in pilot or yet to roll out (as of Dec 2023)."
+  },
+  "pib-bhumi-samvaad-2023": {
+    "org": "PIB — Bhumi Samvaad IV on Bhu-Aadhaar (ULPIN), 10 Mar 2023",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1905655",
+    "kind": "official",
+    "basis": "Bhu-Aadhaar/ULPIN is a 14-digit alpha-numeric number generated from the latitude-longitude of each land parcel's vertices."
+  },
+  "housing-ulpin": {
+    "org": "Housing.com — What is ULPIN (secondary source)",
+    "url": "https://housing.com/news/what-is-ulpin/",
+    "kind": "secondary",
+    "basis": "Describes looking for the ULPIN field on the state land-record page; used only for the general lookup approach, which varies by state."
   }
 }
