@@ -502,5 +502,23 @@
     "url": "https://housing.com/news/what-is-ulpin/",
     "kind": "secondary",
     "basis": "Describes looking for the ULPIN field on the state land-record page; used only for the general lookup approach, which varies by state."
+  },
+  "dhc-sra6-2025": {
+    "org": "Delhi High Court — Shaukat Ali v. Kailash Rani, C.R.P. 211/2024 (13 Jan 2025), quoting Specific Relief Act 1963 s.6",
+    "url": "https://delhihighcourt.nic.in/app/showFileJudgment/59513012025CR2112024_125143.pdf",
+    "kind": "official",
+    "basis": "Reproduces Section 6 of the Specific Relief Act, 1963: suit to recover possession by a person dispossessed without consent otherwise than in due course of law; no suit after six months from dispossession or against the Government; no appeal or review; title suit not barred."
+  },
+  "advocatekhoj-bnss164": {
+    "org": "AdvocateKhoj — BNSS 2023 bare act, Section 164 (secondary source)",
+    "url": "https://www.advocatekhoj.com/library/bareacts/bharatiyanagarik2023/164.php",
+    "kind": "secondary",
+    "basis": "Text of BNSS s.164: Executive Magistrate's procedure where a dispute concerning land or water is likely to cause a breach of peace (replaces CrPC s.145). Verify against the official India Code text."
+  },
+  "devgan-bns329": {
+    "org": "devgan.in — BNS 2023 Section 329, criminal trespass (secondary source)",
+    "url": "https://devgan.in/bns/section/329/",
+    "kind": "secondary",
+    "basis": "BNS s.329 defines criminal trespass and house-trespass (replacing IPC ss.441–448). Verify against the official India Code text."
   }
 }
