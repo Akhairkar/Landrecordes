@@ -538,5 +538,29 @@
     "url": "https://agristack.gov.in/",
     "kind": "official",
     "basis": "Farmer Registry is a federated registry compiled by States; Farmer ID is Aadhaar-based; registry linked to land records for non-legal uses such as scheme delivery and advisory."
+  },
+  "nic-bhunaksha": {
+    "org": "NIC — Bhu-Naksha (Indian Cadastral Mapping Solution)",
+    "url": "https://bhunaksha.nic.in/",
+    "kind": "official",
+    "basis": "NIC's cadastral mapping software used by state Bhu-Naksha portals to show village maps and plots; state map portals listed on our pages were opened on 29 Oct 2026 and their page titles read 'BhuNaksha'."
+  },
+  "pib-svamitva-2026": {
+    "org": "PIB — Ministry of Panchayati Raj, SVAMITVA Scheme (18 Mar 2026) and Distribution of SVAMITVA Property Cards (25 Mar 2026)",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244931",
+    "kind": "official",
+    "basis": "As on 19 Mar 2026, drone survey done in 3.29 lakh of 3.44 lakh targeted villages; 3.10 crore property cards prepared for 1.87 lakh villages, 2.65 crore distributed; MoPR funds Survey of India for drone survey and maps; ground truthing and card preparation/distribution by States/UTs; aims to give Record of Rights in rural inhabited (abadi) areas using drones and CORS."
+  },
+  "pib-svamitva-5yrs": {
+    "org": "PIB — Building a Self-Reliant India: 5 Years of SVAMITVA (23 Apr 2025)",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2123886",
+    "kind": "official",
+    "basis": "Launched 24 April 2020; property cards give legal ownership papers for rural residential land, enabling bank credit and dispute resolution; implemented with Survey of India and NICSI."
+  },
+  "svamitva-up": {
+    "org": "Government of Uttar Pradesh — SVAMITVA portal (Gharauni / rural residential record)",
+    "url": "https://svamitva.up.gov.in/",
+    "kind": "portal",
+    "basis": "UP's SVAMITVA portal for the rural residential record (Gharauni) with a public dashboard of distribution and survey progress."
   }
 }

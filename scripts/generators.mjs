@@ -113,7 +113,7 @@ export function generate({ readJson, esc }) {
         unique_value: `${s.name_en}-specific portal (${s.portal_en}), local record names (${s.record_en}), mutation term (${s.mutation_en}), unit habits and cautions, with address confidence shown.`,
         keywords: [s.name_en, s.name_hi, "bhulekh", "भूलेख", s.portal_name, s.portal_en, "khatauni", "jamabandi", "land record"],
         breadcrumbs: [{ name: "राज्य", name_en: "States", path: "states/" }, { name: s.name_hi, name_en: s.name_en, path: `states/${s.id}/` }],
-        sources: s.sources,
+        sources: s.map_url ? [...s.sources, "nic-bhunaksha"] : s.sources,
         faq: s.faq,
         faq_en: s.faq_en,
         related: [
@@ -135,6 +135,10 @@ ${s.url ? `<p><a class="lr-btn" style="display:inline-flex;align-items:center;te
 ${live}
 <p class="lr-security-note" role="note">${bi("सुरक्षा: पोर्टल का पता राज्य/जिला प्रशासन की आधिकारिक वेबसाइट से मिलाएँ। OTP, पासवर्ड या दस्तावेज़ किसी अनजान एजेंट को न दें; शुल्क हो तो केवल पोर्टल पर प्रकाशित आधिकारिक निर्देश देखें।", "Safety: confirm the portal address from the official state/district website. Never give an OTP, password or documents to an unknown agent; for any fee, follow only the official instructions published on the portal.")}</p>
 <p class="lr-security-note" role="note">${bi("महत्वपूर्ण: ऑनलाइन रिकॉर्ड/उतारा जानकारी के लिए है; अकेले इसे मालिकाना हक़ का अंतिम प्रमाण न मानें। प्रमाणित प्रतिलिपि, पंजीकृत दस्तावेज़ और संबंधित राजस्व कार्यालय से पुष्टि करें।", "Important: an online record/extract is for information; do not treat it alone as conclusive proof of ownership. Verify certified copies, registered documents and the relevant revenue office.")}</p></section>
+${s.map_url ? `<section class="lr-card" aria-labelledby="map-h" style="margin-top:16px"><h2 id="map-h" style="margin-top:0">${bi("भू-नक्शा (जमीन का नक्शा)", "Bhu-Naksha (land map)")}</h2>
+<p>${bi(`जाँचा गया: ${esc(s.map_checked)}`, `Checked: ${esc(s.map_checked)}`)}</p>
+<p><a class="lr-btn secondary" style="display:inline-flex;align-items:center;text-decoration:none" href="${esc(s.map_url)}" target="_blank" rel="noopener noreferrer">${bi("भू-नक्शा खोलें (नई विंडो)", "Open Bhu-Naksha (new window)")}</a> <span class="lr-en">${link(s.map_url)}</span></p>
+<p><a href="maps/">${bi("नक्शा पढ़ने की सावधानियाँ", "Map reading cautions")}</a></p></section>` : ""}
 <div class="lr-prose" data-l="hi">
 <h2>यहाँ रिकॉर्ड को क्या कहते हैं</h2>
 <ul><li><strong>मुख्य रिकॉर्ड:</strong> ${esc(s.record_hi)}</li><li><strong>म्यूटेशन (नाम परिवर्तन):</strong> ${esc(s.mutation_hi)}</li><li><strong>क्षेत्रफल की इकाइयाँ:</strong> ${esc(s.units_hi)}</li></ul>

@@ -64,7 +64,9 @@
           "q": "What is name change in UP records called?",
           "a": "Commonly dakhil-kharij (mutation). Check the process and status with the tehsil/official portal."
         }
-      ]
+      ],
+      "map_url": "https://upbhunaksha.gov.in/",
+      "map_checked": "2026-10-29"
     },
     {
       "id": "maharashtra",
@@ -196,7 +198,9 @@
           "q": "What is mutation called in Rajasthan?",
           "a": "Usually namantaran. Check the application and its status on the portal/tehsil."
         }
-      ]
+      ],
+      "map_url": "https://bhunaksha.rajasthan.gov.in/",
+      "map_checked": "2026-10-29"
     },
     {
       "id": "madhya-pradesh",
@@ -324,7 +328,9 @@
           "a": "A decimal equals a cent: 1 decimal = 1/100 acre = 435.6 sq ft."
         }
       ],
-      "example_en": "Suppose the jamabandi says: raiyat 'Ramlal', khata 123, khesra 456, area 12 katha 5 dhur. First check how many square feet 1 katha and 1 dhur are in your circle. Then enter those values in the calculator and convert the area to decimals or acres. This example is hypothetical."
+      "example_en": "Suppose the jamabandi says: raiyat 'Ramlal', khata 123, khesra 456, area 12 katha 5 dhur. First check how many square feet 1 katha and 1 dhur are in your circle. Then enter those values in the calculator and convert the area to decimals or acres. This example is hypothetical.",
+      "map_url": "https://bhunaksha.bihar.gov.in/",
+      "map_checked": "2026-10-29"
     },
     {
       "id": "gujarat",
@@ -1155,7 +1161,9 @@
           "q": "What is kisam?",
           "a": "The land class (e.g. agricultural, residential), which affects its use and the possibility of sale/conversion."
         }
-      ]
+      ],
+      "map_url": "https://bhunakshaodisha.nic.in/",
+      "map_checked": "2026-10-29"
     },
     {
       "id": "chhattisgarh",
@@ -1227,7 +1235,9 @@
           "q": "What is mutation called in Chhattisgarh?",
           "a": "Usually namantaran. Check the application and status at the tehsil/portal."
         }
-      ]
+      ],
+      "map_url": "https://bhunaksha.cg.nic.in/",
+      "map_checked": "2026-10-29"
     },
     {
       "id": "jharkhand",
@@ -1421,7 +1431,9 @@
           "q": "What is the difference between chitha and jamabandi?",
           "a": "The chitha is the field book with dag details; the jamabandi is the record of rights with pattadars and shares."
         }
-      ]
+      ],
+      "map_url": "https://bhunaksha.assam.gov.in/",
+      "map_checked": "2026-10-29"
     },
     {
       "id": "goa",
@@ -1484,7 +1496,9 @@
           "q": "What is the urban land record in Goa?",
           "a": "Form D, the property card, searched by PT sheet and chalta number."
         }
-      ]
+      ],
+      "map_url": "https://bhunaksha.goa.gov.in/",
+      "map_checked": "2026-10-29"
     },
     {
       "id": "tripura",

@@ -11,6 +11,7 @@ const urls = new Map(); // url -> label
 for (const s of read("data/states.json").states) {
   if (s.url) urls.set(s.url, `${s.name_en} portal`);
   for (const u of s.alt_urls) urls.set(u, `${s.name_en} alt address`);
+  if (s.map_url) urls.set(s.map_url, `${s.name_en} Bhu-Naksha`);
 }
 for (const [id, s] of Object.entries(read("data/sources.json"))) if (s.url) urls.set(s.url, urls.get(s.url) || `source ${id}`);
 

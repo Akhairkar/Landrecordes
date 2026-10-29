@@ -23,6 +23,12 @@ test("state portal addresses and source references are structurally valid", () =
       assert.ok(["http:", "https:"].includes(new URL(address).protocol), `${state.id}: invalid portal URL protocol`);
     }
     for (const sourceId of state.sources) assert.ok(sources[sourceId], `${state.id}: unknown source ${sourceId}`);
+    if (state.map_url) {
+      const u = new URL(state.map_url);
+      assert.equal(u.protocol, "https:", `${state.id}: map_url must be https`);
+      assert.match(u.hostname, /(\.gov\.in|\.nic\.in)$/, `${state.id}: map_url must be a government domain`);
+      assert.match(state.map_checked || "", /^\d{4}-\d{2}-\d{2}$/, `${state.id}: map_checked date required`);
+    }
   }
 });
 
