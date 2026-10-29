@@ -1,0 +1,92 @@
+<!--meta
+{
+ "title": "जमीन का रेट कैलकुलेटर: बीघा, एकड़, गज, वर्ग फुट में भाव",
+ "description": "जमीन का भाव एक इकाई से दूसरी में बदलें (₹ प्रति बीघा → प्रति गज, वर्ग फुट, एकड़) और कुल कीमत निकालें। स्थानीय बीघा का माप खुद भरें, अंदाज़ा नहीं।",
+ "type": "tool",
+ "tool": true,
+ "status": "published",
+ "reviewed_on": "2026-10-29",
+ "active": "tools",
+ "intent": "Buyer/seller hears a land price in one unit ('20 lakh bigha') and wants it per gaj/sq ft/acre or the total for a plot ('jamin ka rate kaise nikale', 'per gaj rate').",
+ "unique_value": "Converts a rate across every unit with sourced fixed factors and user-supplied local bigha/biswa values, plus total price in lakh/crore words; shareable link; no built-in prices.",
+ "breadcrumbs": [
+  { "name": "Tools", "path": "tools/" },
+  { "name": "जमीन का रेट कैलकुलेटर", "path": "tools/land-rate-calculator/" }
+ ],
+ "sources": ["intl-foot-definition", "bajaj-guntha-acre", "bajaj-marla-kanal", "1acre-cent"],
+ "scripts": ["assets/js/tools/land-rate-ui.js"],
+ "keywords": ["jamin ka rate calculator", "जमीन का भाव", "per gaj rate", "bigha rate to sq ft", "land price calculator", "एकड़ का रेट"],
+ "related": [
+  { "path": "tools/land-unit-converter/", "label": "इकाई बदलने का कैलकुलेटर", "label_en": "Land unit converter" },
+  { "path": "tools/stamp-duty-calculator/", "label": "स्टांप ड्यूटी और रजिस्ट्री खर्च", "label_en": "Stamp duty and registration cost" },
+  { "path": "guides/buying-land-document-check/", "label": "जमीन खरीदने से पहले जाँच", "label_en": "Checks before buying land" }
+ ],
+ "faq": [
+  { "q": "₹ प्रति बीघा को प्रति गज में कैसे बदलें?", "a": "पहले पता करें कि आपके इलाके में 1 बीघा कितने वर्ग फुट का है (यह राज्य और ज़िले के अनुसार बदलता है)। फिर प्रति वर्ग फुट रेट = बीघा का रेट ÷ बीघा के वर्ग फुट, और प्रति गज रेट = प्रति वर्ग फुट रेट × 9। टूल यही हिसाब हर इकाई के लिए करता है।" },
+  { "q": "क्या यह टूल मेरे इलाके का बाज़ार भाव या सर्किल रेट बताता है?", "a": "नहीं। रेट आप भरते हैं; टूल सिर्फ उसे दूसरी इकाइयों में बदलता है और कुल कीमत जोड़ता है। सर्किल रेट/DLC रेट राज्य की आधिकारिक साइट या सब-रजिस्ट्रार कार्यालय से देखें।" },
+  { "q": "कुल कीमत में रजिस्ट्री का खर्च जुड़ा है?", "a": "नहीं। स्टांप ड्यूटी और रजिस्ट्री फीस के लिए स्टांप ड्यूटी कैलकुलेटर में अपने राज्य की दर भरें।" }
+ ],
+ "faq_en": [
+  { "q": "How do I convert ₹ per bigha to per gaj?", "a": "First find how many sq ft one bigha is in your area (it varies by state and district). Rate per sq ft = bigha rate ÷ sq ft in a bigha; rate per gaj = rate per sq ft × 9. The tool does this for every unit." },
+  { "q": "Does it tell me the market or circle rate?", "a": "No. You enter the rate; the tool converts it and totals the price. Check the circle/DLC rate on the state's official site or at the sub-registrar office." },
+  { "q": "Does the total include registration cost?", "a": "No. Use the stamp duty calculator with your state's rates for that." }
+ ],
+ "reviewed_by": "owner-approved 2026-10-29 (automated QA)"
+}
+-->
+<h1>जमीन का रेट कैलकुलेटर: भाव एक इकाई से दूसरी में</h1>
+<p class="lr-lead" data-l="hi">किसी ने भाव "₹20 लाख बीघा" बताया और आपको प्रति गज या प्रति वर्ग फुट समझना है? या प्लॉट की कुल कीमत जाननी है? रेट और उसकी इकाई भरें; टूल हर इकाई में भाव और कुल कीमत लाख/करोड़ में दिखाएगा।</p>
+<p class="lr-lead" data-l="en">Heard a price like "₹20 lakh per bigha" and want it per gaj or per sq ft? Or the total for a plot? Enter the rate and its unit; the tool shows the rate in every unit and the total in lakh/crore.</p>
+
+<section class="lr-card" id="tool" aria-labelledby="rate-h">
+  <h2 id="rate-h" style="margin-top:0">रेट बदलें <span class="lr-en">/ Convert a rate</span></h2>
+  <div class="lr-row">
+    <div class="lr-field"><label for="lr-rate">रेट (₹) <span class="lr-en">/ Rate</span></label><input class="lr-input" id="lr-rate" inputmode="decimal" autocomplete="off" placeholder="2000000"></div>
+    <div class="lr-field"><label for="lr-rate-unit">प्रति <span class="lr-en">/ Per</span></label><select class="lr-select" id="lr-rate-unit"></select></div>
+  </div>
+  <div class="lr-row">
+    <div class="lr-field"><label for="lr-area">आपकी जमीन (वैकल्पिक) <span class="lr-en">/ Your area (optional)</span></label><input class="lr-input" id="lr-area" inputmode="decimal" autocomplete="off"></div>
+    <div class="lr-field"><label for="lr-area-unit">इकाई <span class="lr-en">/ Unit</span></label><select class="lr-select" id="lr-area-unit"></select></div>
+  </div>
+  <details id="lr-local-box" class="lr-field">
+    <summary class="lr-label">बीघा/बिस्वा/कट्ठा इस्तेमाल करना है? 1 इकाई = कितने वर्ग फुट, भरें <span class="lr-en">/ Local units</span></summary>
+    <div id="lr-local-fields" class="lr-row"></div>
+  </details>
+  <p id="lr-total" class="lr-result-big" aria-live="polite"></p>
+  <button class="lr-btn secondary" type="button" id="lr-copy">लिंक कॉपी करें <span class="lr-en">/ Copy link</span></button>
+  <p id="lr-status" role="status" aria-live="polite"></p>
+  <div class="lr-table-wrap">
+    <table class="lr-table" id="lr-rate-table" hidden style="min-width:0">
+      <caption class="lr-en" style="text-align:left;padding:8px 0">Rate in every unit</caption>
+      <thead><tr><th scope="col">इकाई</th><th scope="col">रेट</th></tr></thead>
+      <tbody id="lr-rate-body"></tbody>
+    </table>
+  </div>
+  <noscript><p class="lr-notice">इस टूल के लिए JavaScript चाहिए। <span class="lr-en">This tool needs JavaScript.</span></p></noscript>
+</section>
+<p class="lr-notice" style="margin-top:16px"><strong>ध्यान दें:</strong> यह सिर्फ अंकगणित है। हम कोई बाज़ार भाव या सर्किल रेट नहीं बताते। बीघा जैसी स्थानीय इकाई का माप गलत भरा तो पूरा हिसाब गलत होगा, इसलिए पटवारी/तहसील से पक्का करें। <span class="lr-en">Arithmetic only; we give no market or circle rates.</span></p>
+
+<div class="lr-prose" data-l="hi">
+<h2>हिसाब कैसे होता है</h2>
+<p>हर इकाई को पहले वर्ग फुट में बदला जाता है। प्रति वर्ग फुट रेट = दिया गया रेट ÷ उस इकाई के वर्ग फुट। फिर किसी भी इकाई का रेट = प्रति वर्ग फुट रेट × उस इकाई के वर्ग फुट। तय परिभाषाएँ: 1 गज = 9 वर्ग फुट, 1 एकड़ = 43,560 वर्ग फुट, 1 हेक्टेयर = 10,000 वर्ग मीटर।</p>
+<h2>उदाहरण</h2>
+<p>मान लीजिए आपके इलाके में 1 बीघा = 27,225 वर्ग फुट माना जाता है और भाव ₹20 लाख प्रति बीघा है। तब प्रति वर्ग फुट ≈ ₹73.46 और प्रति गज ≈ ₹661। अगर किसी दूसरे इलाके में बीघा छोटा है, तो वही "₹20 लाख बीघा" प्रति गज कहीं महँगा पड़ेगा। इसीलिए सौदे से पहले बीघा का स्थानीय माप लिखित में तय करें।</p>
+<h2>सौदे से पहले</h2>
+<ul>
+<li>भाव किस क्षेत्रफल पर है, यह रिकॉर्ड (खतौनी/जमाबंदी) के रकबे से मिलाएँ, सिर्फ मौखिक नाप से नहीं।</li>
+<li>रजिस्ट्री का खर्च अलग से जुड़ेगा: <a href="tools/stamp-duty-calculator/">स्टांप ड्यूटी कैलकुलेटर</a>।</li>
+<li>खेत की असली नाप का अंदाज़ा: <a href="tools/map-area/">GPS से खेत नापें</a>।</li>
+</ul>
+</div>
+<div class="lr-prose" data-l="en">
+<h2>How it is calculated</h2>
+<p>Every unit is first turned into square feet. Rate per sq ft = given rate ÷ sq ft in that unit. Then the rate in any unit = rate per sq ft × sq ft in that unit. Fixed definitions: 1 gaj = 9 sq ft, 1 acre = 43,560 sq ft, 1 hectare = 10,000 m².</p>
+<h2>Example</h2>
+<p>Say one bigha in your area is taken as 27,225 sq ft and the price is ₹20 lakh per bigha. Then per sq ft ≈ ₹73.46 and per gaj ≈ ₹661. Where the bigha is smaller, the same "₹20 lakh a bigha" is far dearer per gaj, so fix the local bigha size in writing before a deal.</p>
+<h2>Before a deal</h2>
+<ul>
+<li>Match the area the price is based on with the area in the record (khatauni/jamabandi), not just a verbal measure.</li>
+<li>Registration costs come on top: <a href="tools/stamp-duty-calculator/">stamp duty calculator</a>.</li>
+<li>For a rough field measurement: <a href="tools/map-area/">measure a field with GPS</a>.</li>
+</ul>
+</div>

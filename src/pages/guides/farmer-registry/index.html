@@ -1,0 +1,70 @@
+<!--meta
+{
+ "title": "फार्मर रजिस्ट्री और Farmer ID: जमीन कैसे जुड़ती है",
+ "description": "AgriStack की फार्मर रजिस्ट्री क्या है, Farmer ID और Farm ID में फर्क, जमीन का रिकॉर्ड कैसे जोड़ा जाता है, क्या चाहिए और नाम/रकबा न मिले तो क्या करें।",
+ "type": "guide",
+ "status": "published",
+ "reviewed_on": "2026-10-29",
+ "active": "guides",
+ "intent": "Farmer asked to make a 'Farmer ID' / 'kisan registry' (often for PM-Kisan or other schemes) wants to know what it is, what is needed and why land doesn't show up.",
+ "unique_value": "Explains Farmer Registry from the official AgriStack FAQ with a land-record angle: why khatauni/RoR errors block the claim, what to fix first, Farmer ID vs Farm ID vs ULPIN, and scam cautions.",
+ "keywords": ["farmer registry", "फार्मर रजिस्ट्री", "farmer id kaise banaye", "किसान रजिस्ट्री", "agristack", "kisan id", "farmer id land record"],
+ "breadcrumbs": [
+  { "name": "गाइड", "path": "guides/" },
+  { "name": "फार्मर रजिस्ट्री", "path": "guides/farmer-registry/" }
+ ],
+ "sources": ["agristack-fr-faq", "agristack-home", "pib-dolr-yer-2023"],
+ "related": [
+  { "path": "guides/record-mismatch-correction/", "label": "रिकॉर्ड में नाम/रकबा गलत हो तो", "label_en": "Wrong name or area in the record" },
+  { "path": "tools/record-finder/", "label": "अपना भूमि रिकॉर्ड कहाँ देखें", "label_en": "Where to see your land record" },
+  { "path": "records/bhu-aadhaar/", "label": "भू-आधार (ULPIN) क्या है", "label_en": "What is Bhu-Aadhaar (ULPIN)" },
+  { "path": "guides/varasat-inheritance-mutation/", "label": "वरासत में नाम चढ़वाना", "label_en": "Inheritance mutation (varasat)" }
+ ],
+ "faq": [
+  { "q": "Farmer ID और Farm ID में क्या फर्क है?", "a": "आधिकारिक FAQ के अनुसार Farmer ID व्यक्ति (किसान) की पहचान है, और Farm ID उस किसान की सर्वे/उप-सर्वे नंबर के भीतर की जमीन के टुकड़े की।" },
+  { "q": "फार्मर रजिस्ट्री के लिए क्या चाहिए?", "a": "आधिकारिक FAQ के अनुसार जमीन के रिकॉर्ड (सर्वे/उप-सर्वे या खसरा नंबर सहित) और आधार विवरण। राज्य अपनी ज़रूरतें जोड़ सकते हैं, इसलिए राज्य की फार्मर रजिस्ट्री साइट या शिविर से सूची पक्की करें।" },
+  { "q": "मेरी जमीन रजिस्ट्री में नहीं दिख रही, क्या करूँ?", "a": "सबसे आम कारण भूमि रिकॉर्ड में नाम का आधार से मेल न खाना, वरासत/म्यूटेशन न होना या रिकॉर्ड का अपडेट न होना है। पहले अपनी खतौनी/RoR जाँचें; गलती हो तो पटवारी/तहसील से सुधार कराएँ। आधिकारिक FAQ के अनुसार विवाद होने पर शिकायत दर्ज होती है और रिकॉर्ड पटवारी ठीक करता है।" },
+  { "q": "क्या Farmer ID से जमीन का मालिकाना हक़ तय होता है?", "a": "नहीं। AgriStack के अनुसार रजिस्ट्री को जमीन के रिकॉर्ड से योजनाओं और सलाह जैसे गैर-कानूनी उपयोगों के लिए जोड़ा जाता है। हक़ राजस्व रिकॉर्ड, रजिस्ट्री और म्यूटेशन से ही तय होता है।" }
+ ],
+ "faq_en": [
+  { "q": "What is the difference between Farmer ID and Farm ID?", "a": "Per the official FAQ, Farmer ID identifies the person (farmer); Farm ID identifies the farmer's land parcel within a survey/sub-survey number." },
+  { "q": "What do I need for the Farmer Registry?", "a": "Per the official FAQ, land records (including survey/sub-survey or khasra numbers) and Aadhaar details. States can add requirements, so confirm the list on your state's Farmer Registry site or at a camp." },
+  { "q": "My land doesn't show up in the registry. What now?", "a": "The usual reasons are the name in the land record not matching Aadhaar, an inheritance/mutation not done, or the record not being updated. Check your khatauni/RoR first; get errors corrected through the patwari/tehsil. Per the official FAQ, disputes go through a grievance and the patwari corrects the record." },
+  { "q": "Does a Farmer ID decide land ownership?", "a": "No. Per AgriStack, the registry links to land records for non-legal uses such as schemes and advisory. Title is decided by the revenue record, registry and mutation." }
+ ],
+ "reviewed_by": "owner-approved 2026-10-29 (automated QA)"
+}
+-->
+<h1>फार्मर रजिस्ट्री और Farmer ID क्या है? <span class="lr-en">/ Farmer Registry</span></h1>
+<p class="lr-lead">केंद्र सरकार की <strong>AgriStack</strong> पहल के तहत हर राज्य किसानों की एक <strong>फार्मर रजिस्ट्री</strong> बना रहा है। इसमें हर किसान को आधार-आधारित <strong>Farmer ID</strong> मिलती है और उसके नाम की जमीन राज्य के भूमि रिकॉर्ड से जोड़ी जाती है। जमीन तभी जुड़ती है जब भूमि रिकॉर्ड में आपका नाम सही दर्ज हो, इसलिए रिकॉर्ड की जाँच सबसे पहला कदम है।</p>
+<div class="lr-prose">
+<h2>सरकारी जानकारी के मुख्य बिंदु</h2>
+<ul>
+<li><strong>राज्य बनाते हैं:</strong> रजिस्ट्री राज्य साझा मानकों पर बनाते हैं और केंद्र उसकी प्रति रखता है।</li>
+<li><strong>Farmer ID बनाम Farm ID:</strong> Farmer ID व्यक्ति की पहचान है; Farm ID सर्वे/उप-सर्वे नंबर के भीतर किसान की जमीन के टुकड़े की।</li>
+<li><strong>जमीन कैसे जुड़ती है:</strong> किसान अपनी एक जमीन खोजकर मालिकों की सूची से अपना नाम चुनता है, अधिकार-अभिलेख (RoR) से मिलान होता है, और वह ई-साइन से सहमति देता है। एक गाँव में किसान की सारी जमीन एक "बकेट" (समूह) में दिखती है। जहाँ रिकॉर्ड पहले से आधार से जुड़ा है, वहाँ eKYC के बाद जमीन अपने-आप दिख सकती है।</li>
+<li><strong>मिलान नाम से:</strong> FAQ के अनुसार किसान और पिता दोनों के नाम का मिलान होता है; नाम में बहुत फर्क हो तो दावा अधिकारी की मंज़ूरी के लिए जाता है।</li>
+<li><strong>उपयोग:</strong> AgriStack के अनुसार यह जोड़ योजनाओं, सलाह और योजना-निर्माण जैसे गैर-कानूनी कामों के लिए है, मालिकाना हक़ तय करने के लिए नहीं।</li>
+</ul>
+<h2>पंजीकरण से पहले अपना भूमि रिकॉर्ड जाँचें</h2>
+<p>ज़्यादातर अड़चनें रजिस्ट्री में नहीं, भूमि रिकॉर्ड में होती हैं। पंजीकरण से पहले:</p>
+<ol>
+<li><a href="tools/record-finder/">अपने राज्य के पोर्टल</a> पर अपनी खतौनी/जमाबंदी/7-12 खोलें।</li>
+<li>देखें कि नाम और पिता का नाम आधार जैसा ही लिखा है या नहीं। स्पेलिंग का फर्क भी मिलान रोक सकता है।</li>
+<li>पिता/दादा के निधन के बाद वरासत दर्ज नहीं हुई तो जमीन अब भी उनके नाम होगी: <a href="guides/varasat-inheritance-mutation/">वरासत की गाइड</a> देखें।</li>
+<li>रजिस्ट्री से खरीदी जमीन का म्यूटेशन बाकी हो तो पहले वह पूरा कराएँ: <a href="guides/mutation-pending/">म्यूटेशन अटका हो तो</a>।</li>
+<li>नाम या रकबे में गलती हो तो <a href="guides/record-mismatch-correction/">सुधार की प्रक्रिया</a> अपनाएँ।</li>
+</ol>
+<h2>पंजीकरण कहाँ होता है</h2>
+<p>हर राज्य की फार्मर रजिस्ट्री साइट अलग होती है और आम तौर पर agristack.gov.in के उप-डोमेन पर चलती है (जैसे बिहार की bhfr.agristack.gov.in, गुजरात की gjfr.agristack.gov.in)। कई राज्य गाँव-स्तर पर शिविर, CSC या कृषि/राजस्व कर्मचारियों से सहायता भी देते हैं। आपके राज्य में कौन-सा तरीका चालू है, यह कृषि विभाग, पटवारी/लेखपाल या CSC से पूछें। लिंक हमेशा .gov.in वाला ही इस्तेमाल करें।</p>
+<h2>धोखे से बचें</h2>
+<ul>
+<li>"Farmer ID बनाने" के नाम पर किसी अनजान व्यक्ति को OTP, आधार या बैंक विवरण न दें।</li>
+<li>प्ले-स्टोर पर मिलते-जुलते नाम वाले निजी ऐप सरकारी नहीं होते; राज्य की आधिकारिक साइट से ही लिंक लें।</li>
+<li>Farmer ID से जमीन आपकी नहीं हो जाती और न किसी और की हो जाती है; हक़ के कागज़ वही रहते हैं।</li>
+</ul>
+<h2>भू-आधार (ULPIN) से संबंध</h2>
+<p>भू-आधार जमीन के टुकड़े की राष्ट्रीय पहचान है जो नक्शे के निर्देशांक से बनती है, जबकि Farm ID रजिस्ट्री के भीतर किसान की जमीन की पहचान है। दोनों का काम अलग है; ज़्यादा जानकारी के लिए <a href="records/bhu-aadhaar/">भू-आधार क्या है</a> देखें।</p>
+<h2>उदाहरण</h2>
+<p>किसी किसान के पिता का निधन हो चुका है, पर खतौनी में अब भी पिता का नाम है। रजिस्ट्री में जमीन खोजने पर मालिकों की सूची में किसान का नाम नहीं मिलता, इसलिए दावा नहीं हो पाता। सही कदम: पहले तहसील में वरासत दर्ज कराना, नई खतौनी आने पर फिर से जमीन जोड़ना।</p>
+</div>

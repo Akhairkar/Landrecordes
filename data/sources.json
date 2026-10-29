@@ -520,5 +520,23 @@
     "url": "https://devgan.in/bns/section/329/",
     "kind": "secondary",
     "basis": "BNS s.329 defines criminal trespass and house-trespass (replacing IPC ss.441–448). Verify against the official India Code text."
+  },
+  "pib-ngdrs-2023": {
+    "org": "PIB — 28 States/UTs adopt NGDRS for land records, 24 Apr 2023",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1919270",
+    "kind": "official",
+    "basis": "28 States/UTs have adopted the National Generic Document Registration System (e-registration or data sharing with the national NGDRS portal); SRO computerisation and integration figures as on 18.04.2023."
+  },
+  "agristack-fr-faq": {
+    "org": "AgriStack — Farmer Registry: Clarifications (official FAQ, Govt of India)",
+    "url": "https://agristack.gov.in/assets/registries/farmerRegistry/farmer_registry_faqs.pdf",
+    "kind": "official",
+    "basis": "Farmer ID is for a person, Farm ID for a land parcel; farmers claim land 'buckets' by verifying ownership against the RoR with Aadhaar eKYC and e-sign consent; land records with survey numbers plus Aadhaar are needed; grievance set right by Patwari; state-specific requirements may apply."
+  },
+  "agristack-home": {
+    "org": "AgriStack — Digital Public Infrastructure for Agriculture (Govt of India)",
+    "url": "https://agristack.gov.in/",
+    "kind": "official",
+    "basis": "Farmer Registry is a federated registry compiled by States; Farmer ID is Aadhaar-based; registry linked to land records for non-legal uses such as scheme delivery and advisory."
   }
 }

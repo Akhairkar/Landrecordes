@@ -171,3 +171,4 @@ a.lr-btn{display:inline-flex;align-items:center;text-decoration:none}
 .lr-map{height:min(60vh,420px);border-radius:var(--lr-radius-md);border:1px solid var(--lr-border-strong);margin:8px 0;z-index:0}
 .lr-points{font-family:ui-monospace,monospace;font-size:.9rem;padding-left:24px}
 .lr-btn:disabled{opacity:.55;cursor:not-allowed}
+.lr-result-big{font-size:1.2rem;font-weight:700;color:var(--lr-brand);margin:12px 0}

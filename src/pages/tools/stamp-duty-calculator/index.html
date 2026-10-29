@@ -1,0 +1,103 @@
+<!--meta
+{
+ "title": "स्टांप ड्यूटी और रजिस्ट्री फीस कैलकुलेटर",
+ "description": "जमीन या मकान की रजिस्ट्री का खर्च निकालें: सौदे का मूल्य या सर्किल रेट, अपने राज्य की स्टांप ड्यूटी % और रजिस्ट्री फीस भरें। कुल खर्च लाख/करोड़ में।",
+ "type": "tool",
+ "tool": true,
+ "status": "published",
+ "reviewed_on": "2026-10-29",
+ "active": "tools",
+ "intent": "Buyer wants to estimate stamp duty and registration fee before a land/property registry ('stamp duty kitni lagti hai', 'registry ka kharcha').",
+ "unique_value": "Honest calculator: no built-in state rates (which change and vary by buyer type); user enters official rates, picks deal value vs circle value vs higher of the two, optional fee cap and other charges; totals in lakh/crore; shareable link.",
+ "breadcrumbs": [
+  { "name": "Tools", "path": "tools/" },
+  { "name": "स्टांप ड्यूटी कैलकुलेटर", "path": "tools/stamp-duty-calculator/" }
+ ],
+ "sources": ["pib-ngdrs-2023", "editorial-general"],
+ "scripts": ["assets/js/tools/stamp-duty-ui.js"],
+ "keywords": ["stamp duty calculator", "स्टांप ड्यूटी कैलकुलेटर", "registry ka kharcha", "रजिस्ट्री फीस", "circle rate", "jamin registry kharch"],
+ "related": [
+  { "path": "guides/land-registry-process/", "label": "जमीन की रजिस्ट्री कैसे होती है", "label_en": "How a land registry works" },
+  { "path": "tools/land-rate-calculator/", "label": "जमीन का रेट कैलकुलेटर", "label_en": "Land rate calculator" },
+  { "path": "tools/property-checklist/", "label": "खरीद से पहले जाँच-सूची", "label_en": "Purchase checklist" }
+ ],
+ "faq": [
+  { "q": "मेरे राज्य में स्टांप ड्यूटी कितनी है?", "a": "यह राज्य तय करता है और खरीदार (जैसे महिला, संयुक्त नाम), संपत्ति के प्रकार और जगह के हिसाब से बदल सकती है। ताज़ा दर राज्य के पंजीयन/स्टांप विभाग की साइट या सब-रजिस्ट्रार कार्यालय से लें। हम अपने से कोई दर नहीं भरते ताकि पुराना आँकड़ा आपको गुमराह न करे।" },
+  { "q": "ड्यूटी सौदे के मूल्य पर लगेगी या सर्किल रेट पर?", "a": "यह राज्य के नियम पर निर्भर है। टूल में तीनों विकल्प हैं; अपने सब-रजिस्ट्रार से पूछकर सही आधार चुनें।" },
+  { "q": "सर्किल रेट से संपत्ति का मूल्य कैसे निकालें?", "a": "सर्किल/DLC रेट आम तौर पर प्रति वर्ग मीटर, वर्ग फुट या प्रति हेक्टेयर होता है। रेट × क्षेत्रफल से मूल्य बनता है; इकाई बदलने के लिए जमीन का रेट कैलकुलेटर इस्तेमाल करें। भवन, पेड़ या सड़क-किनारे जैसी बातों पर अलग जोड़ हो सकता है।" }
+ ],
+ "faq_en": [
+  { "q": "What is the stamp duty in my state?", "a": "The state sets it and it can vary by buyer (e.g. women, joint names), property type and location. Take the current rate from the state registration/stamps department site or the sub-registrar office. We don't prefill rates so an outdated figure can't mislead you." },
+  { "q": "Is duty charged on the deal value or the circle rate?", "a": "It depends on state rules. The tool offers all three options; ask your sub-registrar and pick the right base." },
+  { "q": "How do I get the value from the circle rate?", "a": "Circle/DLC rates are usually per square metre, square foot or hectare. Rate × area gives the value; use the land rate calculator to change units. Buildings, trees or road frontage may add to it." }
+ ],
+ "reviewed_by": "owner-approved 2026-10-29 (automated QA)"
+}
+-->
+<h1>स्टांप ड्यूटी और रजिस्ट्री फीस कैलकुलेटर</h1>
+<p class="lr-lead" data-l="hi">रजिस्ट्री से पहले जानें कि कुल कितना खर्च आएगा। सौदे का मूल्य और/या सर्किल रेट वाला मूल्य भरें, फिर अपने राज्य की स्टांप ड्यूटी (%) और रजिस्ट्री फीस (%) भरें। दरें राज्य बदलता रहता है, इसलिए हम कोई दर अपने से नहीं भरते।</p>
+<p class="lr-lead" data-l="en">Know the total cost before the registry. Enter the deal value and/or the circle-rate value, then your state's stamp duty (%) and registration fee (%). States change rates, so we never prefill one.</p>
+
+<section class="lr-card" id="tool" aria-labelledby="sd-h">
+  <h2 id="sd-h" style="margin-top:0">खर्च निकालें <span class="lr-en">/ Estimate cost</span></h2>
+  <div class="lr-row">
+    <div class="lr-field"><label for="sd-deal">सौदे का मूल्य (₹) <span class="lr-en">/ Deal value</span></label><input class="lr-input" id="sd-deal" inputmode="decimal" autocomplete="off"></div>
+    <div class="lr-field"><label for="sd-circle">सर्किल रेट से मूल्य (₹) <span class="lr-en">/ Circle-rate value</span></label><input class="lr-input" id="sd-circle" inputmode="decimal" autocomplete="off"></div>
+  </div>
+  <div class="lr-field"><label for="sd-basis">ड्यूटी किस मूल्य पर <span class="lr-en">/ Duty is charged on</span></label>
+    <select class="lr-select" id="sd-basis">
+      <option value="higher">दोनों में से ज़्यादा / Higher of the two</option>
+      <option value="deal">सौदे का मूल्य / Deal value</option>
+      <option value="circle">सर्किल रेट वाला मूल्य / Circle-rate value</option>
+    </select></div>
+  <div class="lr-row">
+    <div class="lr-field"><label for="sd-duty">स्टांप ड्यूटी (%) <span class="lr-en">/ Stamp duty %</span></label><input class="lr-input" id="sd-duty" inputmode="decimal" autocomplete="off"></div>
+    <div class="lr-field"><label for="sd-reg">रजिस्ट्री फीस (%) <span class="lr-en">/ Registration fee %</span></label><input class="lr-input" id="sd-reg" inputmode="decimal" autocomplete="off"></div>
+  </div>
+  <div class="lr-row">
+    <div class="lr-field"><label for="sd-cap">रजिस्ट्री फीस की अधिकतम सीमा ₹ (अगर हो) <span class="lr-en">/ Fee cap</span></label><input class="lr-input" id="sd-cap" inputmode="decimal" autocomplete="off"></div>
+    <div class="lr-field"><label for="sd-extra">अन्य तय खर्च ₹ (वैकल्पिक) <span class="lr-en">/ Other fixed charges</span></label><input class="lr-input" id="sd-extra" inputmode="decimal" autocomplete="off"></div>
+  </div>
+  <p id="sd-status" role="status" aria-live="polite"></p>
+  <div id="sd-out" hidden>
+    <table class="lr-table" style="min-width:0">
+      <caption class="lr-en" style="text-align:left;padding:8px 0">Cost breakdown</caption>
+      <tbody>
+        <tr><th scope="row">ड्यूटी का आधार मूल्य <span class="lr-en">/ Base value</span></th><td class="num" id="sd-value"></td></tr>
+        <tr><th scope="row">स्टांप ड्यूटी <span class="lr-en">/ Stamp duty</span></th><td class="num" id="sd-duty-out"></td></tr>
+        <tr><th scope="row">रजिस्ट्री फीस <span class="lr-en">/ Registration fee</span></th><td class="num" id="sd-reg-out"></td></tr>
+        <tr><th scope="row">अन्य खर्च <span class="lr-en">/ Other</span></th><td class="num" id="sd-extra-out"></td></tr>
+        <tr><th scope="row"><strong>सरकारी खर्च कुल</strong> <span class="lr-en">/ Total charges</span></th><td class="num"><strong id="sd-total"></strong></td></tr>
+        <tr><th scope="row">मूल्य + खर्च <span class="lr-en">/ Value + charges</span></th><td class="num" id="sd-grand"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="lr-btn secondary" type="button" id="sd-copy">लिंक कॉपी करें <span class="lr-en">/ Copy link</span></button>
+  <noscript><p class="lr-notice">इस टूल के लिए JavaScript चाहिए। <span class="lr-en">This tool needs JavaScript.</span></p></noscript>
+</section>
+<p class="lr-notice" style="margin-top:16px"><strong>ध्यान दें:</strong> यह अनुमान आपकी भरी दरों पर है। असली खर्च सब-रजिस्ट्रार के मूल्यांकन, छूट, उपकर (cess/सरचार्ज) और ई-स्टांप/सेवा शुल्क से बदल सकता है। भुगतान से पहले राज्य के आधिकारिक कैलकुलेटर या सब-रजिस्ट्रार से पुष्टि करें। <span class="lr-en">Estimate only; confirm with the official calculator or sub-registrar.</span></p>
+
+<div class="lr-prose" data-l="hi">
+<h2>दरें कहाँ से लें</h2>
+<ul>
+<li>अपने राज्य के पंजीयन एवं स्टांप विभाग (IGR/Registration) की आधिकारिक साइट। कई राज्य वहीं ऑनलाइन मूल्यांकन और शुल्क-गणना देते हैं।</li>
+<li>सर्किल रेट/DLC रेट/गाइडलाइन वैल्यू ज़िले के हिसाब से अलग होती है; उसी साइट या ज़िला/सब-रजिस्ट्रार कार्यालय से लें।</li>
+<li>महिला खरीदार, संयुक्त नाम या परिवार के भीतर ट्रांसफ़र पर कुछ राज्यों में अलग दर या छूट होती है; यह भी वहीं जाँचें।</li>
+</ul>
+<h2>ई-रजिस्ट्रेशन</h2>
+<p>PIB के अनुसार अप्रैल 2023 तक 28 राज्य/केंद्र-शासित प्रदेश जमीन के रिकॉर्ड के लिए राष्ट्रीय जेनेरिक दस्तावेज़ पंजीयन प्रणाली (NGDRS) अपना चुके थे, यानी वहाँ ई-रजिस्ट्रेशन हो रहा है या उनका डेटा NGDRS के राष्ट्रीय पोर्टल से जुड़ा है। पूरी प्रक्रिया के लिए <a href="guides/land-registry-process/">जमीन की रजिस्ट्री कैसे होती है</a> पढ़ें।</p>
+<h2>उदाहरण</h2>
+<p>सौदा ₹40 लाख का है और सर्किल रेट से मूल्य ₹45 लाख बनता है। अगर आपके राज्य में ड्यूटी ज़्यादा मूल्य पर लगती है और दर 6% व रजिस्ट्री फीस 1% है, तो ड्यूटी ₹2,70,000 और फीस ₹45,000 होगी (अगर फीस पर कोई सीमा न हो)। ये दरें सिर्फ उदाहरण हैं, किसी राज्य की असली दर नहीं।</p>
+</div>
+<div class="lr-prose" data-l="en">
+<h2>Where to get the rates</h2>
+<ul>
+<li>Your state's registration and stamps department (IGR) official site; many states offer online valuation and fee calculation there.</li>
+<li>Circle/DLC rates or guideline values differ by district; take them from that site or the district/sub-registrar office.</li>
+<li>Some states have different rates or concessions for women buyers, joint names or transfers within a family; check that there too.</li>
+</ul>
+<h2>E-registration</h2>
+<p>According to PIB, by April 2023, 28 States/UTs had adopted the National Generic Document Registration System (NGDRS) for land records, meaning e-registration is being done there or their data is shared with the national NGDRS portal. For the full process read <a href="guides/land-registry-process/">how a land registry works</a>.</p>
+<h2>Example</h2>
+<p>The deal is ₹40 lakh and the circle-rate value is ₹45 lakh. If your state charges duty on the higher value at 6% with a 1% registration fee, duty is ₹2,70,000 and the fee ₹45,000 (if the fee has no cap). These rates are only an example, not any state's actual rate.</p>
+</div>
