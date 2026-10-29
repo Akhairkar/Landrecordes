@@ -460,10 +460,8 @@
       "name_en": "Punjab",
       "portal_name": "PLRS जमाबंदी (Punjab Land Records Society)",
       "url": "https://jamabandi.punjab.gov.in/",
-      "alt_urls": [
-        "http://plrs.org.in/"
-      ],
-      "confidence": "conflicting",
+      "alt_urls": [],
+      "confidence": "multi-source",
       "sources": [
         "portal-pb",
         "dilrmp"
@@ -471,7 +469,7 @@
       "record_hi": "जमाबंदी, फर्द, खेवट, खतौनी, खसरा",
       "mutation_hi": "इंतकाल",
       "units_hi": "मरला और कनाल आम हैं; एकड़ भी चलता है।",
-      "intro_hi": "पंजाब में जमाबंदी का रिकॉर्ड Punjab Land Records Society (PLRS) के पोर्टल पर देखा जाता है, जहाँ 'फर्द' विकल्प से गाँव, तहसील, जिला और वर्ष चुनकर रिपोर्ट मिलती है। अलग-अलग गाइडें पोर्टल के दो पते बताती हैं।",
+      "intro_hi": "पंजाब में जमाबंदी का रिकॉर्ड Punjab Land Records Society (PLRS) के पोर्टल पर देखा जाता है, जहाँ 'फर्द' विकल्प से गाँव, तहसील, जिला और वर्ष चुनकर रिपोर्ट मिलती है। पोर्टल jamabandi.punjab.gov.in पर है; 29 अक्टूबर 2026 को हमारी जाँच में यह \"Punjab Land Records\" नाम से चालू मिला। कुछ पुरानी गाइडों में दिया plrs.org.in पता अब नहीं खुलता।",
       "steps_hi": [
         "PLRS पोर्टल पर 'फर्द' विकल्प चुनें।",
         "जिला, तहसील, गाँव और जमाबंदी वर्ष चुनें।",
@@ -496,7 +494,7 @@
       "record_en": "Jamabandi, fard, khewat, khatauni, khasra",
       "mutation_en": "Intkal",
       "units_en": "Marla and kanal are common; acres are also used.",
-      "intro_en": "In Punjab the jamabandi is viewed on the Punjab Land Records Society (PLRS) portal, where the 'Fard' option gives a report after choosing village, tehsil, district and year. Guides give two different addresses for the portal.",
+      "intro_en": "In Punjab the jamabandi is viewed on the Punjab Land Records Society (PLRS) portal, where the 'Fard' option gives a report after choosing village, tehsil, district and year. The portal is at jamabandi.punjab.gov.in; our check on 29 October 2026 found it live as \"Punjab Land Records\". The plrs.org.in address in some older guides no longer resolves.",
       "steps_en": [
         "Choose 'Fard' on the PLRS portal.",
         "Select district, tehsil, village and jamabandi year.",
@@ -524,10 +522,8 @@
       "name_en": "Delhi",
       "portal_name": "इंद्रप्रस्थ भूलेख (DLRC)",
       "url": "https://dlrc.delhi.gov.in/",
-      "alt_urls": [
-        "http://dlrc.delhigovt.nic.in/"
-      ],
-      "confidence": "conflicting",
+      "alt_urls": [],
+      "confidence": "multi-source",
       "sources": [
         "portal-dl-doc",
         "portal-dl",
@@ -536,7 +532,7 @@
       "record_hi": "खसरा-खतौनी (दिल्ली भूमि सुधार अधिनियम, 1954 के तहत)",
       "mutation_hi": "म्यूटेशन",
       "units_hi": "शहरी इलाकों में वर्ग गज/गज और वर्ग फुट आम हैं।",
-      "intro_hi": "दिल्ली में खसरा-खतौनी सिर्फ राजस्व गाँवों की जमीन का रिकॉर्ड है। दिल्ली के राजस्व विभाग के दस्तावेज़ में इंद्रप्रस्थ भू-लेख (dlrc.delhigovt.nic.in) का उल्लेख है, जबकि अन्य स्रोत dlrc.delhi.gov.in बताते हैं, इसलिए दोनों पते जाँचें।",
+      "intro_hi": "दिल्ली में खसरा-खतौनी सिर्फ राजस्व गाँवों की जमीन का रिकॉर्ड है। दिल्ली के राजस्व विभाग के दस्तावेज़ में इंद्रप्रस्थ भू-लेख का पुराना NIC पता (dlrc.delhigovt.nic.in) है; 29 अक्टूबर 2026 की हमारी जाँच में यही पोर्टल \"इंद्रप्रस्थ भू-लेख\" नाम से dlrc.delhi.gov.in पर चालू मिला, जबकि पुराना पता जवाब नहीं दे रहा था।",
       "steps_hi": [
         "होमपेज पर 'Khasra-Khatauni Details under DLR Act' जैसा खंड खोलें।",
         "जिला, उप-मंडल और गाँव चुनें।",
@@ -554,14 +550,14 @@
         },
         {
           "q": "दिल्ली भूलेख के दो पते क्यों दिखते हैं?",
-          "a": "अलग-अलग स्रोत अलग-अलग डोमेन देते हैं (एक सरकारी दस्तावेज़ में NIC वाला पता है)। जो चालू और आधिकारिक लगे, वही इस्तेमाल करें और नकली साइटों से बचें।"
+          "a": "पुराने सरकारी दस्तावेज़ में NIC वाला पता है, पर अब पोर्टल dlrc.delhi.gov.in पर चलता है। इसी पते का इस्तेमाल करें और नकली साइटों से बचें।"
         }
       ],
       "portal_en": "Indraprastha Bhulekh (DLRC)",
       "record_en": "Khasra-khatauni (under the Delhi Land Reforms Act, 1954)",
       "mutation_en": "Mutation",
       "units_en": "Square yards (gaj) and square feet are common in urban areas.",
-      "intro_en": "In Delhi the khasra-khatauni is the record only for land in revenue villages. A Delhi revenue department document mentions Indraprastha Bhu-Lekh (dlrc.delhigovt.nic.in), while other sources give dlrc.delhi.gov.in, so check both addresses.",
+      "intro_en": "In Delhi the khasra-khatauni is the record only for land in revenue villages. A Delhi revenue department document gives the older NIC address of Indraprastha Bhu-Lekh (dlrc.delhigovt.nic.in); our check on 29 October 2026 found the same portal, titled \"Indraprastha Bhu-Lekh\", live at dlrc.delhi.gov.in, while the old address did not respond.",
       "steps_en": [
         "Open the section like 'Khasra-Khatauni Details under DLR Act' on the home page.",
         "Select district, sub-division and village.",
@@ -579,7 +575,7 @@
         },
         {
           "q": "Why are there two addresses for Delhi Bhulekh?",
-          "a": "Different sources give different domains (a government document uses the NIC address). Use the one that is live and official and avoid fake sites."
+          "a": "An older government document uses the NIC address, but the portal now runs at dlrc.delhi.gov.in. Use that address and avoid fake sites."
         }
       ]
     },
@@ -1106,10 +1102,8 @@
       "name_en": "Odisha",
       "portal_name": "भूलेख ओडिशा (Bhulekh Odisha)",
       "url": "https://bhulekh.ori.nic.in/",
-      "alt_urls": [
-        "https://bhulekh.odisha.gov.in/"
-      ],
-      "confidence": "conflicting",
+      "alt_urls": [],
+      "confidence": "multi-source",
       "sources": [
         "portal-od",
         "od-guide",
@@ -1118,7 +1112,7 @@
       "record_hi": "खतियान (RoR), प्लॉट सूची, भू-नक्शा (अलग साइट)",
       "mutation_hi": "म्यूटेशन",
       "units_hi": "एकड़ और डेसिमल आम हैं; रिकॉर्ड में 'किसम' (भूमि का वर्ग) भी देखें।",
-      "intro_hi": "ओडिशा में अधिकार-अभिलेख को खतियान कहते हैं। एक गाइड के अनुसार यह कब्ज़े का प्रथम दृष्टया प्रमाण है, स्वामित्व का निर्णायक प्रमाण नहीं। ज़्यादातर स्रोत भूलेख का पता bhulekh.ori.nic.in बताते हैं और एक स्रोत bhulekh.odisha.gov.in।",
+      "intro_hi": "ओडिशा में अधिकार-अभिलेख को खतियान कहते हैं। एक गाइड के अनुसार यह कब्ज़े का प्रथम दृष्टया प्रमाण है, स्वामित्व का निर्णायक प्रमाण नहीं। भूलेख का पता bhulekh.ori.nic.in है, जो 29 अक्टूबर 2026 को हमारी जाँच में चालू मिला; एक स्रोत में दिया bhulekh.odisha.gov.in पता नहीं खुलता।",
       "steps_hi": [
         "जिला, तहसील, RI सर्कल और गाँव चुनें; RI सर्कल सही चुनना ज़रूरी बताया गया है।",
         "खोज का प्रकार चुनें: खतियान नंबर, प्लॉट नंबर, किरायेदार का नाम या प्लॉट सूची।",
@@ -1126,8 +1120,7 @@
       ],
       "watch_hi": [
         "रिकॉर्ड की 'किसम' (भूमि का वर्ग) तय करती है कि जमीन बिक सकती है, रूपांतरित हो सकती है या निर्माण योग्य है; खरीद से पहले इसे ज़रूर पढ़ें।",
-        "भू-नक्शा (सीमा) देखने के लिए अलग भू-नक्शा साइट का ज़िक्र है; दोनों को मिलाकर देखें, पर नक्शे को अंतिम सीमा-निर्णय न मानें।",
-        "स्रोत दो पते बताते हैं; जो आधिकारिक साइट से जुड़ा हो वही इस्तेमाल करें।"
+        "भू-नक्शा (सीमा) देखने के लिए अलग भू-नक्शा साइट का ज़िक्र है; दोनों को मिलाकर देखें, पर नक्शे को अंतिम सीमा-निर्णय न मानें।"
       ],
       "faq": [
         {
@@ -1143,7 +1136,7 @@
       "record_en": "Khatiyan (RoR), plot list, Bhu-Naksha (separate site)",
       "mutation_en": "Mutation",
       "units_en": "Acres and decimals are common; also check the 'kisam' (land class) in the record.",
-      "intro_en": "In Odisha the record of rights is called the khatiyan. One guide says it is prima facie evidence of possession, not conclusive proof of ownership. Most sources give the Bhulekh address as bhulekh.ori.nic.in and one gives bhulekh.odisha.gov.in.",
+      "intro_en": "In Odisha the record of rights is called the khatiyan. One guide says it is prima facie evidence of possession, not conclusive proof of ownership. The Bhulekh address is bhulekh.ori.nic.in, which our check on 29 October 2026 found live; the bhulekh.odisha.gov.in address given by one source does not resolve.",
       "steps_en": [
         "Select district, tahasil, RI circle and village; choosing the right RI circle is said to be essential.",
         "Choose search type: khatiyan number, plot number, tenant name or plot list.",
@@ -1151,8 +1144,7 @@
       ],
       "watch_en": [
         "The record's 'kisam' (land class) decides whether land can be sold, converted or built on; read it before buying.",
-        "A separate Bhu-Naksha site is mentioned for maps; compare both, but don't treat the map as a final boundary decision.",
-        "Sources give two addresses; use the one linked from the official site."
+        "A separate Bhu-Naksha site is mentioned for maps; compare both, but don't treat the map as a final boundary decision."
       ],
       "faq_en": [
         {
@@ -1369,14 +1361,14 @@
       "id": "assam",
       "name_hi": "असम",
       "name_en": "Assam",
-      "portal_name": "धरित्री / ILRMS",
-      "portal_en": "Dharitree / ILRMS",
+      "portal_name": "ILRMS (पहले धरित्री)",
+      "portal_en": "ILRMS (earlier Dharitree)",
       "url": "https://ilrms.assam.gov.in/",
       "alt_urls": [
         "https://landrevenue.assam.gov.in/",
         "https://dharitree.assam.gov.in/"
       ],
-      "confidence": "conflicting",
+      "confidence": "multi-source",
       "sources": [
         "portal-as",
         "as-guide",
@@ -1388,8 +1380,8 @@
       "mutation_en": "Namjari (mutation)",
       "units_hi": "बीघा, कट्ठा और लेसा चलते हैं; माप रिकॉर्ड में देखें।",
       "units_en": "Bigha, katha and lessa are used; check the measure in the record.",
-      "intro_hi": "असम में भूखंड को दाग नंबर से पहचाना जाता है, जमाबंदी अधिकार-अभिलेख है और चिठा खेत-पुस्तिका। रिकॉर्ड धरित्री/ILRMS प्रणाली से देखे जाते हैं, पर स्रोत इसके अलग-अलग पते बताते हैं।",
-      "intro_en": "In Assam a plot is identified by its dag number, the jamabandi is the record of rights and the chitha is the field book. Records are seen through the Dharitree/ILRMS system, but sources give different addresses for it.",
+      "intro_hi": "असम में भूखंड को दाग नंबर से पहचाना जाता है, जमाबंदी अधिकार-अभिलेख है और चिठा खेत-पुस्तिका। रिकॉर्ड ILRMS (ilrms.assam.gov.in) पर देखे जाते हैं, जो 29 अक्टूबर 2026 को हमारी जाँच में \"Integrated Land Records Management System\" नाम से चालू मिला; पुरानी गाइडें धरित्री का ज़िक्र करती हैं।",
+      "intro_en": "In Assam a plot is identified by its dag number, the jamabandi is the record of rights and the chitha is the field book. Records are seen on ILRMS (ilrms.assam.gov.in), which our check on 29 October 2026 found live as the \"Integrated Land Records Management System\"; older guides mention Dharitree.",
       "steps_hi": [
         "जमाबंदी या भूमि रिकॉर्ड का विकल्प चुनें।",
         "जिला, सर्कल और गाँव (मौजा) चुनें।",

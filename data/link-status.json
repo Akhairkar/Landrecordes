@@ -1,246 +1,471 @@
 {
-  "https://digitalsatbara.mahabhumi.gov.in/DSLR": {
-    "checked": "2026-10-09",
+  "https://bhulekh.mahabhumi.gov.in/": {
+    "checked": "2026-10-29",
     "status": 503,
     "error": null
   },
-  "https://apnakhata.rajasthan.gov.in/": {
-    "checked": "2026-10-09",
-    "status": 404,
+  "https://digitalsatbara.mahabhumi.gov.in/DSLR": {
+    "checked": "2026-10-29",
+    "status": 503,
     "error": null
   },
   "https://apnakhata.raj.nic.in/": {
-    "checked": "2026-10-09",
-    "status": 503,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
   },
   "https://mpbhulekh.gov.in/": {
-    "checked": "2026-10-09",
-    "status": 503,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
   },
   "https://anyror.gujarat.gov.in/": {
-    "checked": "2026-10-09",
-    "status": 503,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
   },
   "https://jamabandi.nic.in/": {
-    "checked": "2026-10-09",
-    "status": 503,
-    "error": null
-  },
-  "http://plrs.org.in/": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
-  },
-  "http://dlrc.delhigovt.nic.in/": {
-    "checked": "2026-10-09",
-    "status": 503,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
   },
   "https://bhulekh.uk.gov.in/": {
-    "checked": "2026-10-09",
-    "status": 503,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
   },
   "https://himbhoomi.nic.in/": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
     "status": 0,
     "error": "ENOTFOUND"
   },
   "https://himbhoomilmk.nic.in/": {
-    "checked": "2026-10-09",
-    "status": 404,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
   },
   "https://landrecords.jk.gov.in/": {
-    "checked": "2026-10-09",
-    "status": 503,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
   },
   "https://landrecords.karnataka.gov.in/": {
-    "checked": "2026-10-09",
-    "status": 503,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
   },
   "https://meebhoomi.ap.gov.in/": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
     "status": 503,
     "error": null
   },
   "https://eservices.tn.gov.in/": {
-    "checked": "2026-10-09",
-    "status": 503,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
   },
   "https://banglarbhumi.gov.in/": {
-    "checked": "2026-10-09",
-    "status": 503,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
   },
   "https://bhulekh.ori.nic.in/": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
     "status": 503,
-    "error": null
-  },
-  "https://bhulekh.odisha.gov.in/": {
-    "checked": "2026-10-09",
-    "status": 0,
-    "error": "ENOTFOUND"
-  },
-  "https://bhuiyan.cg.nic.in/": {
-    "checked": "2026-10-09",
-    "status": 401,
     "error": null
   },
   "https://jharbhoomi.nic.in/": {
-    "checked": "2026-10-09",
-    "status": 503,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
   },
   "https://jharbhoomi.jharkhand.gov.in/": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
+  },
+  "https://erekha.kerala.gov.in/": {
+    "checked": "2026-10-29",
     "status": 503,
     "error": null
   },
-  "https://www.bajajfinserv.in/marla-to-kanal": {
-    "checked": "2026-10-09",
-    "status": 403,
+  "https://landrevenue.assam.gov.in/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
+  },
+  "https://dharitree.assam.gov.in/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
+  },
+  "https://egov.goa.nic.in/dslr/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://jami.tripura.gov.in/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
+  },
+  "https://revenue.chd.gov.in/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
+  },
+  "https://nilamagal.py.gov.in/public/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "AbortError"
+  },
+  "https://lisa.arunachal.gov.in/": {
+    "checked": "2026-10-29",
+    "status": 503,
     "error": null
+  },
+  "https://land.utl.gov.in/": {
+    "checked": "2026-10-29",
+    "status": 503,
+    "error": null
+  },
+  "https://dnh.nlrmp.in/avanika/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://sugam.dddgov.in/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://www.bajajfinserv.in/marla-to-kanal": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
   "https://bajajfinserv.in/guntha-to-acre": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
   "https://1acre.in/land-unit-converter/cent-to-sqft": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
   "https://dilrmp.gov.in/": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
     "status": 503,
     "error": null
   },
   "https://www.bajajfinserv.in/bhulekh-login-using-state-bhulekh-portals": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
   "https://www.drishtiias.com/state-pcs-current-affairs/the-e-fard-system-implemented-in-the-state/print_manually": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
-  "https://revenue.delhi.gov.in/sites/default/files/revenue/important-news/1817_1.pdf": {
-    "checked": "2026-10-09",
+  "https://www.tatacapital.com/hindi/blog/medical-loan/devbhoomi-uttaranchal-land-records/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://www.dailyexcelsior.com/?p=1239588": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://techobserver.in/news/egov/dilrmp-3-land-records-digitisation-bhu-aadhaar-328937/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://homenesto.com/blog/dilrmp-3-0-and-bhu-aadhaar-what-the-14-digit-land-id-means-for-property-owners/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://housing.com/news/cts-number/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://bb.bankbazaar.com/home-loan/bhoomi-karnataka.html": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://deccanchronicle.com/southern-states/telangana/bhu-bharati-portal-goes-live-replaces-dharani-1873120": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://www.theweek.in/wire-updates/national/2025/04/14/mes18-tl-cm-land-portal.html": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://cleartax.in/s/mee-bhoomi-ap-gov-portal": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://services.india.gov.in/service/detail/e-services-of-land-records": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://groww.in/p/tax/banglarbhumi/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://www.bajajfinserv.in/about-bhulekh-odisha": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://1acre.in/guides/chhattisgarh/khasra-b1-nakal-chhattisgarh": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://mahabhumi.gov.in/Mahabhumilink/": {
+    "checked": "2026-10-29",
     "status": 503,
     "error": null
   },
-  "https://www.tatacapital.com/hindi/blog/medical-loan/devbhoomi-uttaranchal-land-records/": {
-    "checked": "2026-10-09",
-    "status": 403,
+  "https://emojni.mahabhumi.gov.in/citizensite/Contactus.aspx": {
+    "checked": "2026-10-29",
+    "status": 503,
     "error": null
   },
-  "https://www.dailyexcelsior.com/?p=1239588": {
-    "checked": "2026-10-09",
-    "status": 403,
+  "https://bankbazaar.com/home-loan/erekha-kerala-land-record.html": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://housing.com/news/dharitree-assam-land-record": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://www.thegoan.net/goa-news/online-land-records-are-now-valid-for-official-use/75617.html": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://housing.com/news/jami-tripura": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://reachladakh.com/news/social-news/chief-secretary-chairs-review-of-digital-land-records-system": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://www.tribuneindia.com/news/chandigarh/move-to-curb-frauds-keep-documents-updatednow-access-land-records-of-23-ut-villages-online-237039": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://dainikasam.assamtribune.com/amp/north-east/sikkim-cm-launches-web-based-land-record-system-on-independence-day-1548160": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://www.tatacapital.com/blog/?p=45712": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://www.tatacapital.com/hindi/blog/loan-for-home/manipur-land-records/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://housing.com/news/mizoram-land-records/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://housing.com/news/nagaland-land-records": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
+  },
+  "https://www.india.gov.in/land-information-system-arunachal-lisa-portal": {
+    "checked": "2026-10-29",
+    "status": 404,
     "error": null
   },
-  "https://techobserver.in/news/egov/dilrmp-3-land-records-digitisation-bhu-aadhaar-328937/": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+  "https://housing.com/news/all-about-dadra-and-nagar-haveli-daman-and-diu-land-record": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
-  "https://homenesto.com/blog/dilrmp-3-0-and-bhu-aadhaar-what-the-14-digit-land-id-means-for-property-owners/": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+  "https://www.bajajfinserv.in/devbhoomi-bhulekh-uttarakhand-land-record": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
-  "https://housing.com/news/cts-number/": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+  "https://homefirstindia.com/blog/article/khatauni-khasra-uttarakhand/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
-  "https://bb.bankbazaar.com/home-loan/bhoomi-karnataka.html": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+  "https://operations.osmfoundation.org/policies/tiles/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
-  "https://deccanchronicle.com/southern-states/telangana/bhu-bharati-portal-goes-live-replaces-dharani-1873120": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+  "https://en.wikipedia.org/wiki/Earth_radius#Mean_radius": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
-  "https://www.theweek.in/wire-updates/national/2025/04/14/mes18-tl-cm-land-portal.html": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+  "https://housing.com/news/what-is-ulpin/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
-  "https://cleartax.in/s/mee-bhoomi-ap-gov-portal": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+  "https://www.advocatekhoj.com/library/bareacts/bharatiyanagarik2023/164.php": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
-  "https://groww.in/p/tax/banglarbhumi/": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
-  },
-  "https://www.bajajfinserv.in/about-bhulekh-odisha": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
-  },
-  "https://1acre.in/guides/chhattisgarh/khasra-b1-nakal-chhattisgarh": {
-    "checked": "2026-10-09",
-    "status": 403,
-    "error": null
+  "https://devgan.in/bns/section/329/": {
+    "checked": "2026-10-29",
+    "status": 0,
+    "error": "ENOTFOUND"
   },
   "https://upbhulekh.gov.in/": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
     "status": 200,
     "error": null
   },
-  "https://bhulekh.mahabhumi.gov.in/": {
-    "checked": "2026-10-09",
+  "https://apnakhata.rajasthan.gov.in/": {
+    "checked": "2026-10-29",
     "status": 200,
     "error": null
   },
   "https://biharbhumi.bihar.gov.in/": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
     "status": 200,
     "error": null
   },
   "https://jamabandi.punjab.gov.in/": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
     "status": 200,
     "error": null
   },
   "https://dlrc.delhi.gov.in/": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://bhuiyan.cg.nic.in/": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://ilrms.assam.gov.in/": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://landrecords.ladakh.gov.in/": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://ilrms.sikkim.gov.in/": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://eram.mizoram.gov.in/": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://dweepbhoomi.andamannicobar.gov.in/": {
+    "checked": "2026-10-29",
     "status": 200,
     "error": null
   },
   "https://thane.nic.in/service/computerised-7-12/": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://revenue.delhi.gov.in/sites/default/files/revenue/important-news/1817_1.pdf": {
+    "checked": "2026-10-29",
     "status": 200,
     "error": null
   },
   "https://hpkinnaur.nic.in/?p=2872": {
-    "checked": "2026-10-09",
-    "status": 200,
-    "error": null
-  },
-  "https://services.india.gov.in/service/detail/e-services-of-land-records": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
     "status": 200,
     "error": null
   },
   "https://ramgarh.nic.in/service/land-records/": {
-    "checked": "2026-10-09",
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://nagpur.gov.in/district-superintendent-land-records/": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://pune.gov.in/en/service/view-property-card/": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://ladakh.gov.in/?p=52324": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://puducherry-dt.gov.in/service/land-records/": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://dolr.gov.in/citizen-centric-services/": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://lakshadweep.gov.in/department-of-revenue/": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1800387": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1989671": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1905655": {
+    "checked": "2026-10-29",
+    "status": 200,
+    "error": null
+  },
+  "https://delhihighcourt.nic.in/app/showFileJudgment/59513012025CR2112024_125143.pdf": {
+    "checked": "2026-10-29",
     "status": 200,
     "error": null
   }

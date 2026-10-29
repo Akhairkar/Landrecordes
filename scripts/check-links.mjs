@@ -19,7 +19,8 @@ async function probe(url) {
   const t = setTimeout(() => ctl.abort(), 20000);
   try {
     let r = await fetch(url, { method: "HEAD", redirect: "follow", signal: ctl.signal, headers: { "user-agent": "LandRecord-link-check/1.0 (+https://github.com/Akhairkar/Landrecordes)" } });
-    if (r.status === 405 || r.status === 403) r = await fetch(url, { method: "GET", redirect: "follow", signal: ctl.signal, headers: { "user-agent": "LandRecord-link-check/1.0" } });
+    // Many government servers answer HEAD with 403/404/405/503 while the page itself loads, so retry any failure with GET.
+    if (!r.ok) r = await fetch(url, { method: "GET", redirect: "follow", signal: ctl.signal, headers: { "user-agent": "LandRecord-link-check/1.0" } });
     return { status: r.status, final: r.url };
   } catch (e) {
     return { status: 0, error: e.cause?.code || e.name || "error" };
