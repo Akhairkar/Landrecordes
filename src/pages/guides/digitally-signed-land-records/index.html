@@ -1,0 +1,70 @@
+<!--meta
+{
+ "title": "डिजिटल हस्ताक्षर वाले भूमि रिकॉर्ड: क्या हैं और कैसे जाँचें",
+ "description": "डिजिटली साइन की हुई खतौनी/7-12/जमाबंदी क्या होती है, PDF में डिजिटल हस्ताक्षर कैसे जाँचें, स्क्रीनशॉट या प्रिंट से फर्क और बैंक में देने से पहले की सावधानी।",
+ "type": "guide",
+ "status": "published",
+ "reviewed_on": "2026-10-31",
+ "active": "guides",
+ "intent": "User got or needs a digitally signed land-record PDF and wants to know what it means and how to verify it ('digital signed 7/12', 'digitally signed khatauni verify').",
+ "unique_value": "Practical how-to for checking a digital signature in a PDF (signature panel, validity, edits after signing), why a screenshot or re-saved file loses it, and what to confirm with the receiving office; no state-specific claims without official sources.",
+ "keywords": ["digitally signed land record", "डिजिटल हस्ताक्षर खतौनी", "digital signed 7/12", "signature verify pdf", "डिजिटल साइन जमाबंदी"],
+ "breadcrumbs": [
+  { "name": "गाइड", "path": "guides/" },
+  { "name": "डिजिटल हस्ताक्षर वाले रिकॉर्ड", "path": "guides/digitally-signed-land-records/" }
+ ],
+ "sources": ["editorial-general"],
+ "related": [
+  { "path": "guides/online-vs-certified-copy/", "label": "ऑनलाइन बनाम प्रमाणित नकल", "label_en": "Online vs certified copy" },
+  { "path": "tools/record-finder/", "label": "अपने राज्य का रिकॉर्ड कहाँ देखें", "label_en": "Where to see your state's record" },
+  { "path": "states/", "label": "राज्य-वार पोर्टल", "label_en": "State-wise portals" }
+ ],
+ "faq": [
+  { "q": "PDF में हस्ताक्षर 'validity unknown' क्यों दिखता है?", "a": "अक्सर इसका मतलब है कि आपके PDF रीडर को हस्ताक्षर देने वाली प्रमाणन संस्था (certificate) पर भरोसा सेट नहीं है, या फ़ाइल किसी ऐसे ऐप में खुली जो हस्ताक्षर नहीं जाँचता। फ़ाइल किसी हस्ताक्षर-जाँच वाले PDF रीडर में खोलकर विवरण देखें, और ज़रूरत हो तो रिकॉर्ड देने वाले पोर्टल या कार्यालय से पुष्टि करें।" },
+  { "q": "क्या डिजिटली साइन PDF का प्रिंट भी उतना ही मान्य है?", "a": "हस्ताक्षर डिजिटल फ़ाइल में होता है; प्रिंट पर उसकी जाँच नहीं हो सकती। कई जगह प्रिंट पर दिए सत्यापन कोड/QR से पोर्टल पर मिलान होता है। बैंक या कार्यालय क्या मानता है, यह पहले उनसे पूछें।" },
+  { "q": "क्या हर राज्य डिजिटली साइन रिकॉर्ड देता है?", "a": "नहीं, सुविधा राज्य के अनुसार अलग है। अपने राज्य के पेज और पोर्टल पर देखें; हम केवल वही राज्य-विशेष बात लिखते हैं जो किसी सरकारी स्रोत से जाँची गई हो।" }
+ ],
+ "faq_en": [
+  { "q": "Why does the PDF signature say 'validity unknown'?", "a": "Usually your PDF reader does not trust the certifying authority's certificate, or the file opened in an app that doesn't check signatures. Open it in a reader that checks signatures and view the details; if needed confirm with the issuing portal or office." },
+  { "q": "Is a printout of a digitally signed PDF equally valid?", "a": "The signature lives in the digital file; a printout can't be checked for it. Many systems let a verification code/QR on the print be matched on the portal. Ask the bank or office what they accept." },
+  { "q": "Does every state give digitally signed records?", "a": "No, it varies by state. Check your state page and portal; we only state state-specific facts verified from a government source." }
+ ],
+ "reviewed_by": "owner-approved 2026-10-31 (automated QA)"
+}
+-->
+<h1>डिजिटल हस्ताक्षर वाले भूमि रिकॉर्ड <span class="lr-en">/ Digitally signed land records</span></h1>
+<p class="lr-lead">कई राज्य खतौनी, जमाबंदी या 7/12 जैसे रिकॉर्ड की ऐसी PDF देते हैं जिस पर अधिकृत अधिकारी या सिस्टम का <strong>डिजिटल हस्ताक्षर</strong> होता है। ऐसी फ़ाइल साधारण स्क्रीन-प्रति से अलग है, पर उसका फ़ायदा तभी है जब फ़ाइल असली रूप में रहे और हस्ताक्षर जाँचा जा सके। यह पेज बताता है कि डिजिटल हस्ताक्षर क्या है, उसे कैसे जाँचें और किन गलतियों से वह बेकार हो जाता है।</p>
+<div class="lr-prose">
+<h2>डिजिटल हस्ताक्षर क्या करता है</h2>
+<ul>
+<li><strong>किसने जारी किया:</strong> हस्ताक्षर के साथ एक डिजिटल प्रमाणपत्र (certificate) जुड़ा होता है जो बताता है कि फ़ाइल किस अधिकारी या संस्था ने साइन की।</li>
+<li><strong>बदलाव पकड़ना:</strong> साइन होने के बाद फ़ाइल में एक अक्षर भी बदला जाए तो जाँच में हस्ताक्षर अमान्य दिखता है।</li>
+<li><strong>कब साइन हुआ:</strong> हस्ताक्षर के विवरण में तारीख और समय होता है।</li>
+</ul>
+<h2>तीन तरह की प्रतियों में फर्क</h2>
+<ul>
+<li><strong>स्क्रीन पर दिखी प्रति / स्क्रीनशॉट:</strong> जानकारी के लिए; इसमें कोई हस्ताक्षर नहीं।</li>
+<li><strong>डिजिटली साइन PDF:</strong> मूल फ़ाइल के रूप में जाँची जा सकती है; किस काम में मान्य है, यह राज्य और लेने वाले संस्थान पर है।</li>
+<li><strong>कार्यालय से प्रमाणित नकल:</strong> कागज़ पर मुहर/हस्ताक्षर वाली प्रति।</li>
+</ul>
+<p>विस्तार से: <a href="guides/online-vs-certified-copy/">ऑनलाइन बनाम प्रमाणित नकल</a>।</p>
+<h2>PDF में हस्ताक्षर कैसे जाँचें (सामान्य तरीका)</h2>
+<ol>
+<li>फ़ाइल को ऐसे PDF रीडर में खोलें जो डिजिटल हस्ताक्षर दिखाता है (कंप्यूटर या मोबाइल के कई PDF रीडर में "Signature panel" या हस्ताक्षर विवरण का विकल्प होता है)।</li>
+<li>हस्ताक्षर पर टैप/क्लिक करके विवरण देखें: साइन करने वाले का नाम/पद, जारी करने वाली प्रमाणन संस्था, तारीख।</li>
+<li>देखें कि "Document has not been modified since signing" जैसा संदेश है या "modified" की चेतावनी।</li>
+<li>"Validity unknown" दिखे तो इसका मतलब अक्सर भरोसे की सेटिंग है, ज़रूरी नहीं कि फ़ाइल नकली हो; फिर भी पोर्टल पर सत्यापन कोड/QR हो तो उससे मिलान करें।</li>
+<li>रिकॉर्ड के अंदर का खसरा/खाता, नाम और तारीख पोर्टल पर दिखी ताज़ा जानकारी से मिलाएँ।</li>
+</ol>
+<h2>गलतियाँ जो हस्ताक्षर बेकार कर देती हैं</h2>
+<ul>
+<li>PDF का स्क्रीनशॉट लेकर भेजना।</li>
+<li>फ़ाइल को किसी ऐप में "edit", "compress" या "print to PDF" करके नई फ़ाइल बनाना।</li>
+<li>सिर्फ प्रिंट देना, जबकि लेने वाले को डिजिटल फ़ाइल चाहिए थी।</li>
+</ul>
+<p>सबसे सुरक्षित तरीका: पोर्टल से डाउनलोड हुई मूल फ़ाइल ही ईमेल/अपलोड करें, और पहले संस्थान से पूछ लें कि वे डिजिटल फ़ाइल, प्रिंट-प्लस-कोड या कार्यालय की प्रमाणित नकल में से क्या मानते हैं।</p>
+<h2>राज्य के हिसाब से</h2>
+<p>डिजिटली साइन रिकॉर्ड की सुविधा, उसका शुल्क और उसकी मान्यता राज्य के अनुसार अलग है। अपना पोर्टल <a href="states/">राज्य पेज</a> या <a href="tools/record-finder/">रिकॉर्ड-खोज मार्गदर्शक</a> से खोलें और वहीं दिए निर्देश देखें। हम यहाँ किसी राज्य का शुल्क या नियम तभी लिखेंगे जब सरकारी स्रोत से जाँच लें।</p>
+<h2>उदाहरण</h2>
+<p>किसी ने बैंक लोन के लिए पोर्टल से डिजिटली साइन 7/12 की PDF डाउनलोड की, पर भेजने से पहले उसे फ़ोन के एक ऐप में "compress" कर दिया। बैंक की जाँच में हस्ताक्षर अमान्य दिखा। मूल फ़ाइल दोबारा डाउनलोड करके बिना बदले भेजी तो हस्ताक्षर सही दिखा और काम आगे बढ़ा।</p>
+</div>
