@@ -1,0 +1,71 @@
+<!--meta
+{
+ "title": "GPS नाप बनाम सरकारी पैमाइश: फर्क और सीमांकन कैसे कराएँ",
+ "description": "फ़ोन GPS या नक्शे से निकला क्षेत्रफल सरकारी पैमाइश से अलग क्यों होता है, कब कौन-सा काम आता है, और तहसील से सीमांकन (पैमाइश/demarcation) कराने का सामान्य तरीका।",
+ "type": "guide",
+ "status": "published",
+ "reviewed_on": "2026-10-31",
+ "active": "guides",
+ "intent": "User measured land with a phone/GPS or map and the figure differs from the record, or wants an official boundary measurement ('paimaish kaise karaye', 'seemankan', 'GPS area galat').",
+ "unique_value": "Explains the sources of difference between GPS/map area, tape measurement and the revenue record, when each is good enough, and the general path to an official demarcation, tied to our map and plot tools.",
+ "keywords": ["paimaish kaise karaye", "सीमांकन", "demarcation", "GPS se jamin napna", "seemankan application", "jamin ki naap", "official land survey"],
+ "breadcrumbs": [
+  { "name": "गाइड", "path": "guides/" },
+  { "name": "GPS बनाम सरकारी पैमाइश", "path": "guides/gps-vs-official-survey/" }
+ ],
+ "sources": ["geo-mean-radius", "intl-foot-definition", "editorial-general"],
+ "related": [
+  { "path": "tools/map-area/", "label": "GPS/नक्शे से खेत नापें", "label_en": "Map & GPS field area" },
+  { "path": "tools/plot-area-calculator/", "label": "भुजाओं से क्षेत्रफल", "label_en": "Area from measured sides" },
+  { "path": "tools/application-templates/", "label": "सीमांकन आवेदन का ड्राफ्ट", "label_en": "Demarcation application draft" },
+  { "path": "maps/", "label": "सरकारी भू-नक्शा", "label_en": "Official land maps" }
+ ],
+ "faq": [
+  { "q": "GPS वाला क्षेत्रफल खतौनी के रकबे से अलग क्यों है?", "a": "फ़ोन का GPS कुछ मीटर तक भटक सकता है, कोने सही जगह न लगें तो फर्क और बढ़ता है, और रिकॉर्ड का रकबा पुराने सर्वे से आता है। छोटे प्लॉट में कुछ मीटर का फर्क भी प्रतिशत में बड़ा हो जाता है।" },
+  { "q": "क्या GPS नाप विवाद में सबूत है?", "a": "यह अपना अंदाज़ा लगाने के लिए ठीक है, पर सीमा-विवाद, रजिस्ट्री या अदालत में आम तौर पर सरकारी पैमाइश/सीमांकन की रिपोर्ट ही देखी जाती है।" },
+  { "q": "सीमांकन में कितना समय और शुल्क लगता है?", "a": "यह राज्य और तहसील के नियम पर है; हमने कोई शुल्क या समय-सीमा सत्यापित नहीं की है। आवेदन देते समय तहसील या राज्य पोर्टल से पूछें और रसीद लें।" }
+ ],
+ "faq_en": [
+  { "q": "Why does the GPS area differ from the khatauni area?", "a": "Phone GPS can drift a few metres, misplaced corners add error, and the record's area comes from an older survey. On small plots a few metres is a large percentage." },
+  { "q": "Is a GPS measurement evidence in a dispute?", "a": "It is fine for your own estimate, but boundary disputes, registries and courts generally look at an official measurement/demarcation report." },
+  { "q": "How long does demarcation take and what does it cost?", "a": "It depends on state and tehsil rules; we have not verified any fee or timeline. Ask the tehsil or state portal when applying and keep the receipt." }
+ ],
+ "reviewed_by": "owner-approved 2026-10-31 (automated QA)"
+}
+-->
+<h1>GPS नाप बनाम सरकारी पैमाइश <span class="lr-en">/ GPS area vs official survey</span></h1>
+<p class="lr-lead">फ़ोन से खेत नापना आसान है, पर उसका आँकड़ा अक्सर खतौनी के रकबे या पड़ोसी के दावे से मेल नहीं खाता। यह पेज बताता है कि फर्क क्यों आता है, किस काम के लिए कौन-सा नाप ठीक है, और जब सीमा पक्की करनी हो तो सरकारी पैमाइश (सीमांकन/demarcation) कैसे कराई जाती है।</p>
+<div class="lr-prose">
+<h2>तीन तरह के नाप</h2>
+<ul>
+<li><strong>GPS/नक्शे वाला नाप:</strong> हमारे <a href="tools/map-area/">GPS/नक्शा टूल</a> जैसा। कोनों के निर्देशांक से क्षेत्रफल निकलता है। जल्दी अंदाज़े के लिए अच्छा।</li>
+<li><strong>टेप/जरीब से नाप:</strong> भुजाएँ नापकर <a href="tools/plot-area-calculator/">क्षेत्रफल कैलकुलेटर</a> से। छोटे प्लॉट में GPS से ज़्यादा भरोसेमंद, अगर ढलान और मेड़ का ध्यान रखा जाए।</li>
+<li><strong>सरकारी पैमाइश:</strong> राजस्व कर्मचारी गाँव के सरकारी नक्शे और रिकॉर्ड के आधार पर मौके पर सीमा तय करते हैं। विवाद, बँटवारे या अदालत में यही रिपोर्ट मायने रखती है।</li>
+</ul>
+<h2>GPS नाप में फर्क क्यों आता है</h2>
+<ul>
+<li><strong>GPS की सटीकता:</strong> खुले मैदान में भी फ़ोन कुछ मीटर भटक सकता है; पेड़, दीवार और बादल में ज़्यादा। हमारा टूल हर कोने के साथ ±मीटर दिखाता है।</li>
+<li><strong>कोने कहाँ लगे:</strong> मेड़ के बीच, अंदर या बाहर, इससे कुछ फुट का फर्क हर तरफ़ जुड़ता है।</li>
+<li><strong>छोटे प्लॉट:</strong> 5 मीटर की गलती 1 एकड़ में कम असर करती है, पर 200 गज के प्लॉट में बहुत।</li>
+<li><strong>रिकॉर्ड पुराना:</strong> खतौनी का रकबा पुराने सर्वे या बँटवारे से आता है; मौके पर मेड़ें समय के साथ खिसक चुकी हो सकती हैं।</li>
+<li><strong>इकाई:</strong> रिकॉर्ड हेक्टेयर या स्थानीय इकाई में हो सकता है; तुलना से पहले <a href="tools/land-unit-converter/">इकाई बदलें</a>।</li>
+</ul>
+<h2>कब कौन-सा नाप काफ़ी है</h2>
+<ul>
+<li>खरीद से पहले मोटा अंदाज़ा, खेती की योजना, रेट का हिसाब: GPS या टेप।</li>
+<li>पड़ोसी से सीमा का झगड़ा, कब्ज़े का आरोप, बँटवारा, रजिस्ट्री में रकबे पर शक: सरकारी पैमाइश।</li>
+</ul>
+<h2>सरकारी पैमाइश/सीमांकन का सामान्य तरीका</h2>
+<ol>
+<li>तहसील या राज्य के पोर्टल (जहाँ ऑनलाइन सुविधा है) पर सीमांकन का आवेदन दें। अलग राज्यों में इसे पैमाइश, सीमांकन, हदबंदी या demarcation कहा जाता है। ढाँचे के लिए <a href="tools/application-templates/">आवेदन ड्राफ्ट टूल</a>।</li>
+<li>साथ में ताज़ा खतौनी/जमाबंदी, खसरा नंबर, गाँव का नाम और पहचान-पत्र लगाएँ; राज्य के अनुसार शुल्क जमा करें और रसीद लें।</li>
+<li>पड़ोसी खातेदारों को सूचना दी जाती है ताकि वे मौके पर मौजूद रहें।</li>
+<li>राजस्व कर्मचारी सरकारी नक्शे से मौके पर सीमा नापते हैं और निशान लगाते हैं।</li>
+<li>सीमांकन रिपोर्ट/नक्शे की प्रति लें; उससे असहमति हो तो आपत्ति या अपील का रास्ता राज्य के नियमों में है।</li>
+</ol>
+<p>अपने राज्य का सरकारी गाँव-नक्शा पहले देख लेना मदद करता है: <a href="maps/">भू-नक्शा कहाँ देखें</a>।</p>
+<h2>गणना का आधार</h2>
+<p>हमारा GPS टूल अक्षांश-देशांतर को पृथ्वी की औसत त्रिज्या (6,371 किमी) से मीटर में बदलकर शू-लेस सूत्र लगाता है। इकाइयाँ तय परिभाषाओं से बदलती हैं: 1 फुट = 0.3048 मीटर। गणना सही होने पर भी नतीजा उतना ही अच्छा है जितने कोने सही लगे।</p>
+<h2>उदाहरण</h2>
+<p>एक किसान ने GPS से खेत नापा तो 1.8 बीघा आया, जबकि खतौनी में 2 बीघा था। पड़ोसी पर मेड़ खिसकाने का शक था, पर झगड़ा करने की जगह उन्होंने तहसील में सीमांकन का आवेदन दिया। सरकारी पैमाइश में पता चला कि एक तरफ़ की मेड़ सच में अंदर आई थी, और रिपोर्ट के आधार पर सीमा के निशान दोबारा लगे।</p>
+</div>
