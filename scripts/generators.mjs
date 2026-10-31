@@ -37,6 +37,18 @@ function liveNote(entry) {
   return [`स्वचालित जाँच (${d}): यह पता खुला।`, `Automatic check (${d}): this address opened.`];
 }
 
+// Search methods listed in each state's steps (data/states.json → search_methods).
+export const METHOD_LABELS = {
+  "owner-name": ["मालिक का नाम", "Owner name"],
+  khasra: ["खसरा/गाटा", "Khasra/gata"],
+  khata: ["खाता", "Khata"],
+  survey: ["सर्वे/गट नंबर", "Survey/gat number"],
+  khewat: ["खेवट", "Khewat"],
+  dag: ["दाग नंबर", "Dag number"],
+  patta: ["पट्टा", "Patta"],
+  cts: ["CTS नंबर", "CTS number"],
+};
+
 export function generate({ readJson, esc }) {
   let linkStatus = {};
   try { linkStatus = readJson("data/link-status.json"); } catch { linkStatus = {}; }
@@ -51,8 +63,14 @@ export function generate({ readJson, esc }) {
 
   // ---- states hub ----
   const rows = states
-    .map((s) => `<tr><th scope="row"><a href="states/${s.id}/">${bi(esc(s.name_hi), esc(s.name_en))}</a></th><td>${bi(esc(s.portal_name), esc(s.portal_en))}</td><td>${bi(esc(s.record_hi), esc(s.record_en))}</td><td>${bi(esc(s.mutation_hi), esc(s.mutation_en))}</td><td><span class="lr-badge ${(CONF[s.confidence] || CONF.unconfirmed)[0]}">${bi(...(CONF_SHORT[s.confidence] || CONF_SHORT.unconfirmed))}</span></td></tr>`)
+    .map((s) => `<tr data-name="${esc(`${s.name_hi} ${s.name_en} ${s.id}`.toLowerCase())}" data-methods="${esc((s.search_methods || []).join(" "))}" data-map="${s.map_url ? 1 : 0}" data-reg="${s.registration_url ? 1 : 0}" data-conf="${esc(s.confidence)}"><th scope="row"><a href="states/${s.id}/">${bi(esc(s.name_hi), esc(s.name_en))}</a></th><td>${bi(esc(s.portal_name), esc(s.portal_en))}</td><td>${bi(esc(s.record_hi), esc(s.record_en))}</td><td>${bi(esc(s.mutation_hi), esc(s.mutation_en))}</td><td><span class="lr-badge ${(CONF[s.confidence] || CONF.unconfirmed)[0]}">${bi(...(CONF_SHORT[s.confidence] || CONF_SHORT.unconfirmed))}</span></td></tr>`)
     .join("");
+  const confOptions = Object.keys(CONF_SHORT).map((k) => `<option value="${k}">${CONF_SHORT[k][0]} / ${CONF_SHORT[k][1]}</option>`).join("");
+  const filterForm = `<form class="lr-card lr-filter" id="st-filter" role="search" aria-label="राज्य खोजें / Filter states" hidden>
+<div class="lr-row"><div class="lr-field"><label for="st-q">राज्य का नाम <span class="lr-en">/ State name</span></label><input class="lr-input" id="st-q" type="search" autocomplete="off"></div>
+<div class="lr-field"><label for="st-conf">पते की पुष्टि <span class="lr-en">/ Address confidence</span></label><select class="lr-select" id="st-conf"><option value="">सभी / All</option>${confOptions}</select></div></div>
+<div class="lr-filter-checks"><label><input type="checkbox" id="st-owner"> ${bi("नाम से खोज उपलब्ध", "Owner-name search")}</label><label><input type="checkbox" id="st-map"> ${bi("भू-नक्शा लिंक", "Has Bhu-Naksha")}</label><label><input type="checkbox" id="st-reg"> ${bi("पंजीयन पोर्टल", "Has registration portal")}</label></div>
+<p id="st-count" role="status" aria-live="polite"></p></form>`;
   out.push({
     rel: "states/index.html",
     meta: {
@@ -65,13 +83,15 @@ export function generate({ readJson, esc }) {
       breadcrumbs: [{ name: "राज्य", name_en: "States", path: "states/" }],
       sources: ["dilrmp"],
       related: [{ path: "tools/record-finder/", label: "रिकॉर्ड-खोज मार्गदर्शक", label_en: "Record finder" }, { path: "tools/land-terms/", label: "शब्दकोश: खतौनी = जमाबंदी = 7/12", label_en: "Glossary: khatauni = jamabandi = 7/12" }],
+      scripts: ["assets/js/states-filter.js"],
     },
     body: `<h1>राज्य-वार भूमि रिकॉर्ड पोर्टल <span class="lr-en">/ Land records by state</span></h1>
 <p class="lr-lead" data-l="hi">हर राज्य में जमीन के रिकॉर्ड के नाम, पोर्टल और प्रक्रिया अलग हैं। अपना राज्य चुनें और देखें कि वहाँ रिकॉर्ड को क्या कहते हैं, कहाँ देखते हैं और किन बातों का ध्यान रखें। सभी 28 राज्य और 8 केंद्र-शासित प्रदेश शामिल हैं। जहाँ ऑनलाइन पोर्टल नहीं है या उसका पता पक्का नहीं, वहाँ यह साफ लिखा है।</p>
 <p class="lr-lead" data-l="en">Record names, portals and processes differ in every state. Pick your state to see what the record is called, where to see it and what to watch out for. All 28 states and 8 union territories are covered. Where there is no online portal or its address is unconfirmed, we say so.</p>
 <p class="lr-chips" data-l="hi">${states.map((s) => `<a href="states/${s.id}/">${esc(s.name_hi)}</a>`).join(" ")}</p>
 <p class="lr-chips" data-l="en">${states.map((s) => `<a href="states/${s.id}/">${esc(s.name_en)}</a>`).join(" ")}</p>
-<div class="lr-table-wrap"><table class="lr-table" style="min-width:680px"><caption style="text-align:left;padding:8px 0">${bi("अब तक शामिल राज्य", "States covered so far")}</caption><thead><tr><th scope="col">${bi("राज्य", "State")}</th><th scope="col">${bi("पोर्टल", "Portal")}</th><th scope="col">${bi("मुख्य रिकॉर्ड", "Main record")}</th><th scope="col">${bi("म्यूटेशन को कहते हैं", "Mutation is called")}</th><th scope="col">${bi("पोर्टल का पता", "Portal address")}</th></tr></thead><tbody>${rows}</tbody></table></div>
+${filterForm}
+<div class="lr-table-wrap"><table class="lr-table" id="st-table" style="min-width:680px"><caption style="text-align:left;padding:8px 0">${bi("अब तक शामिल राज्य", "States covered so far")}</caption><thead><tr><th scope="col">${bi("राज्य", "State")}</th><th scope="col">${bi("पोर्टल", "Portal")}</th><th scope="col">${bi("मुख्य रिकॉर्ड", "Main record")}</th><th scope="col">${bi("म्यूटेशन को कहते हैं", "Mutation is called")}</th><th scope="col">${bi("पोर्टल का पता", "Portal address")}</th></tr></thead><tbody>${rows}</tbody></table></div>
 <div class="lr-prose" data-l="hi"><h2>"पोर्टल का पता" वाला स्तंभ क्या बताता है?</h2>
 <p>हर राज्य के पोर्टल का पता हमने अलग-अलग स्रोतों से मिलाया है। जहाँ स्रोत आपस में सहमत नहीं थे, वहाँ हमने सभी पते दिखाए और उसे साफ लिखा है। जहाँ आधिकारिक पता पक्का नहीं हो पाया, वहाँ "पुष्टि जारी" लिखा है। यह पुष्टि आप राज्य के राजस्व विभाग की वेबसाइट से कर सकते हैं।</p>
 <p>राष्ट्रीय स्तर पर राज्यों के पोर्टल की सूची भूमि संसाधन विभाग के DILRMP कार्यक्रम के पास है, जो हमारा मार्गदर्शक संदर्भ है, पर वह यह साबित नहीं करता कि हर राज्य में एक जैसी सेवाएँ हैं।</p></div>
@@ -138,6 +158,9 @@ ${s.map_url ? `<section class="lr-card" aria-labelledby="map-h" style="margin-to
 <p>${bi(`जाँचा गया: ${esc(s.map_checked)}`, `Checked: ${esc(s.map_checked)}`)}</p>
 <p><a class="lr-btn secondary" style="display:inline-flex;align-items:center;text-decoration:none" href="${esc(s.map_url)}" target="_blank" rel="noopener noreferrer">${bi("भू-नक्शा खोलें (नई विंडो)", "Open Bhu-Naksha (new window)")}</a> <span class="lr-en">${link(s.map_url)}</span></p>
 <p><a href="maps/">${bi("नक्शा पढ़ने की सावधानियाँ", "Map reading cautions")}</a></p></section>` : ""}
+${(s.url && (s.search_methods || []).length) || s.registration_url ? `<section class="lr-card lr-methods" aria-labelledby="sm-h" style="margin-top:16px"><h2 id="sm-h" style="margin-top:0">${bi("खोजने के तरीके", "Search methods")}</h2>
+${s.url && (s.search_methods || []).length ? `<p>${bi("हमारे राज्य-पेज के चरणों के अनुसार पोर्टल पर इनसे खोज होती है:", "Per the steps on this page, the portal searches by:")}</p><ul class="lr-method-list">${s.search_methods.map((m) => `<li>${bi(...(METHOD_LABELS[m] || [esc(m), esc(m)]))}</li>`).join("")}</ul>` : ""}
+${s.registration_url ? `<p>${bi("पंजीयन (रजिस्ट्री) विभाग:", "Registration department:")} ${link(s.registration_url)} <span class="lr-en">(${bi("जाँचा गया", "checked")} ${esc(s.verified?.registration || "")})</span></p>` : ""}</section>` : ""}
 <div class="lr-prose" data-l="hi">
 <h2>यहाँ रिकॉर्ड को क्या कहते हैं</h2>
 <ul><li><strong>मुख्य रिकॉर्ड:</strong> ${esc(s.record_hi)}</li><li><strong>म्यूटेशन (नाम परिवर्तन):</strong> ${esc(s.mutation_hi)}</li><li><strong>क्षेत्रफल की इकाइयाँ:</strong> ${esc(s.units_hi)}</li></ul>
