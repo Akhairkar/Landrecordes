@@ -530,6 +530,8 @@ Admin pages must never accidentally enter public sitemaps.
 
 ## 26. Indexing / launch control
 
+Status: launch approved by the owner on 2026-10-17. Production deploys build with `INDEXABLE=true`; drafts stay `noindex` and out of the sitemap. The "During development" rules below apply to any future pre-launch property.
+
 During development:
 - Keep GSC submission disabled.
 - Do not intentionally request indexing.

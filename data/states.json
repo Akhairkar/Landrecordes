@@ -66,7 +66,19 @@
         }
       ],
       "map_url": "https://upbhunaksha.gov.in/",
-      "map_checked": "2026-10-29"
+      "map_checked": "2026-10-29",
+      "search_methods": [
+        "owner-name",
+        "khasra",
+        "khata"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {
+        "map": "2026-10-29"
+      }
     },
     {
       "id": "maharashtra",
@@ -132,7 +144,16 @@
           "q": "What is mutation called in Maharashtra?",
           "a": "Ferfar. Ferfar entries are linked to the 7/12."
         }
-      ]
+      ],
+      "search_methods": [
+        "owner-name",
+        "survey"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "rajasthan",
@@ -200,7 +221,19 @@
         }
       ],
       "map_url": "https://bhunaksha.rajasthan.gov.in/",
-      "map_checked": "2026-10-29"
+      "map_checked": "2026-10-29",
+      "search_methods": [
+        "owner-name",
+        "khasra",
+        "khata"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {
+        "map": "2026-10-29"
+      }
     },
     {
       "id": "madhya-pradesh",
@@ -263,7 +296,17 @@
           "q": "What is B-1?",
           "a": "B-1 is treated as a khatauni-like record of rights in Madhya Pradesh, showing the owner and khasra details. Confirm its exact form and use with the revenue department."
         }
-      ]
+      ],
+      "search_methods": [
+        "owner-name",
+        "khasra",
+        "khata"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "bihar",
@@ -330,7 +373,18 @@
       ],
       "example_en": "Suppose the jamabandi says: raiyat 'Ramlal', khata 123, khesra 456, area 12 katha 5 dhur. First check how many square feet 1 katha and 1 dhur are in your circle. Then enter those values in the calculator and convert the area to decimals or acres. This example is hypothetical.",
       "map_url": "https://bhunaksha.bihar.gov.in/",
-      "map_checked": "2026-10-29"
+      "map_checked": "2026-10-29",
+      "search_methods": [
+        "owner-name",
+        "khata"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {
+        "map": "2026-10-29"
+      }
     },
     {
       "id": "gujarat",
@@ -395,7 +449,15 @@
           "a": "A summary of the holder's holding, i.e. all survey numbers in their name, khata-wise."
         }
       ],
-      "example_en": "Suppose a 7/12 shows area 0-45-50, i.e. 0 hectare, 45 are and 50 square metres. 1 are = 100 square metres, so the total is 4,550 square metres, about 1.12 acres. You can convert it to acres or guntha with the calculator. This example is hypothetical."
+      "example_en": "Suppose a 7/12 shows area 0-45-50, i.e. 0 hectare, 45 are and 50 square metres. 1 are = 100 square metres, so the total is 4,550 square metres, about 1.12 acres. You can convert it to acres or guntha with the calculator. This example is hypothetical.",
+      "search_methods": [
+        "survey"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "haryana",
@@ -458,7 +520,18 @@
           "q": "How many marla make a kanal?",
           "a": "1 kanal = 20 marla; by the common standard 1 marla = 272.25 sq ft. Some places may differ."
         }
-      ]
+      ],
+      "search_methods": [
+        "owner-name",
+        "khasra",
+        "survey",
+        "khewat"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "punjab",
@@ -520,7 +593,18 @@
           "q": "What is mutation called in Punjab?",
           "a": "Intkal. Check its status at the tehsil/portal."
         }
-      ]
+      ],
+      "search_methods": [
+        "owner-name",
+        "khasra",
+        "khata",
+        "khewat"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "delhi",
@@ -583,7 +667,18 @@
           "q": "Why are there two addresses for Delhi Bhulekh?",
           "a": "An older government document uses the NIC address, but the portal now runs at dlrc.delhi.gov.in. Use that address and avoid fake sites."
         }
-      ]
+      ],
+      "search_methods": [
+        "owner-name",
+        "khasra",
+        "khata",
+        "survey"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "uttarakhand",
@@ -647,7 +742,19 @@
           "q": "What is a nali in Uttarakhand?",
           "a": "A local unit of area used in the hills. Its size may vary by area, so we don't prefill any value."
         }
-      ]
+      ],
+      "search_methods": [
+        "owner-name",
+        "khasra",
+        "khata"
+      ],
+      "documents": [],
+      "registration_url": "https://registration.uk.gov.in/",
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {
+        "registration": "2026-10-30"
+      }
     },
     {
       "id": "himachal-pradesh",
@@ -712,7 +819,17 @@
           "q": "What is mutation called in Himachal?",
           "a": "Intkal. Check its steps and status at the portal/tehsil."
         }
-      ]
+      ],
+      "search_methods": [
+        "khasra",
+        "khata",
+        "khewat"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "jammu-and-kashmir",
@@ -775,7 +892,18 @@
           "q": "What is massavi?",
           "a": "The land map record. Check its availability and form on the portal."
         }
-      ]
+      ],
+      "search_methods": [
+        "owner-name",
+        "khasra",
+        "khata",
+        "khewat"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "karnataka",
@@ -840,7 +968,15 @@
           "q": "What is 'hissa' in Karnataka?",
           "a": "A sub-division of a survey number. One survey number can be split into several hissas, each with its own record."
         }
-      ]
+      ],
+      "search_methods": [
+        "survey"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "telangana",
@@ -903,7 +1039,15 @@
           "q": "What is Bhu Bharati's official address?",
           "a": "We could not confirm it. Get the link from the state revenue/registration department's site and avoid fake sites."
         }
-      ]
+      ],
+      "search_methods": [
+        "survey"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "andhra-pradesh",
@@ -969,7 +1113,17 @@
           "q": "What is a cent?",
           "a": "1 cent = 1/100 acre = 435.6 sq ft."
         }
-      ]
+      ],
+      "search_methods": [
+        "owner-name",
+        "khata",
+        "survey"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "tamil-nadu",
@@ -1034,7 +1188,16 @@
           "q": "What is FMB?",
           "a": "The Field Measurement Book sketch showing a survey number's boundary/shape."
         }
-      ]
+      ],
+      "search_methods": [
+        "survey",
+        "patta"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "west-bengal",
@@ -1100,7 +1263,13 @@
           "q": "Why do RS and LR numbers differ?",
           "a": "Different plot numbers may have been given in different surveys/revisions; old papers may have RS numbers and new records LR numbers."
         }
-      ]
+      ],
+      "search_methods": [],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "odisha",
@@ -1163,7 +1332,18 @@
         }
       ],
       "map_url": "https://bhunakshaodisha.nic.in/",
-      "map_checked": "2026-10-29"
+      "map_checked": "2026-10-29",
+      "search_methods": [
+        "owner-name"
+      ],
+      "documents": [],
+      "registration_url": "https://igrodisha.gov.in/",
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {
+        "map": "2026-10-29",
+        "registration": "2026-10-30"
+      }
     },
     {
       "id": "chhattisgarh",
@@ -1237,7 +1417,18 @@
         }
       ],
       "map_url": "https://bhunaksha.cg.nic.in/",
-      "map_checked": "2026-10-29"
+      "map_checked": "2026-10-29",
+      "search_methods": [
+        "owner-name",
+        "khasra"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {
+        "map": "2026-10-29"
+      }
     },
     {
       "id": "jharkhand",
@@ -1302,7 +1493,16 @@
           "q": "What is mutation called in Jharkhand?",
           "a": "Usually dakhil-kharij. Check the application and status on the portal/circle office."
         }
-      ]
+      ],
+      "search_methods": [
+        "owner-name",
+        "khata"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "kerala",
@@ -1365,7 +1565,15 @@
           "q": "What is BTR?",
           "a": "Basic Tax Register: the base register of land and tax after resurvey."
         }
-      ]
+      ],
+      "search_methods": [
+        "survey"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "assam",
@@ -1433,7 +1641,19 @@
         }
       ],
       "map_url": "https://bhunaksha.assam.gov.in/",
-      "map_checked": "2026-10-29"
+      "map_checked": "2026-10-29",
+      "search_methods": [
+        "owner-name",
+        "dag",
+        "patta"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {
+        "map": "2026-10-29"
+      }
     },
     {
       "id": "goa",
@@ -1498,7 +1718,17 @@
         }
       ],
       "map_url": "https://bhunaksha.goa.gov.in/",
-      "map_checked": "2026-10-29"
+      "map_checked": "2026-10-29",
+      "search_methods": [
+        "survey"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {
+        "map": "2026-10-29"
+      }
     },
     {
       "id": "tripura",
@@ -1563,7 +1793,13 @@
         }
       ],
       "example_hi": "मान लीजिए आपके पास किसी मौजा का खतियान नंबर 245 है। ई-जमी पर जिला, तहसील और मौजा चुनकर 245 डालें; खतियान में हर हिस्सेदार का अंश और उसके प्लॉट दिखेंगे। अगर आप सिर्फ एक प्लॉट खरीद रहे हैं, तो उसी प्लॉट नंबर से भी खोजकर मिलान करें कि वह किस खतियान में है और उसका वर्ग (जैसे धान का खेत या बसावट) क्या दर्ज है। कानी-गंडा में लिखा रकबा कैलकुलेटर में अपने इलाके का मान भरकर बदलें। यह उदाहरण काल्पनिक है।",
-      "example_en": "Suppose you have khatian number 245 of a mouza. On e-Jami choose district, tehsil and mouza and enter 245; the khatian shows each co-sharer's share and plots. If you are buying only one plot, also search by that plot number to confirm which khatian it is in and what class (e.g. paddy land or homestead) is recorded. Convert area written in kani-ganda by entering your local value in the calculator. This example is hypothetical."
+      "example_en": "Suppose you have khatian number 245 of a mouza. On e-Jami choose district, tehsil and mouza and enter 245; the khatian shows each co-sharer's share and plots. If you are buying only one plot, also search by that plot number to confirm which khatian it is in and what class (e.g. paddy land or homestead) is recorded. Convert area written in kani-ganda by entering your local value in the calculator. This example is hypothetical.",
+      "search_methods": [],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "ladakh",
@@ -1627,7 +1863,17 @@
           "q": "What is a fard?",
           "a": "A certified extract of the jamabandi used for bank and court work."
         }
-      ]
+      ],
+      "search_methods": [
+        "owner-name",
+        "khasra",
+        "khewat"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "chandigarh",
@@ -1692,7 +1938,17 @@
         }
       ],
       "example_hi": "मान लीजिए आपका प्लॉट गाँव धनास में है और दूसरा सेक्टर-22 में। धनास वाली जमीन राजस्व विभाग की जमाबंदी में खेवट या खसरा नंबर से मिलेगी, जबकि सेक्टर-22 वाली संपत्ति का रिकॉर्ड एस्टेट ऑफिस के पास होगा, जमाबंदी में नहीं। इसलिए पहले पता करें कि जमीन राजस्व गाँव में है या सेक्टर में, फिर सही दफ़्तर का रिकॉर्ड देखें। यह उदाहरण काल्पनिक है।",
-      "example_en": "Suppose one plot is in village Dhanas and another in Sector 22. The Dhanas land appears in the revenue jamabandi by khewat or khasra number, while the Sector 22 property's record is with the Estate Office, not the jamabandi. So first find out whether the land is in a revenue village or a sector, then check the right office's record. This example is hypothetical."
+      "example_en": "Suppose one plot is in village Dhanas and another in Sector 22. The Dhanas land appears in the revenue jamabandi by khewat or khasra number, while the Sector 22 property's record is with the Estate Office, not the jamabandi. So first find out whether the land is in a revenue village or a sector, then check the right office's record. This example is hypothetical.",
+      "search_methods": [
+        "owner-name",
+        "khasra",
+        "khewat"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "puducherry",
@@ -1755,7 +2011,16 @@
           "q": "Are Karaikal, Mahe and Yanam included?",
           "a": "Yes, all four regions are listed when choosing the region."
         }
-      ]
+      ],
+      "search_methods": [
+        "survey",
+        "patta"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "sikkim",
@@ -1820,7 +2085,16 @@
         }
       ],
       "example_hi": "मान लीजिए आपको किसी परिवार की जमीन का पर्चा देखना है। ILRMS पर ब्लॉक और राजस्व सर्कल चुनकर खतियान नंबर डालें; पर्चे में धारक का नाम, खसरा और रकबा दिखेगा। यह ऑनलाइन पर्चा सिर्फ संदर्भ के लिए है; बैंक या कोर्ट के लिए राजस्व कार्यालय से हस्ताक्षरित प्रति लें, और खरीदार की पात्रता के नियम पहले से जाँच लें। यह उदाहरण काल्पनिक है।",
-      "example_en": "Suppose you need to see a family's land parcha. On ILRMS choose block and revenue circle and enter the khatiyan number; the parcha shows holder name, khasra and area. This online parcha is only a reference; for a bank or court get a signed copy from the revenue office, and check buyer-eligibility rules first. This example is hypothetical."
+      "example_en": "Suppose you need to see a family's land parcha. On ILRMS choose block and revenue circle and enter the khatiyan number; the parcha shows holder name, khasra and area. This online parcha is only a reference; for a bank or court get a signed copy from the revenue office, and check buyer-eligibility rules first. This example is hypothetical.",
+      "search_methods": [
+        "owner-name",
+        "khasra"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "meghalaya",
@@ -1884,7 +2158,15 @@
         }
       ],
       "example_hi": "मान लीजिए आप शिलांग के पास किसी जमीन की खरीद की बात कर रहे हैं और कोई वेबसाइट उसका 'ऑनलाइन पट्टा' तुरंत भेजने की बात कहती है। ज़्यादातर स्रोतों के अनुसार यहाँ ऐसा कोई सरकारी ऑनलाइन पोर्टल नहीं है, इसलिए ऐसी प्रति पर भरोसा न करें। जमीन की जनजातीय या सामुदायिक स्थिति, स्थानीय परिषद की भूमिका और हस्तांतरण की शर्तें DLRS या ज़िला कार्यालय से लिखित में पूछें। यह उदाहरण काल्पनिक है।",
-      "example_en": "Suppose you are discussing buying land near Shillong and a website offers to send its 'online patta' instantly. Most sources say there is no such government online portal here, so don't trust such a copy. Ask DLRS or the district office in writing about the land's tribal or community status, the local council's role and transfer conditions. This example is hypothetical."
+      "example_en": "Suppose you are discussing buying land near Shillong and a website offers to send its 'online patta' instantly. Most sources say there is no such government online portal here, so don't trust such a copy. Ask DLRS or the district office in writing about the land's tribal or community status, the local council's role and transfer conditions. This example is hypothetical.",
+      "search_methods": [
+        "patta"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "manipur",
@@ -1946,7 +2228,16 @@
           "q": "Dag number vs patta number?",
           "a": "The dag number identifies the plot; the patta number is the family's holding account."
         }
-      ]
+      ],
+      "search_methods": [
+        "dag",
+        "patta"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "mizoram",
@@ -2011,7 +2302,15 @@
         }
       ],
       "example_hi": "मान लीजिए आपके पास आइज़ोल में किसी जमीन का LSC है और दूसरी जमीन पर सिर्फ पीरियॉडिक पट्टा। LSC वाली जमीन का विवरण ई-राम या ज़िला कार्यालय से सत्यापित करें। पीरियॉडिक पट्टा वाली जमीन पर अधिकार सीमित अवधि का होता है, इसलिए उसे गिरवी रखने या बेचने से पहले सरकारी अनुमति की ज़रूरत के बारे में राजस्व विभाग से पूछें। यह उदाहरण काल्पनिक है।",
-      "example_en": "Suppose you hold an LSC for one plot in Aizawl and only a periodic patta for another. Verify the LSC plot's details through e-Ram or the district office. Rights on the periodic-patta plot are limited in time, so before mortgaging or selling it ask the revenue department about the government permission required. This example is hypothetical."
+      "example_en": "Suppose you hold an LSC for one plot in Aizawl and only a periodic patta for another. Verify the LSC plot's details through e-Ram or the district office. Rights on the periodic-patta plot are limited in time, so before mortgaging or selling it ask the revenue department about the government permission required. This example is hypothetical.",
+      "search_methods": [
+        "patta"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "nagaland",
@@ -2075,7 +2374,16 @@
         }
       ],
       "example_hi": "मान लीजिए दीमापुर में किसी जमीन के कागज़ देखने हैं। वहाँ ऑनलाइन रिकॉर्ड नहीं मिलेगा; उस ज़िले के सर्कल या DC कार्यालय में गाँव, प्लॉट और पट्टा विवरण के साथ आवेदन करें और शुल्क की रसीद लें। अगर जमीन परंपरागत (गाँव या कबीले की) व्यवस्था में है, तो ग्राम परिषद के दस्तावेज़ और स्थानीय नियम भी देखने पड़ सकते हैं। यह उदाहरण काल्पनिक है।",
-      "example_en": "Suppose you need to see a land's papers in Dimapur. No online record exists there; apply at that district's circle or DC office with village, plot and patta details and keep the fee receipt. If the land is under customary (village or clan) arrangements, village council documents and local rules may also matter. This example is hypothetical."
+      "example_en": "Suppose you need to see a land's papers in Dimapur. No online record exists there; apply at that district's circle or DC office with village, plot and patta details and keep the fee receipt. If the land is under customary (village or clan) arrangements, village council documents and local rules may also matter. This example is hypothetical.",
+      "search_methods": [
+        "owner-name",
+        "patta"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "arunachal-pradesh",
@@ -2138,7 +2446,13 @@
           "q": "What is LISA?",
           "a": "Arunachal's land information system offering allotment, revenue payment and LHC services."
         }
-      ]
+      ],
+      "search_methods": [],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "andaman-and-nicobar",
@@ -2201,7 +2515,13 @@
           "q": "What is Dweep Bhoomi?",
           "a": "The revenue department's land portal linked with registration and survey."
         }
-      ]
+      ],
+      "search_methods": [],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "lakshadweep",
@@ -2264,7 +2584,15 @@
           "q": "Can anyone buy land here?",
           "a": "Guides say there are restrictions for non-islanders; confirm with an officer or lawyer."
         }
-      ]
+      ],
+      "search_methods": [
+        "survey"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     },
     {
       "id": "dadra-nagar-haveli-daman-diu",
@@ -2329,7 +2657,23 @@
           "q": "Which portal for Daman-Diu?",
           "a": "SUGAM per guides; confirm on the UT's official site."
         }
-      ]
+      ],
+      "search_methods": [
+        "survey"
+      ],
+      "documents": [],
+      "registration_url": null,
+      "helpdesk": null,
+      "signed_copy": null,
+      "verified": {}
     }
-  ]
+  ],
+  "schema_notes": {
+    "search_methods": "Derived from steps_en (which cite the state's sources): owner-name, khasra, khata, survey, khewat, dag, patta, cts.",
+    "registration_url": "State stamps/registration department site; filled only after the page was opened and its title matched (date in verified.registration).",
+    "documents": "Reserved: official document types offered online; filled only when verified.",
+    "helpdesk": "Reserved: official helpline/contact; filled only when verified.",
+    "signed_copy": "Reserved: whether digitally signed copies are offered; filled only when verified.",
+    "verified": "Manual verification dates per field (portal map, registration, …)."
+  }
 }

@@ -6,7 +6,7 @@ Authority: `RULEBOOK.md` > this file > `docs/architecture/MASTER_PLAN.md`. Nothi
 ## A. Quality gates (automated in CI; a failing gate blocks merge)
 
 A1. **Source gate** — every factual claim rendered from data (portal URL, unit factor, fee, form, deadline) must come from `data/*.json` with `source_url`, `source_org`, `jurisdiction`, `reviewed_on`. Missing field ⇒ build error.
-A2. **Link gate** — no broken internal links. Official external links are checked weekly by `.github/workflows/links.yml` (`scripts/check-links.mjs`, non-blocking report). `node scripts/check-links.mjs --write` stores results in `data/link-status.json`; state pages show the latest "automatic check" note per address. A failure is "verify manually", not proof the site is dead (government sites often block cloud IPs).
+A2. **Link gate** — no broken internal links. Official external links are checked weekly by `.github/workflows/links.yml` (`scripts/check-links.mjs`, non-blocking report). The weekly workflow runs `node scripts/check-links.mjs --write` and commits `data/link-status.json`; run `--write` only from GitHub Actions, not from other cloud environments. State pages show only successful checks; failures stay in the CI report, because a failed automated check is not proof that a government site is down (they often block cloud IPs).
 A3. **SEO gate** — unique `<title>` (≤ 60 chars) and meta description (120–160 chars), one `<h1>`, absolute canonical, `lang`, valid JSON-LD that matches visible content.
 A4. **Thin/duplicate gate** — among pages of the same template: word-trigram Jaccard similarity < 0.35, and a per-type minimum of visible words (FAQ text counts) or a working tool: content 400, record 320, guide 320, state 300, hub 120, home 120, legal 80. Hindi text is counted by whitespace tokens. Length alone never makes a page pass; uniqueness and sources decide. Evidence for the threshold: the old district pages measured 0.89. Pages failing the gate are `status: draft` and excluded from the sitemap.
 A9. **Related-links gate** — record, guide and state pages need ≥ 2 `meta.related` links and ≥ 1 link to a tool (Rulebook §13).
@@ -46,8 +46,8 @@ D6. Ads (later): never above the fold on tool pages, never between inputs and re
 ## E. URLs, indexing and migration
 
 E1. URLs lowercase, stable, human-readable; one canonical per intent; no language duplicates (Rulebook §6, README URL rules).
-E2. Until launch approval: every page `noindex,nofollow` and absent from sitemap/robots allow-list (Rulebook §26).
-E3. No old BhumiRecord URL with impressions is abandoned: each gets a mapped target in `data/redirects.json` before launch.
+E2. *(Launch approved by the owner on 2026-10-17; production builds run with `INDEXABLE=true`, and only `status: published` pages are indexable or in the sitemap.)* Until launch approval: every page `noindex,nofollow` and absent from sitemap/robots allow-list (Rulebook §26).
+E3. No old BhumiRecord URL with impressions is abandoned: each gets a mapped target in `data/redirects.json` before launch. *(Done 2026-10-25: all old pages redirect; the deployed map is recorded in `data/redirects.json`.)*
 E4. Never bulk-generate geographic pages. A district/tehsil page needs ≥ 3 verified local facts that differ from its parent and sibling pages (offices, local portal differences, local unit practice, circle-rate source, helpline) and passes A4.
 E6. Disclaimer placement: the independence/no-legal-advice disclaimer lives in the page footer on every page (owner decision 2026-10-09); no banner above the header.
 E5. Page-budget guard: CI prints published-page count by type; adding >30 pages of one type in a single PR requires owner approval.

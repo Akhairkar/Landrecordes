@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 
 const states = JSON.parse(readFileSync(new URL("../data/states.json", import.meta.url), "utf8")).states;
 const sources = JSON.parse(readFileSync(new URL("../data/sources.json", import.meta.url), "utf8"));
@@ -99,4 +99,33 @@ test("record finder offers goal-specific next guides and safe clickable alternat
   assert.ok(ui.includes('["http:", "https:"]'));
   assert.ok(ui.includes('a.rel = "noopener noreferrer"'));
   assert.ok(ui.includes('Other source addresses') || ui.includes('अन्य स्रोतों के पते'));
+});
+
+test("extended state fields are present and only verified values are filled", () => {
+  const METHODS = new Set(["owner-name", "khasra", "khata", "survey", "khewat", "dag", "patta", "cts"]);
+  for (const s of states) {
+    assert.ok(Array.isArray(s.search_methods) && s.search_methods.every((m) => METHODS.has(m)), `${s.id}: search_methods`);
+    assert.ok(Array.isArray(s.documents), `${s.id}: documents must be an array`);
+    assert.ok(s.verified && typeof s.verified === "object", `${s.id}: verified object required`);
+    if (s.registration_url) {
+      const u = new URL(s.registration_url);
+      assert.equal(u.protocol, "https:", `${s.id}: registration_url must be https`);
+      assert.match(u.hostname, /(\.gov\.in|\.nic\.in)$/, `${s.id}: registration_url must be a government domain`);
+      assert.match(s.verified.registration || "", /^\d{4}-\d{2}-\d{2}$/, `${s.id}: registration_url needs a verified date`);
+    }
+    if (s.map_url) assert.equal(s.verified.map, s.map_checked, `${s.id}: map verification date`);
+  }
+});
+
+test("old BhumiRecord redirect map points only at real pages", () => {
+  const r = JSON.parse(readFileSync(new URL("../data/redirects.json", import.meta.url), "utf8"));
+  const stateIds = new Set(states.map((s) => s.id));
+  assert.ok(r.count > 1000 && Object.keys(r.map).length === r.count);
+  for (const [from, to] of Object.entries(r.map)) {
+    if (to === "") continue;
+    const st = to.match(/^states\/([^/]+)\/$/);
+    if (st) { assert.ok(stateIds.has(st[1]) , `${from} → ${to}`); continue; }
+    if (to === "states/") continue;
+    assert.ok(existsSync(new URL(`../src/pages/${to}index.html`, import.meta.url)), `${from} → ${to} has no page`);
+  }
 });

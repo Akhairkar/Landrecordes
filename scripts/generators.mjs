@@ -30,12 +30,11 @@ const SATBARA = ["records/satbara-7-12/", "7/12 उतारा और 8-अ क
 const MAIN_RECORD_PAGE = { maharashtra: SATBARA, gujarat: SATBARA, haryana: JAMABANDI, punjab: JAMABANDI, rajasthan: JAMABANDI, "himachal-pradesh": JAMABANDI, "jammu-and-kashmir": JAMABANDI, bihar: JAMABANDI };
 
 function liveNote(entry) {
-  if (!entry) return ["", ""];
+  // Only a successful check is shown. Government sites often block or time out for automated checks,
+  // so a failed check is not evidence that a portal is down; failures stay in the CI report (BUILD_RULES A2).
+  if (!entry || !(entry.status >= 200 && entry.status < 400)) return null;
   const d = entry.checked;
-  if (entry.status >= 200 && entry.status < 400) return [`स्वचालित जाँच (${d}): यह पता खुला (HTTP ${entry.status})।`, `Automatic check (${d}): this address opened (HTTP ${entry.status}).`];
-  if (entry.error === "ENOTFOUND") return [`स्वचालित जाँच (${d}): यह पता हमारी जाँच में खुला ही नहीं (डोमेन नहीं मिला)। सावधानी से पुष्टि करें।`, `Automatic check (${d}): this address did not resolve (domain not found). Confirm carefully.`];
-  if (entry.status === 404) return [`स्वचालित जाँच (${d}): इस पते ने 'पेज नहीं मिला' (404) दिया; सही पता राज्य विभाग की साइट से देखें।`, `Automatic check (${d}): this address returned 'not found' (404); get the right address from the state department's site.`];
-  return [`स्वचालित जाँच (${d}): हमारे सर्वर से नहीं खुला (${entry.status || entry.error}); इसे बंद न समझें, खुद खोलकर देखें।`, `Automatic check (${d}): did not open from our server (${entry.status || entry.error}); don't assume it is down, open it yourself.`];
+  return [`स्वचालित जाँच (${d}): यह पता खुला।`, `Automatic check (${d}): this address opened.`];
 }
 
 export function generate({ readJson, esc }) {
@@ -92,7 +91,7 @@ export function generate({ readJson, esc }) {
       ? `<p class="lr-security-note" role="note">${bi("पते की पुष्टि अधूरी है। राज्य/जिला प्रशासन की वेबसाइट से मिलाएँ; पुष्टि से पहले OTP, दस्तावेज़ या भुगतान न दें।", "Address is not fully confirmed. Verify it on the state/district administration website; do not submit OTPs, documents or payments before confirmation.")}</p>`
       : "";
     const alt = s.alt_urls.length ? `<p>${bi("अन्य स्रोतों में दिखने वाले पते:", "Other addresses seen in sources:")} ${s.alt_urls.map(link).join(", ")}</p>` : "";
-    const live = [s.url, ...s.alt_urls].filter(Boolean).filter((u) => linkStatus[u]).map((u) => {
+    const live = [s.url, ...s.alt_urls].filter(Boolean).filter((u) => liveNote(linkStatus[u])).map((u) => {
       const [hi, en] = liveNote(linkStatus[u]);
       return `<p class="lr-en" style="margin:2px 0">${host(u)} — ${bi(esc(hi), esc(en))}</p>`;
     }).join("");
