@@ -7,6 +7,14 @@ const CONF = {
   "single-source": ["एक ही स्रोत में यह पता मिला; खोलकर पुष्टि करें", "Found in one source only; open it to confirm"],
   unconfirmed: ["आधिकारिक पता पक्का नहीं; राज्य राजस्व विभाग की साइट से पुष्टि करें", "Official address not confirmed; confirm on the state revenue department's site"],
 };
+// Search methods named in each state's portal steps (data/states.json → search_methods), and which of them
+// each "what do you have" answer can use.
+const METHODS = {
+  "owner-name": ["मालिक का नाम", "owner name"], khasra: ["खसरा/गाटा", "khasra/gata"], khata: ["खाता", "khata"],
+  survey: ["सर्वे/गट नंबर", "survey/gat number"], khewat: ["खेवट", "khewat"], dag: ["दाग नंबर", "dag number"],
+  patta: ["पट्टा", "patta"], cts: ["CTS नंबर", "CTS number"],
+};
+const HAVE_METHODS = { khasra: ["khasra", "survey", "dag", "cts"], khata: ["khata", "khewat", "patta"], owner: ["owner-name"], nothing: [] };
 const el = (tag, text, cls) => { const e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; };
 const ACTIONS = {
   view: (s) => [`states/${s.id}/`, "राज्य का रिकॉर्ड मार्गदर्शक खोलें", "Open state record guide"],
@@ -66,12 +74,29 @@ async function init() {
     if (Array.isArray(s.alt_urls) && s.alt_urls.length) {
       const p = el("p");
       p.append(document.createTextNode(L("अन्य स्रोतों के पते", "Other source addresses") + ": "));
-      const links = s.alt_urls.map((url) => externalLink(url, url.replace(/^https?:\\/\\//, ""))).filter(Boolean);
+      const links = s.alt_urls.map((url) => externalLink(url, url.replace(/^https?:\/\//, ""))).filter(Boolean);
       links.forEach((a, i) => { if (i) p.append(document.createTextNode(" · ")); p.append(a); });
       if (links.length) box.append(p);
     }
     box.append(el("p", `${L("आपके राज्य में इसे कहते हैं", "In your state this is called")}: ${g === "mutation" ? L(s.mutation_hi, s.mutation_en) : L(s.record_hi, s.record_en)}`));
     out.append(box);
+
+    const methods = Array.isArray(s.search_methods) ? s.search_methods.filter((m) => METHODS[m]) : [];
+    if (s.url && methods.length) {
+      const mb = el("div", null, "lr-result");
+      mb.append(el("h3", L("इस पोर्टल पर खोज के तरीके", "Search methods on this portal")));
+      mb.append(el("p", `${L("राज्य-पेज के चरणों के अनुसार", "Per the state page steps")}: ${methods.map((m) => L(...METHODS[m])).join(", ")}`));
+      const usable = (HAVE_METHODS[h] || []).filter((m) => methods.includes(m));
+      if (h !== "nothing" && usable.length) {
+        mb.append(el("p", L(`आपके पास जो जानकारी है, उससे यहाँ "${usable.map((m) => METHODS[m][0]).join(", ")}" से खोज सकते हैं।`, `With what you have, search here by "${usable.map((m) => METHODS[m][1]).join(", ")}".`)));
+      } else {
+        mb.append(el("p", L("आपकी जानकारी से सीधे खोज का विकल्प इन चरणों में नहीं दिखता। पहले खसरा/खाता नंबर निकालें, फिर पोर्टल पर खोजें।", "The steps don't list a direct search with what you have. First find the khasra/khata number, then search the portal.")));
+        for (const [href, hi, en] of [["guides/find-khasra-number/", "खसरा नंबर पता करने की गाइड", "Guide to finding a khasra number"], ["guides/land-record-by-name/", "नाम से रिकॉर्ड खोजने की गाइड", "Guide to searching records by name"]]) {
+          const a = el("a", L(hi, en)); a.href = href; const p = el("p"); p.append(a); mb.append(p);
+        }
+      }
+      out.append(mb);
+    }
 
     const hv = rules.haves.find((x) => x.id === h);
     const next = el("div", null, "lr-result");
