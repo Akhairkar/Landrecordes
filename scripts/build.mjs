@@ -82,6 +82,10 @@ const siteCss = ["design-system", "shell", "components"].map((n) => readFileSync
 writeFileSync(join(DIST, "assets/css/site.css"), siteCss);
 writeFileSync(join(DIST, "manifest.webmanifest"), JSON.stringify({ name: "LandRecord — भूमि रिकॉर्ड जानकारी", short_name: "LandRecord", lang: "hi", start_url: BASE, scope: BASE, display: "standalone", background_color: "#faf7f0", theme_color: "#2c5b3c", icons: [{ src: `${BASE}assets/img/icon.svg`, sizes: "any", type: "image/svg+xml", purpose: "any" }] }));
 const cssVersion = createHash("sha256").update(siteCss).digest("hex").slice(0, 10);
+// Service worker at the site root so its scope covers every page; cache name changes whenever the shell changes.
+const swSrc = readFileSync(join(ROOT, "src/sw.js"), "utf8");
+const swVersion = createHash("sha256").update(siteCss + swSrc + readFileSync(join(ROOT, "assets/js/site-shell.js"), "utf8")).digest("hex").slice(0, 10);
+writeFileSync(join(DIST, "sw.js"), swSrc.replace("__VERSION__", swVersion).replace("__CSSV__", cssVersion));
 
 // ---------- pages ----------
 const layout = readFileSync(join(ROOT, "src/layout.html"), "utf8");

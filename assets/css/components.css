@@ -172,3 +172,10 @@ a.lr-btn{display:inline-flex;align-items:center;text-decoration:none}
 .lr-points{font-family:ui-monospace,monospace;font-size:.9rem;padding-left:24px}
 .lr-btn:disabled{opacity:.55;cursor:not-allowed}
 .lr-result-big{font-size:1.2rem;font-weight:700;color:var(--lr-brand);margin:12px 0}
+/* batch4 */
+.lr-ck-item{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin:6px 0}
+.lr-ck-item label{flex:1 1 260px}
+.lr-ck-link{font-size:.9rem;white-space:nowrap}
+.lr-ck-sec{font-weight:400;font-size:.9rem;margin-left:6px}
+.lr-factor{font-weight:400;opacity:.85}
+@media print{.lr-ck-link,.lr-tool-actions{display:none!important}}
