@@ -82,6 +82,7 @@ async function init() {
     out.append(box);
 
     const methods = Array.isArray(s.search_methods) ? s.search_methods.filter((m) => METHODS[m]) : [];
+    let khasraLinked = false;
     if (s.url && methods.length) {
       const mb = el("div", null, "lr-result");
       mb.append(el("h3", L("इस पोर्टल पर खोज के तरीके", "Search methods on this portal")));
@@ -94,6 +95,7 @@ async function init() {
         for (const [href, hi, en] of [["guides/find-khasra-number/", "खसरा नंबर पता करने की गाइड", "Guide to finding a khasra number"], ["guides/land-record-by-name/", "नाम से रिकॉर्ड खोजने की गाइड", "Guide to searching records by name"]]) {
           const a = el("a", L(hi, en)); a.href = href; const p = el("p"); p.append(a); mb.append(p);
         }
+        khasraLinked = true;
       }
       out.append(mb);
     }
@@ -113,7 +115,7 @@ async function init() {
       a.href = action[0];
       const p = el("p"); p.append(a); next.append(p);
     }
-    if (h === "owner" || h === "nothing") {
+    if ((h === "owner" || h === "nothing") && !khasraLinked) {
       const a = el("a", L("खसरा / सर्वे नंबर पता करने की गाइड", "Guide to finding a khasra / survey number"));
       a.href = "guides/find-khasra-number/";
       const p = el("p"); p.append(a); next.append(p);
