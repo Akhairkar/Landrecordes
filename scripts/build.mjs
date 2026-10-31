@@ -264,7 +264,7 @@ for (const p of pages) {
         const s = sources[id];
         return `<li>${s.url ? `<a href="${esc(s.url)}" rel="noopener noreferrer">${esc(s.org)}</a>` : esc(s.org)} — ${esc(s.basis || "")}</li>`;
       })
-      .join("")}</ul><p data-l="hi">अंतिम समीक्षा: <time datetime="${esc(meta.reviewed_on)}">${esc(meta.reviewed_on)}</time>. यह मार्गदर्शन शैक्षिक जानकारी है, कानूनी सलाह या आधिकारिक रिकॉर्ड नहीं।</p><p data-l="en">Last reviewed: <time datetime="${esc(meta.reviewed_on)}">${esc(meta.reviewed_on)}</time>. Educational guidance, not legal advice or an official record.</p></section>`;
+      .join("")}</ul><p class="lr-byline"><span data-l="hi">संपादन: <a href="editorial-policy/">LandRecord संपादकीय टीम</a></span><span data-l="en">Edited by the <a href="editorial-policy/">LandRecord editorial team</a></span></p><p data-l="hi">अंतिम समीक्षा: <time datetime="${esc(meta.reviewed_on)}">${esc(meta.reviewed_on)}</time>. यह मार्गदर्शन शैक्षिक जानकारी है, कानूनी सलाह या आधिकारिक रिकॉर्ड नहीं।</p><p data-l="en">Last reviewed: <time datetime="${esc(meta.reviewed_on)}">${esc(meta.reviewed_on)}</time>. Educational guidance, not legal advice or an official record.</p></section>`;
   const defaultRelated = [
     { path: "states/", label: "राज्य-वार आधिकारिक पोर्टल", label_en: "State-wise official portals" },
     { path: "records/", label: "भूमि रिकॉर्ड समझें", label_en: "Understand land records" },
