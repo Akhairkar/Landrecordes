@@ -5,10 +5,10 @@
  "type": "tool",
  "tool": true,
  "status": "published",
- "reviewed_on": "2026-10-09",
+ "reviewed_on": "2026-10-31",
  "active": "tools",
  "intent": "Buyer wants a tickable/printable verification list.",
- "unique_value": "Client-side checklist with progress and print layout; items mirror the buying guide and are labelled general, not legal.",
+ "unique_value": "Four-section due-diligence checklist (ownership, legal, physical, government records) with per-section progress, links to the matching guide/tool for each check, print and a downloadable text summary; all in the browser, labelled general, not legal.",
  "keywords": [
   "checklist",
   "जाँच सूची",
@@ -34,6 +34,11 @@
  ],
  "related": [
   {
+   "path": "guides/encumbrance-certificate/",
+   "label": "भार-मुक्त प्रमाण-पत्र (EC)",
+   "label_en": "Encumbrance Certificate (EC)"
+  },
+  {
    "path": "guides/buying-land-document-check/",
    "label": "खरीदने से पहले क्या जाँचें (गाइड)"
   },
@@ -48,29 +53,38 @@
 <h1>जमीन खरीद की जाँच-सूची <span class="lr-en">/ Land-purchase checklist</span></h1>
 <p class="lr-lead" data-l="hi">हर बिंदु जाँचने पर टिक करें। आपकी प्रगति आपके ही ब्राउज़र में रहती है। सूची सामान्य है और राज्य के हिसाब से बढ़ाई-घटाई जा सकती है; यह कानूनी सलाह नहीं है।</p>
 <p class="lr-lead" data-l="en">Tick each point as you check it. Your progress stays in your own browser. The list is general and can be extended for your state; it is not legal advice.</p>
-<section class="lr-card lr-checklist" aria-labelledby="ck-h" id="tool"><h2 id="ck-h" style="margin-top:0">जाँच-सूची <span class="lr-en">/ Checklist</span></h2>
-<p id="ck-progress" role="status" aria-live="polite"><strong>0 / 0 पूरे</strong></p>
-<fieldset><legend><strong><span data-l="hi">1. मालिकाना हक़</span><span data-l="en">1. Ownership</span></strong></legend>
-<label><input type="checkbox"> <span data-l="hi">राजस्व रिकॉर्ड (खतौनी/जमाबंदी/7-12) में विक्रेता का नाम और हिस्सा देखा</span><span data-l="en">Checked the seller's name and share in the revenue record (khatauni/jamabandi/7-12)</span></label>
-<label><input type="checkbox"> <span data-l="hi">पिछली रजिस्ट्री की कड़ी (विक्रेता को जमीन कैसे मिली) देखी</span><span data-l="en">Checked the chain of previous deeds (how the seller got the land)</span></label>
-<label><input type="checkbox"> <span data-l="hi">सभी खातेदारों/वारिसों की सहमति और हस्ताक्षर पक्के किए</span><span data-l="en">Confirmed consent and signatures of all holders/heirs</span></label></fieldset>
-<fieldset><legend><strong><span data-l="hi">2. रिकॉर्ड का मेल</span><span data-l="en">2. Record match</span></strong></legend>
-<label><input type="checkbox"> <span data-l="hi">खसरा/सर्वे, खाता, रकबा और गाँव रिकॉर्ड और रजिस्ट्री में मिलाए</span><span data-l="en">Matched khasra/survey, khata, area and village in the record and deed</span></label>
-<label><input type="checkbox"> <span data-l="hi">म्यूटेशन दर्ज है या नहीं, यह जाँचा</span><span data-l="en">Checked whether mutation is recorded</span></label></fieldset>
-<fieldset><legend><strong><span data-l="hi">3. बोझा और विवाद</span><span data-l="en">3. Encumbrance and disputes</span></strong></legend>
-<label><input type="checkbox"> <span data-l="hi">बैंक/ऋण/बंधक की जानकारी ली</span><span data-l="en">Asked about bank loans/mortgages</span></label>
-<label><input type="checkbox"> <span data-l="hi">अदालती मुकदमे या आपत्ति की जानकारी ली</span><span data-l="en">Asked about court cases or objections</span></label>
-<label><input type="checkbox"> <span data-l="hi">रिकॉर्ड में दर्ज अन्य अधिकार/प्रविष्टियाँ पढ़ीं</span><span data-l="en">Read other rights/entries in the record</span></label></fieldset>
-<fieldset><legend><strong><span data-l="hi">4. भूमि का प्रकार और उपयोग</span><span data-l="en">4. Land type and use</span></strong></legend>
-<label><input type="checkbox"> <span data-l="hi">भूमि का प्रकार (कृषि/आवासीय/अन्य) और उपयोग-अनुमति पूछी</span><span data-l="en">Asked the land type (agricultural/residential/other) and permitted use</span></label>
-<label><input type="checkbox"> <span data-l="hi">खरीद पर राज्य की कोई शर्त है या नहीं, यह स्थानीय अधिकारी/वकील से पूछा</span><span data-l="en">Asked a local officer/lawyer about any state conditions on purchase</span></label></fieldset>
-<fieldset><legend><strong><span data-l="hi">5. कब्ज़ा और सीमा</span><span data-l="en">5. Possession and boundaries</span></strong></legend>
-<label><input type="checkbox"> <span data-l="hi">मौके पर जाकर कब्ज़ा किसके पास है, यह देखा</span><span data-l="en">Visited the land and saw who is in possession</span></label>
-<label><input type="checkbox"> <span data-l="hi">नक्शे और माप को मौके से मिलाया</span><span data-l="en">Matched the map and measurements on the ground</span></label>
-<label><input type="checkbox"> <span data-l="hi">रास्ते और जल-निकासी के अधिकार की पुष्टि की</span><span data-l="en">Confirmed access road and drainage rights</span></label></fieldset>
-<fieldset><legend><strong><span data-l="hi">6. कर और भुगतान</span><span data-l="en">6. Tax and payments</span></strong></legend>
-<label><input type="checkbox"> <span data-l="hi">ताज़ा कर/लगान की रसीदें देखीं</span><span data-l="en">Checked recent tax/rent receipts</span></label>
-<label><input type="checkbox"> <span data-l="hi">हर भुगतान की रसीद लेने की व्यवस्था की, नकद से बचा</span><span data-l="en">Arranged a receipt for every payment and avoided cash</span></label></fieldset>
-<p><button class="lr-btn secondary" type="button" id="ck-reset">सब साफ करें <span class="lr-en">/ Clear all</span></button> <button class="lr-btn" type="button" id="ck-print">प्रिंट <span class="lr-en">/ Print or PDF</span></button></p></section>
-<div class="lr-prose" data-l="hi"><h2>इस सूची की सीमा</h2><p>यह सामान्य सूची है। असली दस्तावेज़, कर, भूमि-उपयोग और अनुमति के नियम राज्य, नगर निकाय और जमीन के प्रकार पर निर्भर हैं। बड़े सौदे से पहले योग्य वकील या अनुभवी स्थानीय सलाहकार से जाँच ज़रूर कराएँ।</p></div>
-<div class="lr-prose" data-l="en"><h2>Limits of this list</h2><p>This is a general list. Actual documents, taxes, land-use and permission rules depend on the state, the local body and the type of land. Before a big deal, have a qualified lawyer or experienced local adviser check it.</p></div>
+<section class="lr-card lr-checklist" aria-labelledby="ck-h" id="tool"><h2 id="ck-h" style="margin-top:0">जाँच-सूची <span class="lr-en">/ Due-diligence checklist</span></h2>
+<p class="lr-notice" data-l="hi"><strong>ज़रूरी:</strong> यह सूची वकील की सलाह या आधिकारिक टाइटल-सर्च की जगह नहीं है। ऑनलाइन रिकॉर्ड अकेले साफ़ मालिकाना हक़ की गारंटी नहीं देते।</p>
+<p class="lr-notice" data-l="en"><strong>Important:</strong> this list does not replace a lawyer's advice or an official title search. Online records alone do not guarantee clear title.</p>
+<p id="ck-progress" role="status" aria-live="polite"><strong>0 / 0</strong></p>
+<fieldset data-section="a"><legend><strong><span data-l="hi">1. मालिकाना हक़</span><span data-l="en">1. Ownership</span></strong> <span class="lr-ck-sec" data-sec-out="a"></span></legend>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="a1"> <span data-l="hi">विक्रेता की पहचान (पहचान-पत्र) और रिकॉर्ड में दर्ज नाम का मेल किया</span><span data-l="en">Matched the seller's identity (ID) with the name in the record</span></label> <a class="lr-ck-link" href="guides/land-record-by-name/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="a2"> <span data-l="hi">विक्रेता की पंजीकृत रजिस्ट्री/बैनामा या उत्तराधिकार का कागज़ देखा</span><span data-l="en">Saw the seller's registered sale deed or inheritance papers</span></label> <a class="lr-ck-link" href="guides/land-registry-process/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="a3"> <span data-l="hi">पिछली रजिस्ट्रियों की कड़ी देखी (जमीन किससे किसे मिली)</span><span data-l="en">Checked the chain of previous deeds (who got the land from whom)</span></label> <a class="lr-ck-link" href="guides/buying-land-document-check/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="a4"> <span data-l="hi">म्यूटेशन/नामांतरण में विक्रेता का नाम दर्ज है, पक्का किया</span><span data-l="en">Confirmed the seller's name is entered through mutation</span></label> <a class="lr-ck-link" href="records/mutation/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="a5"> <span data-l="hi">सभी सह-खातेदारों/वारिसों की सहमति और हस्ताक्षर तय किए</span><span data-l="en">Settled consent and signatures of all co-holders/heirs</span></label> <a class="lr-ck-link" href="guides/varasat-inheritance-mutation/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div></fieldset>
+<fieldset data-section="b"><legend><strong><span data-l="hi">2. कानूनी जाँच</span><span data-l="en">2. Legal</span></strong> <span class="lr-ck-sec" data-sec-out="b"></span></legend>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="b1"> <span data-l="hi">भार-मुक्त प्रमाण-पत्र (EC) लिया और बंधक/बिक्री की प्रविष्टियाँ पढ़ीं</span><span data-l="en">Got an Encumbrance Certificate and read mortgage/sale entries</span></label> <a class="lr-ck-link" href="guides/encumbrance-certificate/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="b2"> <span data-l="hi">अदालती मुकदमे, आपत्ति या रोक-आदेश की जानकारी ली</span><span data-l="en">Asked about court cases, objections or stay orders</span></label> <a class="lr-ck-link" href="guides/encroachment-overview/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="b3"> <span data-l="hi">अधिग्रहण या सरकारी योजना की कोई सूचना तो नहीं, पूछा</span><span data-l="en">Asked whether any acquisition or government scheme notice exists</span></label></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="b4"> <span data-l="hi">भूमि-उपयोग (कृषि/आवासीय) और मास्टर प्लान/ज़ोनिंग जाँची</span><span data-l="en">Checked land use (agricultural/residential) and master plan/zoning</span></label> <a class="lr-ck-link" href="guides/land-use-conversion/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="b5"> <span data-l="hi">खरीद पर राज्य की कोई शर्त है या नहीं, वकील/अधिकारी से पूछा</span><span data-l="en">Asked a lawyer/officer about any state conditions on purchase</span></label></div></fieldset>
+<fieldset data-section="c"><legend><strong><span data-l="hi">3. मौके की जाँच</span><span data-l="en">3. Physical</span></strong> <span class="lr-ck-sec" data-sec-out="c"></span></legend>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="c1"> <span data-l="hi">खसरा/सर्वे नंबर और रकबा रिकॉर्ड और रजिस्ट्री में मिलाया</span><span data-l="en">Matched khasra/survey number and area in the record and deed</span></label> <a class="lr-ck-link" href="records/khasra-number/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="c2"> <span data-l="hi">सीमा/चौहद्दी नक्शे से मिलाई; ज़रूरत हो तो पैमाइश कराई</span><span data-l="en">Matched boundaries with the map; got a demarcation if needed</span></label> <a class="lr-ck-link" href="maps/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="c3"> <span data-l="hi">आने-जाने का रास्ता और जल-निकासी का अधिकार पक्का किया</span><span data-l="en">Confirmed access road and drainage rights</span></label></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="c4"> <span data-l="hi">मौके पर कब्ज़ा किसके पास है, खुद जाकर देखा</span><span data-l="en">Visited and saw who is in possession</span></label></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="c5"> <span data-l="hi">कहीं अतिक्रमण तो नहीं, पड़ोसियों से भी पूछा</span><span data-l="en">Checked for encroachment, also asked neighbours</span></label> <a class="lr-ck-link" href="guides/encroachment-overview/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="c6"> <span data-l="hi">क्षेत्रफल का अनुमान लगाया; सरकारी पैमाइश की ज़रूरत तय की</span><span data-l="en">Estimated the area; decided whether an official measurement is needed</span></label> <a class="lr-ck-link" href="tools/map-area/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div></fieldset>
+<fieldset data-section="d"><legend><strong><span data-l="hi">4. सरकारी रिकॉर्ड</span><span data-l="en">4. Government records</span></strong> <span class="lr-ck-sec" data-sec-out="d"></span></legend>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="d1"> <span data-l="hi">ताज़ा खतौनी/जमाबंदी/7-12 (RoR) की प्रति ली</span><span data-l="en">Got the latest khatauni/jamabandi/7-12 (RoR)</span></label> <a class="lr-ck-link" href="records/ror/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="d2"> <span data-l="hi">कोई म्यूटेशन लंबित तो नहीं, स्थिति देखी</span><span data-l="en">Checked that no mutation is pending</span></label> <a class="lr-ck-link" href="guides/mutation-pending/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="d3"> <span data-l="hi">जहाँ लागू हो, प्रॉपर्टी कार्ड/घरौनी देखा</span><span data-l="en">Checked the property card/Gharauni where applicable</span></label> <a class="lr-ck-link" href="records/property-card/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="d4"> <span data-l="hi">भू-नक्शा में प्लॉट की स्थिति देखी</span><span data-l="en">Looked at the plot on the land map (Bhu-Naksha)</span></label> <a class="lr-ck-link" href="maps/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="d5"> <span data-l="hi">लगान/कर की ताज़ा रसीदें देखीं</span><span data-l="en">Checked recent land revenue/tax receipts</span></label></div>
+<div class="lr-ck-item"><label><input type="checkbox" data-id="d6"> <span data-l="hi">प्रमाणित नकल ली (सिर्फ ऑनलाइन प्रति पर भरोसा नहीं)</span><span data-l="en">Got certified copies (not relying only on the online view)</span></label> <a class="lr-ck-link" href="guides/online-vs-certified-copy/"><span data-l="hi">गाइड</span><span data-l="en">Guide</span></a></div></fieldset>
+<p class="lr-tool-actions"><button class="lr-btn" type="button" id="ck-print">प्रिंट <span class="lr-en">/ Print or PDF</span></button> <button class="lr-btn secondary" type="button" id="ck-download">सारांश डाउनलोड करें <span class="lr-en">/ Download summary</span></button> <button class="lr-btn secondary" type="button" id="ck-reset">सब साफ करें <span class="lr-en">/ Clear all</span></button></p>
+<p data-l="hi"><small>टिक आपके ही ब्राउज़र में सेव रहते हैं; कुछ भी हमारे पास नहीं भेजा जाता। सारांश एक साधारण टेक्स्ट फ़ाइल है जो आपके फ़ोन/कंप्यूटर पर ही बनती है।</small></p>
+<p data-l="en"><small>Ticks are saved only in your browser; nothing is sent to us. The summary is a plain text file created on your device.</small></p></section>
+<div class="lr-prose" data-l="hi"><h2>इस सूची का इस्तेमाल कैसे करें</h2><p>चारों हिस्से क्रम से भरें: पहले कागज़ी मालिकाना हक़, फिर कानूनी जाँच, फिर मौके पर जाकर जाँच, और आख़िर में सरकारी रिकॉर्ड की ताज़ा प्रतियाँ। हर बिंदु के साथ "गाइड" लिंक उस जाँच का तरीका बताता है। जो बिंदु अधूरा रहे, बयाना देने से पहले उसे पूरा करें।</p><h2>इस सूची की सीमा</h2><p>यह सामान्य सूची है। असली दस्तावेज़, कर, भूमि-उपयोग और अनुमति के नियम राज्य, नगर निकाय और जमीन के प्रकार पर निर्भर हैं। बड़े सौदे से पहले योग्य वकील से टाइटल की जाँच ज़रूर कराएँ।</p></div>
+<div class="lr-prose" data-l="en"><h2>How to use this list</h2><p>Work through the four parts in order: paper ownership first, then legal checks, then a site visit, and finally fresh copies of government records. The "Guide" link next to each point explains how to do that check. Finish any open point before paying an advance.</p><h2>Limits of this list</h2><p>This is a general list. Actual documents, taxes, land-use and permission rules depend on the state, the local body and the type of land. Before a big deal, have a qualified lawyer check the title.</p></div>

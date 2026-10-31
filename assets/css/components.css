@@ -179,3 +179,10 @@ a.lr-btn{display:inline-flex;align-items:center;text-decoration:none}
 .lr-filter-checks input{width:20px;height:20px}
 .lr-method-list{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:8px 0}
 .lr-method-list li{padding:4px 12px;border-radius:999px;background:var(--lr-surface-muted);border:1px solid var(--lr-border-strong)}
+/* batch4 */
+.lr-ck-item{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin:6px 0}
+.lr-ck-item label{flex:1 1 260px}
+.lr-ck-link{font-size:.9rem;white-space:nowrap}
+.lr-ck-sec{font-weight:400;font-size:.9rem;margin-left:6px}
+.lr-factor{font-weight:400;opacity:.85}
+@media print{.lr-ck-link,.lr-tool-actions{display:none!important}}

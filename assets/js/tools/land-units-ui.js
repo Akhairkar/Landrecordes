@@ -1,4 +1,4 @@
-import { parseNumber, convertAll, formatNumber } from "./land-units.js";
+import { parseNumber, convertAll, formatNumber, sqftPerUnit } from "./land-units.js";
 import { $, L, pick, uname, loadUnits, fillUnitSelect, mountLocalFields, copyLink } from "./shared-ui.js";
 
 async function init() {
@@ -39,6 +39,13 @@ async function init() {
       const th = document.createElement("th");
       th.scope = "row";
       th.textContent = uname(u);
+      // Show the factor behind every row so users can check it (BUILD_RULES B3).
+      const f = sqftPerUnit(u, loc);
+      const note = document.createElement("small");
+      note.className = "lr-factor";
+      const basis = u.kind === "local" ? L("आपका मान", "your value") : u.kind === "exact" ? L("परिभाषा", "definition") : L("स्रोत", "source");
+      note.textContent = f == null ? L("मान नहीं भरा", "no value entered") : `1 = ${formatNumber(f)} ${L("वर्ग फुट", "sq ft")} · ${basis}`;
+      th.append(document.createElement("br"), note);
       const td = document.createElement("td");
       if (all[u.id] == null) { td.textContent = L("अपना मान भरें", "Enter your value"); td.className = "lr-muted-cell"; }
       else { td.textContent = formatNumber(all[u.id]); td.className = "num"; }
