@@ -1,0 +1,42 @@
+name: Deploy LandRecord to Cloudflare Workers
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "landrecord-cloudflare-deploy"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout LandRecord
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Unit tests
+        run: node --test tests/*.test.mjs
+
+      - name: Build for Cloudflare root URL
+        run: npm run build
+        env:
+          BASE_PATH: /
+          SITE_URL: https://landrecord-portal.khairkar92.workers.dev
+          INDEXABLE: "true"
+
+      - name: Deploy only the LandRecord Worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
