@@ -251,11 +251,11 @@ ${s.example_en ? `<h2>Reading example</h2>\n<p>${esc(s.example_en)}</p>\n` : ""}
 </div>
 <p class="lr-finder-privacy"><span aria-hidden="true">🔒</span> <span data-l="hi">आपके चुनाव इसी ब्राउज़र में रहते हैं; हम इन्हें सर्वर पर नहीं भेजते।</span><span data-l="en">Your choices stay in this browser; we do not send them to a server.</span></p>
 </section>
-<aside class="lr-finder-sidecard">
+<div class="lr-finder-sidecard">
 <p class="lr-eyebrow" data-l="hi">आपको क्या मिलेगा</p><p class="lr-eyebrow" data-l="en">WHAT YOU’LL GET</p>
 <h2 data-l="hi">सिर्फ लिंक नहीं, पूरा रास्ता</h2><h2 data-l="en">More than just a link</h2>
 <ul><li><span class="lr-finder-side-icon">✓</span><span data-l="hi">आपके राज्य में रिकॉर्ड का सही नाम</span><span data-l="en">The local name of the record</span></li><li><span class="lr-finder-side-icon">⌕</span><span data-l="hi">आपकी जानकारी से खोजने का तरीका</span><span data-l="en">How to search with your details</span></li><li><span class="lr-finder-side-icon">→</span><span data-l="hi">अगला कदम और जरूरी सावधानी</span><span data-l="en">Next steps and useful cautions</span></li></ul>
-</aside>
+</div>
 </section>
 <div id="rf-out" class="lr-finder-results" role="status" aria-live="polite"><div class="lr-finder-empty"><span class="lr-finder-empty-icon">⌕</span><strong data-l="hi">आपके सुझाव यहाँ दिखेंगे</strong><strong data-l="en">Your guidance will appear here</strong><p data-l="hi">शुरू करने के लिए ऊपर तीनों विकल्प चुनें।</p><p data-l="en">Choose all three options above to get started.</p></div></div>
 <section class="lr-finder-how">
