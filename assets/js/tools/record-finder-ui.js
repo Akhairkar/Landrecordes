@@ -175,7 +175,7 @@ async function init() {
     }
     if (Array.isArray(s.alt_urls) && s.alt_urls.length) {
       const altWrap = el("div", null, "lr-finder-alt-links");
-      altWrap.append(el("p", L("अन्य स्रोतों में मिले पते", "Other addresses found in sources")));
+      altWrap.append(el("p", L("अन्य स्रोतों के पते", "Other source addresses")));
       s.alt_urls.forEach((url) => {
         const a = externalLink(url, url.replace(/^https?:\/\//, ""));
         if (a) altWrap.append(a);
