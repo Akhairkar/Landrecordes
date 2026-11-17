@@ -1,42 +1,41 @@
-/* LandRecord — modern land-information design tokens.
-   2026-11-17: owner-requested refresh to a clean white, navy and royal-blue system.
-   The previous land-brown / dark-green palette is superseded. */
-
+/* LandRecord — layered land-tech design system.
+   Owner direction: premium, modern, calm; not a government portal.
+   White cards, cool page surfaces, navy typography, blue links and restrained category tints. */
 :root {
   color-scheme: light;
-
   --lr-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --lr-font-display: var(--lr-font-sans);
-
-  --lr-bg: #f4f7fc;
+  --lr-bg: #f3f6fb;
   --lr-surface: #ffffff;
-  --lr-surface-muted: #edf2fa;
-  --lr-text: #17243b;
-  --lr-text-muted: #56657d;
-  --lr-border: #dce4f0;
-  --lr-border-strong: #bdcbe0;
-
-  --lr-brand: #2457c5;
-  --lr-brand-strong: #173d91;
-  --lr-brand-soft: #e8efff;
-  --lr-accent: #12658d;
-  --lr-accent-soft: #e4f5fb;
-
+  --lr-surface-muted: #edf2f8;
+  --lr-surface-blue: #edf3ff;
+  --lr-surface-teal: #edf7f4;
+  --lr-surface-lavender: #f4f0fb;
+  --lr-surface-amber: #fff7e9;
+  --lr-surface-coral: #fff2ed;
+  --lr-text: #17243a;
+  --lr-text-muted: #596a82;
+  --lr-border: #dce4ef;
+  --lr-border-strong: #bac8db;
+  --lr-brand: #2459b8;
+  --lr-brand-strong: #173a78;
+  --lr-brand-soft: #eaf1ff;
+  --lr-accent: #0e6b78;
+  --lr-accent-soft: #e5f4f5;
+  --lr-button-text: #ffffff;
+  --lr-link: #2459b8;
   --lr-success: #216b52;
   --lr-warning: #805800;
   --lr-danger: #b42318;
-  --lr-info: #2457c5;
-
+  --lr-info: #2459b8;
   --lr-radius-sm: 9px;
   --lr-radius-md: 14px;
   --lr-radius-lg: 20px;
-  --lr-radius-xl: 28px;
+  --lr-radius-xl: 26px;
   --lr-radius-pill: 999px;
-
-  --lr-shadow-sm: 0 2px 8px rgb(25 48 83 / 5%);
+  --lr-shadow-sm: 0 2px 10px rgb(25 48 83 / 5%);
   --lr-shadow-md: 0 10px 28px rgb(25 48 83 / 9%);
-  --lr-shadow-lg: 0 20px 52px rgb(25 48 83 / 13%);
-
+  --lr-shadow-lg: 0 20px 48px rgb(25 48 83 / 13%);
   --lr-space-1: 4px;
   --lr-space-2: 8px;
   --lr-space-3: 12px;
@@ -47,81 +46,70 @@
   --lr-space-10: 40px;
   --lr-space-12: 48px;
   --lr-space-16: 64px;
-
   --lr-content-max: 1200px;
-  --lr-reading-max: 760px;
+  --lr-reading-max: 780px;
   --lr-control-min: 44px;
-
-  --lr-focus: 0 0 0 3px rgb(36 87 197 / 28%);
-
-  /* Quiet category accents for service cards and chips. */
-  --lr-c-field: #256b5b;  --lr-c-field-soft: #e7f5f0;
-  --lr-c-soil: #99502f;   --lr-c-soil-soft: #fff0e8;
-  --lr-c-wheat: #795300;  --lr-c-wheat-soft: #fff5d8;
-  --lr-c-river: #2457c5;  --lr-c-river-soft: #e8f0ff;
-  --lr-c-dusk: #67429b;   --lr-c-dusk-soft: #f1eafe;
-
-  --lr-hero-from: #142d52;
-  --lr-hero-to: #2457c5;
+  --lr-focus: 0 0 0 3px rgb(36 89 184 / 25%);
+  --lr-c-field: #276653;  --lr-c-field-soft: #eaf5f1;  --lr-c-field-surface: #f5faf8;
+  --lr-c-soil: #99512f;   --lr-c-soil-soft: #fbf1eb;   --lr-c-soil-surface: #fff9f5;
+  --lr-c-wheat: #785700;  --lr-c-wheat-soft: #fcf6e6;  --lr-c-wheat-surface: #fffdf6;
+  --lr-c-river: #2459b8;  --lr-c-river-soft: #edf3ff;  --lr-c-river-surface: #f7f9ff;
+  --lr-c-dusk: #68459b;   --lr-c-dusk-soft: #f3effb;   --lr-c-dusk-surface: #faf8ff;
+  --lr-hero-from: #132746;
+  --lr-hero-to: #24549b;
   --lr-hero-text: #ffffff;
-  --lr-hero-muted: #dce7ff;
-  /* Replace this gradient with url('/assets/img/fields-hero.jpg') when the field photo is ready. */
+  --lr-hero-muted: #dce8fb;
   --lr-hero-image: linear-gradient(135deg, #dce9fb 0%, #a8c4eb 55%, #dce8f7 100%);
-
-  --lr-footer-bg: #13213a;
+  --lr-footer-bg: #101d32;
   --lr-footer-text: #f4f7ff;
   --lr-footer-muted: #c0cbe0;
-  --lr-footer-link: #c8d8ff;
+  --lr-footer-link: #d3e1ff;
 }
-
 [data-theme="dark"] {
   color-scheme: dark;
-
   --lr-bg: #0f1727;
-  --lr-surface: #172238;
-  --lr-surface-muted: #1f2d45;
+  --lr-surface: #17243a;
+  --lr-surface-muted: #1e2d45;
+  --lr-surface-blue: #1d3152;
+  --lr-surface-teal: #1c3938;
+  --lr-surface-lavender: #332d49;
+  --lr-surface-amber: #3b3424;
+  --lr-surface-coral: #3b2d2b;
   --lr-text: #f2f6ff;
-  --lr-text-muted: #c0cbe0;
-  --lr-border: #2e3c55;
-  --lr-border-strong: #405270;
-
-  --lr-brand: #8fb2ff;
-  --lr-brand-strong: #b8ceff;
-  --lr-brand-soft: #263753;
-  --lr-accent: #83c8e8;
-  --lr-accent-soft: #1d3b50;
-
-  --lr-success: #83d4be;
+  --lr-text-muted: #bdc9dc;
+  --lr-border: #2d3c55;
+  --lr-border-strong: #435571;
+  --lr-brand: #9bb9ff;
+  --lr-brand-strong: #c1d4ff;
+  --lr-brand-soft: #263856;
+  --lr-accent: #82d1d6;
+  --lr-accent-soft: #1d3c47;
+  --lr-button-text: #10203a;
+  --lr-link: #a9c4ff;
+  --lr-success: #85d7bb;
   --lr-warning: #f0d17b;
   --lr-danger: #ff9c93;
-  --lr-info: #8fb2ff;
-
-  --lr-shadow-sm: 0 2px 8px rgb(0 0 0 / 18%);
+  --lr-info: #9bb9ff;
+  --lr-shadow-sm: 0 2px 10px rgb(0 0 0 / 18%);
   --lr-shadow-md: 0 10px 28px rgb(0 0 0 / 24%);
-  --lr-shadow-lg: 0 20px 52px rgb(0 0 0 / 30%);
-  --lr-focus: 0 0 0 3px rgb(143 178 255 / 34%);
-
-  --lr-c-field: #83d4be;  --lr-c-field-soft: #203b39;
-  --lr-c-soil: #f2b391;   --lr-c-soil-soft: #462f2a;
-  --lr-c-wheat: #f0d17b;  --lr-c-wheat-soft: #443b24;
-  --lr-c-river: #8fb2ff;  --lr-c-river-soft: #263753;
-  --lr-c-dusk: #c4a8f0;   --lr-c-dusk-soft: #382e4d;
-
-  --lr-hero-from: #10213d;
-  --lr-hero-to: #1b3c79;
-  --lr-hero-muted: #d5e2ff;
-  --lr-hero-image: linear-gradient(135deg, #263753 0%, #1b3c79 55%, #263753 100%);
-
-  --lr-footer-bg: #0b1322;
+  --lr-shadow-lg: 0 20px 48px rgb(0 0 0 / 30%);
+  --lr-focus: 0 0 0 3px rgb(155 185 255 / 34%);
+  --lr-c-field: #86d2ba;  --lr-c-field-soft: #203d3a;  --lr-c-field-surface: #1a302f;
+  --lr-c-soil: #efb18e;   --lr-c-soil-soft: #462f2a;   --lr-c-soil-surface: #302622;
+  --lr-c-wheat: #edcf7b;  --lr-c-wheat-soft: #443b25;  --lr-c-wheat-surface: #302b20;
+  --lr-c-river: #9bb9ff;  --lr-c-river-soft: #263856;  --lr-c-river-surface: #1a2a43;
+  --lr-c-dusk: #c5a9ef;   --lr-c-dusk-soft: #382e4d;   --lr-c-dusk-surface: #29243a;
+  --lr-hero-from: #0f203b;
+  --lr-hero-to: #1b3d78;
+  --lr-hero-muted: #d6e3ff;
+  --lr-hero-image: linear-gradient(135deg, #263753 0%, #1b3d78 55%, #263753 100%);
+  --lr-footer-bg: #0a1220;
   --lr-footer-text: #f2f6ff;
   --lr-footer-muted: #c0cbe0;
-  --lr-footer-link: #c8d8ff;
+  --lr-footer-link: #d3e1ff;
 }
-
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

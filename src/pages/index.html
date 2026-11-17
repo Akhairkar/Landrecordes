@@ -1,20 +1,23 @@
 <!--meta
 {
- "title": "LandRecord: जमीन के रिकॉर्ड, टूल्स और गाइड, सरल हिंदी में",
- "description": "खतौनी, जमाबंदी, 7/12 जैसे जमीन के रिकॉर्ड समझें, अपने राज्य का पोर्टल खोजें और कैलकुलेटर इस्तेमाल करें। स्वतंत्र प्लेटफ़ॉर्म, सरकारी वेबसाइट नहीं।",
- "type": "home",
- "status": "published",
- "reviewed_on": "2026-10-09",
- "active": "",
- "intent": "Entry point: help the visitor pick the right land tool, record page or state.",
- "unique_value": "Task-first entry with search, tools, records, states and recently reviewed list; independence statement is in the footer.",
- "keywords": [
-  "land record",
-  "bhulekh",
-  "जमीन रिकॉर्ड"
- ],
- "breadcrumbs": [],
- "reviewed_by": "owner-approved 2026-10-17 (automated QA)"
+  "title": "LandRecord: जमीन के रिकॉर्ड, टूल्स और गाइड, सरल हिंदी में",
+  "description": "खतौनी, जमाबंदी, 7/12 जैसे जमीन के रिकॉर्ड समझें, अपने राज्य का पोर्टल खोजें और कैलकुलेटर इस्तेमाल करें। स्वतंत्र प्लेटफ़ॉर्म, सरकारी वेबसाइट नहीं।",
+  "type": "home",
+  "status": "published",
+  "reviewed_on": "2026-10-09",
+  "active": "",
+  "intent": "Entry point: help the visitor pick the right land tool, record page or state.",
+  "unique_value": "Task-first entry with search, tools, records, states and recently reviewed list; independence statement is in the footer.",
+  "keywords": [
+    "land record",
+    "bhulekh",
+    "जमीन रिकॉर्ड"
+  ],
+  "breadcrumbs": [],
+  "reviewed_by": "owner-approved 2026-10-17 (automated QA)",
+  "scripts": [
+    "assets/js/map-explorer.js"
+  ]
 }
 -->
 <section class="lr-hero">
@@ -39,7 +42,10 @@
         <ul class="lr-hero-pills"><li>36 states/UTs</li><li>8 record guides</li><li>Browser-based tools</li><li>Sources on every page</li></ul>
       </div>
     </div>
-    <div class="lr-hero-visual" aria-hidden="true"></div>
+    <div class="lr-hero-visual" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1759663379553-308fd9fab82b?auto=format&amp;fit=crop&amp;fm=webp&amp;w=1400&amp;q=82" alt="" width="1400" height="1000" fetchpriority="high" decoding="async">
+      <div class="lr-hero-visual-label"><span>LAND • MAPS • RECORDS</span><span>Illustrative aerial farmland<br>Goran Jaksic / Unsplash</span></div>
+    </div>
   </div>
 </section>
 
@@ -84,18 +90,39 @@
   <p><a href="states/"><span data-l="hi">सभी राज्यों की तालिका →</span><span data-l="en">Table of all states →</span></a></p>
 </section>
 
-<section class="lr-band soil" aria-labelledby="map-home-h">
-  <p class="lr-eyebrow"><span data-l="hi">नक्शे और सरकारी पोर्टल</span><span data-l="en">Maps and official portals</span></p>
-  <h2 id="map-home-h">राज्य से सही पोर्टल तक पहुँचें <span class="lr-en">/ Find the right official route</span></h2>
-  <p data-l="hi">भूमि रिकॉर्ड, गाँव का नक्शा और सर्वे विवरण राज्य के हिसाब से अलग पोर्टल पर मिल सकते हैं। पहले राज्य चुनें; फिर उसी राज्य के आधिकारिक राजस्व या भूमि-अभिलेख पोर्टल पर उपलब्ध सेवा की पुष्टि करें।</p>
-  <p data-l="en">Land records, village maps and survey details may be hosted on different state portals. Choose the state first, then confirm the available service on its official revenue or land-records portal.</p>
-  <div class="lr-grid">
-    <a class="lr-card lr-link-card" href="maps/"><span class="lr-ico">{{icon:pin}}</span><h3>भू-नक्शा खोजें <span class="lr-en">/ Find land maps</span></h3><p data-l="hi">आधिकारिक नक्शा खोजने के कदम और नक्शे की सीमाएँ समझें।</p><p data-l="en">Learn how to find official maps and understand their limitations.</p></a>
-    <a class="lr-card lr-link-card" href="states/"><span class="lr-ico">{{icon:globe}}</span><h3>राज्य-वार पोर्टल <span class="lr-en">/ State portals</span></h3><p data-l="hi">अपने राज्य के रिकॉर्ड के नाम, पोर्टल और उपलब्ध जानकारी देखें।</p><p data-l="en">Explore state record terminology, portals and available guidance.</p></a>
-    <a class="lr-card lr-link-card" href="sources/"><span class="lr-ico">{{icon:book}}</span><h3>स्रोत और पुष्टि <span class="lr-en">/ Sources and verification</span></h3><p data-l="hi">जानकारी के स्रोत और उनकी सीमाएँ देखें; अपुष्ट लिंक को अंतिम न मानें।</p><p data-l="en">Review information sources and limitations; do not treat unconfirmed links as definitive.</p></a>
+<section class="lr-map-showcase" aria-labelledby="map-home-h">
+  <div class="lr-map-showcase-heading">
+    <p class="lr-eyebrow"><span data-l="hi">भारत का map explorer</span><span data-l="en">INDIA MAP EXPLORER</span></p>
+    <h2 id="map-home-h"><span data-l="hi">नक्शे पर अपना क्षेत्र explore करें</span><span data-l="en">Explore your region on the map</span></h2>
+    <p data-l="hi">भारत का सामान्य भौगोलिक नक्शा देखें, zoom करें और फिर अपने राज्य की रिकॉर्ड व map जानकारी तक जाएँ।</p>
+    <p data-l="en">Explore a general map of India, zoom in, then continue to your state's land-record and map guidance.</p>
   </div>
-  <p class="lr-prose" data-l="hi">ध्यान दें: यह साइट लाइव भू-खंड सीमाएँ या मालिकाना हक़ नहीं दिखाती। सामान्य ऑनलाइन नक्शा आधिकारिक भू-अभिलेख नक्शे का विकल्प नहीं है।</p>
-  <p class="lr-prose" data-l="en">Note: this site does not display live parcel boundaries or ownership. A generic online map is not a substitute for an official cadastral map.</p>
+  <div class="lr-map-showcase-grid">
+    <div class="lr-map-panel">
+      <div class="lr-map-panel-head">
+        <div><small>OPENSTREETMAP • INDIA</small><h3><span data-l="hi">भारत का interactive नक्शा</span><span data-l="en">Interactive map of India</span></h3></div>
+        <button class="lr-map-reset" type="button" data-lr-map-reset><span data-l="hi">भारत देखें</span><span data-l="en">India view</span></button>
+      </div>
+      <div class="lr-map-viewport" data-lr-map-explorer role="region" aria-label="Interactive general map of India"></div>
+      <p class="lr-map-note" data-l="hi">यह सामान्य सड़क/स्थान नक्शा है, सरकारी भू-नक्शा या खसरा सीमा नहीं। नक्शा OpenStreetMap से लोड होता है।</p>
+      <p class="lr-map-note" data-l="en">This is a general street and place map, not an official cadastral or khasra map. Map tiles are provided by OpenStreetMap.</p>
+    </div>
+    <figure class="lr-map-photo-card">
+      <img src="https://images.unsplash.com/photo-1776687289242-3f28b8f1265d?auto=format&amp;fit=crop&amp;fm=webp&amp;w=1000&amp;q=80" alt="खेतों के अलग-अलग भूखंडों का उदाहरणात्मक aerial दृश्य" width="1000" height="760" loading="lazy" decoding="async">
+      <figcaption><span data-l="hi">उदाहरणात्मक खेतों का दृश्य</span><span data-l="en">Illustrative farmland view</span><a href="https://unsplash.com/photos/aerial-view-of-agricultural-fields-in-geometric-patterns-dtvn1dBgm6o" target="_blank" rel="noopener noreferrer">Photo: Unsplash</a></figcaption>
+      <div class="lr-map-photo-copy">
+        <h3><span data-l="hi">सही नक्शा, सही राज्य से</span><span data-l="en">The right map starts with the right state</span></h3>
+        <p data-l="hi">हर राज्य में भू-नक्शा, सर्वे नंबर और रिकॉर्ड देखने का तरीका अलग हो सकता है। पहले स्थानीय प्रक्रिया समझें।</p>
+        <p data-l="en">Bhu-Naksha, survey-number and record workflows vary by state. Understand the local route first.</p>
+        <a class="lr-btn secondary" href="maps/"><span data-l="hi">नक्शा गाइड देखें →</span><span data-l="en">Explore map guide →</span></a>
+      </div>
+    </figure>
+  </div>
+  <div class="lr-map-link-grid">
+    <a class="lr-map-link-tile" href="states/"><span class="lr-map-link-icon">⌖</span><span><span data-l="hi">राज्य-वार पोर्टल</span><span data-l="en">State portals</span></span></a>
+    <a class="lr-map-link-tile" href="maps/"><span class="lr-map-link-icon">▧</span><span><span data-l="hi">भू-नक्शा कैसे खोजें</span><span data-l="en">Find official land maps</span></span></a>
+    <a class="lr-map-link-tile" href="tools/map-area/"><span class="lr-map-link-icon">⌗</span><span><span data-l="hi">GPS से खेत का अनुमानित क्षेत्रफल</span><span data-l="en">Estimate field area with GPS</span></span></a>
+  </div>
 </section>
 
 <section aria-labelledby="rec-h">

@@ -177,26 +177,30 @@ Do not use:
 - hamburger-only primary navigation
 - decorative animations that delay task completion
 
-## Colour direction — modern blue refresh (owner request 2026-11-17)
+## Colour direction — layered navy / blue refresh (owner request 2026-11-17)
 
-The original land-inspired green/brown palette has been superseded by the owner's explicit request for a cleaner, more professional light interface.
+The original land-inspired green/brown palette is superseded by a professional, layered interface.
 
-- Primary surfaces: white and cool blue-grey.
-- Brand: deep navy and royal blue.
-- Accent: restrained cyan/teal and muted category colours for service discovery.
-- Hero: navy-to-royal-blue gradient with a dedicated field-photography panel. The panel currently uses a replaceable gradient placeholder; a field photograph can be supplied later through `--lr-hero-image`.
-- Dark mode remains supported with a deep navy surface system; it must not revert to brown/soil backgrounds.
-- Continue to avoid government seals, emblems, official-looking badges or visual imitation.
+- Main page background: cool off-white / blue-grey.
+- Content cards: white, with subtle borders and low shadows.
+- Text: deep navy primary text and softer slate secondary text.
+- Links and primary actions: accessible royal blue.
+- Category grids: restrained teal, clay, blue, amber and lavender accents with very light tinted card surfaces; no loud full-card colour fills.
+- Hero: navy-to-blue with replaceable aerial farmland photography.
+- Map explorer: lazy-loaded OpenStreetMap for general geographic context only; never presented as official cadastral data.
+- Dark mode uses distinct navy surfaces and similarly restrained category tints.
+- Shared components and semantic tokens remain the only source of colour decisions.
 
 All text/background pairs must meet WCAG AA in both themes. Keep colors in `assets/css/design-system.css`; components consume semantic tokens.
 
 ## Visual refresh notes
 
-- The header is white with navy branding and clear blue active states.
-- The homepage hero uses a two-column desktop composition and stacks cleanly on mobile.
-- Service cards use white surfaces, restrained category accents and clear icon tiles.
-- Section bands use cool, low-contrast blue-grey surfaces rather than full-width earthy color blocks.
-- The footer uses deep navy to anchor the page without making the main content dark.
+- Desktop and mobile use the same shared shell and visible primary navigation.
+- Homepage hero combines search with an illustrative aerial image.
+- Homepage and Maps page include a zoomable general map with OpenStreetMap attribution.
+- Official state map routes remain clearly separated from generic map imagery.
+- Cards have distinct white/tinted surfaces, dark readable titles, muted descriptions and blue links.
+- The footer remains deep navy; the main content stays light and spacious.
 
 ## Language architecture (decision 2026-10-09)
 

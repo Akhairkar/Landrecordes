@@ -1,50 +1,71 @@
 <!--meta
 {
- "title": "भू-नक्शा और जमीन के नक्शे: राज्य-वार आधिकारिक रास्ता",
- "description": "अपने राज्य में जमीन का भू-नक्शा या सर्वे मैप खोजने का सुरक्षित तरीका जानें। आधिकारिक पोर्टल, सीमाएँ, सावधानियाँ और राज्य-वार मार्गदर्शन।",
- "type": "hub",
- "status": "published",
- "reviewed_on": "2026-10-14",
- "active": "maps",
- "intent": "Help visitors find the appropriate official state map service without implying this site hosts cadastral data.",
- "unique_value": "Explains how to distinguish official cadastral maps from generic maps and routes visitors to state-specific portal guidance.",
- "keywords": [
-  "भू-नक्शा",
-  "जमीन का नक्शा",
-  "Bhu Naksha",
-  "land map",
-  "cadastral map"
- ],
- "breadcrumbs": [
-  {
-   "name": "नक्शे",
-   "name_en": "Maps",
-   "path": "maps/"
-  }
- ],
- "sources": [
-  "nic-bhunaksha",
-  "dilrmp"
- ],
- "related": [
-  {
-   "path": "states/",
-   "label": "राज्य-वार पोर्टल"
-  },
-  {
-   "path": "records/khasra-number/",
-   "label": "खसरा नंबर समझें"
-  },
-  {
-   "path": "tools/plot-area-calculator/",
-   "label": "क्षेत्रफल कैलकुलेटर"
-  }
- ],
- "reviewed_by": "owner-approved 2026-10-17 (automated QA)"
+  "title": "भू-नक्शा और जमीन के नक्शे: राज्य-वार आधिकारिक रास्ता",
+  "description": "अपने राज्य में जमीन का भू-नक्शा या सर्वे मैप खोजने का सुरक्षित तरीका जानें। आधिकारिक पोर्टल, सीमाएँ, सावधानियाँ और राज्य-वार मार्गदर्शन।",
+  "type": "hub",
+  "status": "published",
+  "reviewed_on": "2026-10-14",
+  "active": "maps",
+  "intent": "Help visitors find the appropriate official state map service without implying this site hosts cadastral data.",
+  "unique_value": "Explains how to distinguish official cadastral maps from generic maps and routes visitors to state-specific portal guidance.",
+  "keywords": [
+    "भू-नक्शा",
+    "जमीन का नक्शा",
+    "Bhu Naksha",
+    "land map",
+    "cadastral map"
+  ],
+  "breadcrumbs": [
+    {
+      "name": "नक्शे",
+      "name_en": "Maps",
+      "path": "maps/"
+    }
+  ],
+  "sources": [
+    "nic-bhunaksha",
+    "dilrmp"
+  ],
+  "related": [
+    {
+      "path": "states/",
+      "label": "राज्य-वार पोर्टल"
+    },
+    {
+      "path": "records/khasra-number/",
+      "label": "खसरा नंबर समझें"
+    },
+    {
+      "path": "tools/plot-area-calculator/",
+      "label": "क्षेत्रफल कैलकुलेटर"
+    }
+  ],
+  "reviewed_by": "owner-approved 2026-10-17 (automated QA)",
+  "scripts": [
+    "assets/js/map-explorer.js"
+  ]
 }
 -->
 <h1>भू-नक्शा और जमीन के नक्शे <span class="lr-en">/ Land maps and Bhu-Naksha</span></h1>
 <p class="lr-lead">अपने भूखंड का नक्शा खोजने के लिए संबंधित राज्य के राजस्व या भू-अभिलेख पोर्टल से शुरुआत करें। LandRecord सरकारी नक्शे होस्ट नहीं करता और किसी भूखंड की सीमा या मालिकाना हक़ प्रमाणित नहीं करता।</p>
+<section class="lr-map-page-feature" aria-label="Map explorer and illustrative field photography">
+  <div class="lr-map-page-map">
+    <p class="lr-eyebrow"><span data-l="hi">भारत का सामान्य नक्शा</span><span data-l="en">GENERAL MAP OF INDIA</span></p>
+    <h2><span data-l="hi">क्षेत्र को zoom करके देखें</span><span data-l="en">Zoom in to explore an area</span></h2>
+    <p data-l="hi">स्थान और सड़कें समझने के लिए interactive map। यह सरकारी cadastral map नहीं है।</p>
+    <p data-l="en">Use this interactive map for geographic context. It is not an official cadastral map.</p>
+    <div class="lr-map-viewport" data-lr-map-explorer role="region" aria-label="Interactive general map of India"></div>
+    <div class="lr-tool-actions"><button class="lr-map-reset" type="button" data-lr-map-reset><span data-l="hi">भारत का view reset करें</span><span data-l="en">Reset India view</span></button><a class="lr-btn secondary" href="states/"><span data-l="hi">राज्य चुनें →</span><span data-l="en">Choose a state →</span></a></div>
+  </div>
+  <figure class="lr-map-page-photo">
+    <img src="https://images.unsplash.com/photo-1772694624284-f0526c2bf63e?auto=format&amp;fit=crop&amp;fm=webp&amp;w=1100&amp;q=80" alt="खेतों और ग्रामीण भू-दृश्य का उदाहरणात्मक aerial photo" width="1100" height="850" loading="lazy" decoding="async">
+    <figcaption><span data-l="hi">उदाहरणात्मक ग्रामीण भू-दृश्य • यह सरकारी भू-नक्शा नहीं है।</span><span data-l="en">Illustrative rural landscape • not an official land map.</span> <a href="https://unsplash.com/photos/aerial-view-of-agricultural-fields-and-a-building-JeDPGNXzepo" target="_blank" rel="noopener noreferrer">Photo: Unsplash</a></figcaption>
+  </figure>
+</section>
+<div class="lr-photo-pair" aria-label="Illustrative farmland photographs">
+  <figure><img src="https://images.unsplash.com/photo-1759663379553-308fd9fab82b?auto=format&amp;fit=crop&amp;fm=webp&amp;w=850&amp;q=78" alt="ऊपर से दिखते खेतों का उदाहरणात्मक दृश्य" width="850" height="560" loading="lazy" decoding="async"><figcaption>Illustrative aerial fields · <a href="https://unsplash.com/photos/aerial-view-of-agricultural-fields-with-harvested-crops-lhKMILOsHtQ" target="_blank" rel="noopener noreferrer">Goran Jaksic / Unsplash</a></figcaption></figure>
+  <figure><img src="https://images.unsplash.com/photo-1776687289242-3f28b8f1265d?auto=format&amp;fit=crop&amp;fm=webp&amp;w=850&amp;q=78" alt="ज्यामितीय आकार में खेती के भूखंडों का उदाहरणात्मक दृश्य" width="850" height="560" loading="lazy" decoding="async"><figcaption>Illustrative field patterns · <a href="https://unsplash.com/photos/aerial-view-of-agricultural-fields-in-geometric-patterns-dtvn1dBgm6o" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption></figure>
+</div>
 <div class="lr-grid" style="margin-top:18px">
   <a class="lr-card lr-link-card" href="states/"><span class="lr-ico">{{icon:pin}}</span><h2 class="lr-card-h">पहले अपना राज्य चुनें</h2><p>राज्य के भूमि रिकॉर्ड पोर्टल, स्थानीय रिकॉर्ड के नाम और आगे के कदम देखें। नक्शे की उपलब्धता राज्य के अनुसार अलग हो सकती है।</p><p class="lr-en">Choose your state to find its land-record portal and guidance. Map availability varies by state.</p></a>
   <a class="lr-card lr-link-card" href="guides/find-khasra-number/"><span class="lr-ico">{{icon:search}}</span><h2 class="lr-card-h">खसरा या सर्वे नंबर ढूँढें</h2><p>यदि नंबर मालूम नहीं है, तो पहले रिकॉर्ड में भूखंड की पहचान करने के तरीके पढ़ें।</p><p class="lr-en">If you do not know the plot number, learn how to identify it in the record first.</p></a>
@@ -52,13 +73,13 @@
 </div>
 <section class="lr-prose" aria-labelledby="map-steps">
   <h2 id="map-steps">आधिकारिक नक्शा खोजने के कदम <span class="lr-en">/ Steps to find an official map</span></h2>
-  <ol data-l="hi">
+  <ol class="lr-visual-steps" data-l="hi">
     <li>राज्य चुनें और उसके भूमि-अभिलेख या राजस्व विभाग की आधिकारिक वेबसाइट खोलें।</li>
     <li>पोर्टल पर भू-नक्शा, cadastral map, village map, plot map या survey map जैसे विकल्प देखें। ये नाम हर राज्य में समान नहीं होते।</li>
     <li>यदि उपलब्ध हो, तो जिला, तहसील/तालुका, गाँव और खसरा/सर्वे/गट नंबर सावधानी से चुनें।</li>
     <li>नक्शे पर दिखाई जानकारी को लिखित रिकॉर्ड से मिलाएँ। कानूनी या रजिस्ट्री उपयोग के लिए संबंधित कार्यालय से प्रमाणित प्रति और सीमा की पुष्टि लें।</li>
   </ol>
-  <ol data-l="en">
+  <ol class="lr-visual-steps" data-l="en">
     <li>Choose your state and open its official land-records or revenue department website.</li>
     <li>Look for options such as Bhu-Naksha, cadastral map, village map, plot map or survey map. Labels differ by state.</li>
     <li>Where available, carefully select the district, tehsil/taluka, village and khasra/survey/gat number.</li>
