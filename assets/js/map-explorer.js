@@ -33,10 +33,10 @@
     let started = false;
     const wrapper = element.closest(".lr-map-panel,.lr-map-page-map") || element.parentElement;
     const reset = wrapper?.querySelector("[data-lr-map-reset]");
-    const note = wrapper?.querySelector("[data-lr-map-status]");
+    const notes = wrapper?.querySelectorAll("[data-lr-map-status]") || [];
 
     function setNote(message) {
-      if (note) note.textContent = message;
+      notes.forEach((note) => { note.textContent = message; });
     }
     function resetView() {
       if (map) map.setView(INDIA_VIEW.center, INDIA_VIEW.zoom, { animate: true });
