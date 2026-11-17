@@ -1,6 +1,6 @@
-/* LandRecord — M1 Design System
-   Tokens only. Global shell/components are implemented in M2.
-   Do not add page-specific styles here. */
+/* LandRecord — modern land-information design tokens.
+   2026-11-17: owner-requested refresh to a clean white, navy and royal-blue system.
+   The previous land-brown / dark-green palette is superseded. */
 
 :root {
   color-scheme: light;
@@ -8,34 +8,34 @@
   --lr-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --lr-font-display: var(--lr-font-sans);
 
-  --lr-bg: #f7f3ea;
+  --lr-bg: #f4f7fc;
   --lr-surface: #ffffff;
-  --lr-surface-muted: #efe8d8;
-  --lr-text: #1f1b13;
-  --lr-text-muted: #584f40;
-  --lr-border: #e2d8c4;
-  --lr-border-strong: #cbbd9f;
+  --lr-surface-muted: #edf2fa;
+  --lr-text: #17243b;
+  --lr-text-muted: #56657d;
+  --lr-border: #dce4f0;
+  --lr-border-strong: #bdcbe0;
 
-  --lr-brand: #1e6a44;
-  --lr-brand-strong: #134d2f;
-  --lr-brand-soft: #dff1e4;
-  --lr-accent: #a8481f;
-  --lr-accent-soft: #fbe6d8;
+  --lr-brand: #2457c5;
+  --lr-brand-strong: #173d91;
+  --lr-brand-soft: #e8efff;
+  --lr-accent: #12658d;
+  --lr-accent-soft: #e4f5fb;
 
-  --lr-success: #1d6b3f;
-  --lr-warning: #8f5f00;
+  --lr-success: #216b52;
+  --lr-warning: #805800;
   --lr-danger: #b42318;
-  --lr-info: #1a5f8f;
+  --lr-info: #2457c5;
 
-  --lr-radius-sm: 8px;
-  --lr-radius-md: 12px;
-  --lr-radius-lg: 18px;
-  --lr-radius-xl: 24px;
+  --lr-radius-sm: 9px;
+  --lr-radius-md: 14px;
+  --lr-radius-lg: 20px;
+  --lr-radius-xl: 28px;
   --lr-radius-pill: 999px;
 
-  --lr-shadow-sm: 0 1px 3px rgb(35 29 20 / 8%);
-  --lr-shadow-md: 0 8px 24px rgb(35 29 20 / 10%);
-  --lr-shadow-lg: 0 18px 48px rgb(35 29 20 / 12%);
+  --lr-shadow-sm: 0 2px 8px rgb(25 48 83 / 5%);
+  --lr-shadow-md: 0 10px 28px rgb(25 48 83 / 9%);
+  --lr-shadow-lg: 0 20px 52px rgb(25 48 83 / 13%);
 
   --lr-space-1: 4px;
   --lr-space-2: 8px;
@@ -52,52 +52,70 @@
   --lr-reading-max: 760px;
   --lr-control-min: 44px;
 
-  --lr-focus: 0 0 0 3px rgb(30 106 68 / 32%);
+  --lr-focus: 0 0 0 3px rgb(36 87 197 / 28%);
 
-  /* Land palette — category colours (fg on soft passes WCAG AA) */
-  --lr-c-field: #1e6a44;  --lr-c-field-soft: #dcf1e2;
-  --lr-c-soil: #a8481f;   --lr-c-soil-soft: #fbe5d7;
-  --lr-c-wheat: #7c5400;  --lr-c-wheat-soft: #fbefc6;
-  --lr-c-river: #155f91;  --lr-c-river-soft: #dbedf9;
-  --lr-c-dusk: #5b3f8f;   --lr-c-dusk-soft: #ece4f8;
-  --lr-hero-from: #134d2f; --lr-hero-to: #1f7a50; --lr-hero-text: #ffffff; --lr-hero-muted: #d9f1e1;
-  --lr-footer-bg: #12301f; --lr-footer-text: #e6efe8; --lr-footer-muted: #b8cbbd; --lr-footer-link: #ffe08a;
+  /* Quiet category accents for service cards and chips. */
+  --lr-c-field: #256b5b;  --lr-c-field-soft: #e7f5f0;
+  --lr-c-soil: #99502f;   --lr-c-soil-soft: #fff0e8;
+  --lr-c-wheat: #795300;  --lr-c-wheat-soft: #fff5d8;
+  --lr-c-river: #2457c5;  --lr-c-river-soft: #e8f0ff;
+  --lr-c-dusk: #67429b;   --lr-c-dusk-soft: #f1eafe;
+
+  --lr-hero-from: #142d52;
+  --lr-hero-to: #2457c5;
+  --lr-hero-text: #ffffff;
+  --lr-hero-muted: #dce7ff;
+  /* Replace this gradient with url('/assets/img/fields-hero.jpg') when the field photo is ready. */
+  --lr-hero-image: linear-gradient(135deg, #dce9fb 0%, #a8c4eb 55%, #dce8f7 100%);
+
+  --lr-footer-bg: #13213a;
+  --lr-footer-text: #f4f7ff;
+  --lr-footer-muted: #c0cbe0;
+  --lr-footer-link: #c8d8ff;
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
 
-  --lr-bg: #24211a;
-  --lr-surface: #2f2b22;
-  --lr-surface-muted: #3a352a;
-  --lr-text: #f7f2e7;
-  --lr-text-muted: #d6ccb8;
-  --lr-border: #4d4633;
-  --lr-border-strong: #6a6045;
+  --lr-bg: #0f1727;
+  --lr-surface: #172238;
+  --lr-surface-muted: #1f2d45;
+  --lr-text: #f2f6ff;
+  --lr-text-muted: #c0cbe0;
+  --lr-border: #2e3c55;
+  --lr-border-strong: #405270;
 
-  --lr-brand: #8fd9a8;
-  --lr-brand-strong: #b5ecc5;
-  --lr-brand-soft: #2b4634;
-  --lr-accent: #f0a878;
-  --lr-accent-soft: #4c3322;
+  --lr-brand: #8fb2ff;
+  --lr-brand-strong: #b8ceff;
+  --lr-brand-soft: #263753;
+  --lr-accent: #83c8e8;
+  --lr-accent-soft: #1d3b50;
 
-  --lr-success: #63c58d;
-  --lr-warning: #f0c36b;
-  --lr-danger: #ff8c82;
-  --lr-info: #7cc0ec;
+  --lr-success: #83d4be;
+  --lr-warning: #f0d17b;
+  --lr-danger: #ff9c93;
+  --lr-info: #8fb2ff;
 
-  --lr-shadow-sm: 0 1px 3px rgb(0 0 0 / 24%);
-  --lr-shadow-md: 0 8px 24px rgb(0 0 0 / 28%);
-  --lr-shadow-lg: 0 18px 48px rgb(0 0 0 / 34%);
+  --lr-shadow-sm: 0 2px 8px rgb(0 0 0 / 18%);
+  --lr-shadow-md: 0 10px 28px rgb(0 0 0 / 24%);
+  --lr-shadow-lg: 0 20px 52px rgb(0 0 0 / 30%);
+  --lr-focus: 0 0 0 3px rgb(143 178 255 / 34%);
 
-  --lr-focus: 0 0 0 3px rgb(143 217 168 / 36%);
-  --lr-c-field: #8fd9a8;  --lr-c-field-soft: #29432f;
-  --lr-c-soil: #f3ac83;   --lr-c-soil-soft: #4a3020;
-  --lr-c-wheat: #f2cf6b;  --lr-c-wheat-soft: #443817;
-  --lr-c-river: #8cc8f0;  --lr-c-river-soft: #1f3a4d;
-  --lr-c-dusk: #c9b2f0;   --lr-c-dusk-soft: #3a2f52;
-  --lr-hero-from: #17402a; --lr-hero-to: #23603f; --lr-hero-text: #ffffff; --lr-hero-muted: #cfe9d7;
-  --lr-footer-bg: #18261c; --lr-footer-text: #e6efe8; --lr-footer-muted: #b8cbbd; --lr-footer-link: #ffe08a;
+  --lr-c-field: #83d4be;  --lr-c-field-soft: #203b39;
+  --lr-c-soil: #f2b391;   --lr-c-soil-soft: #462f2a;
+  --lr-c-wheat: #f0d17b;  --lr-c-wheat-soft: #443b24;
+  --lr-c-river: #8fb2ff;  --lr-c-river-soft: #263753;
+  --lr-c-dusk: #c4a8f0;   --lr-c-dusk-soft: #382e4d;
+
+  --lr-hero-from: #10213d;
+  --lr-hero-to: #1b3c79;
+  --lr-hero-muted: #d5e2ff;
+  --lr-hero-image: linear-gradient(135deg, #263753 0%, #1b3c79 55%, #263753 100%);
+
+  --lr-footer-bg: #0b1322;
+  --lr-footer-text: #f2f6ff;
+  --lr-footer-muted: #c0cbe0;
+  --lr-footer-link: #c8d8ff;
 }
 
 @media (prefers-reduced-motion: reduce) {

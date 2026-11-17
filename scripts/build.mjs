@@ -80,7 +80,7 @@ if (existsSync(join(ROOT, "CNAME"))) cpSync(join(ROOT, "CNAME"), join(DIST, "CNA
 // one stylesheet request instead of three; the hash busts browser caches after each change
 const siteCss = ["design-system", "shell", "components"].map((n) => readFileSync(join(ROOT, `assets/css/${n}.css`), "utf8")).join("\n");
 writeFileSync(join(DIST, "assets/css/site.css"), siteCss);
-writeFileSync(join(DIST, "manifest.webmanifest"), JSON.stringify({ name: "LandRecord — भूमि रिकॉर्ड जानकारी", short_name: "LandRecord", lang: "hi", start_url: BASE, scope: BASE, display: "standalone", background_color: "#faf7f0", theme_color: "#2c5b3c", icons: [{ src: `${BASE}assets/img/icon.svg`, sizes: "any", type: "image/svg+xml", purpose: "any" }] }));
+writeFileSync(join(DIST, "manifest.webmanifest"), JSON.stringify({ name: "LandRecord — भूमि रिकॉर्ड जानकारी", short_name: "LandRecord", lang: "hi", start_url: BASE, scope: BASE, display: "standalone", background_color: "#f4f7fc", theme_color: "#2457c5", icons: [{ src: `${BASE}assets/img/icon.svg`, sizes: "any", type: "image/svg+xml", purpose: "any" }] }));
 const cssVersion = createHash("sha256").update(siteCss).digest("hex").slice(0, 10);
 // Service worker at the site root so its scope covers every page; cache name changes whenever the shell changes.
 const swSrc = readFileSync(join(ROOT, "src/sw.js"), "utf8");

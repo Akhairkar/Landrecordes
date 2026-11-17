@@ -177,17 +177,26 @@ Do not use:
 - hamburger-only primary navigation
 - decorative animations that delay task completion
 
-## Colour direction (owner-approved 2026-10-09)
+## Colour direction — modern blue refresh (owner request 2026-11-17)
 
-Land-inspired, not government-like: warm paper background, deep field green as the brand colour, soil/terracotta as the accent, wheat-toned neutral surfaces. Blue-and-saffron or emblem-like palettes remain forbidden.
+The original land-inspired green/brown palette has been superseded by the owner's explicit request for a cleaner, more professional light interface.
 
-All text/background pairs used by components meet WCAG AA (measured 5.0:1 or higher for muted text, brand and accent on their surfaces, in both themes). Change tokens in `assets/css/design-system.css` only; components must not hard-code colours.
+- Primary surfaces: white and cool blue-grey.
+- Brand: deep navy and royal blue.
+- Accent: restrained cyan/teal and muted category colours for service discovery.
+- Hero: navy-to-royal-blue gradient with a dedicated field-photography panel. The panel currently uses a replaceable gradient placeholder; a field photograph can be supplied later through `--lr-hero-image`.
+- Dark mode remains supported with a deep navy surface system; it must not revert to brown/soil backgrounds.
+- Continue to avoid government seals, emblems, official-looking badges or visual imitation.
 
-## Design v2 — land palette (owner request 2026-10-09: "more attractive colours")
+All text/background pairs must meet WCAG AA in both themes. Keep colors in `assets/css/design-system.css`; components consume semantic tokens.
 
-- Category colours: field green, soil/terracotta, wheat/mustard, river blue, dusk violet (`--lr-c-*` with `-soft` backgrounds). Cards, chips, section rules and result boxes cycle through them; every foreground/soft pair passes WCAG AA in light and dark (verified by the axe gate).
-- Green gradient hero with a subtle field-furrow pattern, coloured full-bleed section bands, a four-colour land stripe on the header, deep-green footer.
-- Inline SVG icon set (`scripts/icons.mjs`, used as `{{icon:name}}`); no icon font or library.
+## Visual refresh notes
+
+- The header is white with navy branding and clear blue active states.
+- The homepage hero uses a two-column desktop composition and stacks cleanly on mobile.
+- Service cards use white surfaces, restrained category accents and clear icon tiles.
+- Section bands use cool, low-contrast blue-grey surfaces rather than full-width earthy color blocks.
+- The footer uses deep navy to anchor the page without making the main content dark.
 
 ## Language architecture (decision 2026-10-09)
 
