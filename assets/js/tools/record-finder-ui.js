@@ -48,150 +48,150 @@ async function init() {
   for (const h of rules.haves) have.append(new Option(L(h.label_hi, h.label_en), h.id));
 
   function addInternalLink(parent, href, hi, en, className = "lr-finder-text-link") {
-    const a = el("a", L(hi, en), className);
-    a.href = href;
-    parent.append(a);
-    return a;
+    const a = el("a", L(hi, en), className); a.href = href; parent.append(a); return a;
   }
-
+  function miniCard(parent, icon, title, description, className = "lr-finder-mini-card") {
+    const node = el("article", null, className);
+    node.append(el("span", icon, "lr-finder-mini-icon"));
+    node.append(el("h4", title));
+    if (description) node.append(el("p", description));
+    parent.append(node); return node;
+  }
   function render() {
     out.textContent = "";
-    const s = states.find((x) => x.id === st.value);
-    const g = goal.value, h = have.value;
+    const s = states.find((x) => x.id === st.value), g = goal.value, h = have.value;
     if (!s || !g || !h) {
       const empty = el("div", null, "lr-finder-empty");
       empty.append(el("span", "⌕", "lr-finder-empty-icon"));
-      empty.append(el("strong", L("सुझाव पाने के लिए तीनों विकल्प चुनें", "Choose all three options to get your guidance")));
-      empty.append(el("p", L("हम पहले आपके राज्य और जरूरत के अनुसार रास्ता तय करेंगे।", "We’ll first identify the right route for your state and task.")));
-      out.append(empty);
-      return;
+      empty.append(el("strong", L("तीन विकल्प चुनें — आपका रास्ता तैयार होगा", "Choose three options — your route will appear")));
+      const steps = el("div", null, "lr-finder-empty-steps");
+      [["01","राज्य","State"],["02","काम","Task"],["03","उपलब्ध जानकारी","Details"]].forEach(([n,hi,en]) => {
+        const item=el("span",null,"lr-finder-empty-step"); item.append(el("b",n)); item.append(el("strong",L(hi,en))); steps.append(item);
+      });
+      empty.append(steps); out.append(empty); return;
     }
-
-    const goalItem = rules.goals.find((x) => x.id === g);
-    const haveItem = rules.haves.find((x) => x.id === h);
+    const goalItem = rules.goals.find((x) => x.id === g), haveItem = rules.haves.find((x) => x.id === h);
     const methods = Array.isArray(s.search_methods) ? s.search_methods.filter((m) => METHODS[m]) : [];
     const usable = (HAVE_METHODS[h] || []).filter((m) => methods.includes(m));
     const recordName = g === "mutation" ? L(s.mutation_hi, s.mutation_en) : L(s.record_hi, s.record_en);
 
-    const head = el("div", null, "lr-finder-result-head");
-    const titleBox = el("div", null, "lr-finder-result-title");
-    titleBox.append(el("p", L("आपके चयन के अनुसार", "BASED ON YOUR SELECTION"), "lr-eyebrow"));
-    titleBox.append(el("h2", L("आपके लिए सही रास्ता", "Your recommended route")));
-    titleBox.append(el("p", L("आपके राज्य में रिकॉर्ड/काम का नाम: ", "Local record or task name: ") + recordName));
-    head.append(titleBox);
-    const stateBadge = el("span", L(s.name_hi, s.name_en), "lr-finder-state-badge");
-    head.append(stateBadge);
-    out.append(head);
+    const selection = el("div", null, "lr-finder-selection");
+    const selectionTitle = el("div", null, "lr-finder-selection-title");
+    selectionTitle.append(el("span","✓","lr-finder-selection-check"),el("strong",L("आपके चयन के अनुसार","YOUR MATCH")));
+    selection.append(selectionTitle);
+    const selectionGrid = el("div",null,"lr-finder-selection-grid");
+    [["राज्य","STATE",L(s.name_hi,s.name_en),"⌖"],["आपका काम","YOUR TASK",L(goalItem.label_hi,goalItem.label_en),"▤"],["आपके पास","YOU HAVE",L(haveItem.label_hi,haveItem.label_en),"◉"]].forEach(([hi,en,value,icon])=>{
+      const item=el("div",null,"lr-finder-selection-item"); item.append(el("span",icon,"lr-finder-selection-icon"));
+      const copy=el("div",null); copy.append(el("small",L(hi,en)),el("strong",value)); item.append(copy); selectionGrid.append(item);
+    });
+    selection.append(selectionGrid); out.append(selection);
 
-    const summaryGrid = el("div", null, "lr-finder-summary-grid");
-    const localCard = el("article", null, "lr-finder-info-card");
-    localCard.append(el("span", "01", "lr-finder-card-number"));
-    localCard.append(el("h3", L("आपके राज्य की जानकारी", "Your state details")));
-    localCard.append(el("p", L("रिकॉर्ड / प्रक्रिया", "Record / process"), "lr-finder-card-label"));
-    localCard.append(el("strong", recordName, "lr-finder-record-name"));
-    localCard.append(el("p", L("संबंधित पोर्टल का नाम", "Portal name"), "lr-finder-card-label"));
-    localCard.append(el("p", L(s.portal_name, s.portal_en), "lr-finder-portal-name"));
-    summaryGrid.append(localCard);
+    const spotlight=el("section",null,"lr-finder-record-spotlight");
+    const spotlightCopy=el("div",null,"lr-finder-record-spotlight-copy");
+    spotlightCopy.append(el("span",L("आपके राज्य में रिकॉर्ड का नाम","LOCAL RECORD NAME"),"lr-eyebrow"));
+    spotlightCopy.append(el("h2",recordName));
+    spotlightCopy.append(el("p",L("आपके चुने हुए काम के लिए यही स्थानीय रिकॉर्ड / प्रक्रिया देखनी है।","This is the local record or process relevant to your selected task.")));
+    spotlight.append(spotlightCopy,el("div","LR","lr-finder-record-mark")); out.append(spotlight);
 
-    const methodCard = el("article", null, "lr-finder-info-card");
-    methodCard.append(el("span", "02", "lr-finder-card-number"));
-    methodCard.append(el("h3", L("आपकी जानकारी से खोज", "Search with what you have")));
-    if (usable.length) {
-      methodCard.append(el("p", L("इस राज्य के चरणों में ये तरीके दिए गए हैं:", "The state guide lists these search methods:")));
-      const chips = el("div", null, "lr-finder-method-chips");
-      usable.forEach((m) => chips.append(el("span", L(...METHODS[m]))));
-      methodCard.append(chips);
-      methodCard.append(el("p", L("आपके पास उपलब्ध जानकारी इन तरीकों में काम आ सकती है। गाँव/क्षेत्र का नाम भी रिकॉर्ड से मिलाएँ।", "Your available details may work with these methods. Match the village/area name with the record too.")));
+    const infoGrid=el("div",null,"lr-finder-visual-grid");
+    const methodCard=el("section",null,"lr-finder-visual-card lr-finder-method-card");
+    const methodHead=el("div",null,"lr-finder-visual-card-head");
+    methodHead.append(el("span","01","lr-finder-visual-number"));
+    const mh=el("div",null); mh.append(el("h3",L("किस जानकारी से खोजें?","HOW CAN YOU SEARCH?")),el("p",L("राज्य के पोर्टल पर उपलब्ध खोज विकल्प","Search options listed for this state")));
+    methodHead.append(mh); methodCard.append(methodHead);
+    if(usable.length){
+      const methodsGrid=el("div",null,"lr-finder-method-grid");
+      usable.forEach((m,i)=>miniCard(methodsGrid,["⌕","▦","⌖","◈"][i%4],L(...METHODS[m]),L("आपके चुने विवरण के अनुसार","Matches the details you selected"),"lr-finder-method-tile"));
+      methodCard.append(methodsGrid);
     } else {
-      methodCard.append(el("p", L("आपके चुने हुए विवरण से सीधे खोज का विकल्प राज्य के उपलब्ध चरणों में नहीं दिखता।", "The available state steps do not show a direct search using the details you selected.")));
-      methodCard.append(el("p", L("पहले खसरा/गाटा या खाता नंबर ढूँढना बेहतर होगा।", "It is better to find the khasra/gata or khata number first.")));
-      addInternalLink(methodCard, "guides/find-khasra-number/", "खसरा नंबर पता करने की गाइड", "Guide to finding a khasra number");
-      addInternalLink(methodCard, "guides/land-record-by-name/", "नाम से रिकॉर्ड खोजने की गाइड", "Guide to searching by owner name");
+      const notice=el("div",null,"lr-finder-notice-tile"); notice.append(el("span","!","lr-finder-notice-mark"));
+      const copy=el("div",null); copy.append(el("strong",L("सीधे नाम से खोज उपलब्ध होने की पुष्टि नहीं है","Direct name search is not confirmed")));
+      copy.append(el("p",L("पहले पुराने कागज़ से खसरा / खाता नंबर ढूँढें।","First find the khasra or khata number from an older document.")));
+      notice.append(copy); methodCard.append(notice);
+      const links=el("div",null,"lr-finder-action-row");
+      addInternalLink(links,"guides/find-khasra-number/","खसरा नंबर कैसे पता करें","How to find a khasra number","lr-btn secondary");
+      addInternalLink(links,"guides/land-record-by-name/","नाम से रिकॉर्ड खोजें","Search by owner's name","lr-btn secondary");
+      methodCard.append(links);
     }
-    if (methods.length) {
-      methodCard.append(el("p", L("राज्य-पेज पर बताए गए दूसरे तरीके:", "Other methods listed on the state page:")));
-      const allChips = el("div", null, "lr-finder-method-chips");
-      methods.forEach((m) => allChips.append(el("span", L(...METHODS[m]))));
-      methodCard.append(allChips);
+    if(methods.length>usable.length){
+      const details=el("details",null,"lr-finder-more-methods");
+      details.append(el("summary",L("राज्य के सभी उपलब्ध खोज विकल्प","All search options for this state")));
+      const all=el("div",null,"lr-finder-method-chips"); methods.forEach(m=>all.append(el("span",L(...METHODS[m]))));
+      details.append(all); methodCard.append(details);
     }
-    summaryGrid.append(methodCard);
-    out.append(summaryGrid);
+    infoGrid.append(methodCard);
 
-    const next = el("section", null, "lr-finder-next-card");
-    const nextHead = el("div", null, "lr-finder-section-head");
-    nextHead.append(el("span", "03", "lr-finder-card-number"));
-    nextHead.append(el("div", null));
-    nextHead.lastChild.append(el("h3", L("अब आगे क्या करें?", "What to do next")));
-    nextHead.lastChild.append(el("p", L("आपके मकसद और उपलब्ध जानकारी के आधार पर", "Based on your goal and available details")));
-    next.append(nextHead);
-    if (g === "view" || g === "certified") {
-      const steps = el("ol", null, "lr-finder-steps");
-      for (const step of L(s.steps_hi, s.steps_en)) steps.append(el("li", step));
-      next.append(steps);
-    }
-    next.append(el("p", L(rules.goal_advice[g], rules.goal_advice_en[g]), "lr-finder-advice"));
-    if (haveItem) next.append(el("p", L(haveItem.advice_hi, haveItem.advice_en), "lr-finder-advice"));
-    const action = ACTIONS[g]?.(s);
-    if (action) {
-      const actionRow = el("div", null, "lr-finder-action-row");
-      addInternalLink(actionRow, action[0], action[1], action[2], "lr-btn secondary");
-      next.append(actionRow);
-    }
-    if ((h === "owner" || h === "nothing") && usable.length === 0) {
-      const actionRow = el("div", null, "lr-finder-action-row");
-      addInternalLink(actionRow, "guides/find-khasra-number/", "खसरा / सर्वे नंबर पता करने की गाइड", "Guide to finding a khasra / survey number", "lr-btn secondary");
-      next.append(actionRow);
-    }
-    out.append(next);
+    const prepCard=el("section",null,"lr-finder-visual-card lr-finder-prep-card");
+    const prepHead=el("div",null,"lr-finder-visual-card-head"); prepHead.append(el("span","02","lr-finder-visual-number"));
+    const ph=el("div",null); ph.append(el("h3",L("शुरू करने से पहले","BEFORE YOU START")),el("p",L("ये बातें तैयार रखें","Keep these details handy")));
+    prepHead.append(ph); prepCard.append(prepHead);
+    const prepGrid=el("div",null,"lr-finder-prep-list");
+    [["⌖","गाँव / मौजा","Village / revenue area"],["▤","खसरा या खाता नंबर","Khasra or khata number"],["✓","नाम और वर्तनी मिलाएँ","Check the name spelling"]].forEach(([icon,hi,en])=>miniCard(prepGrid,icon,L(hi,en),"","lr-finder-prep-item"));
+    prepCard.append(prepGrid);
+    const personalTip=el("div",null,"lr-finder-personal-tip"); personalTip.append(el("span","i","lr-finder-tip-mark"),el("p",L(haveItem.advice_hi,haveItem.advice_en)));
+    prepCard.append(personalTip); infoGrid.append(prepCard); out.append(infoGrid);
 
-    const why = el("details", null, "lr-finder-why");
-    why.append(el("summary", L("यह सुझाव क्यों मिला? सावधानी और नियम देखें", "Why this recommendation? View the rule and cautions")));
-    why.append(el("p", L(
-      "नियम " + "goal." + g + " × have." + h + " × state." + s.id + ": आपका राज्य पोर्टल और स्थानीय नाम तय करता है; मकसद और आपके पास की जानकारी सलाह तय करती है।",
-      "Rule " + "goal." + g + " × have." + h + " × state." + s.id + ": your state determines the portal and local name; your goal and available details determine the guidance."
-    )));
-    const cautions = L(s.watch_hi, s.watch_en).slice(0, 2);
-    cautions.forEach((w) => why.append(el("p", L("सावधानी: ", "Caution: ") + w)));
-    why.append(el("p", L("यह आधिकारिक निर्णय या कानूनी सलाह नहीं है। अंतिम पुष्टि राज्य के आधिकारिक पोर्टल या संबंधित राजस्व कार्यालय से करें।", "This is not an official decision or legal advice. Confirm with the official state portal or the relevant revenue office.")));
-    out.append(why);
-
-    const portalCard = el("section", null, "lr-finder-portal-card");
-    const portalCopy = el("div", null, "lr-finder-portal-copy");
-    portalCopy.append(el("p", L("आखिरी चरण", "FINAL STEP"), "lr-eyebrow"));
-    portalCopy.append(el("h3", L("अब सही सरकारी पोर्टल पर जाएँ", "Now open the relevant government portal")));
-    portalCopy.append(el("p", L("ऊपर रिकॉर्ड का नाम, खोजने का तरीका और जरूरी सावधानी समझ लें। उसके बाद सरकारी पोर्टल पर अपना रिकॉर्ड खोजें।", "Review the record name, search method and cautions above. Then continue to the government portal to search for your record.")));
-    const confidenceText = CONF[s.confidence] || CONF.unconfirmed;
-    portalCopy.append(el("p", L(...confidenceText), "lr-finder-portal-confidence"));
-    portalCard.append(portalCopy);
-    if (s.url) {
-      const a = externalLink(s.url, L("सरकारी पोर्टल खोलें", "Open government portal"));
-      if (a) {
-        a.className = "lr-btn lr-finder-portal-button";
-        portalCard.append(a);
-        portalCard.append(el("p", new URL(s.url).host, "lr-finder-host"));
-      }
-    } else {
-      portalCard.append(el("p", L("इस राज्य का सार्वजनिक ऑनलाइन पोर्टल लिंक उपलब्ध/पुष्ट नहीं है। राज्य के राजस्व विभाग की आधिकारिक वेबसाइट या संबंधित कार्यालय से पता लें।", "A public online portal link for this state is unavailable or unconfirmed. Get the address from the state revenue department’s official website or the relevant office."), "lr-finder-portal-missing"));
-    }
-    if (Array.isArray(s.alt_urls) && s.alt_urls.length) {
-      const altWrap = el("div", null, "lr-finder-alt-links");
-      altWrap.append(el("p", L("अन्य स्रोतों के पते", "Other source addresses")));
-      s.alt_urls.forEach((url) => {
-        const a = externalLink(url, url.replace(/^https?:\/\//, ""));
-        if (a) altWrap.append(a);
+    const next=el("section",null,"lr-finder-process");
+    const processHead=el("div",null,"lr-finder-process-head"), processNo=el("div",null);
+    processNo.append(el("span","03","lr-finder-visual-number"));
+    const processTitle=el("div",null); processTitle.append(el("h3",L("अब ये कदम अपनाएँ","FOLLOW THESE STEPS")),el("p",L("राज्य पोर्टल पर रिकॉर्ड तक पहुँचने का सामान्य क्रम","The usual route to your record on the state portal")));
+    processHead.append(processNo,processTitle); next.append(processHead);
+    const steps=L(s.steps_hi,s.steps_en);
+    if((g==="view"||g==="certified")&&Array.isArray(steps)&&steps.length){
+      const stepGrid=el("div",null,"lr-finder-step-grid");
+      steps.forEach((step,i)=>{
+        const item=el("article",null,"lr-finder-step-card");
+        item.append(el("span",String(i+1).padStart(2,"0"),"lr-finder-step-index"));
+        item.append(el("span",["⌖","▤","⌕","↓"][i%4],"lr-finder-step-icon"));
+        item.append(el("p",step)); stepGrid.append(item);
       });
-      portalCard.append(altWrap);
+      next.append(stepGrid);
+    } else {
+      const action=ACTIONS[g]?.(s), taskGrid=el("div",null,"lr-finder-task-grid");
+      const task=miniCard(taskGrid,"→",L(goalItem.label_hi,goalItem.label_en),L(rules.goal_advice[g],rules.goal_advice_en[g]),"lr-finder-task-tile");
+      if(action) addInternalLink(task,action[0],action[1],action[2]);
+      next.append(taskGrid);
+    }
+    const goalDetails=el("details",null,"lr-finder-guidance-details");
+    goalDetails.append(el("summary",L("इस काम की जरूरी जानकारी और सावधानी","Important guidance and cautions for this task")));
+    const goalAdvice=el("div",null,"lr-finder-guidance-content"); goalAdvice.append(el("p",L(rules.goal_advice[g],rules.goal_advice_en[g])));
+    goalDetails.append(goalAdvice); next.append(goalDetails); out.append(next);
+
+    const cautions=L(s.watch_hi,s.watch_en);
+    if(Array.isArray(cautions)&&cautions.length){
+      const cautionSection=el("details",null,"lr-finder-cautions");
+      cautionSection.append(el("summary",L("ध्यान रखने वाली बातें","Things to keep in mind")));
+      const cautionGrid=el("div",null,"lr-finder-caution-grid");
+      cautions.forEach(item=>{
+        const tile=el("div",null,"lr-finder-caution-tile"); tile.append(el("span","!","lr-finder-caution-mark"),el("p",item)); cautionGrid.append(tile);
+      });
+      cautionSection.append(cautionGrid); out.append(cautionSection);
+    }
+
+    const portalCard=el("section",null,"lr-finder-portal-card");
+    const portalCopy=el("div",null,"lr-finder-portal-copy");
+    portalCopy.append(el("p",L("आखिरी चरण","FINAL STEP"),"lr-eyebrow"),el("h3",L("अब सरकारी पोर्टल पर जाएँ","Continue to the government portal")));
+    portalCopy.append(el("p",L("रिकॉर्ड का नाम और खोजने के तरीके समझने के बाद ही आगे बढ़ें।","Continue after reviewing the record name and search method.")));
+    portalCopy.append(el("p",L(...(CONF[s.confidence]||CONF.unconfirmed)),"lr-finder-portal-confidence")); portalCard.append(portalCopy);
+    const portalAction=el("div",null,"lr-finder-portal-action");
+    if(s.url){
+      const a=externalLink(s.url,L("सरकारी पोर्टल खोलें","Open government portal"));
+      if(a){a.className="lr-btn lr-finder-portal-button";portalAction.append(a,el("small",new URL(s.url).host));}
+    }else portalAction.append(el("p",L("इस राज्य का सार्वजनिक ऑनलाइन पोर्टल लिंक उपलब्ध/पुष्ट नहीं है।","A public online portal link is unavailable or unconfirmed.")));
+    portalCard.append(portalAction);
+    if(Array.isArray(s.alt_urls)&&s.alt_urls.length){
+      const alt=el("details",null,"lr-finder-alt-links");alt.append(el("summary",L("अन्य स्रोतों के पते देखें","View alternate source addresses")));
+      s.alt_urls.forEach(url=>{const a=externalLink(url,url.replace(/^https?:\/\//,""));if(a)alt.append(a);});
+      portalCard.append(alt);
     }
     out.append(portalCard);
-
-    const query = new URLSearchParams({ s: st.value, g, h });
-    history.replaceState(null, "", location.pathname + "?" + query.toString());
+    history.replaceState(null,"",location.pathname+"?"+new URLSearchParams({s:st.value,g,h}).toString());
   }
-  for (const e of [st, goal, have]) e.addEventListener("input", render);
-  const q = new URLSearchParams(location.search);
-  if (q.get("s") && states.some((x) => x.id === q.get("s"))) st.value = q.get("s");
-  if (q.get("g") && rules.goals.some((x) => x.id === q.get("g"))) goal.value = q.get("g");
-  if (q.get("h") && rules.haves.some((x) => x.id === q.get("h"))) have.value = q.get("h");
+  for(const e of [st,goal,have])e.addEventListener("input",render);
+  const q=new URLSearchParams(location.search);
+  if(q.get("s")&&states.some(x=>x.id===q.get("s")))st.value=q.get("s");
+  if(q.get("g")&&rules.goals.some(x=>x.id===q.get("g")))goal.value=q.get("g");
+  if(q.get("h")&&rules.haves.some(x=>x.id===q.get("h")))have.value=q.get("h");
   render();
 }
 init().catch(() => { $("rf-out").textContent = L("मार्गदर्शक लोड नहीं हो सका।", "The guide failed to load."); });
