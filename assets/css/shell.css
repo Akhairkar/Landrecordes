@@ -33,8 +33,8 @@
   display: grid;
   place-items: center;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--lr-hero-from), var(--lr-brand));
-  color: #fff;
+  background: var(--lr-brand-strong);
+  color: var(--lr-bg);
   font-size: 12px;
   box-shadow: 0 5px 14px rgb(36 87 197 / 20%);
 }

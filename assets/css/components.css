@@ -361,7 +361,7 @@ main > h1::after,.lr-page-main > h1::after {
 section.lr-card { border-top: 1px solid var(--lr-border); }
 .lr-btn {
   background: var(--lr-brand);
-  color: #fff;
+  color: var(--lr-surface);
   box-shadow: 0 3px 0 var(--lr-brand-strong);
 }
 .lr-btn:hover { background: var(--lr-brand-strong); }
@@ -369,7 +369,7 @@ section.lr-card { border-top: 1px solid var(--lr-border); }
 .lr-notice { border-left: 4px solid var(--lr-accent); }
 .lr-chips a { border: 1px solid var(--lr-border); background: var(--lr-surface); color: var(--lr-brand); }
 .lr-chips a:hover { background: var(--lr-brand-soft); border-color: var(--lr-brand); filter: none; }
-.lr-table thead th { background: var(--lr-brand-strong); color: #fff; }
+.lr-table thead th { background: var(--lr-brand-strong); color: var(--lr-bg); }
 .lr-table tbody tr:nth-child(even) { background: var(--lr-surface-muted); }
 .lr-table { background: var(--lr-surface); }
 .lr-badge { background: var(--lr-accent-soft); color: var(--lr-accent); border: 1px solid var(--lr-border); }
