@@ -228,16 +228,44 @@ ${s.example_en ? `<h2>Reading example</h2>\n<p>${esc(s.example_en)}</p>\n` : ""}
       scripts: ["assets/js/tools/record-finder-ui.js"],
       related: [{ path: "states/", label: "राज्य-वार पोर्टल", label_en: "State portals" }, { path: "guides/find-khasra-number/", label: "खसरा/गाटा नंबर कैसे पता करें", label_en: "How to find your khasra number" }],
     },
-    body: `<h1>जमीन का रिकॉर्ड कहाँ और कैसे देखें <span class="lr-en">/ Where and how to see your land record</span></h1>
-<p class="lr-lead" data-l="hi">तीन चीज़ें चुनें: राज्य, आपका मकसद और आपके पास क्या जानकारी है। हम बताएँगे कि आपके राज्य में इसे क्या कहते हैं, किस पोर्टल पर जाएँ और अगला कदम क्या हो, साथ में कारण भी। यह सरकारी निर्णय या कानूनी राय नहीं है।</p>
-<p class="lr-lead" data-l="en">Choose three things: your state, your goal and what information you have. We show what it is called in your state, which portal to use and the next step, with the reason. This is not a government decision or legal opinion.</p>
-<section class="lr-card" aria-labelledby="rf-h"><h2 id="rf-h" style="margin-top:0">मार्गदर्शक <span class="lr-en">/ Guide</span></h2>
-<div class="lr-field"><label for="rf-state">1. राज्य <span class="lr-en">/ State</span></label><select class="lr-select" id="rf-state"><option value="">— चुनें / Choose —</option></select></div>
-<div class="lr-field"><label for="rf-goal">2. आप क्या करना चाहते हैं? <span class="lr-en">/ What do you want to do?</span></label><select class="lr-select" id="rf-goal"></select></div>
-<div class="lr-field"><label for="rf-have">3. आपके पास क्या है? <span class="lr-en">/ What do you have?</span></label><select class="lr-select" id="rf-have"></select></div>
-<div id="rf-out" role="status" aria-live="polite"></div></section>
-<div class="lr-prose" data-l="hi"><h2>यह कैसे काम करता है</h2><p>यह चैटबॉट नहीं, सीधे नियमों पर चलने वाला मार्गदर्शक है। आपका चुना राज्य हमारे डेटा से पोर्टल और स्थानीय नाम तय करता है, मकसद और आपके पास की जानकारी से सलाह का हिस्सा बनता है। हर परिणाम में नियम का नाम दिखता है ताकि आप जान सकें कि सुझाव क्यों आया। हम आपकी चुनी हुई जानकारी कहीं नहीं भेजते।</p></div>
-<div class="lr-prose" data-l="en"><h2>How it works</h2><p>This is not a chatbot but a rule-based guide. Your state decides the portal and local name from our data; your goal and what you have decide the advice. Every result shows the rule name so you know why it was suggested. We don't send your choices anywhere.</p></div>`,
+    body: `<section class="lr-finder-hero">
+<div class="lr-finder-hero-copy">
+<p class="lr-eyebrow" data-l="hi">3 चरणों में सही रास्ता</p><p class="lr-eyebrow" data-l="en">THE RIGHT ROUTE IN 3 STEPS</p>
+<h1>जमीन का रिकॉर्ड कहाँ और कैसे देखें <span class="lr-en">/ Where and how to see your land record</span></h1>
+<p class="lr-lead" data-l="hi">अपना राज्य, काम और उपलब्ध जानकारी चुनें। हम आपके लिए सही रिकॉर्ड का नाम, खोजने का तरीका और अगला कदम साफ-साफ बताएँगे।</p>
+<p class="lr-lead" data-l="en">Choose your state, task and available details. We’ll explain the local record name, how to search and what to do next.</p>
+</div>
+<aside class="lr-finder-hero-aside" aria-label="तीन चरण / Three steps">
+<span class="lr-finder-hero-number">03</span>
+<strong data-l="hi">आसान चरण</strong><strong data-l="en">Simple steps</strong>
+<ol><li><span data-l="hi">राज्य चुनें</span><span data-l="en">Choose state</span></li><li><span data-l="hi">काम बताएँ</span><span data-l="en">Choose task</span></li><li><span data-l="hi">जानकारी चुनें</span><span data-l="en">Choose details</span></li></ol>
+</aside>
+</section>
+<section class="lr-finder-workspace" aria-label="मार्गदर्शक चयन / Guide selections">
+<section class="lr-card lr-finder-form-card" aria-labelledby="rf-h">
+<div class="lr-finder-form-head"><span class="lr-finder-step-icon">01</span><div><h2 id="rf-h" data-l="hi">अपनी जानकारी चुनें</h2><h2 id="rf-h-en" data-l="en">Tell us what you need</h2><p data-l="hi">तीनों विकल्प चुनते ही आपके लिए सुझाव तैयार हो जाएगा।</p><p data-l="en">Your recommendation appears as soon as all three choices are selected.</p></div></div>
+<div class="lr-finder-form-grid">
+<div class="lr-field"><label for="rf-state"><span class="lr-finder-field-no">1</span><span data-l="hi">आपका राज्य</span><span data-l="en">Your state</span></label><select class="lr-select" id="rf-state"><option value="">— राज्य चुनें / Choose state —</option></select></div>
+<div class="lr-field"><label for="rf-goal"><span class="lr-finder-field-no">2</span><span data-l="hi">आपका काम</span><span data-l="en">Your task</span></label><select class="lr-select" id="rf-goal"></select></div>
+<div class="lr-field"><label for="rf-have"><span class="lr-finder-field-no">3</span><span data-l="hi">आपके पास क्या जानकारी है?</span><span data-l="en">What details do you have?</span></label><select class="lr-select" id="rf-have"></select></div>
+</div>
+<p class="lr-finder-privacy"><span aria-hidden="true">🔒</span> <span data-l="hi">आपके चुनाव इसी ब्राउज़र में रहते हैं; हम इन्हें सर्वर पर नहीं भेजते।</span><span data-l="en">Your choices stay in this browser; we do not send them to a server.</span></p>
+</section>
+<aside class="lr-finder-sidecard">
+<p class="lr-eyebrow" data-l="hi">आपको क्या मिलेगा</p><p class="lr-eyebrow" data-l="en">WHAT YOU’LL GET</p>
+<h2 data-l="hi">सिर्फ लिंक नहीं, पूरा रास्ता</h2><h2 data-l="en">More than just a link</h2>
+<ul><li><span class="lr-finder-side-icon">✓</span><span data-l="hi">आपके राज्य में रिकॉर्ड का सही नाम</span><span data-l="en">The local name of the record</span></li><li><span class="lr-finder-side-icon">⌕</span><span data-l="hi">आपकी जानकारी से खोजने का तरीका</span><span data-l="en">How to search with your details</span></li><li><span class="lr-finder-side-icon">→</span><span data-l="hi">अगला कदम और जरूरी सावधानी</span><span data-l="en">Next steps and useful cautions</span></li></ul>
+</aside>
+</section>
+<div id="rf-out" class="lr-finder-results" role="status" aria-live="polite"><div class="lr-finder-empty"><span class="lr-finder-empty-icon">⌕</span><strong data-l="hi">आपके सुझाव यहाँ दिखेंगे</strong><strong data-l="en">Your guidance will appear here</strong><p data-l="hi">शुरू करने के लिए ऊपर तीनों विकल्प चुनें।</p><p data-l="en">Choose all three options above to get started.</p></div></div>
+<section class="lr-finder-how">
+<p class="lr-eyebrow" data-l="hi">कैसे काम करता है</p><p class="lr-eyebrow" data-l="en">HOW IT WORKS</p>
+<div class="lr-finder-how-grid">
+<article><span>01</span><h3 data-l="hi">राज्य के अनुसार</h3><h3 data-l="en">State-specific</h3><p data-l="hi">रिकॉर्ड का स्थानीय नाम और पोर्टल आपके चुने राज्य के डेटा से तय होता है।</p><p data-l="en">Local record names and portals come from the selected state’s data.</p></article>
+<article><span>02</span><h3 data-l="hi">आपके काम के अनुसार</h3><h3 data-l="en">Task-based</h3><p data-l="hi">देखना, प्रमाणित प्रति, म्यूटेशन या नक्शा—हर काम का अगला कदम अलग है।</p><p data-l="en">Viewing, certified copies, mutation and maps each need different next steps.</p></article>
+<article><span>03</span><h3 data-l="hi">सुझाव का कारण</h3><h3 data-l="en">Explainable guidance</h3><p data-l="hi">हर सुझाव के पीछे का नियम और जरूरी सावधानी भी दिखाई जाती है।</p><p data-l="en">The rule behind each recommendation and its cautions are also shown.</p></article>
+</div>
+</section>`,
   });
   return out;
 }
